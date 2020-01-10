@@ -11,6 +11,7 @@ import App from './App.vue'
 import { Button, Toast, Infiniteloading, Swiper, Switch } from '@nutui/nutui';
 console.log(Button, Toast, Infiniteloading, Swiper, Switch)
 Button.install(Vue);
+Switch.install(Vue);
 
 import "./assets/rem";
 
