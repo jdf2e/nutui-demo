@@ -41,7 +41,9 @@ base 通过 Npm 引入 NutUI 的示例，包含如下功能：
 
 基于 nuxt 的示例工程。
 
-> 技术栈：Vue、Nuxt、NutUI （开发小哥哥正在努力开发中。。。）
+> 技术栈：Vue、Nuxt、NutUI 
+- 组件按需引入
+- theme 工程在 base 工程的基础上增加了自定义主题色的配置。
 
 ## 预览
 
