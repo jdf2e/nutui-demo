@@ -7,11 +7,10 @@ import App from './App.vue'
 
 // NutUI.install(Vue);
 
-import { Button, Toast, Infiniteloading, Swiper, Switch, Qart, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem } from '@nutui/nutui';
-console.log(Button, Toast, Infiniteloading, Swiper, Switch, Qart, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell)
+import { Button, Toast, Infiniteloading, Swiper, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem } from '@nutui/nutui';
+console.log(Button, Toast, Infiniteloading, Swiper, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell)
 Button.install(Vue);
 Switch.install(Vue);
-Qart.install(Vue);
 LuckDraw.install(Vue);
 Signature.install(Vue);
 CircleProgress.install(Vue);
