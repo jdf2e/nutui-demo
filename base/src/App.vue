@@ -1,22 +1,40 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <nut-button>
-      定制按钮样式
+    <nut-button @click="openCalendar">
+      打开日历
     </nut-button>
     <nut-switch :active="true">
     </nut-switch>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+
+    <nut-calendar :is-visible.sync="isVisible" :default-value="date" type="range" :start-date="null" :end-date="null"
+      :animation="`nutSlideUp`" @close="switchPickerClose" @choose="setChooseValue">
+    </nut-calendar>
+
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      isVisible: false,
+      date: null
+    };
   },
   mounted() {},
-  methods: {}
+  methods: {
+    openCalendar() {
+      this.isVisible = true;
+    },
+    switchPickerClose(event) {
+      console.log("switchPickerClose", event);
+    },
+    setChooseValue(param) {
+      this.date = [...[param[0][3], param[1][3]]];
+      console.log(this.date);
+    }
+  }
 };
 </script>
 
