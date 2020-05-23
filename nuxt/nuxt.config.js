@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/nutui.js"],
+  plugins: [{ src: "~/plugins/nutui.js", ssr: true }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -56,7 +56,7 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
-      config.resolve.extensions.push('.sass');
+      config.resolve.extensions.push(".sass");
     }
   }
 };
