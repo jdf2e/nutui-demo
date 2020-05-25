@@ -4,12 +4,17 @@
     <nut-button @click="openCalendar">
       打开日历
     </nut-button>
+      <nut-button @click="showPopup=true">
+      打开地址组件
+    </nut-button>
     <nut-switch :active="true">
     </nut-switch>
 
     <nut-calendar :is-visible.sync="isVisible" :default-value="date" type="range" :start-date="null" :end-date="null"
       :animation="`nutSlideUp`" @close="switchPickerClose" @choose="setChooseValue">
     </nut-calendar>
+
+      <nut-address v-model="showPopup" :province="province" :city="city" :country="country" :town="town" @onChange="onChange1" @close="close1" customAddressTitle="请选择所在地区"></nut-address>
 
   </div>
 </template>
@@ -19,7 +24,12 @@ export default {
   data() {
     return {
       isVisible: false,
-      date: null
+      date: null,
+      showPopup:false,
+      province:[{"id":1,"name":"北京"},{"id":2,"name":"广西"},{"id":3,"name":"江西"},{"id":4,"name":"四川"}], // 省
+      city:[{"id":7,"name":"朝阳区"},{"id":8,"name":"崇文区"},{"id":9,"name":"昌平区"},{"id":6,"name":"石景山区"}],// 市
+      country:[{"id":3,"name":"八里庄街道"},{"id":9,"name":"北苑"},{"id":4,"name":"常营乡"}],// 县
+      town:[], // 镇
     };
   },
   mounted() {},
