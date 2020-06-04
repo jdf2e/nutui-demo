@@ -1,0 +1,182 @@
+@charset "utf-8";
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+em,
+img,
+s,
+strong,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    -webkit-overflow-scrolling:touch;
+}
+
+
+
+
+/* ios默认文本框阴影 */
+
+input[type=text],
+textarea {
+    -webkit-appearance: none;
+}
+
+
+/* 低版本安卓文本框层级问题 */
+
+input:focus {
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+// 清除谷歌浏览器下的 search 叉号
+input::-webkit-search-cancel-button{
+  display: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body,#app {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
+    height: 100%;
+    width: 100%;
+    background-color:#fff;
+    font-family: PingHei,Lucida Grande,Lucida Sans Unicode,STHeiti,Helvetica,Arial,Verdana,"sans-serif",PingHei-light,SimHei,Droid Sans;
+    font-size: 24px;
+}
+
+a,
+button,
+input {
+    outline: 0 none;
+    text-decoration: none;
+}
+
+img {
+    border: 0 none;
+    vertical-align: bottom;
+    -ms-interpolation-mode: bicubic;
+}
+[v-cloak] {
+    display: none;
+}
+
+// dialog对话框
+.nut-dialog{
+    border-radius: 12px;
+}
+
+.nut-dialog{
+    .nut-dialog-content{
+        font-size: 16px;
+        font-weight: bold;
+        color: #333
+    }
+    .nut-dialog-footer{
+        height: auto;
+        margin-bottom: 20px;
+        justify-content: center;
+        .nut-dialog-btn{
+            flex: inherit;
+            width: auto;
+            min-width: 100px;
+            height: 30px;
+            padding: 0px 17px;
+            margin-right: 13px;
+            border-radius: 30px;
+            border: 1px solid rgba(242,39,12,1);
+            font-size: 12px;
+            color: #F2270C;
+            &.nut-dialog-ok{
+                color: #fff;
+                background: linear-gradient(135deg, rgba(242,20,12,1) 0%,rgba(242,39,12,1) 70%,rgba(242,77,12,1) 100%);
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.nut-textbox{
+    .txt-area{
+        border-radius: 4px;
+        padding: 10px 12px !important;
+    }
+}
+
+.popup-bottom{
+    &.round{
+        border-radius: 12px 12px 0 0;
+    }
+}
+.popup-top{
+    &.round{
+        border-radius: 0 0 12px 12px;
+    }
+}
