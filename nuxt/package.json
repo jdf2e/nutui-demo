@@ -11,8 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nutui/babel-plugin-separate-import": "^1.2.0",
-    "@nutui/nutui": "^2.2.4",
+    "@nutui/babel-plugin-separate-import": "^1.2.2",
+    "@nutui/nutui": "^2.2.6",
     "node-sass": "^4.13.1",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.2"
