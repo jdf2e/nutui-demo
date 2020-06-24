@@ -4,6 +4,10 @@
     <nut-button @click="openCalendar">
       打开日历
     </nut-button>
+    <nut-button @click="openDate=true">
+      打开日期
+    </nut-button>
+    <nut-datepicker :is-visible="openDate" title="请选择日期" type="date" />
     <nut-button @click="showPopup=true">
       打开地址组件
     </nut-button>
@@ -27,6 +31,7 @@ export default {
       isVisible: false,
       date: null,
       showPopup: false,
+      openDate: false,
       province: [
         { id: 1, name: "北京" },
         { id: 2, name: "广西" },
