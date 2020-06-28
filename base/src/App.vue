@@ -7,7 +7,9 @@
     <nut-button @click="openDate=true">
       打开日期
     </nut-button>
-    <nut-datepicker :is-visible="openDate" title="请选择日期" type="date" />
+    <nut-datepicker 
+    startDate='2020-05-18' endDate='2021-05-20'
+     :is-visible="openDate" title="请选择日期" type="date" />
     <nut-button @click="showPopup=true">
       打开地址组件
     </nut-button>

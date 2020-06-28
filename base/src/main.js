@@ -6,8 +6,8 @@ import App from './App.vue'
 
 // NutUI.install(Vue);
 
-import { Button, Toast, Infiniteloading, DatePicker,Swiper, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup } from '@nutui/nutui';
-console.log(Button, Toast,DatePicker, Infiniteloading, Swiper, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell,Calendar,Popup)
+import { Button, Actionsheet,Toast, Infiniteloading, DatePicker,Swiper, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker } from '@nutui/nutui';
+console.log(Button, Actionsheet,Toast,DatePicker, Infiniteloading, Swiper, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell,Calendar,Popup,Picker)
 Button.install(Vue);
 Switch.install(Vue);
 LuckDraw.install(Vue);
@@ -22,6 +22,8 @@ Calendar.install(Vue);
 Address.install(Vue);
 Popup.install(Vue);
 DatePicker.install(Vue);
+Picker.install(Vue);
+Actionsheet.install(Vue);
 
 import "./assets/rem";
 import "./assets/reset.scss";

@@ -12,7 +12,10 @@ module.exports = {
             },
             postcss: {
                 plugins: [
-               
+                    require('autoprefixer')({ // 配置使用 autoprefixer
+                        // browsers: ['last 20 versions'],
+                        overrideBrowserslist: ['last 20 versions'] // 记得这里要把 browsers 改为 overrideBrowserslist，autoprefixer 新版本的写法有变
+                    })
                 ]
             }
         },

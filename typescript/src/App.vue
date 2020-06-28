@@ -3,7 +3,6 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <nut-button>定制按钮样式</nut-button>
     <nut-switch :active="true"></nut-switch>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
