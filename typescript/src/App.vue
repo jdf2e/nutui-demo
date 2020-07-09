@@ -7,6 +7,8 @@
       <nut-fixednav active-text="右侧收起" un-active-text="右侧展开" :nav-list="navList">
       </nut-fixednav>
     </nut-drag>
+
+    <nut-countup :init-num='0' :end-num='200'></nut-countup>
   </div>
 </template>
 
@@ -18,9 +20,7 @@ export default class App extends Vue {
   mounted(): void {
     this.$toast.text("欢迎您使用nutui");
 
-    this.$notify.text("欢迎您使用nutui", {
-      duration: 10000
-    });
+    this.$notify.text("欢迎您使用nutui");
   }
   navList: any[] = [
     {
@@ -62,6 +62,9 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #nav {

@@ -5,8 +5,8 @@ import store from './store'
 
 
 
-import { Button, Toast, Infiniteloading, Swiper, Switch, FixedNav, Notify, Drag, Popup } from '@nutui/nutui';
-console.log(Button, Toast, Infiniteloading, Swiper, Switch, FixedNav, Notify, Drag,Popup)
+import { Button, Toast, Infiniteloading, Swiper, Switch, FixedNav, Notify, Drag, Popup, CountUp } from '@nutui/nutui';
+console.log(Button, Toast, Infiniteloading, Swiper, Switch, FixedNav, Notify, Drag,Popup,CountUp)
 Button.install(Vue);
 Switch.install(Vue);
 Toast.install(Vue);
@@ -14,6 +14,7 @@ FixedNav.install(Vue);
 Drag.install(Vue);
 Popup.install(Vue);
 Notify.install(Vue);
+CountUp.install(Vue);
 
 Vue.config.productionTip = false
 
