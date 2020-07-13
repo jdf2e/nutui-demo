@@ -6,7 +6,7 @@ import App from './App.vue'
 
 // NutUI.install(Vue);
 
-import { Button, Actionsheet, DatePicker, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker,FixedNav,Notify,CountUp } from '@nutui/nutui';
+import { Button, Actionsheet, DatePicker, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker,FixedNav,Notify,CountUp,SearchBar } from '@nutui/nutui';
 Button.install(Vue);
 Switch.install(Vue);
 LuckDraw.install(Vue);
@@ -23,7 +23,7 @@ Popup.install(Vue);
 DatePicker.install(Vue);
 Picker.install(Vue);
 Actionsheet.install(Vue);
-
+SearchBar.install(Vue);
 FixedNav.install(Vue);
 Notify.install(Vue);
 CountUp.install(Vue);

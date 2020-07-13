@@ -7,9 +7,8 @@
     <nut-button @click="openDate=true">
       打开日期
     </nut-button>
-    <nut-datepicker 
-    startDate='2020-05-18' endDate='2021-05-20'
-     :is-visible="openDate" @close="openDate=false" title="请选择日期" type="date" />
+    <nut-datepicker startDate='2020-05-18' endDate='2021-05-20' :is-visible="openDate" @close="openDate=false"
+      title="请选择日期" type="date" />
     <nut-button @click="showPopup=true">
       打开地址组件
     </nut-button>
@@ -23,11 +22,24 @@
     <nut-address v-model="showPopup" :province="province" :city="city" :country="country" :town="town"
       @onChange="onChange" customAddressTitle="请选择所在地区"></nut-address>
 
-       <nut-drag direction="y" :style="{right:'0px',bottom:'50px'}">
+    <nut-drag direction="y" :style="{right:'0px',bottom:'50px'}">
       <nut-fixednav active-text="右侧收起" un-active-text="右侧展开" :nav-list="navList">
       </nut-fixednav>
     </nut-drag>
 
+    <nut-button @click.native="popupshow= true">展示弹出层</nut-button>
+
+    <nut-popup position="bottom" closeable close-icon-position="top-right" :style="{ height: '80%' }"
+      v-model="popupshow" @close="popupClose" :destroy-on-close="true">
+      <div class="matter-container">
+        <h3>物料</h3>
+        <section class="matter-content">
+          <nut-searchbar ref='mySearchBarInput' customClass="search_bar" placeText="ERP/姓名/邮箱" :hasIcon="true"
+            :hasSearchButton="false">
+          </nut-searchbar>
+        </section>
+      </div>
+    </nut-popup>
 
   </div>
 </template>
@@ -40,7 +52,8 @@ export default {
       date: null,
       showPopup: false,
       openDate: false,
-       navList: [
+      popupshow: false,
+      navList: [
         {
           id: 1,
           text: "首页",
@@ -88,9 +101,12 @@ export default {
     };
   },
   mounted() {
-      this.$notify.text("欢迎您使用nutui");
+    this.$notify.text("欢迎您使用nutui");
   },
   methods: {
+    popupClose() {
+      this.$refs.mySearchBarInput.clearInput();
+    },
     onChange(event) {
       console.log(event);
     },
