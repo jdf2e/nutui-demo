@@ -34,12 +34,14 @@
       <div class="matter-container">
         <h3>物料</h3>
         <section class="matter-content">
-          <nut-searchbar ref='mySearchBarInput' customClass="search_bar" placeText="ERP/姓名/邮箱" :hasIcon="true"
+          <nut-searchbar ref='mySearchBarInput' v-model="searchBarValue" @clear="clear" customClass="search_bar" placeText="ERP/姓名/邮箱" :hasIcon="true"
             :hasSearchButton="false">
           </nut-searchbar>
         </section>
       </div>
     </nut-popup>
+
+    <nut-textbox disabled v-model="searchBarValue"></nut-textbox>
 
   </div>
 </template>
@@ -53,6 +55,7 @@ export default {
       showPopup: false,
       openDate: false,
       popupshow: false,
+      searchBarValue:'123',
       navList: [
         {
           id: 1,
@@ -104,8 +107,11 @@ export default {
     this.$notify.text("欢迎您使用nutui");
   },
   methods: {
+    clear(){
+      console.log('clear')
+    },
     popupClose() {
-      this.$refs.mySearchBarInput.clearInput();
+      // this.$refs.mySearchBarInput.clearInput();
     },
     onChange(event) {
       console.log(event);
