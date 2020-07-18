@@ -13,9 +13,10 @@ module.exports = {
       },
       postcss: {
         plugins: [
-          require('autoprefixer')({ // 配置使用 autoprefixer
+          require("autoprefixer")({
+            // 配置使用 autoprefixer
             // browsers: ['last 20 versions'],
-            overrideBrowserslist: ['last 20 versions'] // 记得这里要把 browsers 改为 overrideBrowserslist，autoprefixer 新版本的写法有变
+            overrideBrowserslist: ["last 20 versions"], // 记得这里要把 browsers 改为 overrideBrowserslist，autoprefixer 新版本的写法有变
           }),
           pxtorem({
             rootValue: 37.5,
@@ -24,5 +25,24 @@ module.exports = {
         ],
       },
     },
+  },
+  chainWebpack: (config) => {
+    const svgRule = config.module.rule("svg");
+
+    // 清除已有的所有 loader。
+    // 如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
+    svgRule.uses.clear();
+
+    // 添加要替换的 loader
+    svgRule
+      .use("vue-svg-loader")
+      .loader("raw-loader")
+      .tap((options) => {
+        // 修改它的选项...
+        options = {
+          esModule: false,
+        };
+        return options;
+      });
   },
 };

@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <nut-icon 
+      type="self" :url="require('./assets/after-sale.svg')"
+    >
+    </nut-icon>
     <nut-button @click="openCalendar">
       打开日历
     </nut-button>

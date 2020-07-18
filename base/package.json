@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.4.3",
     "node-sass": "^4.13.0",
+    "raw-loader": "^4.0.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
