@@ -8,7 +8,7 @@ module.exports = {
         // 注意：在 sass-loader v7 中，这个选项名是 "data"
         prependData: ` 
                 @import "@/assets/custom_theme.scss";
-                @import "@nutui/nutui/dist/styles/index.scss";
+                @import "@nutui/nutui-jdl/dist/styles/index.scss";
                 `,
       },
       postcss: {
@@ -20,8 +20,9 @@ module.exports = {
           }),
           pxtorem({
             rootValue: 37.5,
-            propList: ["*"],
-          }),
+            propList: ['*'],
+            exclude: /node_modules/   // 排除node_modules，不对node_modules 中的内容进行转换
+          })
         ],
       },
     },

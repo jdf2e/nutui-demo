@@ -1,19 +1,30 @@
-import Vue from 'vue'
-import App from './App.vue'
-// import NutUI from '@nutui/nutui';
-// import '@nutui/nutui/dist/nutui.scss';
-
+import Vue from "vue";
+import App from "./App.vue";
+// import NutUI from '@nutui/nutui-jdl';
+// import '@nutui/nutui-jdl/dist/nutui.scss';
 
 // NutUI.install(Vue);
 
-import { Button, Actionsheet, DatePicker, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker,FixedNav,Notify,CountUp,SearchBar,TextBox } from '@nutui/nutui';
+import {
+  Button,
+  Actionsheet,
+  DatePicker,
+  Switch,
+  SideNavBar,
+  Cell,
+  SubSideNavBar,
+  SideNavBarItem,
+  Calendar,
+  Address,
+  Popup,
+  Picker,
+  SearchBar,
+  Toast
+} from "@nutui/nutui-jdl";
+Toast.install(Vue);
 Button.install(Vue);
 Switch.install(Vue);
-LuckDraw.install(Vue);
-Signature.install(Vue);
-CircleProgress.install(Vue);
 SideNavBar.install(Vue);
-Drag.install(Vue);
 Cell.install(Vue);
 SubSideNavBar.install(Vue);
 SideNavBarItem.install(Vue);
@@ -24,17 +35,11 @@ DatePicker.install(Vue);
 Picker.install(Vue);
 Actionsheet.install(Vue);
 SearchBar.install(Vue);
-FixedNav.install(Vue);
-Notify.install(Vue);
-CountUp.install(Vue);
-TextBox.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 
-
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");
