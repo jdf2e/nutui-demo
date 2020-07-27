@@ -19,7 +19,8 @@ import {
   Popup,
   Picker,
   SearchBar,
-  Toast
+  Toast,
+  Dialog
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
 Button.install(Vue);
@@ -35,6 +36,7 @@ DatePicker.install(Vue);
 Picker.install(Vue);
 Actionsheet.install(Vue);
 SearchBar.install(Vue);
+Dialog.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 

@@ -18,11 +18,11 @@ module.exports = {
             // browsers: ['last 20 versions'],
             overrideBrowserslist: ["last 20 versions"], // 记得这里要把 browsers 改为 overrideBrowserslist，autoprefixer 新版本的写法有变
           }),
-          pxtorem({
-            rootValue: 37.5,
-            propList: ["*"],
-            selectorBlackList: ['nut']
-          }),
+          // pxtorem({
+          //   rootValue: 37.5,
+          //   propList: ["*"],
+          //   selectorBlackList: ['nut']
+          // }),
         ],
       },
     },

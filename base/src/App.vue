@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <nut-icon type="self" :url="require('./assets/after-sale.svg')">
+    <nut-icon type="self" :url="require('./assets/svg/after-sale.svg')">
     </nut-icon>
     <nut-button @click="openCalendar">
       打开日历
@@ -38,6 +37,35 @@
     <nut-switch :active="true">
     </nut-switch>
 
+    <div class="cell-box" style="width:100%">
+      <nut-cell :show-icon="true" title="我的主页" @click-cell="clickEvnt">
+        <div slot="avatar">
+          <nut-icon type="self" color="#9D49F8FF" size="18px" :url="require('./assets/svg/avatar.svg')">></nut-icon>
+        </div>
+      </nut-cell>
+      <nut-cell :show-icon="true" title="店铺定位" desc="查看店铺" @click-cell="clickEvnt">
+        <div slot="avatar">
+          <nut-icon type="self" color="#FF6E4CFF" size="18px" :url="require('./assets/svg/nav.svg')">></nut-icon>
+        </div>
+      </nut-cell>
+      <nut-cell :show-icon="true" title="我的收藏" @click-cell="clickEvnt">
+        <div slot="avatar">
+          <nut-icon type="self" color="#FFBA12FF" size="18px" :url="require('./assets/svg/star.svg')">></nut-icon>
+        </div>
+      </nut-cell>
+      <nut-cell :show-icon="true" title="设置" desc="版本升级" @click-cell="clickEvnt">
+        <div slot="avatar">
+          <nut-icon type="self" color="#1EA3FFFF" size="18px" :url="require('./assets/svg/set.svg')">></nut-icon>
+        </div>
+      </nut-cell>
+      <nut-cell title="打开Dialog" @click-cell="dialogOpen"></nut-cell>
+
+      <nut-cell :show-icon="true" title="ActionSheet 基础样式" :desc="'123'" @click.native="isVisible1=true">
+      </nut-cell>
+      <nut-actionsheet :is-visible="isVisible1" @close="isVisible=false" :option-list="optionList"
+        @choose="choose"></nut-actionsheet>
+
+    </div>
   </div>
 </template>
 
@@ -46,11 +74,26 @@ export default {
   data() {
     return {
       isVisible: false,
+      isVisible1: false,
       date: null,
       showPopup: false,
       openDate: false,
       popupshow: false,
       searchBarValue: "",
+        optionList: [
+        {
+          name: '选项A',
+          value: 0
+        },
+        {
+          name: '选项B',
+          value: 1
+        },
+        {
+          name: '选项C',
+          value: 1
+        }
+      ],
       navList: [
         {
           id: 1,
@@ -102,6 +145,21 @@ export default {
     this.$toast.text("欢迎您使用nutui");
   },
   methods: {
+    choose(e){
+      console.log(e);
+    },
+    dialogOpen() {
+      this.$dialog({
+        title: "确定删除此订单？",
+        content: "删除后将从你的记录里消失，无法找回",
+        onOkBtn() {
+          this.close(); //关闭对话框
+        },
+      });
+    },
+    clickEvnt() {
+      console.log("clickEvnt");
+    },
     clear() {
       console.log("clear");
     },
