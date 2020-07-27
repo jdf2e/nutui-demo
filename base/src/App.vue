@@ -24,8 +24,8 @@
 
     <nut-button @click.native="popupshow= true">展示弹出层</nut-button>
 
-    <nut-popup position="bottom" closeable close-icon-position="top-right" :style="{ height: '80%' }"
-      v-model="popupshow" @close="popupClose" :destroy-on-close="true">
+    <nut-popup position="bottom" :style="{ height: '80%' }" v-model="popupshow" @close="popupClose"
+      :destroy-on-close="true">
       <div class="matter-container">
         <section class="matter-content">
           <nut-searchbar ref='mySearchBarInput' v-model="searchBarValue" @clear="clear" customClass="search_bar"

@@ -20,9 +20,9 @@ module.exports = {
           }),
           pxtorem({
             rootValue: 37.5,
-            propList: ['*'],
-            exclude: /node_modules/   // 排除node_modules，不对node_modules 中的内容进行转换
-          })
+            propList: ["*"],
+            selectorBlackList: ['nut']
+          }),
         ],
       },
     },
