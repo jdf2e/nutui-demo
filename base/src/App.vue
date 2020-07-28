@@ -53,24 +53,24 @@
 
     <div class="cell-box" style="width:100%">
       <nut-cell :show-icon="true" title="我的主页" @click-cell="clickEvnt">
-        <div slot="avatar">
-          <nut-icon type="self" color="#9D49F8FF" size="18px" :url="require('./assets/svg/avatar.svg')">></nut-icon>
-        </div>
+        <template slot="avatar">
+          <img width="24" height="24" class="avatar-img" src="./assets/img/ic_me.png" />
+        </template>
       </nut-cell>
       <nut-cell :show-icon="true" title="店铺定位" desc="查看店铺" @click-cell="clickEvnt">
-        <div slot="avatar">
-          <nut-icon type="self" color="#FF6E4CFF" size="18px" :url="require('./assets/svg/nav.svg')">></nut-icon>
-        </div>
+        <template slot="avatar">
+          <img width="24" height="24" class="avatar-img" src="./assets/img/ic_location.png" />
+        </template>
       </nut-cell>
       <nut-cell :show-icon="true" title="我的收藏" @click-cell="clickEvnt">
-        <div slot="avatar">
-          <nut-icon type="self" color="#FFBA12FF" size="18px" :url="require('./assets/svg/star.svg')">></nut-icon>
-        </div>
+        <template slot="avatar">
+          <img width="24" height="24" class="avatar-img" src="./assets/img/ic_collect.png" />
+        </template>
       </nut-cell>
       <nut-cell :show-icon="true" title="设置" desc="版本升级" @click-cell="clickEvnt">
-        <div slot="avatar">
-          <nut-icon type="self" color="#1EA3FFFF" size="18px" :url="require('./assets/svg/set.svg')">></nut-icon>
-        </div>
+        <template slot="avatar">
+          <img width="24" height="24" class="avatar-img" src="./assets/img/ic_set.png" />
+        </template>
       </nut-cell>
       <nut-cell title="打开Dialog" @click-cell="dialogOpen"></nut-cell>
 
@@ -82,15 +82,15 @@
       <nut-leftslip v-for="(item, index) in list" :key="item.id" ref="leftslip">
         <div slot="slip-main" class="slip-main">
           <nut-cell class="cell-item" :title="item.title" :sub-title="item.subTitle">
-            <div slot="avatar">
+            <template slot="avatar">
               <nut-avatar sizeNum="60" :bg-image="require('./assets/logo.png')" bg-icon></nut-avatar>
-            </div>
-            <div slot="desc">
+            </template>
+            <template slot="desc">
               <p class="timer">{{item.time}}</p>
               <p class="badge">
                 <nut-badge :is-dot="item.isDot" :value="item.value" :max="99" top="0px" right="15px"></nut-badge>
               </p>
-            </div>
+            </template>
           </nut-cell>
         </div>
         <div slot="slipbtns" class="slipbtns"><a href="javascript:;" @click="delItem(index)">删除</a>
