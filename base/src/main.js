@@ -32,7 +32,10 @@ import {
   Rate,
   Tag,
   Imagepreview,
-  Swiper
+  Swiper,
+  Steps,
+  Stepper,
+  Card
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
 Rate.install(Vue);
@@ -61,6 +64,9 @@ Navbar.install(Vue);
 Noticebar.install(Vue);
 Imagepreview.install(Vue);
 Swiper.install(Vue);
+Steps.install(Vue);
+Stepper.install(Vue);
+Card.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 
