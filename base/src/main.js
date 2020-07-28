@@ -21,7 +21,8 @@ import {
   SearchBar,
   Toast,
   Dialog,
-  LeftSlip
+  LeftSlip,
+  Avatar
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
 Button.install(Vue);
@@ -39,6 +40,7 @@ Actionsheet.install(Vue);
 SearchBar.install(Vue);
 Dialog.install(Vue);
 LeftSlip.install(Vue);
+Avatar.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 

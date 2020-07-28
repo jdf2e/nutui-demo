@@ -70,6 +70,23 @@
         <div slot="slipbtns" class="slipbtns"><a href="javascript:;" @click="delSlipItem">删除</a></div>
       </nut-leftslip>
 
+      <nut-leftslip v-for="(item, index) in list" :key="item.id" ref="leftslip">
+        <div slot="slip-main" class="slip-main">
+          <nut-cell class="cell-item" :title="item.title" :sub-title="item.subTitle">
+            <div slot="avatar">
+              <nut-avatar sizeNum="60" :bg-image="require('./assets/logo.png')" bg-icon></nut-avatar>
+            </div>
+            <div slot="desc">
+              <p class="timer">{{item.time}}</p>
+              <p class="badge">
+                <nut-badge :is-dot="item.isDot" :value="item.value" :max="99" top="0px" right="15px"></nut-badge>
+              </p>
+            </div>
+          </nut-cell>
+        </div>
+        <div slot="slipbtns" class="slipbtns"><a href="javascript:;" @click="delItem(index)">删除</a>
+        </div>
+      </nut-leftslip>
     </div>
   </div>
 </template>
@@ -85,6 +102,40 @@ export default {
       openDate: false,
       popupshow: false,
       searchBarValue: "",
+      list: [
+        {
+          id: "add1",
+          title: "噜啦噜1",
+          subTitle: "我又来送福利啦！关注之后你就会",
+          time: "10:13",
+          isDot: false,
+          value: 9,
+        },
+        {
+          id: "add2",
+          title: "噜啦噜2",
+          subTitle: "我又来送福利啦！关注之后你就会",
+          time: "10:12",
+          isDot: true,
+          value: 1,
+        },
+        {
+          id: "add5",
+          title: "噜啦噜5",
+          subTitle: "我又来送福利啦！关注之后你就会",
+          time: "1小时前",
+          isDot: false,
+          value: 99,
+        },
+        {
+          id: "add8",
+          title: "噜啦噜8",
+          subTitle: "我又来送福利啦！关注之后你就会",
+          time: "星期五",
+          isDot: false,
+          value: 100,
+        },
+      ],
       optionList: [
         {
           name: "选项A",
