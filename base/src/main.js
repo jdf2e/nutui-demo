@@ -28,9 +28,15 @@ import {
   Badge,
   TabBar,
   Navbar,
-  Noticebar
+  Noticebar,
+  Rate,
+  Tag,
+  Imagepreview,
+  Swiper
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
+Rate.install(Vue);
+Tag.install(Vue);
 Button.install(Vue);
 Switch.install(Vue);
 SideNavBar.install(Vue);
@@ -53,6 +59,8 @@ Badge.install(Vue);
 TabBar.install(Vue);
 Navbar.install(Vue);
 Noticebar.install(Vue);
+Imagepreview.install(Vue);
+Swiper.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 

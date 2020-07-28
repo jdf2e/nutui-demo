@@ -1,9 +1,16 @@
 <template>
   <div id="app">
+    <nut-rate :value="5">
+    </nut-rate>
+    <nut-tag disabled>
+      标签
+    </nut-tag>
     <nut-noticebar :close-mode="true">华为畅享9新品即将上市，活动期间0元预约可参与抽奖，赢HUAWEI WATCH等好礼，更多产品信息请持续关注！
     </nut-noticebar>
-    <nut-navbar style="position:fixed;left:0;top:0;right:0;z-index:1111" @on-click-back="back" @on-click-close="close"
-      @on-click-title="title" @on-click-search="search" @on-click-more="more">
+    <nut-badge :value="9" :max="99" class="item">拜访提醒</nut-badge>
+    <nut-badge :value="99" :max="99" class="item">拜访提醒</nut-badge>
+    <nut-badge :value="200" :max="99" class="item">拜访提醒</nut-badge>
+    <nut-navbar style="position:fixed;left:0;top:0;right:0;z-index:1111">
     </nut-navbar>
     <nut-tab>
       <nut-tab-panel tab-title="页签一">
@@ -97,6 +104,8 @@
         </div>
       </nut-leftslip>
     </div>
+    <nut-cell isLink title="展示图片预览" :showIcon="true" @click.native="showPreview = true"></nut-cell>
+    <nut-imagepreview v-model="showPreview" :images="dataImgItem" @close="showPreview = false" />
 
     <nut-tabbar :tabbar-list="navList" :bottom="true"> </nut-tabbar>
   </div>
@@ -106,6 +115,7 @@
 export default {
   data() {
     return {
+      showPreview: false,
       isVisible: false,
       isVisible1: false,
       date: null,
@@ -113,6 +123,24 @@ export default {
       openDate: false,
       popupshow: false,
       searchBarValue: "",
+      dataImgItem: [
+        {
+          imgSrc:
+            "//m.360buyimg.com/mobilecms/s750x366_jfs/t1/18629/34/3378/144318/5c263f64Ef0e2bff0/0d650e0aa2e852ee.jpg",
+        },
+        {
+          imgSrc:
+            "//m.360buyimg.com/mobilecms/s750x366_jfs/t1/26597/30/4870/174583/5c35c5d2Ed55eedc6/50e27870c25e7a82.png",
+        },
+        {
+          imgSrc:
+            "//m.360buyimg.com/mobilecms/s750x366_jfs/t1/9542/17/12873/201687/5c3c4362Ea9eb757d/60026b40a9d60d85.jpg",
+        },
+        {
+          imgSrc:
+            "//m.360buyimg.com/mobilecms/s750x366_jfs/t1/30042/36/427/82951/5c3bfdabE3faf2f66/9adca782661c988c.jpg",
+        },
+      ],
       list: [
         {
           id: "add1",
@@ -266,5 +294,26 @@ export default {
     height: 200px;
     width: 200px;
   }
+}
+
+.item {
+  margin: 16px 26px 10px 10px;
+  line-height: 15px;
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #646464;
+}
+
+.demo-w {
+  margin: 0;
+  background: white;
+}
+
+.demo-svg {
+  display: inline-block;
+  height: 17px;
+  width: 19px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 </style>
