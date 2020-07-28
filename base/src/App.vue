@@ -62,8 +62,13 @@
 
       <nut-cell :show-icon="true" title="ActionSheet 基础样式" :desc="'123'" @click.native="isVisible1=true">
       </nut-cell>
-      <nut-actionsheet :is-visible="isVisible1" @close="isVisible=false" :option-list="optionList"
-        @choose="choose"></nut-actionsheet>
+      <nut-actionsheet :is-visible="isVisible1" @close="isVisible=false" :option-list="optionList" @choose="choose">
+      </nut-actionsheet>
+
+      <nut-leftslip ref="demo1">
+        <div slot="slip-main" class="slip-main base-style">左滑触发删除<span class="main-right">这里是内容</span></div>
+        <div slot="slipbtns" class="slipbtns"><a href="javascript:;" @click="delSlipItem">删除</a></div>
+      </nut-leftslip>
 
     </div>
   </div>
@@ -80,19 +85,19 @@ export default {
       openDate: false,
       popupshow: false,
       searchBarValue: "",
-        optionList: [
+      optionList: [
         {
-          name: '选项A',
-          value: 0
+          name: "选项A",
+          value: 0,
         },
         {
-          name: '选项B',
-          value: 1
+          name: "选项B",
+          value: 1,
         },
         {
-          name: '选项C',
-          value: 1
-        }
+          name: "选项C",
+          value: 1,
+        },
       ],
       navList: [
         {
@@ -145,7 +150,7 @@ export default {
     this.$toast.text("欢迎您使用nutui");
   },
   methods: {
-    choose(e){
+    choose(e) {
       console.log(e);
     },
     dialogOpen() {

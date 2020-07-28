@@ -20,7 +20,8 @@ import {
   Picker,
   SearchBar,
   Toast,
-  Dialog
+  Dialog,
+  LeftSlip
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
 Button.install(Vue);
@@ -37,6 +38,7 @@ Picker.install(Vue);
 Actionsheet.install(Vue);
 SearchBar.install(Vue);
 Dialog.install(Vue);
+LeftSlip.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 
