@@ -1,6 +1,14 @@
 <template>
   <div id="app">
+    <nut-tab>
+      <nut-tab-panel tab-title="页签一">这里是页签1内容</nut-tab-panel>
+      <nut-tab-panel tab-title="页签二">这里是页签2内容</nut-tab-panel>
+      <nut-tab-panel tab-title="页签三">这里是页签3内容</nut-tab-panel>
+      <nut-tab-panel tab-title="页签四">这里是页签4内容</nut-tab-panel>
+    </nut-tab>
     <nut-icon type="self" :url="require('./assets/svg/after-sale.svg')">
+    </nut-icon>
+    <nut-icon type="top">
     </nut-icon>
     <nut-button @click="openCalendar">
       打开日历
@@ -67,7 +75,7 @@
 
       <nut-leftslip ref="demo1">
         <div slot="slip-main" class="slip-main base-style">左滑触发删除<span class="main-right">这里是内容</span></div>
-        <div slot="slipbtns" class="slipbtns"><a href="javascript:;" @click="delSlipItem">删除</a></div>
+        <div slot="slipbtns" class="slipbtns"><a href="javascript:;" >删除</a></div>
       </nut-leftslip>
 
       <nut-leftslip v-for="(item, index) in list" :key="item.id" ref="leftslip">
@@ -88,6 +96,8 @@
         </div>
       </nut-leftslip>
     </div>
+
+    <nut-tabbar  :tabbar-list="navList" :bottom="true"> </nut-tabbar>
   </div>
 </template>
 
@@ -153,26 +163,26 @@ export default {
       navList: [
         {
           id: 1,
-          text: "首页",
+          tabTitle: "首页",
           icon:
             "https://img11.360buyimg.com/imagetools/jfs/t1/117646/2/11112/1297/5ef83e95E81d77f05/daf8e3b1c81e3c98.png",
         },
         {
           id: 2,
-          text: "分类",
+          tabTitle: "分类",
           icon:
             "https://img12.360buyimg.com/imagetools/jfs/t1/119490/8/9568/1798/5ef83e95E968c69a6/dd029326f7d5042e.png",
         },
         {
           id: 3,
-          text: "购物车",
+          tabTitle: "购物车",
           num: 2,
           icon:
             "https://img14.360buyimg.com/imagetools/jfs/t1/130725/4/3157/1704/5ef83e95Eb976644f/b36c6cfc1cc1a99d.png",
         },
         {
           id: 4,
-          text: "我的",
+          tabTitle: "我的",
           icon:
             "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png",
         },

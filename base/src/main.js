@@ -22,7 +22,11 @@ import {
   Toast,
   Dialog,
   LeftSlip,
-  Avatar
+  Avatar,
+  Tab,
+  TabPanel,
+  Badge,
+  TabBar
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
 Button.install(Vue);
@@ -41,6 +45,10 @@ SearchBar.install(Vue);
 Dialog.install(Vue);
 LeftSlip.install(Vue);
 Avatar.install(Vue);
+Tab.install(Vue);
+TabPanel.install(Vue);
+Badge.install(Vue);
+TabBar.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 
