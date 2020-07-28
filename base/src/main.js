@@ -26,7 +26,9 @@ import {
   Tab,
   TabPanel,
   Badge,
-  TabBar
+  TabBar,
+  Navbar,
+  Noticebar
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
 Button.install(Vue);
@@ -49,6 +51,8 @@ Tab.install(Vue);
 TabPanel.install(Vue);
 Badge.install(Vue);
 TabBar.install(Vue);
+Navbar.install(Vue);
+Noticebar.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 

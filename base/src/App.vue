@@ -1,35 +1,44 @@
 <template>
   <div id="app">
+    <nut-noticebar :close-mode="true">华为畅享9新品即将上市，活动期间0元预约可参与抽奖，赢HUAWEI WATCH等好礼，更多产品信息请持续关注！
+    </nut-noticebar>
+    <nut-navbar style="position:fixed;left:0;top:0;right:0;z-index:1111" @on-click-back="back" @on-click-close="close"
+      @on-click-title="title" @on-click-search="search" @on-click-more="more">
+    </nut-navbar>
     <nut-tab>
-      <nut-tab-panel tab-title="页签一">这里是页签1内容</nut-tab-panel>
-      <nut-tab-panel tab-title="页签二">这里是页签2内容</nut-tab-panel>
-      <nut-tab-panel tab-title="页签三">这里是页签3内容</nut-tab-panel>
-      <nut-tab-panel tab-title="页签四">这里是页签4内容</nut-tab-panel>
+      <nut-tab-panel tab-title="页签一">
+
+        <nut-button @click="openCalendar">
+          打开日历
+        </nut-button>
+
+      </nut-tab-panel>
+      <nut-tab-panel tab-title="页签二">
+        <nut-switch :active="true">
+        </nut-switch>
+      </nut-tab-panel>
+      <nut-tab-panel tab-title="页签三">
+        <nut-button @click="openDate=true">
+          打开日期
+        </nut-button>
+
+      </nut-tab-panel>
+      <nut-tab-panel tab-title="页签四">
+
+        <nut-button @click="showPopup=true">
+          打开地址组件
+        </nut-button>
+        <nut-button @click.native="popupshow= true">展示弹出层</nut-button>
+      </nut-tab-panel>
     </nut-tab>
-    <nut-icon type="self" :url="require('./assets/svg/after-sale.svg')">
-    </nut-icon>
-    <nut-icon type="top">
-    </nut-icon>
-    <nut-button @click="openCalendar">
-      打开日历
-    </nut-button>
-    <nut-button @click="openDate=true">
-      打开日期
-    </nut-button>
     <nut-datepicker startDate='2020-05-18' endDate='2021-05-20' :is-visible="openDate" @close="openDate=false"
       title="请选择日期" type="date" />
-    <nut-button @click="showPopup=true">
-      打开地址组件
-    </nut-button>
-
     <nut-calendar :is-visible.sync="isVisible" :default-value="date" type="range" :start-date="null" :end-date="null"
       :animation="`nutSlideUp`" @close="switchPickerClose" @choose="setChooseValue">
     </nut-calendar>
 
     <nut-address v-model="showPopup" :province="province" :city="city" :country="country" :town="town"
       @onChange="onChange" customAddressTitle="请选择所在地区"></nut-address>
-
-    <nut-button @click.native="popupshow= true">展示弹出层</nut-button>
 
     <nut-popup position="bottom" :style="{ height: '80%' }" v-model="popupshow" @close="popupClose"
       :destroy-on-close="true">
@@ -41,9 +50,6 @@
         </section>
       </div>
     </nut-popup>
-
-    <nut-switch :active="true">
-    </nut-switch>
 
     <div class="cell-box" style="width:100%">
       <nut-cell :show-icon="true" title="我的主页" @click-cell="clickEvnt">
@@ -73,11 +79,6 @@
       <nut-actionsheet :is-visible="isVisible1" @close="isVisible=false" :option-list="optionList" @choose="choose">
       </nut-actionsheet>
 
-      <nut-leftslip ref="demo1">
-        <div slot="slip-main" class="slip-main base-style">左滑触发删除<span class="main-right">这里是内容</span></div>
-        <div slot="slipbtns" class="slipbtns"><a href="javascript:;" >删除</a></div>
-      </nut-leftslip>
-
       <nut-leftslip v-for="(item, index) in list" :key="item.id" ref="leftslip">
         <div slot="slip-main" class="slip-main">
           <nut-cell class="cell-item" :title="item.title" :sub-title="item.subTitle">
@@ -97,7 +98,7 @@
       </nut-leftslip>
     </div>
 
-    <nut-tabbar  :tabbar-list="navList" :bottom="true"> </nut-tabbar>
+    <nut-tabbar :tabbar-list="navList" :bottom="true"> </nut-tabbar>
   </div>
 </template>
 
@@ -255,17 +256,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: auto;
   // display: flex;
   // flex-direction: column;
 
   > img {
     height: 200px;
     width: 200px;
-  }
-
-  .nut-button {
-    margin-bottom: 20px;
   }
 }
 </style>
