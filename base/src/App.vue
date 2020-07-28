@@ -258,7 +258,6 @@ export default {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   > img {
     height: 200px;
