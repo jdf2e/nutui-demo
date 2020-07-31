@@ -35,9 +35,11 @@ import {
   Swiper,
   Steps,
   Stepper,
-  Card
+  Card,
+  Scroll
 } from "@nutui/nutui-jdl";
 Toast.install(Vue);
+Scroll.install(Vue);
 Rate.install(Vue);
 Tag.install(Vue);
 Button.install(Vue);

@@ -265,6 +265,41 @@ export default {
     this.$toast.text("欢迎您使用nutui");
   },
   methods: {
+    onRefresh() {
+      // 调用API获取数据 PS：这里通过setTimeout来mock
+      setTimeout(() => {
+        let start = this.top - 1;
+        for (let i = start; i > start - 10; i--) {
+          this.items.splice(
+            0,
+            0,
+            "塑像本来就在石头里，我只是把不要的部分去掉 " +
+              (i > -10 ? "0" + -i : -i)
+          );
+        }
+        this.top = this.top - 10;
+        // 停止下拉动画
+        this.$refs.scroller && this.$refs.scroller.finishPullToRefresh();
+      }, 1500);
+    },
+    onInfinite(cb) {
+      // 通过回调函数cb进行控制是否数据加载
+      if (this.bottom >= 50) {
+        cb(true);
+        return;
+      }
+      setTimeout(() => {
+        let start = this.bottom + 1;
+        for (let i = start; i < start + 10; i++) {
+          this.items.push(
+            "塑像本来就在石头里，我只是把不要的部分去掉 " +
+              (i < 10 ? "0" + i : i)
+          );
+        }
+        this.bottom = this.bottom + 10;
+        this.$refs.scroller && this.$refs.scroller.finishInfinite();
+      }, 1500);
+    },
     choose(e) {
       console.log(e);
     },
