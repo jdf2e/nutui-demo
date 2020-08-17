@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <nut-icon 
-      type="self" :url="require('./assets/after-sale.svg')"
-    >
+
+    <nut-checkboxgroup ref="checkboxGroup" :checkBoxData="data" v-model="group">
+    </nut-checkboxgroup>
+    <nut-icon type="self" :url="require('./assets/after-sale.svg')">
     </nut-icon>
     <nut-button @click="openCalendar">
       打开日历
@@ -38,8 +38,8 @@
       <div class="matter-container">
         <h3>物料</h3>
         <section class="matter-content">
-          <nut-searchbar ref='mySearchBarInput' v-model="searchBarValue" @clear="clear" customClass="search_bar" placeText="ERP/姓名/邮箱" :hasIcon="true"
-            :hasSearchButton="false">
+          <nut-searchbar ref='mySearchBarInput' v-model="searchBarValue" @clear="clear" customClass="search_bar"
+            placeText="ERP/姓名/邮箱" :hasIcon="true" :hasSearchButton="false">
           </nut-searchbar>
         </section>
       </div>
@@ -54,65 +54,72 @@
 export default {
   data() {
     return {
+      data: [
+        { id: 11, value: "选项A", label: "选项A" },
+        { id: 12, value: "选项B", label: "选项B" },
+        { id: 13, value: "选项C", label: "选项C" },
+        { id: 14, value: "选项D", label: "选项D" },
+      ],
+      group: ["选项B"],
       isVisible: false,
       date: null,
       showPopup: false,
       openDate: false,
       popupshow: false,
-      searchBarValue:'123',
+      searchBarValue: "123",
       navList: [
         {
           id: 1,
           text: "首页",
           icon:
-            "https://img11.360buyimg.com/imagetools/jfs/t1/117646/2/11112/1297/5ef83e95E81d77f05/daf8e3b1c81e3c98.png"
+            "https://img11.360buyimg.com/imagetools/jfs/t1/117646/2/11112/1297/5ef83e95E81d77f05/daf8e3b1c81e3c98.png",
         },
         {
           id: 2,
           text: "分类",
           icon:
-            "https://img12.360buyimg.com/imagetools/jfs/t1/119490/8/9568/1798/5ef83e95E968c69a6/dd029326f7d5042e.png"
+            "https://img12.360buyimg.com/imagetools/jfs/t1/119490/8/9568/1798/5ef83e95E968c69a6/dd029326f7d5042e.png",
         },
         {
           id: 3,
           text: "购物车",
           num: 2,
           icon:
-            "https://img14.360buyimg.com/imagetools/jfs/t1/130725/4/3157/1704/5ef83e95Eb976644f/b36c6cfc1cc1a99d.png"
+            "https://img14.360buyimg.com/imagetools/jfs/t1/130725/4/3157/1704/5ef83e95Eb976644f/b36c6cfc1cc1a99d.png",
         },
         {
           id: 4,
           text: "我的",
           icon:
-            "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png"
-        }
+            "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png",
+        },
       ],
       province: [
         { id: 1, name: "北京" },
         { id: 2, name: "广西" },
         { id: 3, name: "江西" },
-        { id: 4, name: "四川" }
+        { id: 4, name: "四川" },
       ], // 省
       city: [
         { id: 7, name: "朝阳区" },
         { id: 8, name: "崇文区" },
         { id: 9, name: "昌平区" },
-        { id: 6, name: "石景山区" }
+        { id: 6, name: "石景山区" },
       ], // 市
       country: [
         { id: 3, name: "八里庄街道" },
         { id: 9, name: "北苑" },
-        { id: 4, name: "常营乡" }
+        { id: 4, name: "常营乡" },
       ], // 县
-      town: [] // 镇
+      town: [], // 镇
     };
   },
   mounted() {
     this.$notify.text("欢迎您使用nutui");
   },
   methods: {
-    clear(){
-      console.log('clear')
+    clear() {
+      console.log("clear");
     },
     popupClose() {
       // this.$refs.mySearchBarInput.clearInput();
@@ -129,8 +136,8 @@ export default {
     setChooseValue(param) {
       this.date = [...[param[0][3], param[1][3]]];
       console.log(this.date);
-    }
-  }
+    },
+  },
 };
 </script>
 

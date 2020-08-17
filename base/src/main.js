@@ -6,7 +6,7 @@ import App from './App.vue'
 
 // NutUI.install(Vue);
 
-import { Button, Actionsheet, DatePicker, Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker,FixedNav,Notify,CountUp,SearchBar,TextBox } from '@nutui/nutui';
+import { Button, Actionsheet, DatePicker, CheckBox,CheckBoxGroup,Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker,FixedNav,Notify,CountUp,SearchBar,TextBox } from '@nutui/nutui';
 Button.install(Vue);
 Switch.install(Vue);
 LuckDraw.install(Vue);
@@ -28,6 +28,8 @@ FixedNav.install(Vue);
 Notify.install(Vue);
 CountUp.install(Vue);
 TextBox.install(Vue);
+CheckBox.install(Vue);
+CheckBoxGroup.install(Vue);
 import "./assets/rem";
 import "./assets/reset.scss";
 
