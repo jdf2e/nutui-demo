@@ -220,12 +220,16 @@ export default {
           tabTitle: "首页",
           icon:
             "https://img11.360buyimg.com/imagetools/jfs/t1/117646/2/11112/1297/5ef83e95E81d77f05/daf8e3b1c81e3c98.png",
+          activeIcon:
+            "https://img13.360buyimg.com/imagetools/jfs/t1/144737/16/3979/6780/5f1f964eE1ea6a85c/f0884d425c08f817.png",
         },
         {
           id: 2,
           tabTitle: "分类",
           icon:
             "https://img12.360buyimg.com/imagetools/jfs/t1/119490/8/9568/1798/5ef83e95E968c69a6/dd029326f7d5042e.png",
+          activeIcon:
+            "https://img14.360buyimg.com/imagetools/jfs/t1/147105/26/3919/8702/5f1f964cEa84ada31/49449b6837783b96.png",
         },
         {
           id: 3,
@@ -233,12 +237,16 @@ export default {
           num: 2,
           icon:
             "https://img14.360buyimg.com/imagetools/jfs/t1/130725/4/3157/1704/5ef83e95Eb976644f/b36c6cfc1cc1a99d.png",
+          activeIcon:
+            "https://img11.360buyimg.com/imagetools/jfs/t1/134812/35/5525/4171/5f1f964cE87259d35/0c15597415912785.png",
         },
         {
           id: 4,
           tabTitle: "我的",
           icon:
             "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png",
+          activeIcon:
+            "https://img12.360buyimg.com/imagetools/jfs/t1/141460/22/3921/6967/5f1f964cE0f298049/1aa9437df6e5e747.png",
         },
       ],
       province: [
