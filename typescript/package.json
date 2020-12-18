@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@nutui/babel-plugin-separate-import": "^1.2.2",
-    "@nutui/nutui": "^2.2.6",
+    "@nutui/nutui": "^2.2.13",
     "core-js": "^3.6.4",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
