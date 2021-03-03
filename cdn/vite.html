@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@nutui/nutui@beta/dist/style.css"
+    />
+    <!-- 引入Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+    <!-- 引入NutUI组件库 -->
+    <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@beta/dist/nutui.umd.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        
+    </div>
+    <script>
+      // 在 #app 标签下渲染一个按钮组件
+      const app = Vue.createApp({
+        template: `<nut-button>Button 3.0</nut-button>
+        <nut-button type="primary">主要按钮</nut-button>
+        <nut-button type="info">信息按钮</nut-button>
+        <nut-button type="default">默认按钮</nut-button>
+        <nut-button type="danger">危险按钮</nut-button>
+        <nut-button type="warning">警告按钮</nut-button>
+        <nut-button type="success">成功按钮</nut-button>
+        `,
+      });
+      app.use(nutui);
+      // 调用函数组件，弹出一个 Toast
+      // nutui.Toast("NutUI 3.0");
+      app.mount("#app");
+    </script>
+  </body>
+</html>
