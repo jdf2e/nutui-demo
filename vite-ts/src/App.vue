@@ -7,19 +7,21 @@
   <nut-button type="danger">危险按钮</nut-button>
   <nut-button type="warning">警告按钮</nut-button>
   <nut-button type="success">成功按钮</nut-button>
+  <nut-cell title="123123213312">123123</nut-cell>
+  <nut-icon name="dongdong"></nut-icon>
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-})
+    HelloWorld,
+  },
+});
 </script>
 
 <style>
