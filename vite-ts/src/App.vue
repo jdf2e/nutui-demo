@@ -1,8 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
-
-  <nut-button type="primary" @click="testNavBar">主要按钮</nut-button>
+  <nut-button type="primary" @click="testNavBar">测试NavBar按钮</nut-button>
   <nut-button type="info">信息按钮</nut-button>
   <nut-button type="default">默认按钮</nut-button>
   <nut-button type="danger">危险按钮</nut-button>
@@ -18,15 +15,21 @@
       :num="item.num"
     ></nut-tabbar-item>
   </nut-tabbar>
+
+  <ShortPassword></ShortPassword>
+
+  <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, reactive } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import ShortPassword from "./components/ShortPassword.vue";
 export default defineComponent({
   name: "App",
   components: {
     HelloWorld,
+    ShortPassword,
   },
   setup() {
     const tests = reactive([
@@ -62,5 +65,8 @@ export default defineComponent({
   color: #2c3e50;
   margin-top: 60px;
   padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
