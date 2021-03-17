@@ -9,6 +9,7 @@ import {
   ShortPassword,
   Dialog,
   Price,
+  Layout,
 } from "@nutui/nutui";
 import "@nutui/nutui/dist/style.css";
 createApp(App)
@@ -20,4 +21,5 @@ createApp(App)
   .use(ShortPassword)
   .use(Dialog)
   .use(Price)
+  .use(Layout)
   .mount("#app");
