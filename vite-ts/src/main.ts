@@ -10,6 +10,7 @@ import {
   Dialog,
   Price,
   Layout,
+  Rate
 } from "@nutui/nutui";
 import "@nutui/nutui/dist/style.css";
 createApp(App)
@@ -22,4 +23,5 @@ createApp(App)
   .use(Dialog)
   .use(Price)
   .use(Layout)
+  .use(Rate)
   .mount("#app");

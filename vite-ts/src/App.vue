@@ -1,18 +1,20 @@
 <template>
   <ShortPassword></ShortPassword>
   <Button></Button>
+  <Rate></Rate>
   <Price></Price>
   <Tabbar></Tabbar>
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive } from "vue";
+import { defineComponent } from "vue";
 import HelloWorld from "./test-components/HelloWorld.vue";
 import ShortPassword from "./test-components/ShortPassword.vue";
 import Button from "./test-components/Button.vue";
 import Price from "./test-components/Price.vue";
 import Tabbar from "./test-components/Tabbar.vue";
+import Rate from "./test-components/Rate.vue";
 export default defineComponent({
   name: "App",
   components: {
@@ -21,6 +23,7 @@ export default defineComponent({
     Button,
     Price,
     Tabbar,
+    Rate,
   },
   setup() {},
 });
