@@ -1,5 +1,6 @@
 <template>
   <ShortPassword></ShortPassword>
+  <Calendar></Calendar>
   <Button></Button>
   <Rate></Rate>
   <Price></Price>
@@ -15,6 +16,7 @@ import Button from "./test-components/Button.vue";
 import Price from "./test-components/Price.vue";
 import Tabbar from "./test-components/Tabbar.vue";
 import Rate from "./test-components/Rate.vue";
+import Calendar from "./test-components/Calendar.vue";
 export default defineComponent({
   name: "App",
   components: {
@@ -23,6 +25,7 @@ export default defineComponent({
     Button,
     Price,
     Tabbar,
+    Calendar,
     Rate,
   },
   setup() {},
@@ -41,5 +44,8 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+* {
+  box-sizing: border-box;
 }
 </style>

@@ -10,9 +10,11 @@ import {
   Dialog,
   Price,
   Layout,
-  Rate
+  Rate,
+  Popup,
+  Calendar,
 } from "@nutui/nutui";
-import "@nutui/nutui/dist/style.css";
+import "@nutui/nutui/dist/styles/themes/default.scss";
 createApp(App)
   .use(Button)
   .use(Cell)
@@ -21,7 +23,9 @@ createApp(App)
   .use(Toast)
   .use(ShortPassword)
   .use(Dialog)
+  .use(Popup)
   .use(Price)
+  .use(Calendar)
   .use(Layout)
   .use(Rate)
   .mount("#app");

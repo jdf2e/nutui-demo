@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@nutui/nutui": "^3.0.0-beta.7",
+    "@nutui/nutui": "^3.0.0-beta.8",
     "vue": "^3.0.5"
   },
   "devDependencies": {
