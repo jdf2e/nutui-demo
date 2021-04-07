@@ -1,6 +1,6 @@
 <template>
   <nut-button type="primary" @click="testNavBar">测试NavBar按钮</nut-button>
-  <nut-tabbar :bottom="true" :show="active" @tab-switch="tabSwitch">
+  <nut-tabbar :bottom="true" v-model:visible="active" @tab-switch="tabSwitch">
     <nut-tabbar-item
       v-for="item in tests"
       :tab-title="item.title"

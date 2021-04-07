@@ -7,7 +7,6 @@ import {
   Tabbar,
   Toast,
   ShortPassword,
-  Dialog,
   Price,
   Layout,
   Rate,
@@ -22,7 +21,6 @@ createApp(App)
   .use(Tabbar)
   .use(Toast)
   .use(ShortPassword)
-  .use(Dialog)
   .use(Popup)
   .use(Price)
   .use(Calendar)
