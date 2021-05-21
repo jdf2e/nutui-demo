@@ -9,7 +9,14 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins: [
+    [
+      '/Users/suzigang/Downloads/project/nutui3.0/nutui-demo/taro/src/plugin-html',
+      {
+        pxtransformBlackList: [/nut-/,/demo-/,/demo/,/nutui-/]
+      }
+    ]
+  ],
   defineConstants: {
   },
   copy: {
