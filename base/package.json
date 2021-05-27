@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@nutui/babel-plugin-separate-import": "^1.2.2",
-    "@nutui/nutui": "^2.2.13",
+    "@nutui/nutui": "^2.3.0",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
