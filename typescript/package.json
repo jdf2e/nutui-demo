@@ -8,11 +8,6 @@
     "lint": "vue-cli-service lint",
     "watch": "vue-cli-service watch"
   },
-  "vuePlugins": {
-    "service": [
-      "./vue-cli-plugin-watch"
-    ]
-  },
   "dependencies": {
     "@nutui/babel-plugin-separate-import": "^1.2.2",
     "@nutui/nutui": "^2.3.0",
