@@ -137,7 +137,7 @@ export default defineComponent({
   }
 });
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .demo-list {
   margin: 57px 0 60px 0;
   padding: 0 17px 17px;
@@ -158,12 +158,12 @@ export default defineComponent({
     box-shadow: 0px 1px 7px 0px rgba(237, 238, 241, 1);
     &.group1 {
       flex-direction: column;
-      ::v-deep(.nut-checkbox) {
+      .nut-checkbox {
         margin-left: 15px;
       }
     }
     &.group2 {
-      ::v-deep(.nut-checkbox) {
+      .nut-checkbox {
         margin-left: 15px;
       }
     }
@@ -178,7 +178,7 @@ export default defineComponent({
       font-size: 16px;
       &.btn {
         margin-top: 20px;
-        ::v-deep(.nut-button) {
+        .nut-button {
           margin-left: 10px;
         }
       }

@@ -37,7 +37,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .wrapper {
   display: flex;
   height: 100%;

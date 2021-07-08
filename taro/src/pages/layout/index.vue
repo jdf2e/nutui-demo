@@ -128,7 +128,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .box-item {
   background: #fff;
   margin-bottom: 20px;

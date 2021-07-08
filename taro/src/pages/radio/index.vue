@@ -57,7 +57,6 @@
 
 <script lang="ts">
 import { reactive, toRefs, defineComponent } from 'vue';
-import { Toast } from '@nutui/nutui';
 export default defineComponent({
   props: {},
   setup() {
@@ -76,7 +75,7 @@ export default defineComponent({
       console.log(value);
     };
     const handleChange3 = (value: any) => {
-      Toast.text(`您选中了${value}`);
+      console.log(1)
     };
     return {
       ...toRefs(data),
@@ -88,7 +87,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .demo-list {
   margin: 57px 0 60px 0;
   padding: 0 17px 17px;
@@ -107,10 +106,6 @@ export default defineComponent({
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0px 1px 7px 0px rgba(237, 238, 241, 1);
-    ::v-deep(.nut-radio) {
-      height: 25px;
-      line-height: 25px;
-    }
   }
 }
 </style>

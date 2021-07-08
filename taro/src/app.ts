@@ -34,8 +34,8 @@ import {
   ShortPassword,
   TextArea,
   Address
-} from "@nutui/nutui";
-import "@nutui/nutui/dist/style.css";
+} from "@nutui/nutui-taro";
+import "@nutui/nutui-taro/dist/style.css";
 
 import "./app.scss";
 

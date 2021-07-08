@@ -79,8 +79,6 @@ export default defineComponent({
     return {
       state,
       onChange,
-      blur,
-      focus,
       overlimit
     };
   }

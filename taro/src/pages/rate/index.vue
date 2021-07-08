@@ -50,7 +50,7 @@ export default defineComponent({
       val8: 3
     });
     const onChange = val => {
-      proxy.$toast.text(val);
+      console.log(val)
     };
     return {
       state,
