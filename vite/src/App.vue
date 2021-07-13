@@ -9,6 +9,13 @@
   <nut-button type="success">成功按钮</nut-button>
   <nut-cell title="123123213312">123123</nut-cell>
   <nut-icon name="dongdong"></nut-icon>
+
+  <nut-cell title="自定义 Icon 字体">
+    <!-- 通过 class-prefix 指定类名为 my-icon -->
+    <nut-icon font-class-name="iconfont" class-prefix="icon" name="mianji" />
+    <span class="iconfont icon-mianji"></span>
+  </nut-cell>
+
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 

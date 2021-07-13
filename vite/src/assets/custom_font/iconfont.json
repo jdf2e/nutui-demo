@@ -1,0 +1,79 @@
+{
+  "id": "990955",
+  "name": "应急系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "36107",
+      "name": "面积",
+      "font_class": "mianji",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "479427",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "827618",
+      "name": "地图",
+      "font_class": "ditu",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "1127401",
+      "name": "圆圈笔",
+      "font_class": "pencircle",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "1335476",
+      "name": "5边形线框",
+      "font_class": "icon-bianxing",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1391424",
+      "name": "钢笔",
+      "font_class": "37",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "3020034",
+      "name": "二级-安全态势",
+      "font_class": "erji-anquantaishi",
+      "unicode": "eaac",
+      "unicode_decimal": 60076
+    },
+    {
+      "icon_id": "4514578",
+      "name": "测量",
+      "font_class": "celiang",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "6043856",
+      "name": "线索",
+      "font_class": "xiansuo",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "6677522",
+      "name": "距离测量",
+      "font_class": "juliceliang",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}
