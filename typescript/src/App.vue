@@ -14,6 +14,8 @@
 
     <nut-countup :init-num='1000.00' :end-num='0.00' :speed='6.3' :start-flag='startNum' :to-fixed='2'></nut-countup>
 
+    <nut-magic  :data="dataArr"></nut-magic>
+
   </div>
 </template>
 
@@ -27,32 +29,96 @@ export default class App extends Vue {
 
     this.$notify.text("欢迎您使用nutui");
   }
+
+  dataArr: any[] = [
+    {
+      type: "rank",
+      name: "name1",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+    {
+      type: "rank",
+      name: "name2",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+    {
+      type: "lbs",
+      name: "name3",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+    {
+      type: "lbs",
+      name: "name4",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+    {
+      type: "act",
+      name: "name5",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+    {
+      type: "act",
+      name: "name6",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+    {
+      type: "rank",
+      name: "name7",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+    {
+      type: "rank",
+      name: "name8",
+      pictureUrl:
+        "https://img10.360buyimg.com/n5/s54x54_jfs/t1/164065/10/8839/39628/603ee7edE9dee283f/e56acfa461919177.jpg",
+      desc: "desc",
+      link: "link",
+    },
+  ];
+
   navList: any[] = [
     {
       id: 1,
       text: "首页",
-      icon:
-        "https://img11.360buyimg.com/imagetools/jfs/t1/117646/2/11112/1297/5ef83e95E81d77f05/daf8e3b1c81e3c98.png"
+      icon: "https://img11.360buyimg.com/imagetools/jfs/t1/117646/2/11112/1297/5ef83e95E81d77f05/daf8e3b1c81e3c98.png",
     },
     {
       id: 2,
       text: "分类",
-      icon:
-        "https://img12.360buyimg.com/imagetools/jfs/t1/119490/8/9568/1798/5ef83e95E968c69a6/dd029326f7d5042e.png"
+      icon: "https://img12.360buyimg.com/imagetools/jfs/t1/119490/8/9568/1798/5ef83e95E968c69a6/dd029326f7d5042e.png",
     },
     {
       id: 3,
       text: "购物车",
       num: 2,
-      icon:
-        "https://img14.360buyimg.com/imagetools/jfs/t1/130725/4/3157/1704/5ef83e95Eb976644f/b36c6cfc1cc1a99d.png"
+      icon: "https://img14.360buyimg.com/imagetools/jfs/t1/130725/4/3157/1704/5ef83e95Eb976644f/b36c6cfc1cc1a99d.png",
     },
     {
       id: 4,
       text: "我的",
-      icon:
-        "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png"
-    }
+      icon: "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png",
+    },
   ];
 }
 </script>

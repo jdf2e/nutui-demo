@@ -30,6 +30,7 @@ CountUp.install(Vue);
 TextBox.install(Vue);
 CheckBox.install(Vue);
 CheckBoxGroup.install(Vue);
+    <nut-magic @click="click" :data="dataArr"></nut-magic>
 import "./assets/rem";
 import "./assets/reset.scss";
 
