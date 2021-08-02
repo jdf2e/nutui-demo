@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { Button, Icon, Toast } from '@nutui/nutui-taro';
 
 import '@nutui/nutui-taro/dist/styles/themes/default.scss';
-import './app.scss'
+
 
 const App = createApp({
   onShow (options) {},

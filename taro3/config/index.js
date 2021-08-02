@@ -1,3 +1,4 @@
+const path = require('path');
 const config = {
   projectName: 'taro3',
   date: '2021-7-22',
@@ -13,6 +14,11 @@ const config = {
   plugins: ['@tarojs/plugin-html'],
   defineConstants: {
   },
+  sass: {
+		resource: [
+			path.resolve(__dirname, '..', 'src/assets/styles/custom_theme.scss')
+		]
+	},
   copy: {
     patterns: [
     ],
