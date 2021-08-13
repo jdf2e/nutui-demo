@@ -14,6 +14,7 @@ export default {
         'pages/dialog/index',
         'pages/toast/index',
         'pages/notify/index',
+        'pages/swipe/index',
         'pages/swiper/index',
         'pages/drag/index',
         'pages/steps/index',
@@ -34,7 +35,7 @@ export default {
     },
     {
       root: 'nav',
-      pages: ['pages/navbar/index', 'pages/tabbar/index', 'pages/tab/index']
+      pages: ['pages/navbar/index', 'pages/tabbar/index', 'pages/tab/index','pages/fixednav/index']
     },
     {
       root: 'dentry',
