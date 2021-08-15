@@ -1,12 +1,34 @@
 <template>
   <div class="demo">
-    <nut-fixednav active-text="基础用法" :position="{top:'70px' }" v-model:visible="visible" :nav-list="navList"
-      @selected="selected" />
-    <nut-fixednav type="left" :position="{top:'140px' }" v-model:visible="visible1" active-text="左侧收起"
-      un-active-text="左侧展开" :nav-list="navList" @selected="selected" />
-    <nut-fixednav :position="{top:'210px' }" :overlay="false" v-model:visible="visible2" :nav-list="navList"
-      @selected="selected" />
-    <nut-fixednav :position="{top:'280px' }" type="left" v-model:visible="myActive" @selected="selected">
+    <nut-fixednav
+      active-text="基础用法"
+      :position="{ top: '70px' }"
+      v-model:visible="visible"
+      :nav-list="navList"
+      @selected="selected"
+    />
+    <nut-fixednav
+      type="left"
+      :position="{ top: '140px' }"
+      v-model:visible="visible1"
+      active-text="左侧收起"
+      un-active-text="左侧展开"
+      :nav-list="navList"
+      @selected="selected"
+    />
+    <nut-fixednav
+      :position="{ top: '210px' }"
+      :overlay="false"
+      v-model:visible="visible2"
+      :nav-list="navList"
+      @selected="selected"
+    />
+    <nut-fixednav
+      :position="{ top: '280px' }"
+      type="left"
+      v-model:visible="myActive"
+      @selected="selected"
+    >
       <template v-slot:list>
         <ul class="nut-fixednav__list">
           <li class="nut-fixednav__list-item">1</li>
@@ -17,15 +39,13 @@
         </ul>
       </template>
       <template v-slot:btn>
-        <nut-icon name="retweet" color="#fff">
-        </nut-icon>
+        <nut-icon name="retweet" color="#fff"> </nut-icon>
         <span class="text">{{ myActive ? '自定义开' : '自定义关' }}</span>
       </template>
     </nut-fixednav>
-
   </div>
 </template>
-  
+
 <script lang="ts">
 import { defineComponent, onMounted, reactive, ref } from 'vue';
 export default defineComponent({
@@ -79,5 +99,3 @@ export default defineComponent({
   }
 });
 </script>
-  
-  

@@ -25,22 +25,27 @@
     {
       "name": "intro,theme,start",
       "cName": "指南",
-      "path": "/intro"
+      "path": "#/intro"
     },
     {
       "name": "component",
       "cName": "组件",
-      "path": "/button"
+      "path": "#/button"
     },
     {
       "name": "example",
       "cName": "示例",
-      "path": "/"
+      "path": "demo.html"
     },
     {
       "name": "resource",
       "cName": "资源",
-      "path": "/resource"
+      "path": "#/resource"
+    },
+    {
+      "name": "joinus",
+      "cName": "加入我们",
+      "path": "#/joinus"
     }
   ],
   "docs": {
@@ -115,7 +120,6 @@
           "version": "3.0.0",
           "name": "Cell",
           "taro": true,
-          "tarodoc": true,
           "sort": 1,
           "cName": "单元格",
           "type": "component",
@@ -133,7 +137,6 @@
           "desc": "展示分组列表",
           "author": "richard1015"
         },
-        
         {
           "version": "3.0.0",
           "name": "Icon",
@@ -156,7 +159,6 @@
           "desc": "价格组件",
           "author": "ailululu"
         },
-       
         {
           "version": "3.0.0",
           "name": "OverLay",
@@ -211,6 +213,17 @@
       "name": "操作反馈",
       "enName": "feedback",
       "packages": [
+        {
+          "version": "3.0.0",
+          "name": "Swipe",
+          "taro": true,
+          "type": "component",
+          "cName": "滑动手势",
+          "desc": "列表项左滑删除场景使用",
+          "sort": 4,
+          "show": true,
+          "author": "richard1015"
+        },
         {
           "version": "3.0.0",
           "name": "ActionSheet",
@@ -325,7 +338,6 @@
           "show": false,
           "author": "yangxiaolu3"
         },
-    
         {
           "version": "3.0.0",
           "name": "Video",
@@ -367,17 +379,6 @@
           "show": false,
           "desc": "步骤条子组件",
           "author": "ailululu"
-        },
-        {
-          "version": "3.0.0",
-          "name": "Swipe",
-          "taro": true,
-          "type": "component",
-          "cName": "滑动手势",
-          "desc": "列表项左滑删除场景使用",
-          "sort": 4,
-          "show": true,
-          "author": "richard1015"
         },
         {
           "version": "3.0.0",
@@ -423,8 +424,29 @@
           "show": true,
           "desc": "轻提示",
           "author": "undo"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Progress",
+          "taro": true,
+          "sort": 8,
+          "cName": "进度条",
+          "type": "component",
+          "show": true,
+          "desc": "用来展示进度",
+          "author": "Drjingubo"
+        },
+        {
+          "version": "3.0.0",
+          "name": "CircleProgress",
+          "taro": true,
+          "sort": 8,
+          "cName": "环形进度条",
+          "type": "component",
+          "show": true,
+          "desc": "用来展示进度",
+          "author": "Drjingubo"
         }
-       
       ]
     },
     {
@@ -683,11 +705,22 @@
           "show": true,
           "desc": "上传文件、图片",
           "author": "richard1015"
+        },
+        {
+          "version": "3.0.0",
+          "name": "CountUp",
+          "taro": true,
+          "sort": 12,
+          "cName": "数字滚动",
+          "type": "component",
+          "show": true,
+          "desc": "数字滚动组件，动态变化展示",
+          "author": "Ymm0008"
         }
       ]
     },
     {
-      "name": "业务组件",
+      "name": "特色组件",
       "enName": "business",
       "packages": [
         {
@@ -700,6 +733,17 @@
           "sort": 1,
           "show": true,
           "author": "yangxiaolu3"
+        },
+        {
+          "version": "3.0.0",
+          "taro": true,
+          "name": "Barrage",
+          "type": "component",
+          "cName": "弹幕组件",
+          "desc": "用于视频弹幕等展示",
+          "sort": 2,
+          "show": true,
+          "author": "Ymm0008"
         }
       ]
     }
