@@ -6,7 +6,7 @@
 <script lang="ts">
 import { defineComponent, reactive, ref, toRefs } from "vue";
 export default defineComponent({
-  name: "Tabbar",
+  name: "video",
   setup() {
     const state = reactive({
       source: {

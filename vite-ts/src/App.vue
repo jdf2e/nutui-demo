@@ -6,6 +6,9 @@
   <Price></Price>
   <Tabbar></Tabbar>
   <Video></Video>
+  <NoticeBar></NoticeBar>
+  <CountDown></CountDown>
+  <NumberKeyboard></NumberKeyboard>
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
@@ -19,6 +22,9 @@ import Tabbar from "./test-components/Tabbar.vue";
 import Rate from "./test-components/Rate.vue";
 import Calendar from "./test-components/Calendar.vue";
 import Video from "./test-components/Video.vue";
+import NoticeBar from "./test-components/NoticeBar.vue";
+import CountDown from "./test-components/CountDown.vue";
+import NumberKeyboard from "./test-components/NumberKeyboard.vue";
 export default defineComponent({
   name: "App",
   components: {
@@ -30,6 +36,9 @@ export default defineComponent({
     Calendar,
     Rate,
     Video,
+    NoticeBar,
+    NumberKeyboard,
+    CountDown
   },
   setup() {},
 });

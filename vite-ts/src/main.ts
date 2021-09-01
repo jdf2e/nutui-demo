@@ -13,6 +13,9 @@ import {
   Popup,
   Calendar,
   Video,
+  NoticeBar,
+  NumberKeyboard,
+  CountDown
 } from "@nutui/nutui";
 import "@nutui/nutui/dist/styles/themes/default.scss";
 createApp(App)
@@ -28,4 +31,7 @@ createApp(App)
   .use(Layout)
   .use(Rate)
   .use(Video)
+  .use(NoticeBar)
+  .use(CountDown)
+  .use(NumberKeyboard)
   .mount("#app");
