@@ -5,6 +5,7 @@
   <Rate></Rate>
   <Price></Price>
   <Tabbar></Tabbar>
+  <Video></Video>
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
@@ -17,6 +18,7 @@ import Price from "./test-components/Price.vue";
 import Tabbar from "./test-components/Tabbar.vue";
 import Rate from "./test-components/Rate.vue";
 import Calendar from "./test-components/Calendar.vue";
+import Video from "./test-components/Video.vue";
 export default defineComponent({
   name: "App",
   components: {
@@ -27,6 +29,7 @@ export default defineComponent({
     Tabbar,
     Calendar,
     Rate,
+    Video,
   },
   setup() {},
 });

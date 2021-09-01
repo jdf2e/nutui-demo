@@ -12,6 +12,7 @@ import {
   Rate,
   Popup,
   Calendar,
+  Video,
 } from "@nutui/nutui";
 import "@nutui/nutui/dist/styles/themes/default.scss";
 createApp(App)
@@ -26,4 +27,5 @@ createApp(App)
   .use(Calendar)
   .use(Layout)
   .use(Rate)
+  .use(Video)
   .mount("#app");
