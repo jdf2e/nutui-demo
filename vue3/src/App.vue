@@ -5,12 +5,52 @@
   <nut-button type="danger">危险按钮</nut-button>
   <nut-button type="warning">警告按钮</nut-button>
   <nut-button type="success">成功按钮</nut-button>
+  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
+  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
+  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
+  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
 </template>
 
 <script>
+import {reactive} from 'vue';
 export default {
   name: "App",
-  components: {
+  components: {},
+  setup() {
+    const state = reactive({
+      val0: "",
+      val1: "初始数据",
+      val2: "禁止修改",
+      val3: "readonly 只读",
+      val4: "",
+      val5: "",
+      val6: "",
+      val7: "",
+      val8: "文案",
+    });
+    setTimeout(function () {
+      state.val1 = "异步数据";
+    }, 2000);
+    const change = (value, event) => {
+      console.log("change: ", value, event);
+    };
+    const focus = (value, event) => {
+      console.log("focus:", value, event);
+    };
+    const blur = (value, event) => {
+      console.log("blur:", value, event);
+    };
+    const clear = (value) => {
+      console.log("clear:", value);
+    };
+
+    return {
+      state,
+      change,
+      blur,
+      clear,
+      focus,
+    };
   },
 };
 </script>
