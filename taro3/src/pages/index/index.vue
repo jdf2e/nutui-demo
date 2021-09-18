@@ -16,6 +16,21 @@
       icon="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
       shape="round"></nut-avatar>
     <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
+
+    <nut-input
+      v-model="val1"
+      @change="change"
+      @focus="focus"
+      @blur="blur"
+      label="文本"
+    />
+    <nut-input placeholder="请输入文本"
+      @change="change"
+      v-model="val0"
+      :require-show="true"
+      label="文本"
+      @clear="clear"
+    />
   </view>
 </template>
 
@@ -31,7 +46,32 @@ export default {
       type: "text",
       show: false,
       cover: false,
+
+       val0: '',
+      val1: '初始数据',
+      val2: '禁止修改',
+      val3: 'readonly 只读',
+      val4: '',
+      val5: '',
+      val6: '',
+      val7: '',
+      val8: '文案'
     });
+
+   
+  
+    const change = (value: string | number,event:Event) => {
+      console.log('change: ', value,event);
+    };
+    const focus = (value: string | number,event:Event) => {
+      console.log('focus:', value,event);
+    };
+    const blur = (value: string | number,event:Event) => {
+      console.log('blur:', value,event);
+    };
+    const clear = (value: string | number) => {
+      console.log('clear:', value);
+    };
 
     const handleClick = (type: string, msg: string, cover: boolean = false) => {
       state.show = true;
@@ -66,6 +106,10 @@ export default {
     return {
       visible,
       navList,
+       change,
+      blur,
+      clear,
+      focus,
       ...toRefs(state),
       handleClick,
     };
