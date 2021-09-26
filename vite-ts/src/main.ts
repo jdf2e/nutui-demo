@@ -17,7 +17,7 @@ import {
   NumberKeyboard,
   CountDown
 } from "@nutui/nutui";
-import "@nutui/nutui/dist/styles/themes/default.scss";
+// import "@nutui/nutui/dist/styles/themes/default.scss";
 createApp(App)
   .use(Button)
   .use(Cell)
