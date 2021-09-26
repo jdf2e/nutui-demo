@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import NutUI from "@nutui/nutui";
-import  "@nutui/nutui/dist/style.css";
-createApp(App).use(NutUI).mount("#app");
+import { Button, Price, Input, Icon } from "@nutui/nutui";
+import "@nutui/nutui/dist/style.css";
+createApp(App).use(Button).use(Price).use(Input).use(Icon).mount("#app");

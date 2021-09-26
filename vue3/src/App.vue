@@ -1,14 +1,12 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <nut-button type="info">信息按钮</nut-button>
+  <nut-button type="info" icon="star-fill">信息按钮</nut-button>
   <nut-button type="default">默认按钮</nut-button>
   <nut-button type="danger">危险按钮</nut-button>
   <nut-button type="warning">警告按钮</nut-button>
   <nut-button type="success">成功按钮</nut-button>
-  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
-  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
-  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
-  <nut-input v-model="state.val1" @change="change" @focus="focus" @blur="blur" label="文本" />
+  <nut-input v-model="state.val1" @change="change" @focus="focus" @clear="clear" @blur="blur" label="文本" />
+  <nut-price :price="1010" :need-symbol="false" :thousands="true" />
 </template>
 
 <script>
