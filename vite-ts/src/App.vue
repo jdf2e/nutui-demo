@@ -1,4 +1,8 @@
 <template>
+<Badge></Badge>
+  <Pagination></Pagination>
+  <Popover></Popover>
+  <Tag></Tag>
   <ShortPassword></ShortPassword>
   <Calendar></Calendar>
   <Button></Button>
@@ -25,6 +29,10 @@ import Video from "./test-components/Video.vue";
 import NoticeBar from "./test-components/NoticeBar.vue";
 import CountDown from "./test-components/CountDown.vue";
 import NumberKeyboard from "./test-components/NumberKeyboard.vue";
+import Tag from "./test-components/Tag.vue";
+import Badge from "./test-components/Badge.vue";
+import Popover from "./test-components/Popover.vue"
+import Pagination from "./test-components/Pagination.vue"
 export default defineComponent({
   name: "App",
   components: {
@@ -38,7 +46,11 @@ export default defineComponent({
     Video,
     NoticeBar,
     NumberKeyboard,
-    CountDown
+    CountDown,
+    Tag,
+    Badge,
+    Popover,
+    Pagination
   },
   setup() {},
 });

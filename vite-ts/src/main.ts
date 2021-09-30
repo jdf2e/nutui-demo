@@ -15,7 +15,12 @@ import {
   Video,
   NoticeBar,
   NumberKeyboard,
-  CountDown
+  CountDown,
+  Tag,
+  Badge,
+  Avatar,
+  Popover,
+  Pagination
 } from "@nutui/nutui";
 // import "@nutui/nutui/dist/styles/themes/default.scss";
 createApp(App)
@@ -34,4 +39,9 @@ createApp(App)
   .use(NoticeBar)
   .use(CountDown)
   .use(NumberKeyboard)
+  .use(Tag)
+  .use(Badge)
+  .use(Avatar)
+  .use(Popover)
+  .use(Pagination)
   .mount("#app");
