@@ -1,5 +1,16 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
+  <nut-tabs v-model="state.tab1value">
+    <nut-tabpane title="Tab 1">
+      Tab 1
+    </nut-tabpane>
+    <nut-tabpane title="Tab 2">
+      Tab 2
+    </nut-tabpane>
+    <nut-tabpane title="Tab 3">
+      Tab 3
+    </nut-tabpane>
+  </nut-tabs>
   <nut-button type="info" icon="star-fill">信息按钮</nut-button>
   <nut-button type="default">默认按钮</nut-button>
   <nut-button type="danger">危险按钮</nut-button>
@@ -10,12 +21,13 @@
 </template>
 
 <script>
-import {reactive} from 'vue';
+import { reactive } from "vue";
 export default {
   name: "App",
   components: {},
   setup() {
     const state = reactive({
+      tab1value: "0",
       val0: "",
       val1: "初始数据",
       val2: "禁止修改",
