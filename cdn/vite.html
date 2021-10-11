@@ -11,27 +11,68 @@
     <!-- 引入Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
     <!-- 引入NutUI组件库 -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@next/dist/nutui.umd.js"></script> -->
-    <script src="./nutui.umd.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@next/dist/nutui.umd.js"></script>
   </head>
   <body>
     <div id="app">
-        
+      <nut-button type="primary" @click="showAddress">{{text}}</nut-button>
+      <nut-address
+        v-model:visible="showPopup"
+        :province="province"
+        :city="city"
+        :country="country"
+        :town="town"
+        @change="onChange"
+        @close="close"
+        custom-address-title="请选择所在地区"
+      ></nut-address>
     </div>
     <script>
       // 在 #app 标签下渲染一个按钮组件
       const app = Vue.createApp({
-        template: `<nut-button>Button 3.0</nut-button>
-        <nut-button type="primary">主要按钮</nut-button>
-        <nut-button type="info">信息按钮</nut-button>
-        <nut-button type="default">默认按钮</nut-button>
-        <nut-button type="danger">危险按钮</nut-button>
-        <nut-button type="warning">警告按钮</nut-button>
-        <nut-button type="success">成功按钮</nut-button>
-        `,
+        data() {
+          return {
+            showPopup: true,
+            province: [
+              { id: 1, name: "北京" },
+              { id: 2, name: "广西" },
+              { id: 3, name: "江西" },
+              { id: 4, name: "四川" },
+            ],
+            city: [
+              { id: 7, name: "朝阳区" },
+              { id: 8, name: "崇文区" },
+              { id: 9, name: "昌平区" },
+              { id: 6, name: "石景山区" },
+            ],
+            country: [
+              { id: 3, name: "八里庄街道" },
+              { id: 9, name: "北苑" },
+              { id: 4, name: "常营乡" },
+            ],
+            town: [],
+            text: "请选择地址",
+            modify_id: -1,
+            modify_index: -1,
+            tasks: [],
+          };
+        },
+        methods: {
+          showAddress() {
+            this.showPopup = !this.showPopup;
+          },
+
+          onChange(cal) {
+            const name = this[cal.next];
+            if (name.length < 1) {
+              this.showPopup = false;
+            }
+          },
+          close(val) {
+            this.text = val.data.addressStr;
+          },
+        },
       });
-      debugger
       app.use(nutui);
       // 调用函数组件，弹出一个 Toast
       // nutui.Toast("NutUI 3.0");
