@@ -2,75 +2,56 @@
   <div class="demo full">
     <h2>基础用法</h2>
     <nut-tabs v-model="state.tab1value">
-      <nut-tabpane title="Tab 1">
-        Tab 1
-      </nut-tabpane>
-      <nut-tabpane title="Tab 2">
-        Tab 2
-      </nut-tabpane>
-      <nut-tabpane title="Tab 3">
-        Tab 3
-      </nut-tabpane>
+      <nut-tabpane title="Tab 1"> Tab 1 </nut-tabpane>
+      <nut-tabpane title="Tab 2"> Tab 2 </nut-tabpane>
+      <nut-tabpane title="Tab 3"> Tab 3 </nut-tabpane>
     </nut-tabs>
     <h2>基础用法-微笑曲线</h2>
     <nut-tabs v-model="state.tab11value" type="smile">
-      <nut-tabpane title="Tab 1">
-        Tab 1
-      </nut-tabpane>
-      <nut-tabpane title="Tab 2">
-        Tab 2
-      </nut-tabpane>
-      <nut-tabpane title="Tab 3">
-        Tab 3
-      </nut-tabpane>
+      <nut-tabpane title="Tab 1"> Tab 1 </nut-tabpane>
+      <nut-tabpane title="Tab 2"> Tab 2 </nut-tabpane>
+      <nut-tabpane title="Tab 3"> Tab 3 </nut-tabpane>
     </nut-tabs>
     <h2>通过 pane-key 匹配</h2>
     <nut-tabs v-model="state.tab2value">
-      <nut-tabpane title="Tab 1" pane-key="0">
-        Tab 1
-      </nut-tabpane>
-      <nut-tabpane title="Tab 2" pane-key="1" :disabled="true">
-        Tab 2
-      </nut-tabpane>
-      <nut-tabpane title="Tab 3" pane-key="2">
-        Tab 3
-      </nut-tabpane>
+      <nut-tabpane title="Tab 1" pane-key="0"> Tab 1 </nut-tabpane>
+      <nut-tabpane title="Tab 2" pane-key="1" :disabled="true"> Tab 2 </nut-tabpane>
+      <nut-tabpane title="Tab 3" pane-key="2"> Tab 3 </nut-tabpane>
     </nut-tabs>
     <h2>数据异步渲染 3s</h2>
     <nut-tabs v-model="state.tab3value">
-      <nut-tabpane v-for="item in state.list3" :title="'Tab '+ item">
-        Tab {{item}}
-      </nut-tabpane>
+      <nut-tabpane v-for="item in state.list3" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
     </nut-tabs>
 
     <h2>数量多,滚动操作</h2>
     <nut-tabs v-model="state.tab4value" title-scroll title-gutter="10">
-      <nut-tabpane v-for="item in state.list4" :title="'Tab '+ item">
-        Tab {{item}}
-      </nut-tabpane>
+      <nut-tabpane v-for="item in state.list4" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
     </nut-tabs>
     <h2>左右布局</h2>
-    <nut-tabs style="height:300px" v-model="state.tab5value" title-scroll direction="vertical">
-      <nut-tabpane v-for="item in state.list5" :title="'Tab '+ item">
-        Tab {{item}}
-      </nut-tabpane>
+    <nut-tabs style="height: 300px" v-model="state.tab5value" title-scroll direction="vertical">
+      <nut-tabpane v-for="item in state.list5" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
     </nut-tabs>
     <h2>自定义标签栏</h2>
     <nut-tabs v-model="state.tab6value">
       <template v-slot:titles>
-        <div class="nut-tabs__titles-item" @click="state.tab6value=item.paneKey"
-          :class="{active:state.tab6value==item.paneKey}" :key="item.paneKey" v-for="item in state.list6">
+        <div
+          class="nut-tabs__titles-item"
+          @click="state.tab6value = item.paneKey"
+          :class="{ active: state.tab6value == item.paneKey }"
+          :key="item.paneKey"
+          v-for="item in state.list6"
+        >
           <nut-icon v-if="item.icon" :name="item.icon" />
-          <span class="nut-tabs__titles-item__text">{{item.title}}</span>
+          <span class="nut-tabs__titles-item__text">{{ item.title }}</span>
         </div>
       </template>
       <nut-tabpane v-for="item in state.list6" :pane-key="item.paneKey">
-        {{item.title}}
+        {{ item.title }}
       </nut-tabpane>
     </nut-tabs>
   </div>
 </template>
-  
+
 <script lang="ts">
 import { reactive } from 'vue';
 export default {
@@ -113,7 +94,5 @@ export default {
   }
 };
 </script>
-  
-<style lang="scss" scoped>
-</style>
-  
+
+<style lang="scss" scoped></style>
