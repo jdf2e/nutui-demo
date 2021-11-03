@@ -18,20 +18,14 @@
       shape="round"></nut-avatar>
     <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
 
-    <nut-input
-      v-model="val1"
-      @change="change"
-      @focus="focus"
-      @blur="blur"
-      label="文本"
-    />
-    <nut-input placeholder="请输入文本"
-      @change="change"
-      v-model="val0"
-      :require-show="true"
-      label="文本"
-      @clear="clear"
-    />
+    <nut-input v-model="val1" @change="change" @focus="focus" @blur="blur" label="文本" />
+    <nut-input placeholder="请输入文本" @change="change" v-model="val0" :require-show="true" label="文本" @clear="clear" />
+    <nut-swipe>
+      <nut-cell round-radius="0" desc="左滑删除" />
+      <template #right>
+        <nut-button shape="square" style="height:100%" type="danger">删除</nut-button>
+      </template>
+    </nut-swipe>
   </view>
 </template>
 
@@ -48,30 +42,28 @@ export default {
       show: false,
       cover: false,
 
-       val0: '',
-      val1: '初始数据',
-      val2: '禁止修改',
-      val3: 'readonly 只读',
-      val4: '',
-      val5: '',
-      val6: '',
-      val7: '',
-      val8: '文案'
+      val0: "",
+      val1: "初始数据",
+      val2: "禁止修改",
+      val3: "readonly 只读",
+      val4: "",
+      val5: "",
+      val6: "",
+      val7: "",
+      val8: "文案",
     });
 
-   
-  
-    const change = (value: string | number,event:Event) => {
-      console.log('change: ', value,event);
+    const change = (value: string | number, event: Event) => {
+      console.log("change: ", value, event);
     };
-    const focus = (value: string | number,event:Event) => {
-      console.log('focus:', value,event);
+    const focus = (value: string | number, event: Event) => {
+      console.log("focus:", value, event);
     };
-    const blur = (value: string | number,event:Event) => {
-      console.log('blur:', value,event);
+    const blur = (value: string | number, event: Event) => {
+      console.log("blur:", value, event);
     };
     const clear = (value: string | number) => {
-      console.log('clear:', value);
+      console.log("clear:", value);
     };
 
     const handleClick = (type: string, msg: string, cover: boolean = false) => {
@@ -107,7 +99,7 @@ export default {
     return {
       visible,
       navList,
-       change,
+      change,
       blur,
       clear,
       focus,
@@ -124,5 +116,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 </style>
