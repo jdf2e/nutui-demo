@@ -43,6 +43,11 @@
       "path": "#/resource"
     },
     {
+      "name": "notice",
+      "cName": "通知",
+      "path": "#/notice"
+    },
+    {
       "name": "joinus",
       "cName": "加入我们",
       "path": "#/joinus"
@@ -82,10 +87,21 @@
         "show": true
       },
       {
+        "name": "contributing",
+        "cName": "贡献指南",
+        "path": "#/contributing",
+        "show": true
+      },
+      {
         "name": "https://github.com/jdf2e/nutui/releases",
         "cName": "更新日志",
         "show": true,
         "isLink": true
+      },
+      {
+        "name": "notice",
+        "cName": "常见问题",
+        "show": true
       }
     ]
   },
@@ -134,7 +150,7 @@
           "cName": "单元格组件",
           "type": "component",
           "show": false,
-          "taro":true,
+          "taro": true,
           "exportEmpty": true,
           "desc": "展示分组列表",
           "author": "richard1015"
@@ -207,7 +223,7 @@
           "cName": "布局-Col",
           "type": "component",
           "show": false,
-          "taro":true,
+          "taro": true,
           "exportEmpty": true,
           "desc": "布局组件Col",
           "author": "undo"
@@ -219,10 +235,21 @@
           "cName": "布局-Row",
           "type": "component",
           "show": false,
-          "taro":true,
+          "taro": true,
           "exportEmpty": true,
           "desc": "布局组件Row",
           "author": "undo"
+        },
+        {
+          "version": "3.0.0",
+          "name": "ImagePreview",
+          "type": "component",
+          "cName": "图片预览",
+          "desc": "图片预览",
+          "sort": 4,
+          "show": true,
+          "taro": true,
+          "author": "zongyue3"
         }
       ]
     },
@@ -284,6 +311,7 @@
           "type": "component",
           "show": false,
           "exportEmpty": true,
+          "exportEmptyTaro": true,
           "desc": "折叠面板-item",
           "author": "Ymm0008"
         },
@@ -397,7 +425,7 @@
           "cName": "步骤条子组件",
           "type": "component",
           "show": false,
-          "taro":true,
+          "taro": true,
           "exportEmpty": true,
           "desc": "步骤条子组件",
           "author": "ailululu"
@@ -421,8 +449,9 @@
           "cName": "轮播图子组件",
           "type": "component",
           "show": false,
-          "taro":true,
+          "taro": true,
           "exportEmpty": true,
+          "exportEmptyTaro": true,
           "desc": "轮播图子组件",
           "author": "suzigang"
         },
@@ -481,6 +510,17 @@
           "show": true,
           "taro": true,
           "author": "yangxiaolu"
+        },
+        {
+          "version": "3.0.0",
+          "name": "SearchBar",
+          "type": "component",
+          "cName": "搜索栏",
+          "desc": "搜索栏",
+          "sort": 23,
+          "show": true,
+          "taro": true,
+          "author": "zongyue3"
         }
       ]
     },
@@ -512,25 +552,71 @@
         },
         {
           "version": "3.0.0",
-          "name": "Tab",
-          "sort": 1,
-          "cName": "标签组件",
+          "name": "Menu",
+          "sort": 2,
+          "cName": "菜单组件",
           "type": "component",
-          "show": true,
           "taro": true,
-          "desc": "标签组件",
-          "author": "zhenyulei"
+          "show": true,
+          "desc": "下拉菜单组件",
+          "author": "yangjinjun3"
         },
         {
-          "name": "TabPanel",
+          "version": "3.0.0",
+          "name": "MenuItem",
           "sort": 2,
-          "cName": "标签组件",
+          "cName": "菜单组件",
+          "type": "component",
+          "taro": true,
+          "exportEmpty": true,
+          "show": false,
+          "desc": "下拉菜单组件",
+          "author": "yangjinjun3"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Tabbar",
+          "taro": true,
+          "sort": 2,
+          "cName": "标签栏",
+          "type": "component",
+          "show": true,
+          "desc": "标签栏",
+          "author": "Drjingfubo"
+        },
+        {
+          "version": "3.0.0",
+          "name": "TabbarItem",
+          "sort": 2,
+          "cName": "标签栏子组件",
           "type": "component",
           "show": false,
-          "taro":true,
+          "taro": true,
           "exportEmpty": true,
-          "desc": "标签组件",
-          "author": "zhenyulei"
+          "desc": "标签栏子组件",
+          "author": "Drjingfubo"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Elevator",
+          "type": "component",
+          "cName": "电梯楼层",
+          "desc": "用于列表快速定位以及索引的显示",
+          "sort": 5,
+          "show": true,
+          "taro": true,
+          "author": "szg2008"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Pagination",
+          "type": "component",
+          "cName": "分页",
+          "desc": "当数据量较多时，采用分页的形式分隔长列表。",
+          "sort": 10,
+          "show": true,
+          "taro": true,
+          "author": "yushuang24"
         },
         {
           "version": "3.1.9",
@@ -554,62 +640,6 @@
           "taro": true,
           "show": false,
           "author": "richard1015"
-        },
-        {
-          "version": "3.0.0",
-          "name": "Menu",
-          "sort": 2,
-          "cName": "菜单组件",
-          "type": "component",
-          "show": false,
-          "desc": "下拉菜单组件",
-          "author": "vickyYE"
-        },
-        {
-          "version": "3.0.0",
-          "name": "MenuItem",
-          "sort": 2,
-          "cName": "菜单组件",
-          "type": "component",
-          "taro":true,
-          "exportEmpty": true,
-          "show": false,
-          "desc": "下拉菜单组件",
-          "author": "vickyYE"
-        },
-        {
-          "version": "3.0.0",
-          "name": "Tabbar",
-          "taro": true,
-          "sort": 2,
-          "cName": "标签栏",
-          "type": "component",
-          "show": true,
-          "desc": "标签栏",
-          "author": "Drjingfubo"
-        },
-        {
-          "version": "3.0.0",
-          "name": "TabbarItem",
-          "sort": 2,
-          "cName": "标签栏子组件",
-          "type": "component",
-          "show": false,
-          "taro":true,
-          "exportEmpty": true,
-          "desc": "标签栏子组件",
-          "author": "Drjingfubo"
-        },
-        {
-          "version": "3.0.0",
-          "name": "Elevator",
-          "type": "component",
-          "cName": "电梯楼层",
-          "desc": "用于列表快速定位以及索引的显示",
-          "sort": 5,
-          "show": true,
-          "taro": true,
-          "author": "szg2008"
         }
       ]
     },
@@ -808,6 +838,62 @@
           "show": true,
           "taro": true,
           "author": "yangxiaolu"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Badge",
+          "type": "component",
+          "cName": "徽标",
+          "desc": "徽标",
+          "sort": 17,
+          "show": true,
+          "taro": true,
+          "author": "liqiong"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Tag",
+          "type": "component",
+          "cName": "标签",
+          "desc": "标签",
+          "sort": 18,
+          "show": true,
+          "taro": true,
+          "author": "liqiong"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Popover",
+          "type": "component",
+          "cName": "气泡弹出框",
+          "desc": "气泡弹出框",
+          "sort": 19,
+          "show": true,
+          "taro": true,
+          "author": "liqiong"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Form",
+          "type": "component",
+          "cName": "表单",
+          "desc": "1",
+          "sort": 21,
+          "show": true,
+          "taro": true,
+          "author": "richard1015"
+        },
+        {
+          "version": "3.0.0",
+          "name": "FormItem",
+          "type": "component",
+          "cName": "表单Item",
+          "desc": "表单Item",
+          "sort": 22,
+          "show": false,
+          "taro": true,
+          "exportEmpty": true,
+          "author": "richard1015"
         }
       ]
     },
@@ -848,6 +934,52 @@
           "sort": 3,
           "show": true,
           "author": "guoxiaoxiao"
+        },
+        {
+          "version": "3.0.0",
+          "taro": true,
+          "name": "TimeSelect",
+          "type": "component",
+          "cName": "配送时间",
+          "desc": "配送时间",
+          "sort": 4,
+          "show": true,
+          "author": "szg2008"
+        },
+        {
+          "version": "3.0.0",
+          "taro": true,
+          "name": "TimePannel",
+          "type": "component",
+          "cName": "配送时间",
+          "desc": "配送时间",
+          "sort": 5,
+          "show": false,
+          "exportEmpty": true,
+          "author": "szg2008"
+        },
+        {
+          "version": "3.0.0",
+          "taro": true,
+          "name": "TimeDetail",
+          "type": "component",
+          "cName": "配送时间",
+          "desc": "配送时间",
+          "sort": 6,
+          "show": false,
+          "exportEmpty": true,
+          "author": "szg2008"
+        },
+        {
+          "version": "3.0.0",
+          "taro": true,
+          "name": "Sku",
+          "type": "component",
+          "cName": "商品规格选择",
+          "desc": "商品规格选择",
+          "sort": 1,
+          "show": true,
+          "author": "yangxiaolu3"
         }
       ]
     }

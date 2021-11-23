@@ -3,7 +3,7 @@ export default {
   subpackages: [
     {
       root: 'layout',
-      pages: ['pages/layout/index']
+      pages: ['pages/layout/index', 'pages/imagepreview/index']
     },
     {
       root: 'feedback',
@@ -24,7 +24,8 @@ export default {
         'pages/steps/index',
         'pages/infiniteloading/index',
         'pages/progress/index',
-        'pages/circleprogress/index'
+        'pages/circleprogress/index',
+        'pages/searchbar/index'
       ]
     },
     {
@@ -46,7 +47,9 @@ export default {
         'pages/tabbar/index',
         'pages/tabs/index',
         'pages/fixednav/index',
-        'pages/elevator/index'
+        'pages/elevator/index',
+        'pages/menu/index',
+        'pages/pagination/index'
       ]
     },
     {
@@ -59,13 +62,17 @@ export default {
         'pages/rate/index',
         'pages/radio/index',
         'pages/calendar/index',
+        'pages/form/index',
         'pages/shortpassword/index',
         'pages/picker/index',
         'pages/datepicker/index',
         'pages/textarea/index',
         'pages/countdown/index',
         'pages/countup/index',
-        'pages/numberkeyboard/index'
+        'pages/numberkeyboard/index',
+        'pages/badge/index',
+        'pages/tag/index',
+        'pages/popover/index'
       ]
     },
     {
@@ -73,7 +80,9 @@ export default {
       pages: [
         'pages/address/index',
         'pages/signature/index',
-        'pages/barrage/index'
+        'pages/barrage/index',
+        'pages/timeselect/index',
+        'pages/sku/index'
       ]
     }
   ],
