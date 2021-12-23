@@ -23,7 +23,8 @@ import {
   Menu,
   MenuItem,
   Popover,
-  Pagination
+  Pagination,
+  Form,FormItem
 } from "@nutui/nutui";
 // import "@nutui/nutui/dist/styles/themes/default.scss";
 
@@ -31,6 +32,7 @@ import {
 const nutuiComponents = [
   Button,
   Cell,
+  Form,FormItem,
   Icon,
   Tabbar,
   Toast,

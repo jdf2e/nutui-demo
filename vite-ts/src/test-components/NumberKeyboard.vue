@@ -1,5 +1,5 @@
 <template>
-  <nut-numberkeyboard :visible="true">
+  <nut-numberkeyboard :visible="false">
   </nut-numberkeyboard>
 </template>
 

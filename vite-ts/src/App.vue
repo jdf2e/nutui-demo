@@ -1,5 +1,6 @@
 <template>
 <Badge></Badge>
+  <Forms></Forms>
   <Pagination></Pagination>
   <Popover></Popover>
   <Tag></Tag>
@@ -33,6 +34,7 @@ import Tag from "./test-components/Tag.vue";
 import Badge from "./test-components/Badge.vue";
 import Popover from "./test-components/Popover.vue"
 import Pagination from "./test-components/Pagination.vue"
+import Forms from "./test-components/Form.vue"
 export default defineComponent({
   name: "App",
   components: {
@@ -50,7 +52,8 @@ export default defineComponent({
     Tag,
     Badge,
     Popover,
-    Pagination
+    Pagination,
+    Forms
   },
   setup() {},
 });
