@@ -12,7 +12,9 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
-  sass: {},
+  sass: {
+    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
+	},
   defineConstants: {},
   copy: {
     patterns: [],

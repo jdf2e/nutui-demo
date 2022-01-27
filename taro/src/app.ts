@@ -12,7 +12,7 @@ import {   Avatar,Button,Cell,CellGroup,Icon,Price,OverLay,Divider,Layout,Col,Ro
 // import '@nutui/nutui-taro/dist/style.css';
 
 // import '@nutui/nutui-taro/dist/styles/themes/default.scss';
-import '@nutui/nutui-taro/dist/style.css';
+// import '@nutui/nutui-taro/dist/style.css';
 
 //这里添加用到的 nutui 组件
 const nutuiComponents = [

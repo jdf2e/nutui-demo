@@ -17,7 +17,8 @@ const config = {
   sass: {
 		resource: [
 			path.resolve(__dirname, '..', 'src/assets/styles/custom_theme.scss')
-		]
+		],
+    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
 	},
   copy: {
     patterns: [
