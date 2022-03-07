@@ -2,6 +2,15 @@
   <div class="demo">
     <h2>默认用法</h2>
     <nut-noticebar :text="text"></nut-noticebar>
+    
+    <h2>滚动播放</h2>
+    <nut-noticebar
+      text="华为畅享9新品即将上市"
+      :scrollable="true"
+      :background="`rgba(251, 248, 220, 1)`"
+      :color="`#D9500B`"
+    >
+    </nut-noticebar>
 
     <h2>禁用滚动</h2>
     <nut-noticebar
