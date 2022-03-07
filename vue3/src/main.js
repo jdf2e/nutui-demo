@@ -1,5 +1,19 @@
-import { createApp } from 'vue'
+import {
+    createApp
+} from 'vue'
 import App from './App.vue'
-import { Button, Price, Input, Icon, Cell, Tabs, TabPane } from "@nutui/nutui";
+import router from './router';
+import {
+    Button,
+    Price,
+    Input,
+    Icon,
+    Cell,
+    Tabs,
+    TabPane,
+    NoticeBar
+} from "@nutui/nutui";
 import "@nutui/nutui/dist/style.css";
-createApp(App).use(Button).use(Price).use(Input).use(Icon).use(Cell).use(Tabs).use(TabPane).mount("#app");
+
+const app = createApp(App)
+app.use(router).use(Button).use(Price).use(Input).use(Icon).use(Cell).use(Tabs).use(TabPane).use(NoticeBar).mount("#app");
