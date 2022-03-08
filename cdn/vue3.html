@@ -6,15 +6,17 @@
     <!-- 引入样式 -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@nutui/nutui@3.1.9/dist/style.css"
+      href="https://cdn.jsdelivr.net/npm/@nutui/nutui/dist/style.css"
     />
     <!-- 引入Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@next"></script>
     <!-- 引入NutUI组件库 -->
-    <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@3.1.9/dist/nutui.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@beta/dist/nutui.umd.js"></script>
   </head>
   <body>
     <div id="app">
+      <nut-cell  is-link url="https://m.jd.com">跳转 https://m.jd.com</nut-cell>
       <nut-button type="primary" @click="showAddress">{{text}}</nut-button>
       <nut-address
         v-model:visible="showPopup"
@@ -74,6 +76,25 @@
           },
         },
       });
+
+      const Home = { template: `<h1>Contenuto Home</h1>` };
+      const About = { template: `<h1>Contenuto About</h1>` };
+      const Portfolio = { template: `<h1>Contenuto Portfolio</h1>` };
+      const Contatti = { template: `<h1>Contenuto Contatti</h1>` };
+
+      const routes = [
+          { path: "/", component: Home },
+          { path: "/about", component: About },
+          { path: "/portfolio", component: Portfolio },
+          { path: "/contatti", component: Contatti }
+      ];
+
+      const router = VueRouter.createRouter({
+           history: VueRouter.createWebHashHistory(),
+           routes
+    })
+
+      app.use(router);
       app.use(nutui);
       // 调用函数组件，弹出一个 Toast
       // nutui.Toast("NutUI 3.0");
