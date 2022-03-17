@@ -26,7 +26,6 @@ import {
   Pagination,
   Form,FormItem
 } from "@nutui/nutui";
-// import "@nutui/nutui/dist/styles/themes/default.scss";
 
 
 const nutuiComponents = [

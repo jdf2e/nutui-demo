@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import { Avatar, Button, FixedNav, Icon, Input, OverLay, Toast,Swipe,Cell } from '@nutui/nutui-taro';
 
-// import '@nutui/nutui-taro/dist/styles/themes/default.scss';
 
 
 const App = createApp({

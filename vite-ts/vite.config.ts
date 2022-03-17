@@ -26,7 +26,7 @@ export default defineConfig({
       scss: {
         // example : additionalData: `@import "./src/design/styles/variables";`
         // dont need include file extend .scss
-        additionalData: `@import "@nutui/nutui/dist/styles/variables.scss"; @import "./src/assets/custom_theme.scss";`
+        additionalData: ` @import "./src/assets/custom_theme.scss";@import "@nutui/nutui/dist/styles/variables.scss";`
       }
     }
   },
