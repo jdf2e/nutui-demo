@@ -19,7 +19,7 @@
     <nut-switch :active="true">
     </nut-switch>
 
-    <nut-calendar :is-visible.sync="isVisible" :default-value="date" type="range" :start-date="null" :end-date="null"
+    <nut-calendar :is-visible.sync="isVisible" :default-value="date" type="range" :start-date="'2022-02-03'" :end-date="'2022-03-28'"
       :animation="`nutSlideUp`" @close="switchPickerClose" @choose="setChooseValue">
     </nut-calendar>
 
