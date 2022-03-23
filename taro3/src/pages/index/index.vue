@@ -26,6 +26,9 @@
         <nut-button shape="square" style="height:100%" type="danger">删除</nut-button>
       </template>
     </nut-swipe>
+     <nut-cell>
+        <nut-progress percentage="60" :text-inside="true" />
+      </nut-cell>
   </view>
 </template>
 
