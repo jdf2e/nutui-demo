@@ -194,9 +194,18 @@
           "desc": "图片预览",
           "sort": 4,
           "show": true,
-          "taro": false,
-          "tarodoc": true,
           "author": "zongyue3"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Sticky",
+          "cType": "布局组件",
+          "cName": "粘性布局",
+          "type": "component",
+          "desc": "当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在距离屏幕固定的距离处",
+          "show": true,
+          "tarodoc": false,
+          "author": "szg2008"
         }
       ]
     },
@@ -381,7 +390,6 @@
           "version": "3.0.0",
           "name": "Swiper",
           "taro": true,
-          "tarodoc": true,
           "sort": 6,
           "cName": "轮播",
           "type": "component",
@@ -479,6 +487,39 @@
           "sort": 24,
           "show": true,
           "author": "wujia8"
+        },
+        {
+          "version": "3.0.0",
+          "name": "Audio",
+          "taro": true,
+          "tarodoc": true,
+          "type": "component",
+          "cName": "音频播放器",
+          "desc": "音频播放器",
+          "sort": 25,
+          "show": true,
+          "author": "yangxiaolu"
+        },
+        {
+          "version": "3.0.0",
+          "name": "AudioOperate",
+          "type": "component",
+          "cName": "音频操作按钮",
+          "desc": "音频操作按钮",
+          "sort": 26,
+          "show": false,
+          "author": "yangxiaolu"
+        },
+        {
+          "version": "3.0.0",
+          "name": "List",
+          "cType": "操作反馈",
+          "cName": "虚拟列表",
+          "desc": "可在成千上万条数据渲染时只渲染用户最大可见条数，提升页面渲染性能",
+          "show": true,
+          "tarodoc": false,
+          "type": "component",
+          "author": "szg2008"
         }
       ]
     },
@@ -551,6 +592,7 @@
           "show": false,
           "taro": true,
           "exportEmpty": true,
+          "exportEmptyTaro": true,
           "desc": "标签栏子组件",
           "author": "Drjingfubo"
         },
@@ -713,7 +755,6 @@
           "version": "3.0.0",
           "name": "DatePicker",
           "taro": true,
-          "tarodoc": true,
           "type": "component",
           "cName": "日期选择器",
           "desc": "提供多个选型集合供用户选择,支持单列选择和多列级联,通常与弹出层配合使用",
@@ -791,7 +832,6 @@
           "version": "3.0.0",
           "name": "Picker",
           "taro": true,
-          "tarodoc": true,
           "type": "component",
           "cName": "选择器",
           "desc": "提供多个选型集合供用户选择,支持单列选择和多列级联,通常与弹出层配合使用",
@@ -837,7 +877,6 @@
           "version": "3.0.0",
           "name": "CountUp",
           "taro": true,
-          "tarodoc": true,
           "sort": 12,
           "cName": "数字滚动",
           "type": "component",
@@ -848,7 +887,6 @@
         {
           "version": "3.0.0",
           "name": "NumberKeyboard",
-          "tarodoc": true,
           "taro": true,
           "sort": 13,
           "cName": "数字键盘",
@@ -933,7 +971,8 @@
           "show": true,
           "taro": true,
           "author": "liqiong"
-        },{
+        },
+        {
           "name": "Cascader",
           "type": "component",
           "cName": "级联选择",
@@ -942,6 +981,17 @@
           "show": true,
           "taro": true,
           "author": "dongj0316"
+        },
+        {
+          "version": "3.0.0",
+          "name": "OldPicker",
+          "cType": "数据录入",
+          "cName": "选择器",
+          "desc": "3.1.17 版本之前（包括 3.1.17 版本）的选择器",
+          "show": false,
+          "tarodoc": false,
+          "type": "component",
+          "author": "yangxiaolu"
         }
       ]
     },
@@ -1045,7 +1095,7 @@
           "taro": true,
           "name": "Table",
           "type": "component",
-          "cName": "表格组件",
+          "cName": "表格",
           "desc": "用于展示多条结构类似的数据，并具有一定的操作功能",
           "sort": 9,
           "show": true,

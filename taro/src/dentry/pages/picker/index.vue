@@ -1,7 +1,7 @@
 <template>
   <div class="demo">
     <h2>基础用法</h2>
-    <nut-cell title="请选择城市1" :desc="index" @click="open(0)"></nut-cell>
+    <nut-cell title="请选择城市" :desc="index" @click="open(0)"></nut-cell>
     <nut-picker
       v-model:visible="show"
       :columns="columns"

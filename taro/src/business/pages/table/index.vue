@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import { reactive, toRefs, onMounted, onUnmounted, h, defineComponent } from 'vue';
-import {Button,Icon} from '@nutui/nutui-taro';
+import {Button,Icon,} from '@nutui/nutui-taro'
 export default defineComponent({
   components: {
     Button,
@@ -228,7 +228,7 @@ export default defineComponent({
       }
     });
 
-    const handleSorter = (item: TableColumnProps) => {
+    const handleSorter = (item: any) => {
       console.log(JSON.stringify(item));
     };
 

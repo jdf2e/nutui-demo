@@ -45,15 +45,9 @@
   </div>
 </template>
 <script lang="ts">
-import Taro, { useReady } from '@tarojs/taro';
-import { onMounted } from 'vue';
 export default {
   props: {},
   setup() {
-    console.log(Taro.useReady)
-    useReady(() => {
-      console.log(Taro)
-    });
     const handleClick = () => {
       console.log('触发点击头像');
     };
