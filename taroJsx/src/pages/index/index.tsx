@@ -6,7 +6,7 @@ export default defineComponent({
    name: "Index",
    components: {  Cell, Picker, Popup, Button },
    setup() {
-    let show = ref(true);
+    let show = ref(false);
     let desc = ref('111');
     let columns = ref([
       { text: '南京市', value: 'NanJing' },
@@ -19,6 +19,7 @@ export default defineComponent({
     ]);
 
     const open = ()=>{
+      show.value = true
       console.log('打开')
     }
      return () => (
