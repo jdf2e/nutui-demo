@@ -1,22 +1,15 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path';
-import styleImport from 'vite-plugin-style-import';
-const resolve = path.resolve;
+import { createStyleImportPlugin, NutuiResolve } from 'vite-plugin-style-import'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(),
-  styleImport({
-    libs: [
-      {
-        libraryName: '@nutui/nutui',
-        libraryNameChangeCase: 'pascalCase',
-        resolveStyle: (name) => {
-          return `@nutui/nutui/dist/packages/${name}/index.scss`
-        }
-      }
-    ],
-  }),
+  plugins: [
+    vue(),
+    createStyleImportPlugin({
+      resolves: [
+        NutuiResolve(),
+      ]
+    }),
   ],
   // resolve: {
   //   alias: [{ find: '@', replacement: resolve(__dirname, './src') }]
