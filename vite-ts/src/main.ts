@@ -24,12 +24,14 @@ import {
   MenuItem,
   Popover,
   Pagination,
-  Form,FormItem
+  Form,FormItem,
+  Uploader
 } from "@nutui/nutui";
 
 
 const nutuiComponents = [
   Button,
+  Uploader,
   Cell,
   Form,FormItem,
   Icon,

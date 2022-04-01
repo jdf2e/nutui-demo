@@ -14,6 +14,7 @@
   <NoticeBar></NoticeBar>
   <CountDown></CountDown>
   <NumberKeyboard></NumberKeyboard>
+  <Uploader></Uploader>
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
@@ -35,6 +36,7 @@ import Badge from "./test-components/Badge.vue";
 import Popover from "./test-components/Popover.vue"
 import Pagination from "./test-components/Pagination.vue"
 import Forms from "./test-components/Form.vue"
+import Uploader from "./test-components/Uploader.vue"
 export default defineComponent({
   name: "App",
   components: {
@@ -53,7 +55,8 @@ export default defineComponent({
     Badge,
     Popover,
     Pagination,
-    Forms
+    Forms,
+    Uploader
   },
   setup() {},
 });
