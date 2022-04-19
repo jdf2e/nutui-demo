@@ -1,6 +1,7 @@
 <template>
   <div>
     <img alt="Vue logo" src="../assets/logo.png">
+    <nut-pagination v-model="state.currentPage" :total-items="25" :items-per-page="5" />
     <nut-tabs v-model="state.tab1value">
       <nut-tabpane title="Tab 1">
         Tab 1
@@ -29,7 +30,8 @@
 import { reactive,ref } from "vue";
 export default {
   name: "Index",
-  components: {},
+  components: {
+  },
   setup() {
     const state = reactive({
       tab1value: "0",
@@ -42,6 +44,7 @@ export default {
       val6: "",
       val7: "",
       val8: "文案",
+      currentPage: 1,
     });
     const show = ref(false);
     const desc = ref('');

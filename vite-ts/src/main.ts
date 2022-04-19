@@ -24,16 +24,25 @@ import {
   MenuItem,
   Popover,
   Pagination,
-  Form,FormItem,
-  Uploader
+  Form, FormItem,
+  Uploader,Locale
 } from "@nutui/nutui";
-
-
+import us from "@nutui/nutui/dist/packages/locale/lang/en-US";
+import tw from "@nutui/nutui/dist/packages/locale/lang/zh-TW";
+setTimeout(() => {
+  Locale.use('en-US', us);
+}, 1000 * 5);
+setTimeout(() => {
+  Locale.use('zh-CN');
+}, 1000 * 10);
+setTimeout(() => {
+  Locale.use('zh-TW', tw);
+}, 1000 * 15);
 const nutuiComponents = [
   Button,
   Uploader,
   Cell,
-  Form,FormItem,
+  Form, FormItem,
   Icon,
   Tabbar,
   Toast,
@@ -61,7 +70,7 @@ const app = createApp(App)
 
 
 nutuiComponents.forEach(item => {
-    app.use(item);
+  app.use(item);
 })
 
 app.mount("#app");
