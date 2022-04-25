@@ -11,6 +11,7 @@
     "@nutui/nutui": "^3.1.18",
     "core-js": "^3.6.5",
     "node-sass": "^4.12.0",
+    "postcss-plugin-px2rem": "^0.8.1",
     "sass-loader": "^8.0.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.13",
@@ -45,5 +46,8 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "postcss-plugin-px2rem":{
+    "rootValue":37.5
+  }
 }

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="demo">rem 转换</div>
     <img alt="Vue logo" src="../assets/logo.png">
     <nut-tabs v-model="state.tab1value">
       <nut-tabpane title="Tab 1">
@@ -165,5 +166,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.demo{
+  width: 50px;
 }
 </style>
