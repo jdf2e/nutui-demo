@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "@nutui/nutui-taro": "^3.1.20",
     "@tarojs/cli": "^3.3.2",
-    "@nutui/nutui-taro": "^3.1.17",
     "@tarojs/mini-runner": "3.4.3",
     "@tarojs/plugin-html": "^3.4.3",
     "@tarojs/webpack-runner": "3.4.3",
