@@ -25,7 +25,7 @@ import {
   Popover,
   Pagination,
   Form, FormItem,
-  Uploader,Locale
+  Uploader,Locale, TabbarItem
 } from "@nutui/nutui";
 import us from "@nutui/nutui/dist/packages/locale/lang/en-US";
 import tw from "@nutui/nutui/dist/packages/locale/lang/zh-TW";
@@ -45,6 +45,7 @@ const nutuiComponents = [
   Form, FormItem,
   Icon,
   Tabbar,
+  TabbarItem,
   Toast,
   ShortPassword,
   Price,
