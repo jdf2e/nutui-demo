@@ -29,6 +29,9 @@
      <nut-cell>
         <nut-progress percentage="60" :text-inside="true" />
       </nut-cell>
+     <nut-cell>
+         <nut-circleprogress :progress="20"> </nut-circleprogress>
+      </nut-cell>
   </view>
 </template>
 

@@ -37,6 +37,7 @@
     "@babel/runtime": "^7.7.7",
     "@nutui/nutui-taro": "^3.1.9",
     "@tarojs/components": "^3.3.2",
+    "@tarojs/plugin-framework-vue3": "^3.4.9",
     "@tarojs/plugin-html": "^3.3.2",
     "@tarojs/runtime": "^3.3.2",
     "@tarojs/taro": "^3.3.2",
