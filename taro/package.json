@@ -47,6 +47,7 @@
     "@babel/core": "^7.8.0",
     "@tarojs/cli": "^3.4.0",
     "@tarojs/mini-runner": "^3.4.0",
+    "@tarojs/plugin-framework-vue3": "^3.4.12",
     "@tarojs/plugin-html": "^3.4.0",
     "@tarojs/webpack-runner": "^3.4.0",
     "@types/webpack-env": "^1.13.6",
