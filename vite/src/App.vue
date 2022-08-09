@@ -9,12 +9,36 @@
   <nut-button type="success">成功按钮</nut-button>
   <nut-cell title="123123213312">123123</nut-cell>
   <nut-icon name="dongdong"></nut-icon>
-  <nut-fixednav :position="{bottom:'70px' }" v-model:visible="visible" :nav-list="navList" />
+  <nut-fixednav
+    :position="{ bottom: '70px' }"
+    v-model:visible="visible"
+    :nav-list="navList"
+  />
   <nut-cell title="自定义 Icon 字体">
     <!-- 通过 class-prefix 指定类名为 my-icon -->
     <nut-icon font-class-name="iconfont" class-prefix="icon" name="mianji" />
     <span class="iconfont icon-mianji"></span>
   </nut-cell>
+  <nut-cell
+    is-link
+    title="自定义Cell 中 Icon 字体"
+    font-class-name="iconfont"
+    class-prefix="icon"
+    icon="mianji"
+    right-icon="mianji"
+  ></nut-cell>
+
+  <nut-menu font-class-name="iconfont" class-prefix="icon" title-icon="mianji">
+    <nut-menu-item v-model="state.value1" :options="state.options1" />
+    <nut-menu-item
+      v-model="state.value2"
+      @change="handleChange"
+      :options="state.options2"
+      font-class-name="iconfont"
+      class-prefix="icon"
+      option-icon="mianji"
+    />
+  </nut-menu>
 
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
@@ -46,6 +70,26 @@ const navList = reactive([
     icon: "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png",
   },
 ]);
+
+const state = reactive({
+  options1: [
+    { text: "全部商品", value: 0 },
+    { text: "新款商品", value: 1 },
+    { text: "活动商品", value: 2 },
+  ],
+  options2: [
+    { text: "默认排序", value: "a" },
+    { text: "好评排序", value: "b" },
+    { text: "销量排序", value: "c" },
+  ],
+  value1: 0,
+  value2: "a",
+});
+
+const handleChange = (val) => {
+  console.log("val", val);
+};
+
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
