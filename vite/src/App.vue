@@ -9,19 +9,37 @@
   <nut-button type="success">成功按钮</nut-button>
   <nut-cell title="123123213312">123123</nut-cell>
   <nut-icon name="dongdong"></nut-icon>
-  <nut-fixednav :position="{bottom:'70px' }" v-model:visible="visible" :nav-list="navList" />
+  <nut-fixednav
+    :position="{ bottom: '70px' }"
+    v-model:visible="visible"
+    :nav-list="navList"
+  />
   <nut-cell title="自定义 Icon 字体">
     <!-- 通过 class-prefix 指定类名为 my-icon -->
     <nut-icon font-class-name="iconfont" class-prefix="icon" name="mianji" />
     <span class="iconfont icon-mianji"></span>
   </nut-cell>
 
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <nut-cell
+    title="选择地址"
+    @click="
+      () => {
+        show = true;
+      }
+    "
+  ></nut-cell>
+  <nut-picker
+    v-model:visible="show"
+    :columns="columns"
+    @confirm="confirm"
+  ></nut-picker>
+
+  <div>11</div>
 </template>
 
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
-import { ref, reactive } from "vue";
+import { ref, reactive ,computed} from "vue";
 const visible = ref(false);
 const navList = reactive([
   {
@@ -46,8 +64,22 @@ const navList = reactive([
     icon: "https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png",
   },
 ]);
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+const show = ref(false);
+
+const columns = computed(() => [
+      { text: '南京', value: 'NanJing' },
+      { text: 'wuXi', value: 'WuXi' },
+      { text: 'zangZu', value: 'ZangZu' },
+      { text: 'beiJing', value: 'BeiJing' },
+      { text: 'lianYunGang', value: 'LianYunGang' },
+      { text: 'zheJiang', value: 'ZheJiang' },
+      { text: 'jiangSu', value: 'JiangSu' }
+    ]);
+
+    const confirm = ({ selectedValue }) => {
+      console.log(11,selectedValue)
+    };
+
 </script>
 
 <style>
