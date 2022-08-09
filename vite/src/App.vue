@@ -40,12 +40,26 @@
     />
   </nut-menu>
 
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <nut-cell
+    title="选择地址"
+    @click="
+      () => {
+        show = true;
+      }
+    "
+  ></nut-cell>
+  <nut-picker
+    v-model:visible="show"
+    :columns="columns"
+    @confirm="confirm"
+  ></nut-picker>
+
+  <div>11</div>
 </template>
 
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
-import { ref, reactive } from "vue";
+import { ref, reactive, computed } from "vue";
 const visible = ref(false);
 const navList = reactive([
   {
@@ -92,6 +106,21 @@ const handleChange = (val) => {
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+const show = ref(false);
+
+const columns = computed(() => [
+  { text: "南京", value: "NanJing" },
+  { text: "wuXi", value: "WuXi" },
+  { text: "zangZu", value: "ZangZu" },
+  { text: "beiJing", value: "BeiJing" },
+  { text: "lianYunGang", value: "LianYunGang" },
+  { text: "zheJiang", value: "ZheJiang" },
+  { text: "jiangSu", value: "JiangSu" },
+]);
+
+const confirm = ({ selectedValue }) => {
+  console.log(11, selectedValue);
+};
 </script>
 
 <style>
