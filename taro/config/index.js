@@ -47,6 +47,9 @@ const config = {
     staticDirectory: 'static',
     esnextModules: ['nutui-taro'],
     postcss: {
+      url:{
+        enable:true
+      },
       autoprefixer: {
         enable: true,
         config: {}
