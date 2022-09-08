@@ -73,7 +73,7 @@
                         position: absolute;
                         left: 50%;
                         margin-left: -10px;
-                        margin-top: 11px;
+                        margin-top: 13px;
                     }
                 }
             }
@@ -102,38 +102,31 @@
     }
 
     // icons 图标
-    .icons-notice {
-        position: relative;
-        background-color: #fff;
-        border-radius: 5px;
-        overflow: hidden;
+    .icons {
+        display: flex;
+        flex-wrap: wrap;
 
-        .icons {
-            display: flex;
-            flex-wrap: wrap;
+        .icon {
+            margin-right: 10px;
+            text-align: center;
+            width: 58px;
 
-            .icon {
-                margin-right: 10px;
-                text-align: center;
-                width: 58px;
-
-                &:nth-child(5n) {
-                    margin-right: 0;
-                }
-
-                &:nth-child(-n + 5) {
-                    margin-bottom: 10px;
-                }
+            &:nth-child(5n) {
+                margin-right: 0;
             }
 
-            img {
-                width: 50px;
-                height: 50px;
+            &:nth-child(-n + 5) {
+                margin-bottom: 10px;
             }
+        }
 
-            .name {
-                font-size: 11px;
-            }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .name {
+            font-size: 11px;
         }
 
         .nut-swiper-pagination {
@@ -142,6 +135,7 @@
 
         .nut-swiper-inner {
             height: auto !important;
+            width: 710px !important;
         }
 
         .nut-swiper-item {
@@ -168,6 +162,14 @@
         .nut-grid-item__content {
             padding: 10px 5px;
         }
+    }
+
+    // 通知
+    .notice {
+        position: relative;
+        background-color: #fff;
+        border-radius: 5px;
+        overflow: hidden;
 
         .notice {
             position: absolute;
@@ -318,43 +320,43 @@
 }
 
 // TODO
-.nut-price {
-    font-size: 16px;
-    display: inline;
-    color: #fa2c19
-}
+// .nut-price {
+//     font-size: 16px;
+//     display: inline;
+//     color: #fa2c19
+// }
 
-.nut-price--symbol {
-    display: inline-block;
-    font-size: 16px
-}
+// .nut-price--symbol {
+//     display: inline-block;
+//     font-size: 16px
+// }
 
-.nut-price--large,.nut-price--point {
-    display: inline-block;
-    font-size: 24px
-}
+// .nut-price--large,.nut-price--point {
+//     display: inline-block;
+//     font-size: 24px
+// }
 
-.nut-price--decimal-large,.nut-price--symbol-large {
-    display: inline-block;
-    font-size: 18px
-}
+// .nut-price--decimal-large,.nut-price--symbol-large {
+//     display: inline-block;
+//     font-size: 18px
+// }
 
-.nut-price--normal {
-    display: inline-block;
-    font-size: 16px
-}
+// .nut-price--normal {
+//     display: inline-block;
+//     font-size: 16px
+// }
 
-.nut-price--decimal-normal,.nut-price--symbol-normal {
-    display: inline-block;
-    font-size: 14px
-}
+// .nut-price--decimal-normal,.nut-price--symbol-normal {
+//     display: inline-block;
+//     font-size: 14px
+// }
 
-.nut-price--small {
-    display: inline-block;
-    font-size: 12px
-}
+// .nut-price--small {
+//     display: inline-block;
+//     font-size: 12px
+// }
 
-.nut-price--decimal-small,.nut-price--symbol-small {
-    display: inline-block;
-    font-size: 10px
-}
+// .nut-price--decimal-small,.nut-price--symbol-small {
+//     display: inline-block;
+//     font-size: 10px
+// }

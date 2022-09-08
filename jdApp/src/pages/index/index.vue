@@ -13,7 +13,10 @@
     <banner-box></banner-box>
 
     <!-- icons 图标 -->
-    <icons-notice></icons-notice> 
+    <icons></icons> 
+
+    <!-- 通知 -->
+    <notice></notice> 
 
     <!-- 秒杀 -->
     <seckill></seckill>
@@ -30,7 +33,8 @@
 import {reactive,toRefs} from 'vue'
 import FeedProducts from './components/feedProducts.vue'
 import Seckill from './components/seckill.vue'
-import IconsNotice from './components/iconsNotice.vue'
+import Icons from './components/icons.vue'
+import Notice from './components/notice.vue'
 import SearchbarBox from './components/searchbarBox.vue'
 import NavBox from './components/navBox.vue'
 import BannerBox from './components/bannerBox.vue'
@@ -43,7 +47,8 @@ export default {
     'my-footer': MyFooter,
     'feed-products': FeedProducts,
     'seckill': Seckill,
-    'icons-notice': IconsNotice,
+    'icons': Icons,
+    'notice': Notice,
     'searchbar-box': SearchbarBox,
     'nav-box': NavBox,
     'banner-box': BannerBox

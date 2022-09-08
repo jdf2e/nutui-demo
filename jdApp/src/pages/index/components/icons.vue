@@ -1,34 +1,25 @@
 <template>
-    <view class="icons-notice">
-      <view class="icons">
-        <nut-swiper :pagination-visible="true" pagination-color="#426543">
-          <nut-swiper-item>
-            <!-- <view v-for="(item, index) in list[0]" :key="index" class="icon">
-              <view><img :src="item.img" /></view>
-              <view class="name">{{item.name}}</view>
-            </view> -->
-            <nut-grid>
-              <nut-grid-item v-for="(item, index) in list[0]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
-            </nut-grid>
-          </nut-swiper-item>
-          <nut-swiper-item>
-            <!-- <view v-for="(item, index) in list[1]" :key="index" class="icon">
-              <view><img :src="item.img" /></view>
-              <view class="name">{{item.name}}</view>
-            </view> -->
-            <nut-grid>
-              <nut-grid-item v-for="(item, index) in list[1]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
-            </nut-grid>
-          </nut-swiper-item>
-        </nut-swiper>
-      </view>
-      <view>
-        <nut-noticebar
-          text="NutUI 是京东风格的移动端组件库，使用 Vue 语言来编写可以在 H5，小程序平台上的应用，帮助研发人员提升开发效率，改善开发体验。"
-          :background="`rgba(251, 248, 220, 1)`"
-          :color="`#D9500B`"
-        ></nut-noticebar>
-      </view>
+    <view class="icons">
+      <nut-swiper :pagination-visible="true" pagination-color="#426543">
+        <nut-swiper-item>
+          <!-- <view v-for="(item, index) in list[0]" :key="index" class="icon">
+            <view><img :src="item.img" /></view>
+            <view class="name">{{item.name}}</view>
+          </view> -->
+          <nut-grid>
+            <nut-grid-item v-for="(item, index) in list[0]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
+          </nut-grid>
+        </nut-swiper-item>
+        <nut-swiper-item>
+          <!-- <view v-for="(item, index) in list[1]" :key="index" class="icon">
+            <view><img :src="item.img" /></view>
+            <view class="name">{{item.name}}</view>
+          </view> -->
+          <nut-grid>
+            <nut-grid-item v-for="(item, index) in list[1]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
+          </nut-grid>
+        </nut-swiper-item>
+      </nut-swiper>
     </view>
 </template>
 
@@ -36,7 +27,7 @@
 import {reactive,toRefs} from 'vue'
 
 export default {
-  name: 'IconsNotice',
+  name: 'Icons',
   setup(){
     const state = reactive({
       list: [

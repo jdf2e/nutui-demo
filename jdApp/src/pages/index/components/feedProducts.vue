@@ -3,12 +3,13 @@
       <view v-for="(feedProduct, index) in feedProducts" :key="index" class="feed-product">
         <view class="feed-product-image"><img :src="feedProduct.img" /></view>
         <view class="feed-product-name">{{feedProduct.name}}</view>
-        <view class="nut-price">
+        <!-- <view class="nut-price">
           <view class="nut-price--symbol nut-price--symbol-normal">¥</view>
           <view class="nut-price--normal">{{feedProduct.price.split('.')[0]}}</view>
           <view class="nut-price--decimal-normal">.</view>
           <view class="nut-price--decimal-normal">{{feedProduct.price.split('.')[1]}}</view>
-        </view>
+        </view> -->
+        <nut-price :price="10010.01" :need-symbol="true" size="normal" :thousands="false" />
         <view class="comment-points">
           <view class="comment">{{feedProduct.comments}}条评论</view>
           <view class="points">
