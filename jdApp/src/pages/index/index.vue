@@ -21,8 +21,8 @@
     <!-- 秒杀 -->
     <seckill></seckill>
 
-    <!-- 商品 feed 流 -->
-    <feed-products></feed-products>
+    <!-- 主商品区域 -->
+    <main-products></main-products>
 
     <!-- 底部 -->
     <my-footer></my-footer>
@@ -31,7 +31,7 @@
 
 <script>
 import {reactive,toRefs} from 'vue'
-import FeedProducts from './components/feedProducts.vue'
+import MainProducts from './components/mainProducts.vue'
 import Seckill from './components/seckill.vue'
 import Icons from './components/icons.vue'
 import Notice from './components/notice.vue'
@@ -45,7 +45,7 @@ export default {
   name: 'Index',
   components: {
     'my-footer': MyFooter,
-    'feed-products': FeedProducts,
+    'main-products': MainProducts,
     'seckill': Seckill,
     'icons': Icons,
     'notice': Notice,

@@ -2,19 +2,11 @@
     <view class="icons">
       <nut-swiper :pagination-visible="true" pagination-color="#426543">
         <nut-swiper-item>
-          <!-- <view v-for="(item, index) in list[0]" :key="index" class="icon">
-            <view><img :src="item.img" /></view>
-            <view class="name">{{item.name}}</view>
-          </view> -->
           <nut-grid>
             <nut-grid-item v-for="(item, index) in list[0]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
           </nut-grid>
         </nut-swiper-item>
         <nut-swiper-item>
-          <!-- <view v-for="(item, index) in list[1]" :key="index" class="icon">
-            <view><img :src="item.img" /></view>
-            <view class="name">{{item.name}}</view>
-          </view> -->
           <nut-grid>
             <nut-grid-item v-for="(item, index) in list[1]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
           </nut-grid>

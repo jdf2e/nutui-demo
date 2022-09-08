@@ -260,13 +260,13 @@
         }
     }
 
-    // 商品 feed 流
-    .feed-products {
+    // 主商品区域
+    .main-products {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
 
-        .feed-product {
+        .main-product {
             flex-basis: 172px;
             margin-bottom: 15px;
 
@@ -318,45 +318,3 @@
         }
     }
 }
-
-// TODO
-// .nut-price {
-//     font-size: 16px;
-//     display: inline;
-//     color: #fa2c19
-// }
-
-// .nut-price--symbol {
-//     display: inline-block;
-//     font-size: 16px
-// }
-
-// .nut-price--large,.nut-price--point {
-//     display: inline-block;
-//     font-size: 24px
-// }
-
-// .nut-price--decimal-large,.nut-price--symbol-large {
-//     display: inline-block;
-//     font-size: 18px
-// }
-
-// .nut-price--normal {
-//     display: inline-block;
-//     font-size: 16px
-// }
-
-// .nut-price--decimal-normal,.nut-price--symbol-normal {
-//     display: inline-block;
-//     font-size: 14px
-// }
-
-// .nut-price--small {
-//     display: inline-block;
-//     font-size: 12px
-// }
-
-// .nut-price--decimal-small,.nut-price--symbol-small {
-//     display: inline-block;
-//     font-size: 10px
-// }
