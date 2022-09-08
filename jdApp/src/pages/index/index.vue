@@ -2,27 +2,30 @@
   <view class="index">
     <!-- 红色背景 -->
     <view class="slider-bg"></view>
+    <nut-backtop :bottom="80">
+      <template v-slot:content>
+        <!-- 搜索框 -->
+        <searchbar-box></searchbar-box>
 
-    <!-- 搜索框 -->
-    <searchbar-box></searchbar-box>
+        <!-- 导航 -->
+        <nav-box></nav-box>
 
-    <!-- 导航 -->
-    <nav-box></nav-box>
+        <!-- banner 轮播图 -->
+        <banner-box></banner-box>
 
-    <!-- banner 轮播图 -->
-    <banner-box></banner-box>
+        <!-- icons 图标 -->
+        <icons></icons> 
 
-    <!-- icons 图标 -->
-    <icons></icons> 
+        <!-- 通知 -->
+        <notice></notice> 
 
-    <!-- 通知 -->
-    <notice></notice> 
+        <!-- 秒杀 -->
+        <seckill></seckill>
 
-    <!-- 秒杀 -->
-    <seckill></seckill>
-
-    <!-- 主商品区域 -->
-    <main-products></main-products>
+        <!-- 主商品区域 -->
+        <main-products></main-products>
+      </template>
+    </nut-backtop>
 
     <!-- 底部 -->
     <my-footer></my-footer>

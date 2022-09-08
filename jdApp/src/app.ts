@@ -9,7 +9,8 @@ import {
   Swiper, SwiperItem, 
   Grid, GridItem, 
   SearchBar, 
-  Price
+  Price,
+  BackTop
 } from '@nutui/nutui-taro';
 
 import './app.scss'
@@ -35,5 +36,6 @@ App.use(pinia)
    .use(Button)
    .use(CountDown)
    .use(Price)
+   .use(BackTop)
 
 export default App
