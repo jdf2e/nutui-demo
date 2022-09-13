@@ -1,14 +1,14 @@
 import { createApp } from 'vue'
 import {createPinia} from 'pinia'
 import {
-  Tabbar, TabbarItem, 
-  Icon, 
-  NoticeBar, 
-  CountDown, 
-  Button, 
-  Swiper, SwiperItem, 
-  Grid, GridItem, 
-  SearchBar, 
+  Tabbar, TabbarItem,
+  SearchBar,
+  Icon,
+  Button,
+  Swiper, SwiperItem,
+  Grid, GridItem,
+  NoticeBar,
+  CountDown,
   Price,
   BackTop
 } from '@nutui/nutui-taro';
@@ -26,14 +26,14 @@ const App = createApp({
 App.use(pinia)
    .use(Tabbar)
    .use(TabbarItem)
-   .use(NoticeBar)
+   .use(SearchBar)
+   .use(Icon)
+   .use(Button)
    .use(Swiper)
    .use(SwiperItem)
    .use(Grid)
    .use(GridItem)
-   .use(Icon)
-   .use(SearchBar)
-   .use(Button)
+   .use(NoticeBar)
    .use(CountDown)
    .use(Price)
    .use(BackTop)

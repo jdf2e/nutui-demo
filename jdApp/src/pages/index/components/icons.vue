@@ -1,29 +1,27 @@
 <template>
-    <view class="icons">
-      <nut-swiper :pagination-visible="true" pagination-color="#426543">
-        <nut-swiper-item>
-          <nut-grid>
-            <nut-grid-item v-for="(item, index) in list[0]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
-          </nut-grid>
-        </nut-swiper-item>
-        <nut-swiper-item>
-          <nut-grid>
-            <nut-grid-item v-for="(item, index) in list[1]" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
-          </nut-grid>
-        </nut-swiper-item>
-      </nut-swiper>
-    </view>
+  <view class="icons">
+    <nut-swiper :pagination-visible="true" pagination-color="#426543">
+      <nut-swiper-item>
+        <nut-grid>
+          <nut-grid-item v-for="(item, index) in [...list].splice(0, 10)" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
+        </nut-grid>
+      </nut-swiper-item>
+      <nut-swiper-item>
+        <nut-grid>
+          <nut-grid-item v-for="(item, index) in [...list].splice(10, 18)" :key="index" :icon="item.img" :text="item.name"></nut-grid-item>
+        </nut-grid>
+      </nut-swiper-item>
+    </nut-swiper>
+  </view>
 </template>
 
 <script>
-import {reactive,toRefs} from 'vue'
-
+import {reactive, toRefs} from 'vue'
 export default {
   name: 'Icons',
   setup(){
     const state = reactive({
       list: [
-      [
         {
           img: require('../../../asset/images/icons/icon1.png'),
           name: '京东超市'
@@ -63,9 +61,7 @@ export default {
         {
           img: require('../../../asset/images/icons/icon10.png'),
           name: 'PLUS会员'
-        }
-      ],
-      [
+        },
         {
           img: require('../../../asset/images/icons/icon11.png'),
           name: '京东国际'
@@ -99,8 +95,7 @@ export default {
           name: '潮燃青年'
         }
       ]
-      ]
-    });
+    })
 
     return {
       ...toRefs(state)
