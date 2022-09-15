@@ -3,10 +3,15 @@ import { getQueryString } from "../../utils/utils";
 import components from "./importList";
 
 const Single = (props: any) => {
-  const idx = Number(getQueryString(props.tid, "id"));
+  console.log('porps.tid', props.tid)
+  let idx = Number(getQueryString(props.tid, "id"));
+  if(typeof window === 'object') {
+    idx = Number(getQueryString(window.location.hash, "id"));
+  }
   useEffect(() => {
-    console.log(props);
+    console.log('props', props);
   }, []);
+  console.log('Single', idx)
   const Item = components[idx] || null;
   return <Item />;
 };

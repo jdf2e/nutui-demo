@@ -9,6 +9,7 @@ const { navigateTo } = Taro;
 
 const nutuiTaro: React.FunctionComponent = () => {
   const gotoSingleComponent = (index?: number) => {
+    console.log('gotoSingleComponent ', index )
     navigateTo({
       url: `/pages/single/index?id=${index}`,
     });
@@ -19,6 +20,7 @@ const nutuiTaro: React.FunctionComponent = () => {
   const renderCellGroup = () => {
     if (list?.length) {
       return list.map((i: string, index: number) => {
+        console.log('list', index)
         return <Cell click={() => gotoSingleComponent(index)}>{i}</Cell>;
       });
     }
