@@ -6,9 +6,13 @@ export default defineConfig({
   plugins: [
     vue(),
     createStyleImportPlugin({
-      resolves: [
-        NutuiResolve(),
-      ]
+      resolves: [{
+          libraryName: '@nutui/nutui',
+          libraryNameChangeCase: 'pascalCase',
+          resolveStyle: (name) => {
+            return `@nutui/nutui/dist/packages/${name.toLowerCase()}/index.scss`
+          },
+      }]
     }),
   ],
   // resolve: {
