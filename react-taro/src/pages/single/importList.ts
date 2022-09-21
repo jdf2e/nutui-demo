@@ -28,9 +28,8 @@ import Uploader from "../../components/uploader/uploader";
 import Searchbar from "../../components/searchbar/searchbar";
 import Numberkeyboard from "../../components/numberkeyboard/numberkeyboard";
 import Actionsheet from "../../components/actionsheet/actionsheet";
-import Infiniteloading from "../../components/infiniteloading/infiniteloading";
 import Switch from "../../components/switch/switch";
-import Pulltorefresh from "../../components/pulltorefresh/pulltorefresh";
+import Toast from "../../components/toast/toast";
 import Circleprogress from "../../components/circleprogress/circleprogress";
 import Noticebar from "../../components/noticebar/noticebar";
 import Steps from "../../components/steps/steps";
@@ -45,9 +44,10 @@ import Countdown from "../../components/countdown/countdown";
 import Collapse from "../../components/collapse/collapse";
 import Empty from "../../components/empty/empty";
 import Progress from "../../components/progress/progress";
+import Audio from "../../components/audio/audio";
 import Barrage from "../../components/barrage/barrage";
 import Card from "../../components/card/card";
 import Timeselect from "../../components/timeselect/timeselect";
  
-const components =[Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Searchbar,Numberkeyboard,Actionsheet,Infiniteloading,Switch,Pulltorefresh,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Empty,Progress,Barrage,Card,Timeselect]; 
+const components =[Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Searchbar,Numberkeyboard,Actionsheet,Switch,Toast,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Empty,Progress,Audio,Barrage,Card,Timeselect]; 
 export default components
