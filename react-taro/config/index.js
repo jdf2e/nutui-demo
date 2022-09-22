@@ -64,6 +64,12 @@ const config = {
         config: {
         }
       },
+      pxtransform: {
+        enable: true,
+        config: {
+          selectorBlackList: ['nut-', 'demo', 'index']
+        }
+      },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
