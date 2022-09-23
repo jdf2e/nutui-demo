@@ -1,18 +1,62 @@
 <template>
-  <view class="index">
-    <my-footer></my-footer>
+  <view class="goods_detail">
+    <!-- 顶部导航 -->
+    <top-nav></top-nav>
+    <!-- 商品基本信息 -->
+    <goods-info></goods-info>
+    <!-- 商品规格选择 -->
+    <goods-sku></goods-sku>
+    <!-- 地址信息 -->
+    <address-info></address-info>
+    <!-- 推荐列表 -->
+    <recommend-list></recommend-list>
+    <!-- 评论信息 -->
+    <goods-comment></goods-comment>
+    <!-- 商品详情 -->
+    <more-detail></more-detail>
+    <!-- 底部操作 -->
+    <detail-footer></detail-footer>
   </view>
 </template>
 
 <script>
-import MyFooter from '../../components/footer/footer.vue'
+import { reactive, toRefs, ref } from "vue";
+import topNav from "./components/topNav.vue";
+import goodsInfo from "./components/goodsInfo.vue";
+import goodsSku from "./components/goodsSku.vue";
+import addressInfo from "./components/addressInfo.vue";
+import recommendList from "./components/recommendList.vue";
+import goodsComment from "./components/goodsComment.vue";
+import moreDetail from "./components/moreDetail.vue";
+import detailFooter from "./components/detailFooter.vue";
 
+import "./index.scss";
 export default {
-  name: 'Index',
+  name: "Index",
   components: {
-    'my-footer': MyFooter
+    "top-nav": topNav,
+    "goods-info": goodsInfo,
+    "goods-sku": goodsSku,
+    "address-info": addressInfo,
+    "recommend-list": recommendList,
+    "goods-comment": goodsComment,
+    "more-detail": moreDetail,
+    "detail-footer": detailFooter,
   },
-  setup(){
-  }
-}
+  setup() {
+    const state = reactive({});
+    return { ...toRefs(state) };
+  },
+};
 </script>
+<style lang="scss">
+.goods_detail {
+  height: 100%;
+  width: 100%;
+  background: #f3f3f3;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-bottom: 70px;
+}
+</style>
