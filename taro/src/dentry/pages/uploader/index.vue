@@ -81,6 +81,11 @@ export default {
         type: 'image'
       }
     ]);
+
+    setTimeout(() => {
+      defaultFileList.value.splice(0,defaultFileList.value.length)
+    }, 3000);
+
     const onOversize = (files: File[]) => {
       console.log('oversize 触发 文件大小不能超过 50kb', files);
     };
