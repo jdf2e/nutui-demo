@@ -28,6 +28,7 @@ import Uploader from "../../components/uploader/uploader";
 import Searchbar from "../../components/searchbar/searchbar";
 import Numberkeyboard from "../../components/numberkeyboard/numberkeyboard";
 import Actionsheet from "../../components/actionsheet/actionsheet";
+import Notify from "../../components/notify/notify";
 import Switch from "../../components/switch/switch";
 import Toast from "../../components/toast/toast";
 import Circleprogress from "../../components/circleprogress/circleprogress";
@@ -42,12 +43,14 @@ import Popover from "../../components/popover/popover";
 import Skeleton from "../../components/skeleton/skeleton";
 import Countdown from "../../components/countdown/countdown";
 import Collapse from "../../components/collapse/collapse";
+import Animatingnumbers from "../../components/animatingnumbers/animatingnumbers";
 import Empty from "../../components/empty/empty";
+import Table from "../../components/table/table";
 import Progress from "../../components/progress/progress";
 import Audio from "../../components/audio/audio";
 import Barrage from "../../components/barrage/barrage";
 import Card from "../../components/card/card";
 import Timeselect from "../../components/timeselect/timeselect";
  
-const components =[Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Searchbar,Numberkeyboard,Actionsheet,Switch,Toast,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Empty,Progress,Audio,Barrage,Card,Timeselect]; 
+const components =[Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Searchbar,Numberkeyboard,Actionsheet,Notify,Switch,Toast,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Animatingnumbers,Empty,Table,Progress,Audio,Barrage,Card,Timeselect]; 
 export default components
