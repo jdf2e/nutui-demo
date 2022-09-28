@@ -5,7 +5,8 @@ import components from "./importList";
 const Single = (props: any) => {
   console.log('porps.tid', props.tid)
   let idx = Number(getQueryString(props.tid, "id"));
-  if(typeof window === 'object') {
+  if(!props.tid) {
+    console.log('xxx')
     idx = Number(getQueryString(window.location.hash, "id"));
   }
   useEffect(() => {
