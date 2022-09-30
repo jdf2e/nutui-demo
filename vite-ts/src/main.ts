@@ -3,6 +3,7 @@ import App from "./App.vue";
 import {
   Button,
   Cell,
+  CellGroup,
   Icon,
   Tabbar,
   Toast,
@@ -24,8 +25,9 @@ import {
   MenuItem,
   Popover,
   Pagination,
+  Progress,
   Form, FormItem,
-  Uploader,Locale, TabbarItem
+  Uploader,Locale, TabbarItem, List
 } from "@nutui/nutui";
 import us from "@nutui/nutui/dist/packages/locale/lang/en-US";
 import tw from "@nutui/nutui/dist/packages/locale/lang/zh-TW";
@@ -64,7 +66,10 @@ const nutuiComponents = [
   Menu,
   MenuItem,
   Popover,
-  Pagination
+  Pagination,
+  List,
+  CellGroup,
+  Progress
 ];
 
 const app = createApp(App)
