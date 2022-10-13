@@ -25,12 +25,10 @@ import Picker from "../../components/picker/picker";
 import Shortpassword from "../../components/shortpassword/shortpassword";
 import Textarea from "../../components/textarea/textarea";
 import Uploader from "../../components/uploader/uploader";
-import Cascader from "../../components/cascader/cascader";
 import Searchbar from "../../components/searchbar/searchbar";
 import Numberkeyboard from "../../components/numberkeyboard/numberkeyboard";
 import Actionsheet from "../../components/actionsheet/actionsheet";
-import Dialog from "../../components/dialog/dialog";
-import Notify from "../../components/notify/notify";
+
 import Switch from "../../components/switch/switch";
 import Toast from "../../components/toast/toast";
 import Circleprogress from "../../components/circleprogress/circleprogress";
@@ -45,16 +43,15 @@ import Popover from "../../components/popover/popover";
 import Skeleton from "../../components/skeleton/skeleton";
 import Countdown from "../../components/countdown/countdown";
 import Collapse from "../../components/collapse/collapse";
-import Animatingnumbers from "../../components/animatingnumbers/animatingnumbers";
 import Empty from "../../components/empty/empty";
-import Table from "../../components/table/table";
 import Progress from "../../components/progress/progress";
 import Audio from "../../components/audio/audio";
-import Imagepreview from "../../components/imagepreview/imagepreview";
-import Address from "../../components/address/address";
 import Barrage from "../../components/barrage/barrage";
 import Card from "../../components/card/card";
 import Timeselect from "../../components/timeselect/timeselect";
+import Swipe from "../../components/swipe/swipe";
+import Signature from "../../components/signature/signature";
+import Drag from "../../components/drag/drag";
  
-const components =[Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Cascader,Searchbar,Numberkeyboard,Actionsheet,Dialog,Notify,Switch,Toast,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Animatingnumbers,Empty,Table,Progress,Audio,Imagepreview,Address,Barrage,Card,Timeselect]; 
+const components =[Drag,Signature,Swipe,Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Searchbar,Numberkeyboard,Actionsheet,Switch,Toast,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Empty,Progress,Audio,Barrage,Card,Timeselect]; 
 export default components
