@@ -29,10 +29,12 @@ import Cascader from "../../components/cascader/cascader";
 import Searchbar from "../../components/searchbar/searchbar";
 import Numberkeyboard from "../../components/numberkeyboard/numberkeyboard";
 import Actionsheet from "../../components/actionsheet/actionsheet";
+import Drag from "../../components/drag/drag";
 import Dialog from "../../components/dialog/dialog";
 import Notify from "../../components/notify/notify";
 import Switch from "../../components/switch/switch";
 import Toast from "../../components/toast/toast";
+import Swipe from "../../components/swipe/swipe";
 import Circleprogress from "../../components/circleprogress/circleprogress";
 import Noticebar from "../../components/noticebar/noticebar";
 import Steps from "../../components/steps/steps";
@@ -53,8 +55,9 @@ import Audio from "../../components/audio/audio";
 import Imagepreview from "../../components/imagepreview/imagepreview";
 import Address from "../../components/address/address";
 import Barrage from "../../components/barrage/barrage";
+import Signature from "../../components/signature/signature";
 import Card from "../../components/card/card";
 import Timeselect from "../../components/timeselect/timeselect";
  
-const components =[Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Cascader,Searchbar,Numberkeyboard,Actionsheet,Dialog,Notify,Switch,Toast,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Animatingnumbers,Empty,Table,Progress,Audio,Imagepreview,Address,Barrage,Card,Timeselect]; 
+const components =[Button,Cell,Icon,Overlay,Popup,Layout,Divider,Grid,Navbar,Fixednav,Tabbar,Pagination,Tabs,Indicator,Menu,Range,Calendar,Checkbox,Datepicker,Inputnumber,Input,Radio,Rate,Picker,Shortpassword,Textarea,Uploader,Cascader,Searchbar,Numberkeyboard,Actionsheet,Drag,Dialog,Notify,Switch,Toast,Swipe,Circleprogress,Noticebar,Steps,Swiper,Avatar,Price,Badge,Tag,Popover,Skeleton,Countdown,Collapse,Animatingnumbers,Empty,Table,Progress,Audio,Imagepreview,Address,Barrage,Signature,Card,Timeselect]; 
 export default components
