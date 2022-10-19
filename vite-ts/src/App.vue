@@ -1,5 +1,5 @@
 <template>
-<Badge></Badge>
+  <!-- <Badge></Badge>
   <Forms></Forms>
   <Pagination></Pagination>
   <Popover></Popover>
@@ -14,8 +14,9 @@
   <NoticeBar></NoticeBar>
   <CountDown></CountDown>
   <NumberKeyboard></NumberKeyboard>
-  <Uploader></Uploader>
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <Uploader></Uploader> -->
+  <List></List>
+  <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
 </template>
 
 <script lang="ts">
@@ -30,6 +31,7 @@ import Calendar from "./test-components/Calendar.vue";
 import Video from "./test-components/Video.vue";
 import NoticeBar from "./test-components/NoticeBar.vue";
 import CountDown from "./test-components/CountDown.vue";
+import List from "./test-components/List.vue";
 import NumberKeyboard from "./test-components/NumberKeyboard.vue";
 import Tag from "./test-components/Tag.vue";
 import Badge from "./test-components/Badge.vue";
@@ -56,7 +58,8 @@ export default defineComponent({
     Popover,
     Pagination,
     Forms,
-    Uploader
+    Uploader,
+    List
   },
   setup() {},
 });

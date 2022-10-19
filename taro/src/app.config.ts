@@ -63,7 +63,6 @@ const subPackages = [
       "pages/actionsheet/index",
       "pages/backtop/index",
       "pages/drag/index",
-      "pages/dialog/index",
       "pages/infiniteloading/index",
       "pages/notify/index",
       "pages/switch/index",
