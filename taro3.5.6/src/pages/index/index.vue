@@ -3,17 +3,28 @@
     <view>
       <img src="" alt="">
     </view>
-    {{ msg }}
+     1{{selectedValue}}
     <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)">点我</nut-button>
+      <nut-button type="primary" @click="handleClick('text', msg2, true)">点我1</nut-button>
       <nut-icon name="dongdong"></nut-icon>
     </view>
-    <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
+    <!-- <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" /> -->
+
+    <nut-picker
+    v-model="selectedValue"
+    v-model:visible="show"
+    :columns="columns"
+    title="城市选择"
+    @confirm="confirm"
+  >
+  </nut-picker>
+
+    
   </view>
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue';
+import { reactive, toRefs ,ref} from 'vue';
 export default {
   name: 'Index',
   components: {
@@ -25,9 +36,18 @@ export default {
       msg2: '你成功了～',
       type: 'text',
       show: false,
-      cover: false
+      cover: false,
     });
-
+    const selectedValue = ref();
+      const columns = ref([
+        { text: '南京市', value: 'NanJing' },
+        { text: '无锡市', value: 'WuXi' },
+        { text: '海北藏族自治区', value: 'ZangZu' },
+        { text: '北京市', value: 'BeiJing' },
+        { text: '连云港市', value: 'LianYunGang' },
+        { text: '浙江市', value: 'ZheJiang' },
+        { text: '江苏市', value: 'JiangSu' }
+      ]);
     const handleClick = (type, msg, cover = false) => {
       state.show = true;
       state.msg2 = msg;
@@ -37,7 +57,9 @@ export default {
 
     return {
       ...toRefs(state),
-      handleClick
+      handleClick,
+      columns,
+      selectedValue
     }
   }
 }
