@@ -62,6 +62,7 @@ const TextAreaDemo = () => {
         <TextArea
           defaultValue={value1}
           className="text-1"
+          maxlength={-1}
           style={{ fontSize: '12px' }}
           onChange={(value, event) => {
             change(value, event)

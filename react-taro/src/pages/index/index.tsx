@@ -21,7 +21,7 @@ const nutuiTaro: React.FunctionComponent = () => {
     if (list?.length) {
       return list.map((i: string, index: number) => {
         console.log('list', index)
-        return <Cell click={() => gotoSingleComponent(index)}>{i}</Cell>;
+        return <Cell onClick={() => gotoSingleComponent(index)}>{i}</Cell>;
       });
     }
     return null;

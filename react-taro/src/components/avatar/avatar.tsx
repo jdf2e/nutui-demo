@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import { Cell, Badge, Avatar, AvatarGroup } from '@nutui/nutui-react-taro'
 
 import './demo.scss'
+import {useDidShow} from "@tarojs/taro";
+import {handleClick} from "@nutui/nutui-react-taro/dist/esm/types/src/packages/sidenavbar/utils";
 
 interface T {
   b040e71e: string
@@ -56,14 +58,38 @@ const AvatarDemo = () => {
   const activeAvatar = () => {
     console.log(translated.b040e71e)
   }
+
+  const [userInfo, setUserInfo] = useState({
+    avatar:'https://ts1.cn.mm.bing.net/th/id/R-C.29a84eb867bf75b5327e7df3b1a7e32c?rik=iW9zjAJwqTB%2fdA&riu=http%3a%2f%2ftupian.qqw21.com%2farticle%2fUploadPic%2f2019-7%2f201971622263482217.jpeg&ehk=W4G6YV7SJ1LFEFGJ3r%2bsC66stsnts%2bGu%2b7tsCcMPWGA%3d&risl=&pid=ImgRaw&r=0'
+  })
+  const initData = async () => {
+
+
+    const userRes = {
+      // avatar:'https://ts1.cn.mm.bing.net/th/id/R-C.29a84eb867bf75b5327e7df3b1a7e32c?rik=iW9zjAJwqTB%2fdA&riu=http%3a%2f%2ftupian.qqw21.com%2farticle%2fUploadPic%2f2019-7%2f201971622263482217.jpeg&ehk=W4G6YV7SJ1LFEFGJ3r%2bsC66stsnts%2bGu%2b7tsCcMPWGA%3d&risl=&pid=ImgRaw&r=0'
+      avatar:'https://huzhudian.zhaodaka.vip/api/static/upload/2022/11/02/63614f32eff12907c3f6dfd3.jpeg'
+
+    }
+    setUserInfo(userRes)
+  }
+  useDidShow(() => {
+    console.log('onshow')
+
+  })
+  const handleClick = () => {
+    console.log('xxx')
+    initData()
+  }
+
   return (
     <>
       <div className="demo full avatar-demo">
         <h2>{translated['67f78db5']}</h2>
-        <Cell>
+        <Cell onClick={handleClick}>
           <Avatar
             size="large"
-            url="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
+            // url="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
+              url={userInfo.avatar}
           />
           <Avatar
             size="normal"
