@@ -6,7 +6,8 @@ import App from './App.vue'
 
 // NutUI.install(Vue);
 
-import { Button, Actionsheet, DatePicker, CheckBox,CheckBoxGroup,Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker,FixedNav,Notify,CountUp,SearchBar,TextBox } from '@nutui/nutui';
+import { Swipe, Button, Actionsheet, DatePicker, CheckBox,CheckBoxGroup,Switch, LuckDraw, Signature, CircleProgress, SideNavBar, Drag, Cell, SubSideNavBar, SideNavBarItem,Calendar,Address,Popup,Picker,FixedNav,Notify,CountUp,SearchBar,TextBox } from '@nutui/nutui';
+Swipe.install(Vue)
 Button.install(Vue);
 Switch.install(Vue);
 LuckDraw.install(Vue);
