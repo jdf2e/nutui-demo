@@ -26,6 +26,7 @@ import {
   Tabs,
   TabPane,
   Sticky,
+  Cell
 } from "@nutui/nutui-taro";
 
 import "./app.scss";
@@ -63,5 +64,6 @@ App.use(pinia)
   .use(Tabs)
   .use(TabPane)
   .use(Sticky)
+  .use(Cell)
   .use(InputNumber);
 export default App;

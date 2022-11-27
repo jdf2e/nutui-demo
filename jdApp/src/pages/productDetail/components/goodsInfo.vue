@@ -88,6 +88,7 @@ export default {
   }
   .item_img {
     width: 100%;
+    height: 100%;
   }
   .price_wrap {
     width: 100%;

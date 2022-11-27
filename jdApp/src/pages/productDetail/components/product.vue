@@ -2,7 +2,7 @@
   <view class="detail-products">
     <view class="detail-product">
       <view class="detail-product-image">
-        <img :src="info.img" />
+        <img :src="info.img"  mode="widthFix" />
       </view>
       <view class="detail-product-name">{{ info.name }}</view>
       <nut-price
@@ -34,7 +34,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 // 商品区域
 .detail-products {
   display: flex;
@@ -48,7 +48,6 @@ export default {
       border-radius: 6px;
       overflow: hidden;
       margin-bottom: 8px;
-
       img {
         width: 100%;
         height: 100%;

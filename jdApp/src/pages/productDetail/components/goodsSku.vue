@@ -54,7 +54,7 @@ export default {
       console.log("点击了操作按钮", op);
       state.flag = false;
     };
-    return { ...toRefs(state), selectSku, clickBtnOperate, close, showSku };
+    return { ...toRefs(state), selectSku, clickBtnOperate, showSku };
   },
 };
 </script>
