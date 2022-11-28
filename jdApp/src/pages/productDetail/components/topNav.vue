@@ -68,7 +68,7 @@ export default {
       let topValue = scrollTop + appH.value / 2 + 100;
       if (Taro.getEnv() == "WEAPP") {
         topValue =
-          scrollTop + appH.value / 2 - 100 * Taro.getWindowInfo().pixelRatio;
+          scrollTop + appH.value / 2 - 50 * Taro.getWindowInfo().pixelRatio;
       }
       for (let key in targetRect.value) {
         let item = targetRect.value[key];

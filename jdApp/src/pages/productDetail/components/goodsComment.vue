@@ -15,7 +15,6 @@
           :images="cmt.images"
           :videos="cmt.videos"
           :info="cmt.info"
-          :labels="labels"
           @clickImages="clickImages"
           @clickOperate="clickOperate"
           :operation="['replay']"
