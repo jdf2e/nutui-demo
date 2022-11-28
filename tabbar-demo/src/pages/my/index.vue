@@ -1,6 +1,6 @@
 <template>
   <div>
-      首页
+      我的
       <Tabbar></Tabbar>
   </div>
 </template>
