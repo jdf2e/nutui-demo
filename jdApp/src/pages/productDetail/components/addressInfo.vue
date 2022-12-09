@@ -132,9 +132,12 @@ export default {
     }
     .container {
       flex: 1;
+
       .user-address {
         display: flex;
         align-items: center;
+        flex: 1;
+        line-height: 20px;
       }
       .nut-ellipsis {
         flex: 1;

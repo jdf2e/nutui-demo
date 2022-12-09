@@ -15,7 +15,6 @@
           :images="cmt.images"
           :videos="cmt.videos"
           :info="cmt.info"
-          :labels="labels"
           @clickImages="clickImages"
           @clickOperate="clickOperate"
           :operation="['replay']"
@@ -24,7 +23,7 @@
             <img
               class="nut-comment-header__labels--item"
               src="https://storage.360buyimg.com/imgtools/78925d9440-f9e874d0-e93d-11eb-8e5c-0da9e18a13b1.png"
-              style="height: 12px"
+              style="height: 12px; width: 30px"
             />
           </template>
         </nut-comment>

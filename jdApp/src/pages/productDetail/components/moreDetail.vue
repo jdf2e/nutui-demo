@@ -44,6 +44,10 @@ export default {
   margin-top: 12px;
   padding: 12px 0px;
   position: relative;
+  image{
+    width: 100%;
+    height: 100%;
+  }
   .nut-tabpane {
     padding: 0px;
     img {

@@ -44,7 +44,10 @@ export default {
     "detail-footer": detailFooter,
   },
   setup() {
-    const state = reactive({});
+    const state = reactive({
+      text:
+        "北京大兴区亦庄经济开发区科创十一街与经海四路交叉口西北150米京东总部4号楼",
+    });
     return { ...toRefs(state) };
   },
 };
@@ -58,5 +61,10 @@ export default {
   overflow-x: hidden;
   box-sizing: border-box;
   padding-bottom: 70px;
+  .nut-ellipsis {
+    flex: 1;
+    margin-left: 4px;
+    min-width: 200px;
+  }
 }
 </style>
