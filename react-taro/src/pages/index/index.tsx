@@ -29,7 +29,7 @@ const nutuiTaro: React.FunctionComponent = () => {
   return (
     <View>
       <View className="title">
-        <Text>NutUI-React-Taro!</Text>
+        <Text className='nihao'>NutUI-React-Taro!</Text>
       </View>
       <View className="name">{renderCellGroup()}</View>
     </View>
