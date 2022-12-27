@@ -14,6 +14,36 @@ const router = createRouter({
       name: "button",
       component: () => import("../views/ButtonView.vue"),
     },
+    {
+      path: "/price",
+      name: "price",
+      component: () => import("../views/PriceView.vue"),
+    },
+    {
+      path: "/layout",
+      name: "layout",
+      component: () => import("../views/LayoutView.vue"),
+    },
+    {
+      path: "/actionSheet",
+      name: "ActionSheet",
+      component: () => import("../views/ActionSheet.vue"),
+    },
+    {
+      path: "/drag",
+      name: "DragView",
+      component: () => import("../views/DragView.vue"),
+    },
+    {
+      path: "/notify",
+      name: "notify",
+      component: () => import("../views/NotifyView.vue"),
+    },
+    {
+      path: "/popup",
+      name: "popup",
+      component: () => import("../views/PopupView.vue"),
+    },
   ],
 });
 

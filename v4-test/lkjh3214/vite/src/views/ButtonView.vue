@@ -58,13 +58,15 @@
       </nut-button>
     </nut-cell>
     <div>
+      <Add color="red"></Add>
       <StarFill></StarFill>
+      <IconFont name="dongdong"></IconFont>
     </div>
   </main>
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import { StarFill, Star } from "@nutui/icons-vue";
+import { StarFill, Star, Loading, Add, IconFont } from "@nutui/icons-vue";
 const isLoading = ref(false);
 const changeLoading = () => {
   isLoading.value = true;

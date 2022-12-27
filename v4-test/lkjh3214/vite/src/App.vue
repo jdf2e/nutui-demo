@@ -14,10 +14,9 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style scoped lang="scss">
-.wrapper{
-  nav{
-    padding: 10px;  
+.wrapper {
+  nav {
+    padding: 10px;
   }
 }
-
 </style>
