@@ -37,7 +37,7 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@gui-one/material-miniapp": "^0.15.81",
-    "@nutui/nutui-react-taro": "^1.3.15",
+    "@nutui/nutui-react-taro": "^1.4.0",
     "@tarojs/components": "3.5.5",
     "@tarojs/helper": "3.5.5",
     "@tarojs/plugin-framework-react": "3.5.5",
