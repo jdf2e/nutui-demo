@@ -1,8 +1,10 @@
 {
   "list": [
-    "cell",
-    "overlay",
-    "image-preview",
-    "backtop"
+    "Cell",
+    "Overlay",
+    "ImagePreview",
+    "Backtop",
+    "Dialog",
+    "Range"
   ]
 }

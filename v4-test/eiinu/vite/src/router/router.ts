@@ -1,42 +1,53 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import CellDemo from '@/views/CellDemo.vue';
-import OverlayDemo from '@/views/OverlayDemo.vue';
-import ImagePreviewDemo from '@/views/ImagePreviewDemo.vue';
-import BacktopDemo from '@/views/BacktopDemo.vue';
 import List from '@/views/List.vue';
+import Cell from '@/views/Cell.vue';
+import Overlay from '@/views/Overlay.vue';
+import ImagePreview from '@/views/ImagePreview.vue';
+import Backtop from '@/views/Backtop.vue';
+import Dialog from '@/views/Dialog.vue';
+import Range from '@/views/Range.vue';
+const routes = [{
+    path: '/',
+    name: 'index',
+    component: List, 
+  },
+  
+  {
+    path: '/cell',
+    name: 'cell',
+    component: Cell
+  },
 
-const routes = [
   {
-    path: "/",
-    name: 'home',
-    component: List
+    path: '/overlay',
+    name: 'overlay',
+    component: Overlay
   },
+
   {
-    path: "/cell",
-    name: "cell",
-    component: CellDemo
+    path: '/imagepreview',
+    name: 'imagepreview',
+    component: ImagePreview
   },
+
   {
-    path: "/overlay",
-    name: "overlay",
-    component: OverlayDemo
+    path: '/backtop',
+    name: 'backtop',
+    component: Backtop
   },
+
   {
-    path: "/image-preview",
-    name: "image-preview",
-    component: ImagePreviewDemo
+    path: '/dialog',
+    name: 'dialog',
+    component: Dialog
   },
+
   {
-    path: "/backtop",
-    name: "backtop",
-    component: BacktopDemo
+    path: '/range',
+    name: 'range',
+    component: Range
   },
-  {
-    path: "/:path(.*)+",
-    redirect: () => "home",
-  }
 ]
-
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
