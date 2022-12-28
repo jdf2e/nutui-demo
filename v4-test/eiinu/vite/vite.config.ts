@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import path from 'path';
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 const NutUIResolver = () => {
@@ -15,6 +16,11 @@ const NutUIResolver = () => {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    }
+  },
   plugins: [
     vue(),
     Components({
@@ -28,5 +34,5 @@ export default defineConfig({
         additionalData: `@import "@nutui/nutui/dist/styles/variables.scss";`
       }
     }
-  }
+  },
 })
