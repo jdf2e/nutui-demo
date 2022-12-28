@@ -2,6 +2,7 @@
   "list": [
     "cell",
     "overlay",
-    "image-preview"
+    "image-preview",
+    "backtop"
   ]
 }

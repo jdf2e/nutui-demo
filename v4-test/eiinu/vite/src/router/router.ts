@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import CellDemo from '@/views/CellDemo.vue';
 import OverlayDemo from '@/views/OverlayDemo.vue';
 import ImagePreviewDemo from '@/views/ImagePreviewDemo.vue';
+import BacktopDemo from '@/views/BacktopDemo.vue';
 import List from '@/views/List.vue';
 
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
     path: "/image-preview",
     name: "image-preview",
     component: ImagePreviewDemo
+  },
+  {
+    path: "/backtop",
+    name: "backtop",
+    component: BacktopDemo
   },
   {
     path: "/:path(.*)+",
