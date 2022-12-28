@@ -88,8 +88,9 @@
     <div @click="showPop2 = true">点击它</div>
   </nut-popup>
   <nut-popup :style="{ padding: '30px 50px' }" v-model:visible="showPop2"
-    >正文</nut-popup
-  >
+    >正文
+  </nut-popup>
+  <div class="test_div"></div>
 </template>
 <script lang="ts">
 import { reactive, toRefs } from "vue";
@@ -118,3 +119,10 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.test_div {
+  height: 500px;
+  border: 1px solid #eee;
+  width: 100%;
+}
+</style>

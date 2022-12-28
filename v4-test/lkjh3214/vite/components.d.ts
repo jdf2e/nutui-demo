@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     NutPopup: typeof import('@nutui/nutui')['Popup']
     NutPrice: typeof import('@nutui/nutui')['Price']
     NutRow: typeof import('@nutui/nutui')['Row']
+    NutSwitch: typeof import('@nutui/nutui')['Switch']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']

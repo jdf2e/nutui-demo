@@ -44,6 +44,11 @@ const router = createRouter({
       name: "popup",
       component: () => import("../views/PopupView.vue"),
     },
+    {
+      path: "/switch",
+      name: "switch",
+      component: () => import("../views/SwitchView.vue"),
+    },
   ],
 });
 
