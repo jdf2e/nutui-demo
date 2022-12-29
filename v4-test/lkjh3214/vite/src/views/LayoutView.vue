@@ -1,5 +1,5 @@
 <template>
-  <div class="demo">
+  <div class="demo" id="el_id">
     <nut-row>
       <nut-col :span="24">
         <div class="flex-content">span:24</div>
@@ -136,10 +136,17 @@
         </nut-row>
       </nut-col>
     </nut-row>
+    <nut-backtop :distance="100" :bottom="110" el-id="el_id">
+      <view class="backtop-demo">
+        <Top width="12px" height="12px" class="nut-backtop-main"></Top
+        ><view class="title">test</view>
+      </view>
+    </nut-backtop>
   </div>
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
+import { Top } from "@nutui/icons-vue";
 </script>
 <style lang="scss" scoped>
 .demo {

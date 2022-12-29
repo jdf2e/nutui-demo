@@ -6,7 +6,9 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
+      "@": ["src"],
       "@/*": ["./src/*"]
-    }
+    },
+    "preserveValueImports": false
   }
 }
