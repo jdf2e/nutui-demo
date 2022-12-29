@@ -16,6 +16,11 @@ const NutUIResolver = () => {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    }
+  },
   plugins: [
     vue(),
     Components({
@@ -30,9 +35,4 @@ export default defineConfig({
       }
     }
   },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    }
-  }
 })

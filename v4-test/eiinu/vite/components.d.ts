@@ -7,11 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    NutBacktop: typeof import('@nutui/nutui')['Backtop']
     NutButton: typeof import('@nutui/nutui')['Button']
     NutCell: typeof import('@nutui/nutui')['Cell']
     NutCellGroup: typeof import('@nutui/nutui')['CellGroup']
+    NutDialog: typeof import('@nutui/nutui')['Dialog']
     NutImagePreview: typeof import('@nutui/nutui')['ImagePreview']
     NutOverlay: typeof import('@nutui/nutui')['Overlay']
+    NutRange: typeof import('@nutui/nutui')['Range']
     NutSwitch: typeof import('@nutui/nutui')['Switch']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
