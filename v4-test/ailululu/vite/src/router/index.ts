@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:22
  * @LastEditors: sueRimn
- * @LastEditTime: 2022-12-29 16:00:44
+ * @LastEditTime: 2022-12-29 17:30:47
  */
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -45,6 +45,11 @@ const router = createRouter({
       path: "/circleprogress",
       name: "circleprogress",
       component: () => import("../views/CircleProgress.vue"),
+    },
+    {
+      path: "/menu",
+      name: "menu",
+      component: () => import("../views/Menu.vue"),
     },
   ],
 });

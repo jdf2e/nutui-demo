@@ -1,6 +1,66 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2022-12-29 15:49:18
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2022-12-29 17:26:15
+-->
+<script setup lang="ts">
+import { ref } from "vue";
+const gradientColor = {
+  "0%": "#FF5E5E",
+  "100%": "#FFA062",
+};
+const percent = ref(30);
+const setAddVal = () => {
+  if (percent.value >= 100) {
+    return;
+  }
+  percent.value += 10;
+};
+const setReduceVal = () => {
+  if (percent.value - 10 <= 0) {
+    percent.value = 0;
+    return;
+  }
+  percent.value -= 10;
+};
+</script>
+
 <template>
   <div class="demo-box">
-    <nut-circle-progress :progress="20"> </nut-circle-progress>
+    <nut-cell>
+      <nut-circle-progress :progress="20" :clockwise="false">
+      </nut-circle-progress>
+    </nut-cell>
+    <nut-cell>
+      <nut-circle-progress :progress="50" strokeWidth="10">
+      </nut-circle-progress>
+    </nut-cell>
+    <nut-cell>
+      <nut-circle-progress :progress="50" color="red" />
+      <nut-circle-progress :progress="100" :color="gradientColor" />
+    </nut-cell>
+    <nut-cell>
+      <nut-circle-progress :progress="50" radius="60" stroke-linecap="butt"
+        >butt</nut-circle-progress
+      >
+    </nut-cell>
+    <nut-cell>
+      <nut-circle-progress :progress="50" radius="60" stroke-linecap="square"
+        >square</nut-circle-progress
+      >
+    </nut-cell>
+    <div>
+      <div>
+        <nut-circle-progress :progress="percent"></nut-circle-progress>
+      </div>
+      <div>
+        <nut-button type="primary" @click="setReduceVal">减少</nut-button>
+        <nut-button type="primary" @click="setAddVal">增加</nut-button>
+      </div>
+    </div>
   </div>
 </template>
 

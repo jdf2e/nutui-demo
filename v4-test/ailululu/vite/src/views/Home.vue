@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:48
  * @LastEditors: sueRimn
- * @LastEditTime: 2022-12-29 16:01:10
+ * @LastEditTime: 2022-12-29 17:31:33
 -->
 <script setup lang="ts"></script>
 
@@ -18,6 +18,7 @@
         <RouterLink to="/notify">notify</RouterLink>
         <RouterLink to="/picker">picker</RouterLink>
         <RouterLink to="/circleprogress">circleprogress</RouterLink>
+        <RouterLink to="/menu">menu</RouterLink>
       </nav>
     </div>
   </main>

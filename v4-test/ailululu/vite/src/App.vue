@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-27 15:14:11
  * @LastEditors: sueRimn
- * @LastEditTime: 2022-12-29 15:57:48
+ * @LastEditTime: 2022-12-29 17:39:28
 -->
 <script setup lang="ts">
 import { RouterView } from "vue-router";
@@ -22,7 +22,7 @@ import { RouterView } from "vue-router";
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
 
   font-weight: normal;
 }
