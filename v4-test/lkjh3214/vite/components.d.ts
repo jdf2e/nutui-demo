@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     NutActionSheet: typeof import('@nutui/nutui')['ActionSheet']
+    NutBacktop: typeof import('@nutui/nutui')['Backtop']
     NutButton: typeof import('@nutui/nutui')['Button']
     NutCell: typeof import('@nutui/nutui')['Cell']
     NutCellGroup: typeof import('@nutui/nutui')['CellGroup']

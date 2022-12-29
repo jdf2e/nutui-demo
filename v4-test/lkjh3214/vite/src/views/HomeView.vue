@@ -12,6 +12,7 @@
         <RouterLink to="/notify">notify</RouterLink>
         <RouterLink to="/popup">popup</RouterLink>
         <RouterLink to="/switch">switch</RouterLink>
+        <RouterLink to="/backtop">backtop</RouterLink>
       </nav>
     </div>
   </main>
