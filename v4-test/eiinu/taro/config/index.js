@@ -3,6 +3,7 @@ import ComponentsPlugin from 'unplugin-vue-components/webpack';
 const NutUIResolver = () => {
   return (name) => {
     if (name.startsWith('Nut')) {
+      console.log(name);
       return {
         name: name.slice(3),
         from: '@nutui/nutui-taro',
@@ -37,16 +38,19 @@ const config = {
     }
   },
   framework: 'vue3',
-  compiler: 'webpack5',
+  compiler: {
+    type: 'webpack5',
+    prebundle: { enable: false }
+  },
   cache: {
     enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
   mini: {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(ComponentsPlugin({
-        dirs: ['src/components'],
+        // dirs: ['src/components'],
         allowOverrides: true,
-        resolvers: NutUIResolver()
+        resolvers: [NutUIResolver()]
       }))
     },
     postcss: {
@@ -72,13 +76,12 @@ const config = {
     }
   },
   h5: {
-    webpackChain(chain) {
-      chain.plugin('unplugin-vue-components').use(ComponentsPlugin({
-        dirs: ['src/components'],
-        allowOverrides: true,
-        resolvers: NutUIResolver()
-      }))
-    },
+    // webpackChain(chain) {
+    //   chain.plugin('unplugin-vue-components').use(ComponentsPlugin({
+    //     allowOverrides: true,
+    //     resolvers: [NutUIResolver()]
+    //   }))
+    // },
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {

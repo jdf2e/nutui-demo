@@ -36,7 +36,7 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@nutui/nutui-taro": "4.0.0-beta.2",
+    "@nutui/nutui-taro": "4.0.0-beta.6",
     "@tarojs/components": "3.5.10",
     "@tarojs/helper": "3.5.10",
     "@tarojs/plugin-framework-vue3": "3.5.10",
@@ -64,6 +64,7 @@
     "@typescript-eslint/parser": "^5.20.0",
     "@vue/babel-plugin-jsx": "^1.0.6",
     "@vue/compiler-sfc": "^3.0.0",
+    "babel-plugin-import": "^1.13.5",
     "babel-preset-taro": "3.5.10",
     "css-loader": "3.4.2",
     "eslint": "^8.12.0",

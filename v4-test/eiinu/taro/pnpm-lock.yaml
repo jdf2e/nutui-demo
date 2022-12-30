@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': ^7.8.0
   '@babel/runtime': ^7.7.7
-  '@nutui/nutui-taro': 4.0.0-beta.2
+  '@nutui/nutui-taro': 4.0.0-beta.6
   '@tarojs/cli': 3.5.10
   '@tarojs/components': 3.5.10
   '@tarojs/helper': 3.5.10
@@ -26,6 +26,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.20.0
   '@vue/babel-plugin-jsx': ^1.0.6
   '@vue/compiler-sfc': ^3.0.0
+  babel-plugin-import: ^1.13.5
   babel-preset-taro: 3.5.10
   css-loader: 3.4.2
   eslint: ^8.12.0
@@ -41,7 +42,7 @@ specifiers:
 
 dependencies:
   '@babel/runtime': 7.20.7
-  '@nutui/nutui-taro': 4.0.0-beta.2_vue@3.2.45
+  '@nutui/nutui-taro': 4.0.0-beta.6_vue@3.2.45
   '@tarojs/components': 3.5.10_vue@3.2.45
   '@tarojs/helper': 3.5.10
   '@tarojs/plugin-framework-vue3': 3.5.10_vue@3.2.45
@@ -69,6 +70,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
   '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.7
   '@vue/compiler-sfc': 3.2.45
+  babel-plugin-import: 1.13.5
   babel-preset-taro: 3.5.10_4eomrxrb366s66cj6lregjezge
   css-loader: 3.4.2_webpack@5.69.0
   eslint: 8.30.0
@@ -1593,24 +1595,24 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.14.0
 
-  /@nutui/icons-vue-taro/0.0.2:
-    resolution: {integrity: sha512-YYbbE9x6ff2hwh16A5bg7QDvGEegjQVjNC8gbPuixoPiZVbkOVVasufOGRpdSRmAEu2pNb0QOnoI7LzliNXfzw==}
+  /@nutui/icons-vue-taro/0.0.3:
+    resolution: {integrity: sha512-roJp7jHNnehYKk+KC+M3E/y+H2EtQL87a2IGOfe0A2Y3i/mXdRwdFqihpOUftUPbKUXZA372lQB13LNYa+e7uQ==}
     dependencies:
       vue: 3.2.45
     dev: false
 
-  /@nutui/icons-vue/0.0.16:
-    resolution: {integrity: sha512-/dbOURasQ3R/fnTM+RNvynmji1W/AyfrO1tnQD6Nbk0F7BkIHtfPRfe/NXxo1bvwIZ090NklxGyAfN4nwKnJYw==}
+  /@nutui/icons-vue/0.0.19:
+    resolution: {integrity: sha512-X6tzTWIiB/LpSwVI86NFBBlEFfGnhLwfB38I8sj6zwFtwNm8Mv/wMq+6rJbJ6frnwFIjLw54OXqYKmMrvDVQHg==}
     dependencies:
       vue: 3.2.45
     dev: false
 
-  /@nutui/nutui-taro/4.0.0-beta.2_vue@3.2.45:
-    resolution: {integrity: sha512-AhrTTb3dsClIFwaujJfIx+34udH5iU9q2UvfW96AXOq+TP4Dux9Nsg6RiYuvlhQYfMeCxJ8T9KDFvLVpMf156g==}
+  /@nutui/nutui-taro/4.0.0-beta.6_vue@3.2.45:
+    resolution: {integrity: sha512-T+FODupa6Rnpc/m5XqgOS7Lw+A/Aaq65UgOUwWxztlrQRxNnWAhcU67xkd+zwb0Bz1GDR15imWuBL/dK90PFQg==}
     engines: {node: '>= 16.0.0', pnpm: '>= 7.0.0'}
     dependencies:
-      '@nutui/icons-vue': 0.0.16
-      '@nutui/icons-vue-taro': 0.0.2
+      '@nutui/icons-vue': 0.0.19
+      '@nutui/icons-vue-taro': 0.0.3
       '@tarojs/components': 3.5.6_vue@3.2.45
       sass: 1.50.0
       vscode: 1.1.37
@@ -3526,6 +3528,12 @@ packages:
   /babel-plugin-global-define/1.0.3:
     resolution: {integrity: sha512-M8Sby4wRLuLr+9UB8V31knVRf/rl0xkk51A7um6hUCvVPyOvLtI0u0k1OPiMgE2d7CwmeSa33NzGpaALHPQCPg==}
     engines: {node: '>= 6.x.x'}
+    dev: true
+
+  /babel-plugin-import/1.13.5:
+    resolution: {integrity: sha512-IkqnoV+ov1hdJVofly9pXRJmeDm9EtROfrc5i6eII0Hix2xMs5FEm8FG3ExMvazbnZBbgHIt6qdO8And6lCloQ==}
+    dependencies:
+      '@babel/helper-module-imports': 7.18.6
     dev: true
 
   /babel-plugin-jsx-attributes-array-to-object/0.3.0:
