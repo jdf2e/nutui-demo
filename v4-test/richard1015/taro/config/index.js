@@ -23,8 +23,7 @@ const config = {
   compiler: {
     type: 'webpack5',
     prebundle: {
-      enable: true,
-      exclude: ['@nutui/nutui-taro']
+      enable: false
     }
   },
   cache: {
