@@ -39,7 +39,7 @@
 import { createVNode, ref } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { createDemo, translate } = createComponent('dialog');
-import { Dialog } from '@nutui/nutui';
+import { showDialog } from '@nutui/nutui';
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 const initTranslate = () =>
   useTranslate({
@@ -94,7 +94,7 @@ export default createDemo({
     };
 
     const baseClick = (): void => {
-      Dialog({
+      showDialog({
         title: translate('basic'),
         content: createVNode('span', { style: { color: 'red' } }, translate('content3')),
         onCancel,

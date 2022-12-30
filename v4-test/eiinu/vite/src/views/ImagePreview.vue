@@ -32,7 +32,7 @@ import { reactive, toRefs } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { createDemo, translate } = createComponent('imagepreview');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
-import { ImagePreview } from '@nutui/nutui';
+import { showImagePreview } from '@nutui/nutui';
 const initTranslate = () =>
   useTranslate({
     'zh-CN': {
@@ -113,7 +113,7 @@ export default createDemo({
     };
 
     const fnShow = () => {
-      ImagePreview({
+      showImagePreview({
         show: true,
         images: resData.imgData,
         onClose: () => onClose()

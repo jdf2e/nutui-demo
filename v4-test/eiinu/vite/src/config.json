@@ -1,10 +1,3 @@
 {
-  "list": [
-    "Cell",
-    "Overlay",
-    "ImagePreview",
-    "Backtop",
-    "Dialog",
-    "Range"
-  ]
+  "list": ["Toast","Dialog","ImagePreview","Notify"]
 }

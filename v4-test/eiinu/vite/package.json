@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@nutui/icons-vue": "^0.0.16",
-    "@nutui/nutui": "^4.0.0-beta.5",
+    "@nutui/nutui": "4.0.0-beta.7",
     "fs-extra": "^11.1.0",
     "unplugin-vue-components": "^0.22.12",
     "vue": "^3.2.45",
