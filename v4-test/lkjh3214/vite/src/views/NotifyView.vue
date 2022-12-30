@@ -64,7 +64,7 @@ export default {
     };
     const show = ref(false);
     const showNotify = () => {
-      console.log('showNotify')
+      console.log("showNotify");
       show.value = true;
     };
     return {

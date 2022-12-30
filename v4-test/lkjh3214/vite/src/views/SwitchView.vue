@@ -61,12 +61,26 @@
         <template #icon><Loading /></template>
       </nut-switch>
     </nut-cell>
+    <nut-backtop @click="handleClick"></nut-backtop>
   </div>
 </template>
 
 <script lang="ts">
 import { ref, getCurrentInstance } from "vue";
 import { Loading } from "@nutui/icons-vue";
+interface useTranslateType {
+  basic: string;
+  title1: string;
+  title2: string;
+  title3: string;
+  title4: string;
+  title5: string;
+  title6: string;
+  title7: string;
+  title8: string;
+  text1: string;
+  text2: string;
+}
 const useTranslate = {
   "zh-CN": {
     basic: "基本用法",
@@ -106,7 +120,7 @@ export default {
     // const checkedStr = ref('开');
 
     const change = (value: boolean, event: Event) => {
-      console.log(value)
+      console.log(value);
       proxy.$toast.text(`value：${value}`);
     };
 
@@ -118,9 +132,13 @@ export default {
         loadingAsync.value = false;
       }, 2000);
     };
-    const translate = (key: any) => {
+    const translate = <K extends keyof useTranslateType>(key: K) => {
       return useTranslate["zh-CN"][key];
     };
+    const handleClick = () => {
+      console.log("clg");
+    };
+
     return {
       checked,
       checkedAsync,
@@ -128,6 +146,7 @@ export default {
       loadingAsync,
       change,
       changeAsync,
+      handleClick,
       translate,
     };
   },
