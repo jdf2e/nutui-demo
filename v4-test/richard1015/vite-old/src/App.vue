@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <nut-button loading type="info"></nut-button>
+  <nut-button loading type="info">123</nut-button>
 </template>
 
 <style scoped>
