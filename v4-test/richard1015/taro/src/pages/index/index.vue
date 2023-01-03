@@ -1,30 +1,32 @@
 <template>
   <view class="index">
     <view>
-      <img src="" alt="">
+      <img src="" alt="" />
     </view>
     {{ msg }}
     <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)">点我</nut-button>
+      <nut-button type="primary" @click="handleClick('text', msg2, true)"
+        >点我</nut-button
+      >
     </view>
+    <button>123</button>
     <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
   </view>
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue';
+import { reactive, toRefs } from "vue";
+
 export default {
-  name: 'Index',
-  components: {
-    
-  },
-  setup(){
+  name: "Index",
+  components: {},
+  setup() {
     const state = reactive({
-      msg: '欢迎使用 NutUI3.0 开发小程序',
-      msg2: '你成功了～',
-      type: 'text',
+      msg: "欢迎使用 NutUI3.0 开发小程序",
+      msg2: "你成功了～",
+      type: "text",
       show: false,
-      cover: false
+      cover: false,
     });
 
     const handleClick = (type, msg, cover = false) => {
@@ -36,10 +38,10 @@ export default {
 
     return {
       ...toRefs(state),
-      handleClick
-    }
-  }
-}
+      handleClick,
+    };
+  },
+};
 </script>
 
 <style lang="scss">
