@@ -9,6 +9,8 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Button: typeof import('./src/components/button.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    NutAudio: typeof import('@nutui/nutui')['Audio']
+    NutAudioOperate: typeof import('@nutui/nutui')['AudioOperate']
     NutButton: typeof import('@nutui/nutui')['Button']
     NutCell: typeof import('@nutui/nutui')['Cell']
     NutCellGroup: typeof import('@nutui/nutui')['CellGroup']
