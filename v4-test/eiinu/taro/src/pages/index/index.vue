@@ -1,5 +1,7 @@
 <template>
   <view class="index">
-    <nut-button>测试</nut-button>
+    123
+    <nut-button>abcdefghijklmn</nut-button>
+    4567
   </view>
 </template>

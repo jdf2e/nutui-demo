@@ -1,5 +1,5 @@
 const fse = require('fs-extra');
-const config = require('../src/config.json');
+const config = ['Toast','Dialog','ImagePreview','Notify'];
 const baseUrl = `/Users/peixinyu7/Desktop/jdf2e/nutui-demo/v4-test/eiinu/vite/`;
 
 const copyFile = (from, to) => {
@@ -20,7 +20,7 @@ const copyDemo = (name) => {
 
 const generateRouter = () => {
   let output = `import { createRouter, createWebHashHistory } from "vue-router";\nimport List from '@/views/List.vue';\n`;
-  output += config.list.map((name) => {
+  output += config.map((name) => {
     return `import ${name} from '@/views/${name}.vue';\n`
   }).join('');
   output += `const routes = [{
@@ -28,7 +28,7 @@ const generateRouter = () => {
     name: 'index',
     component: List, 
   },
-  ${config.list.map((name) => {
+  ${config.map((name) => {
     return `
   {
     path: '/${name.toLowerCase()}',
@@ -46,7 +46,7 @@ export default router;
   fse.outputFile(baseUrl + 'src/router/router.ts', output);
 }
 
-config.list.forEach((ComponentName) => {
+config.forEach((ComponentName) => {
   copyDemo(ComponentName);
 })
 generateRouter();
