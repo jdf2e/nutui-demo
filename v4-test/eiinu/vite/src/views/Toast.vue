@@ -24,6 +24,7 @@
 import { createComponent } from '@/packages/utils/create';
 const { createDemo, translate } = createComponent('toast');
 import { showToast } from '@nutui/nutui';
+import "@nutui/nutui/dist/packages/toast/style";
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 import { onUnmounted } from 'vue';
 const initTranslate = () =>
@@ -88,14 +89,14 @@ export default createDemo({
     });
 
     const BottomToast = (msg: string) => {
-      Toast.text(msg, {
+      showToast.text(msg, {
         id: 'taset11',
         center: false,
         bottom: '10%'
       });
     };
     const NoLoading = (msg: string) => {
-      Toast.loading(msg, {
+      showToast.loading(msg, {
         cover: true
       });
     };

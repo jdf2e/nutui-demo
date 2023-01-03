@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@nutui/icons-vue': ^0.0.16
-  '@nutui/nutui': 4.0.0-beta.7
+  '@nutui/nutui': 4.0.0-beta.9
   '@types/node': ^18.11.18
   '@vitejs/plugin-vue': ^4.0.0
   fs-extra: ^11.1.0
@@ -15,7 +15,7 @@ specifiers:
 
 dependencies:
   '@nutui/icons-vue': 0.0.16
-  '@nutui/nutui': 4.0.0-beta.7_vue@3.2.45
+  '@nutui/nutui': 4.0.0-beta.9_vue@3.2.45
   fs-extra: 11.1.0
   unplugin-vue-components: 0.22.12_vue@3.2.45
   vue: 3.2.45
@@ -292,8 +292,8 @@ packages:
       vue: 3.2.45
     dev: false
 
-  /@nutui/nutui/4.0.0-beta.7_vue@3.2.45:
-    resolution: {integrity: sha512-s7yR+PAeQu/H3i8ut0ECr3SoEb9U35pVnx2Djowyaby1sso9xQrgH6lGP10pR79ffOvl2cubWMfX4zQ82Kt7Dw==}
+  /@nutui/nutui/4.0.0-beta.9_vue@3.2.45:
+    resolution: {integrity: sha512-kYVVutODoKlQCS78rdeAKshyxl+HeExX8Apci1oKvG8/mKfW2g7Xia41wjWDil6lHqhvr/mU4P80QAxA+C/O9Q==}
     engines: {node: '>= 16.0.0', pnpm: '>= 7.0.0'}
     dependencies:
       '@nutui/icons-vue': 0.0.19
