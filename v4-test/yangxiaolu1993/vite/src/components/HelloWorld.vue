@@ -29,11 +29,15 @@
       >
       </nut-dialog> -->
     </nut-cell-group>
+
+    <nut-cell isLink title="函数式调用" :showIcon="true" @click="fnShow"></nut-cell>
+
   </div>
 </template>
 
 <script lang="ts">
 import { reactive, toRefs,ref,onMounted } from 'vue';
+import { showImagePreview } from '@nutui/nutui'
 export default {
   setup() {
       const resData = reactive({
@@ -70,6 +74,13 @@ export default {
         visible.value = true;
       };
 
+      const fnShow = () => {
+        showImagePreview({
+          show: true,
+          images: resData.imgData
+        });
+      };
+
       onMounted(() => {
         setTimeout(() => {
           resData.list = [
@@ -87,7 +98,8 @@ export default {
           hideFn,
           componentClick,
           visible,
-          visible1
+          visible1,
+          fnShow
       };
   }
 };
