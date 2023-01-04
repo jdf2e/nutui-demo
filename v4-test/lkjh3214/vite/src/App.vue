@@ -6,17 +6,26 @@ import { RouterLink, RouterView } from "vue-router";
   <header>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">GoHome</RouterLink>
       </nav>
     </div>
   </header>
-  <RouterView />
+  <main class="main_content">
+    <RouterView />
+  </main>
 </template>
 
 <style scoped lang="scss">
 .wrapper {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
   nav {
     padding: 10px;
   }
+}
+.main_content {
+  overflow: auto;
 }
 </style>
