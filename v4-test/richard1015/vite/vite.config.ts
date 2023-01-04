@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite';
-
-const NutUIResolver = () => {
+const NutUIStyleResolver = () => {
   return (name: string) => {
     if (name.startsWith('Nut')) {
       return {
@@ -18,7 +17,8 @@ export default defineConfig({
   plugins: [
     vue(),
     Components({
-      resolvers: [NutUIResolver()],
+      dts: true,
+      resolvers: [NutUIStyleResolver()],
     })
   ],
   css: {
@@ -30,7 +30,13 @@ export default defineConfig({
     }
   },
   build: {
-    minify: false,
+    minify: true,
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // entryFileNames: `demo-${config.version}/[name].js`,
+      }
+    }
   }
 
 })

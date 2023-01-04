@@ -39,7 +39,8 @@
 import { createVNode, ref } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { createDemo, translate } = createComponent('dialog');
-import { Dialog } from '@nutui/nutui';
+import { showDialog } from '@nutui/nutui';
+import "@nutui/nutui/dist/packages/dialog/style";
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 const initTranslate = () =>
   useTranslate({
@@ -94,7 +95,7 @@ export default createDemo({
     };
 
     const baseClick = (): void => {
-      Dialog({
+      showDialog({
         title: translate('basic'),
         content: createVNode('span', { style: { color: 'red' } }, translate('content3')),
         onCancel,
@@ -103,7 +104,7 @@ export default createDemo({
     };
 
     const transparentClick = (): void => {
-      Dialog({
+      showDialog({
         overlayStyle: { background: 'rgba(0,0,0,0)' },
         title: translate('transparent'),
         content: 'Content',
@@ -113,7 +114,7 @@ export default createDemo({
     };
 
     const htmlClick = (): void => {
-      Dialog({
+      showDialog({
         title: translate('html'),
         content:
           "<p style='color:red'>html</p><img src='https://m.360buyimg.com/babel/jfs/t1/164410/22/25162/93384/616eac6cE6c711350/0cac53c1b82e1b05.gif' />",
@@ -123,7 +124,7 @@ export default createDemo({
     };
 
     const beforeCloseClick = (): void => {
-      Dialog({
+      showDialog({
         title: translate('beforeClose'),
         content: translate('content4'),
         onCancel,
@@ -139,14 +140,14 @@ export default createDemo({
     };
 
     const noTitleClick = () => {
-      Dialog({
+      showDialog({
         content: translate('noTitle'),
         onCancel,
         onOk
       });
     };
     const tipsClick = () => {
-      Dialog({
+      showDialog({
         title: translate('tips'),
         content: translate('content'),
         noCancelBtn: true,
@@ -155,7 +156,7 @@ export default createDemo({
       });
     };
     const verticalClick = () => {
-      Dialog({
+      showDialog({
         title: translate('tips'),
         content: translate('content1'),
         footerDirection: 'vertical',
@@ -172,7 +173,7 @@ export default createDemo({
     };
 
     const teleportClick = (teleport: string) => {
-      Dialog({
+      showDialog({
         teleport,
         title: 'teleport to ' + teleport,
         content: translate('content2'),

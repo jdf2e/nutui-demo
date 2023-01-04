@@ -1,11 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import List from '@/views/List.vue';
-import Cell from '@/views/Cell.vue';
-import Overlay from '@/views/Overlay.vue';
-import ImagePreview from '@/views/ImagePreview.vue';
-import Backtop from '@/views/Backtop.vue';
+import Toast from '@/views/Toast.vue';
 import Dialog from '@/views/Dialog.vue';
-import Range from '@/views/Range.vue';
+import ImagePreview from '@/views/ImagePreview.vue';
+import Notify from '@/views/Notify.vue';
 const routes = [{
     path: '/',
     name: 'index',
@@ -13,27 +11,9 @@ const routes = [{
   },
   
   {
-    path: '/cell',
-    name: 'cell',
-    component: Cell
-  },
-
-  {
-    path: '/overlay',
-    name: 'overlay',
-    component: Overlay
-  },
-
-  {
-    path: '/imagepreview',
-    name: 'imagepreview',
-    component: ImagePreview
-  },
-
-  {
-    path: '/backtop',
-    name: 'backtop',
-    component: Backtop
+    path: '/toast',
+    name: 'toast',
+    component: Toast
   },
 
   {
@@ -43,9 +23,15 @@ const routes = [{
   },
 
   {
-    path: '/range',
-    name: 'range',
-    component: Range
+    path: '/imagepreview',
+    name: 'imagepreview',
+    component: ImagePreview
+  },
+
+  {
+    path: '/notify',
+    name: 'notify',
+    component: Notify
   },
 ]
 const router = createRouter({
