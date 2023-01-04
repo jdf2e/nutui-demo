@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <nut-button @click="onClick">按钮</nut-button>
+    <nut-button type="primary" @click="onClick">按钮</nut-button>
     <nut-popup v-model:visible="showPopup">正文</nut-popup>
+    <nut-overlay></nut-overlay>
   </div>
 </template>
 

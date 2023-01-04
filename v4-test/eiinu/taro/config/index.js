@@ -3,10 +3,11 @@ import ComponentsPlugin from 'unplugin-vue-components/webpack';
 const NutUIResolver = () => {
   return (name) => {
     if (name.startsWith('Nut')) {
+      const partialName = name.slice(3);
       return {
-        name: name.slice(3),
-        from: '@nutui/nutui-taro',
-        sideEffects: `@nutui/nutui-taro/dist/packages/${name.slice(3).toLowerCase()}/style.cjs`
+        name: partialName,
+        from: `@nutui/nutui-taro`,
+        sideEffects: `@nutui/nutui-taro/dist/packages/${name.slice(3).toLowerCase()}/style`
       }
     }
   }
