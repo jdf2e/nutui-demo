@@ -3,7 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': ^7.8.0
   '@babel/runtime': ^7.7.7
-  '@nutui/nutui-taro': 4.0.0-beta.11
+  '@nutui/nutui': 4.0.0-beta.12
+  '@nutui/nutui-taro': 4.0.0-beta.12
   '@tarojs/cli': 3.5.10
   '@tarojs/components': 3.5.10
   '@tarojs/helper': 3.5.10
@@ -41,7 +42,8 @@ specifiers:
 
 dependencies:
   '@babel/runtime': 7.20.7
-  '@nutui/nutui-taro': 4.0.0-beta.11_vue@3.2.45
+  '@nutui/nutui': 4.0.0-beta.12
+  '@nutui/nutui-taro': 4.0.0-beta.12_vue@3.2.45
   '@tarojs/components': 3.5.10_vue@3.2.45
   '@tarojs/helper': 3.5.10
   '@tarojs/plugin-framework-vue3': 3.5.10_vue@3.2.45
@@ -1587,8 +1589,14 @@ packages:
       vue: 3.2.45
     dev: false
 
-  /@nutui/nutui-taro/4.0.0-beta.11_vue@3.2.45:
-    resolution: {integrity: sha512-piYQZW1lRAAdOqdtSNwushzuyF+BYwLSgpIeRjv84ILoXsguOwnpt6ujqjfDMhjA2MEFNElInf+dN/me1v2ipw==}
+  /@nutui/icons-vue/0.0.19:
+    resolution: {integrity: sha512-X6tzTWIiB/LpSwVI86NFBBlEFfGnhLwfB38I8sj6zwFtwNm8Mv/wMq+6rJbJ6frnwFIjLw54OXqYKmMrvDVQHg==}
+    dependencies:
+      vue: 3.2.45
+    dev: false
+
+  /@nutui/nutui-taro/4.0.0-beta.12_vue@3.2.45:
+    resolution: {integrity: sha512-7XXpBVioHIxWrUHqg5pp/G5EZKrOnHYAKDBlKzoq1GDMVD3K5QMaCNha36igl9bAElpbact35JAFmgp8iHzDNA==}
     dependencies:
       '@nutui/icons-vue-taro': 0.0.3
       '@tarojs/components': 3.5.6_vue@3.2.45
@@ -1599,6 +1607,13 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - vue
+    dev: false
+
+  /@nutui/nutui/4.0.0-beta.12:
+    resolution: {integrity: sha512-QtKV3g/FLvGgLnWfz7ikBocVvlVIDAaGh5FTgf/EsVGDD6ZrG9+rYUtCeMYfNh8d+a7ZJvPixfcvbTDJf5SZ+A==}
+    dependencies:
+      '@nutui/icons-vue': 0.0.19
+      sass: 1.57.1
     dev: false
 
   /@parcel/css/1.14.0:

@@ -9,11 +9,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     NutButton: typeof import('@nutui/nutui')['Button']
-    NutCell: typeof import('@nutui/nutui')['Cell']
-    NutInvoice: typeof import('@nutui/nutui')['Invoice']
-    NutPagination: typeof import('@nutui/nutui')['Pagination']
     Pagination: typeof import('./src/components/Pagination.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
   }
 }
