@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@nutui/nutui': 3.3.2-beta.0
+  '@nutui/nutui': 3.3.2
   '@vitejs/plugin-vue': ^4.0.0
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -10,7 +10,7 @@ specifiers:
   vue-tsc: ^1.0.11
 
 dependencies:
-  '@nutui/nutui': 3.3.2-beta.0
+  '@nutui/nutui': 3.3.2
   vite-plugin-style-import: 2.0.0_vite@4.0.3
   vue: 3.2.45
 
@@ -221,8 +221,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@nutui/nutui/3.3.2-beta.0:
-    resolution: {integrity: sha512-amBZnwS+P6a+y6ydHFHDvnueGGJ6cgZohCw9zcUpZ733HHaU00PhDUYNGDrS4pjWrfEiQGpgHymBYQUbJj9iBw==}
+  /@nutui/nutui/3.3.2:
+    resolution: {integrity: sha512-71t+7FK/nbspqRC8EJOaNcZhwCUkxlFcdEZfjptqPYeBEhsk/SzEwJLOiiDkMTBH9zfq5ptooFVvcNY6/vbiSQ==}
     dependencies:
       consola: 2.15.3
       sass: 1.57.1
