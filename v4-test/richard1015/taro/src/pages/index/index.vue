@@ -5,11 +5,10 @@
     </view>
     {{ msg }}
     <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)"
+      <nut-button loading type="primary" @click="handleClick('text', msg2, true)"
         >点我</nut-button
       >
     </view>
-    <button>123</button>
     <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
   </view>
 </template>

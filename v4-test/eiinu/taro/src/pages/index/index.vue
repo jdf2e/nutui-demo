@@ -9,7 +9,6 @@
         >点我</nut-button
       >
     </view>
-    <button>123</button>
     <nut-popup :style="{ padding: '30px 50px' }" v-model:visible="showPopup">正文</nut-popup>
     <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
   </view>

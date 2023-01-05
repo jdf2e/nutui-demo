@@ -1,4 +1,4 @@
-@import './base.css';
+@import "./base.css";
 
 #app {
   max-width: 1280px;
@@ -12,6 +12,12 @@ a,
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
 }
+#app .demo {
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: rgb(247, 248, 250);
+}
 
 @media (hover: hover) {
   a:hover {
@@ -24,5 +30,4 @@ a,
     display: flex;
     place-items: center;
   }
-
 }

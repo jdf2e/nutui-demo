@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main :style="{ paddingTop: '50px' }">
     <nut-cell>
       <nut-button type="primary">主要按钮</nut-button>
       <nut-button type="info">信息按钮</nut-button>

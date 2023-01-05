@@ -1,26 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { routes } from "../router/index";
+</script>
 
 <template>
   <main>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/button">button</RouterLink>
-        <RouterLink to="/price">price</RouterLink>
-        <RouterLink to="/layout">layout</RouterLink>
-        <RouterLink to="/actionSheet">ActionSheet</RouterLink>
-        <RouterLink to="/drag">drag</RouterLink>
-        <RouterLink to="/notify">notify</RouterLink>
-        <RouterLink to="/popup">popup</RouterLink>
-        <RouterLink to="/switch">switch</RouterLink>
-        <RouterLink to="/backtop">backtop</RouterLink>
+        <template v-for="item in routes" :key="item.path">
+          <RouterLink :to="item.path">{{ item.name }}</RouterLink>
+        </template>
       </nav>
     </div>
   </main>
 </template>
 <style lang="scss" scoped>
-
 .wrapper {
   padding: 10px 20px;
+  overflow: auto;
   > nav {
     a {
       display: block;

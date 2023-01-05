@@ -2,17 +2,7 @@ import { defineConfig } from 'vite'
 import path from 'path';
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
-const NutUIResolver = () => {
-  return (name: string) => {
-    if (name.startsWith('Nut')) {
-      return {
-        name: name.slice(3),
-        from: '@nutui/nutui',
-        sideEffects: `@nutui/nutui/dist/packages/${name.slice(3).toLowerCase()}/style`
-      }
-    }
-  }
-}
+import { NutUIResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({

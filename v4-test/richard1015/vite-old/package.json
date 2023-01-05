@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nutui/nutui": "^3.3.1",
+    "@nutui/nutui": "3.3.2",
     "vite-plugin-style-import": "^2.0.0",
     "vue": "^3.2.45"
   },
