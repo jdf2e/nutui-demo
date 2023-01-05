@@ -7,8 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Avatar: typeof import('./src/components/Avatar.vue')['default']
+    NutAvatar: typeof import('@nutui/nutui')['Avatar']
     NutButton: typeof import('@nutui/nutui')['Button']
+    NutPagination: typeof import('@nutui/nutui')['Pagination']
     Pagination: typeof import('./src/components/Pagination.vue')['default']
   }
 }

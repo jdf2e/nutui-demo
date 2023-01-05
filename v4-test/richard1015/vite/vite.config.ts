@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite';
-const NutUIStyleResolver = () => {
-  return (name: string) => {
+const NutUIResolver = () => {
+  return (name) => {
     if (name.startsWith('Nut')) {
+      const partialName = name.slice(3);
       return {
-        name: name.slice(3),
+        name: partialName,
         from: '@nutui/nutui',
-        sideEffects: `@nutui/nutui/dist/packages/${name.slice(3).toLowerCase()}/style`
+        sideEffects: `@nutui/nutui/dist/packages/${partialName.toLowerCase()}/style`
       }
     }
   }
@@ -18,7 +19,7 @@ export default defineConfig({
     vue(),
     Components({
       dts: true,
-      resolvers: [NutUIStyleResolver()],
+      resolvers: [NutUIResolver()],
     })
   ],
   css: {
