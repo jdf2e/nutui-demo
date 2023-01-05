@@ -1,17 +1,6 @@
 import ComponentsPlugin from 'unplugin-vue-components/webpack';
+import { NutUIResolver } from 'unplugin-vue-components/resolvers';
 
-const NutUIResolver = () => {
-  return (name) => {
-    if (name.startsWith('Nut')) {
-      const partialName = name.slice(3);
-      return {
-        name: partialName,
-        from: `@nutui/nutui-taro`,
-        sideEffects: `@nutui/nutui-taro/dist/packages/${name.slice(3).toLowerCase()}/style`
-      }
-    }
-  }
-}
 const config = {
   projectName: 'taro',
   date: '2022-12-30',
@@ -49,9 +38,7 @@ const config = {
   mini: {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(ComponentsPlugin({
-        // dirs: ['src/components'],
-        allowOverrides: true,
-        resolvers: [NutUIResolver()]
+        resolvers: [NutUIResolver({taro: true})]
       }))
     },
     postcss: {
