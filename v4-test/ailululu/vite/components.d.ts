@@ -7,14 +7,12 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Avatar: typeof import('./src/components/Avatar.vue')['default']
-    NutAvatar: typeof import('@nutui/nutui')['Avatar']
-    NutAvatarGroup: typeof import('@nutui/nutui')['AvatarGroup']
-    NutBadge: typeof import('@nutui/nutui')['Badge']
+    NutActionSheet: typeof import('@nutui/nutui')['ActionSheet']
     NutButton: typeof import('@nutui/nutui')['Button']
-    NutDialog: typeof import('@nutui/nutui')['Dialog']
-    NutPagination: typeof import('@nutui/nutui')['Pagination']
-    Pagination: typeof import('./src/components/Pagination.vue')['default']
+    NutCell: typeof import('@nutui/nutui')['Cell']
+    NutMenu: typeof import('@nutui/nutui')['Menu']
+    NutMenuItem: typeof import('@nutui/nutui')['MenuItem']
+    NutPopup: typeof import('@nutui/nutui')['Popup']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

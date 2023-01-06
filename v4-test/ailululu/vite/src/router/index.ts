@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:22
  * @LastEditors: sueRimn
- * @LastEditTime: 2022-12-29 17:30:47
+ * @LastEditTime: 2023-01-06 11:19:39
  */
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -50,6 +50,26 @@ const router = createRouter({
       path: "/menu",
       name: "menu",
       component: () => import("../views/Menu.vue"),
+    },
+    {
+      path: "/checkbox",
+      name: "checkbox",
+      component: () => import("../views/Checkbox.vue"),
+    },
+    {
+      path: "/actionsheet",
+      name: "actionsheet",
+      component: () => import("../views/Actionsheet.vue"),
+    },
+    {
+      path: "/drag",
+      name: "drag",
+      component: () => import("../views/Drag.vue"),
+    },
+    {
+      path: "/popup",
+      name: "popup",
+      component: () => import("../views/Popup.vue"),
     },
   ],
 });
