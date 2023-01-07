@@ -5,20 +5,24 @@
     </view>
     {{ msg }}
     <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)"
-        >点我</nut-button
+      <nut-button
+        loading
+        type="primary"
+        @click="handleClick('text', msg2, true)"
+        >点我1</nut-button
       >
     </view>
+    <nut-rate :value="3"></nut-rate>
     <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
   </view>
 </template>
 
 <script>
 import { reactive, toRefs } from "vue";
-
 export default {
   name: "Index",
-  components: {},
+  components: {
+  },
   setup() {
     const state = reactive({
       msg: "欢迎使用 NutUI3.0 开发小程序",
