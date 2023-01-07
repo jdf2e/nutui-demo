@@ -1,16 +1,19 @@
 <template>
   <nut-cell class="cell">
-      <nut-rate :icon="HeartFill" v-model="value" />
+      <nut-rate v-model="value" />
   </nut-cell>
 </template>
 <script lang="ts">
 import { ref } from 'vue';
-import { HeartFill } from '@nutui/icons-vue-taro';
 export default {
-  components: { HeartFill },
   setup() {
       const value = ref(3);
-      return { value, HeartFill }
+      return { value }
   }
 }
 </script>
+<style>
+page, :root {
+  --nut-rate-icon-color: green;
+}
+</style>
