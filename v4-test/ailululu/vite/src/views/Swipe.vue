@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2023-01-07 11:08:51
  * @LastEditors: sueRimn
- * @LastEditTime: 2023-01-07 14:49:49
+ * @LastEditTime: 2023-01-07 15:19:54
 -->
 <template>
   <div class="demo">
@@ -83,13 +83,6 @@
 <script lang="ts">
 import { toRefs, reactive, ref, onMounted } from "vue";
 
-interface Item {
-  name: string;
-  subname?: string;
-  color?: string;
-  disable?: boolean;
-  loading?: boolean;
-}
 export default {
   props: {},
   setup() {

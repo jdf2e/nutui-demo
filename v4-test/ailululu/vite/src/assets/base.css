@@ -50,6 +50,10 @@
   }
 }
 
+:root {
+  --nut-button-primary-background-color: green;
+}
+
 *,
 *::before,
 *::after {

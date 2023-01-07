@@ -8,11 +8,16 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     NutButton: typeof import('@nutui/nutui-taro')['Button']
+    NutCell: typeof import('@nutui/nutui-taro')['Cell']
     NutElevator: typeof import('@nutui/nutui-taro')['Elevator']
+    NutInputNumber: typeof import('@nutui/nutui-taro')['InputNumber']
     NutStep: typeof import('@nutui/nutui-taro')['Step']
     NutSteps: typeof import('@nutui/nutui-taro')['Steps']
+    NutSwipe: typeof import('@nutui/nutui-taro')['Swipe']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
+    NutSwitch: typeof import('@nutui/nutui-taro')['Switch']
+    NutVideo: typeof import('@nutui/nutui-taro')['Video']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
