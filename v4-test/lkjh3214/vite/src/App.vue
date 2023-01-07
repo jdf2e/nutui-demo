@@ -26,6 +26,7 @@ import { RouterLink, RouterView } from "vue-router";
   }
 }
 .main_content {
+  padding-top: 50px;
   overflow: auto;
 }
 </style>

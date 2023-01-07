@@ -29,6 +29,7 @@ declare module '@vue/runtime-core' {
     NutMenuItem: typeof import('@nutui/nutui')['MenuItem']
     NutNotify: typeof import('@nutui/nutui')['Notify']
     NutPagination: typeof import('@nutui/nutui')['Pagination']
+    NutPicker: typeof import('@nutui/nutui')['Picker']
     NutPopup: typeof import('@nutui/nutui')['Popup']
     NutPrice: typeof import('@nutui/nutui')['Price']
     NutRange: typeof import('@nutui/nutui')['Range']
