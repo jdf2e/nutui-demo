@@ -6,6 +6,7 @@ import ImagePreview from '@/views/ImagePreview.vue';
 import Backtop from '@/views/Backtop.vue';
 import Dialog from '@/views/Dialog.vue';
 import Range from '@/views/Range.vue';
+import Grid from '@/views/Grid.vue';
 const routes = [{
     path: '/',
     name: 'index',
@@ -46,6 +47,12 @@ const routes = [{
     path: '/range',
     name: 'range',
     component: Range
+  },
+
+  {
+    path: '/grid',
+    name: 'grid',
+    component: Grid
   },
 ]
 const router = createRouter({

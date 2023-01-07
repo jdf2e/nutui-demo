@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:48
  * @LastEditors: sueRimn
- * @LastEditTime: 2022-12-29 17:31:33
+ * @LastEditTime: 2023-01-07 14:13:39
 -->
 <script setup lang="ts"></script>
 
@@ -19,6 +19,13 @@
         <RouterLink to="/picker">picker</RouterLink>
         <RouterLink to="/circleprogress">circleprogress</RouterLink>
         <RouterLink to="/menu">menu</RouterLink>
+        <RouterLink to="/checkbox">checkbox</RouterLink>
+        <RouterLink to="/actionSheet">actionSheet</RouterLink>
+        <RouterLink to="/popup">popup</RouterLink>
+        <RouterLink to="/elevator">elevator</RouterLink>
+        <RouterLink to="/steps">steps</RouterLink>
+        <RouterLink to="/swiper">swiper</RouterLink>
+        <RouterLink to="/swipe">swipe</RouterLink>
       </nav>
     </div>
   </main>
