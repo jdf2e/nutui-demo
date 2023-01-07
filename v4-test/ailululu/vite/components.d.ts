@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     NutButton: typeof import('@nutui/nutui')['Button']
     NutCell: typeof import('@nutui/nutui')['Cell']
     NutElevator: typeof import('@nutui/nutui')['Elevator']
+    NutInputNumber: typeof import('@nutui/nutui')['InputNumber']
     NutMenu: typeof import('@nutui/nutui')['Menu']
     NutMenuItem: typeof import('@nutui/nutui')['MenuItem']
     NutPopup: typeof import('@nutui/nutui')['Popup']
@@ -19,6 +20,7 @@ declare module '@vue/runtime-core' {
     NutSwipe: typeof import('@nutui/nutui')['Swipe']
     NutSwiper: typeof import('@nutui/nutui')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui')['SwiperItem']
+    NutSwitch: typeof import('@nutui/nutui')['Switch']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
