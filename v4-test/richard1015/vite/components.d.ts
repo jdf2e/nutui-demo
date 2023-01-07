@@ -10,5 +10,7 @@ declare module '@vue/runtime-core' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     NutButton: typeof import('@nutui/nutui')['Button']
     Pagination: typeof import('./src/components/Pagination.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }
