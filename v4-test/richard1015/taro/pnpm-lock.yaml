@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': ^7.8.0
   '@babel/runtime': ^7.7.7
   '@nutui/nutui': 4.0.0-beta.12
-  '@nutui/nutui-taro': 4.0.0-beta.15
+  '@nutui/nutui-taro': 4.0.0-beta.16
   '@tarojs/cli': 3.5.10
   '@tarojs/components': 3.5.10
   '@tarojs/helper': 3.5.10
@@ -44,7 +44,7 @@ specifiers:
 dependencies:
   '@babel/runtime': 7.20.7
   '@nutui/nutui': 4.0.0-beta.12
-  '@nutui/nutui-taro': 4.0.0-beta.15
+  '@nutui/nutui-taro': 4.0.0-beta.16
   '@tarojs/components': 3.5.10_vue@3.2.45
   '@tarojs/helper': 3.5.10
   '@tarojs/plugin-framework-vue3': 3.5.10_vue@3.2.45
@@ -1586,8 +1586,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.14.0
 
-  /@nutui/icons-vue-taro/0.0.4:
-    resolution: {integrity: sha512-3x1nVq6GfWRYocT5FfAwBGRZXgaaizKnnjm67SQu0ctinyJDj2pPPX2wMJ3hoU2JdceHGfgkZNH+i2wRFPsAZQ==}
+  /@nutui/icons-vue-taro/0.0.5:
+    resolution: {integrity: sha512-hTCfiC0Yxfn2JfYNwNKakovwuNDfy3JliOdUfOTe0OKIERcS488aAm3ppZ8WR6Rt9mXq6nI+1EbKIAZDE64Pqg==}
     dev: false
 
   /@nutui/icons-vue/0.0.19:
@@ -1596,10 +1596,10 @@ packages:
       vue: 3.2.45
     dev: false
 
-  /@nutui/nutui-taro/4.0.0-beta.15:
-    resolution: {integrity: sha512-QF7/MGiew9Go87zThjk7QSFsrVGb65ITNuJj30/e8IcT3EKFhvdXsp+Jen3pYV6MCAHVUTMYBH2qfxMRms55Lg==}
+  /@nutui/nutui-taro/4.0.0-beta.16:
+    resolution: {integrity: sha512-09JQIrCnWlTuvgNxdM0v9wS/tp9BN1TdLtzH9Pm07jJ3Jm2lQVWLOubv+oxMZYSt7p3Snw7LhcADu6XtbQcOdg==}
     dependencies:
-      '@nutui/icons-vue-taro': 0.0.4
+      '@nutui/icons-vue-taro': 0.0.5
       sass: 1.57.1
     dev: false
 
