@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:22
  * @LastEditors: sueRimn
- * @LastEditTime: 2023-01-06 17:51:04
+ * @LastEditTime: 2023-01-07 14:13:55
  */
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -75,6 +75,21 @@ const router = createRouter({
       path: "/elevator",
       name: "elevator",
       component: () => import("../views/Elevator.vue"),
+    },
+    {
+      path: "/steps",
+      name: "steps",
+      component: () => import("../views/Steps.vue"),
+    },
+    {
+      path: "/swiper",
+      name: "swiper",
+      component: () => import("../views/Swiper.vue"),
+    },
+    {
+      path: "/swipe",
+      name: "swipe",
+      component: () => import("../views/Swipe.vue"),
     },
   ],
 });
