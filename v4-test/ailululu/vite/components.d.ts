@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     NutActionSheet: typeof import('@nutui/nutui')['ActionSheet']
     NutButton: typeof import('@nutui/nutui')['Button']
     NutCell: typeof import('@nutui/nutui')['Cell']
+    NutElevator: typeof import('@nutui/nutui')['Elevator']
     NutMenu: typeof import('@nutui/nutui')['Menu']
     NutMenuItem: typeof import('@nutui/nutui')['MenuItem']
     NutPopup: typeof import('@nutui/nutui')['Popup']

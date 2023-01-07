@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:22
  * @LastEditors: sueRimn
- * @LastEditTime: 2023-01-06 11:19:39
+ * @LastEditTime: 2023-01-06 17:51:04
  */
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -70,6 +70,11 @@ const router = createRouter({
       path: "/popup",
       name: "popup",
       component: () => import("../views/Popup.vue"),
+    },
+    {
+      path: "/elevator",
+      name: "elevator",
+      component: () => import("../views/Elevator.vue"),
     },
   ],
 });
