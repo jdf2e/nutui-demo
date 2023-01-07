@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@nutui/icons-vue': ^0.0.19
-  '@nutui/nutui': 4.0.0-beta.12
+  '@nutui/icons-vue': 0.0.22
+  '@nutui/nutui': 4.0.0-beta.15
   '@vitejs/plugin-vue': ^4.0.0
   typescript: ^4.9.3
   unplugin-vue-components: ^0.22.12
@@ -11,11 +11,11 @@ specifiers:
   vue-tsc: ^1.0.11
 
 dependencies:
-  '@nutui/nutui': 4.0.0-beta.12
+  '@nutui/nutui': 4.0.0-beta.15
   vue: 3.2.45
 
 devDependencies:
-  '@nutui/icons-vue': 0.0.19
+  '@nutui/icons-vue': 0.0.22
   '@vitejs/plugin-vue': 4.0.0_vite@4.0.3+vue@3.2.45
   typescript: 4.9.4
   unplugin-vue-components: 0.22.12_vue@3.2.45
@@ -274,15 +274,18 @@ packages:
       fastq: 1.14.0
     dev: true
 
-  /@nutui/icons-vue/0.0.19:
-    resolution: {integrity: sha512-X6tzTWIiB/LpSwVI86NFBBlEFfGnhLwfB38I8sj6zwFtwNm8Mv/wMq+6rJbJ6frnwFIjLw54OXqYKmMrvDVQHg==}
-    dependencies:
-      vue: 3.2.45
+  /@nutui/icons-vue/0.0.20:
+    resolution: {integrity: sha512-Y+lExkoWwALZr3QCZZgXV0/nxrYx+BUbqUgKJMH4WEp+vS6nCPpNiF7+kCcoAYt5LCrML7UNirYZdldvHEd67Q==}
+    dev: false
 
-  /@nutui/nutui/4.0.0-beta.12:
-    resolution: {integrity: sha512-QtKV3g/FLvGgLnWfz7ikBocVvlVIDAaGh5FTgf/EsVGDD6ZrG9+rYUtCeMYfNh8d+a7ZJvPixfcvbTDJf5SZ+A==}
+  /@nutui/icons-vue/0.0.22:
+    resolution: {integrity: sha512-Hm3zYniKWdCxBTvylZ983muWsfG1efO1vwmfZFnjxjUEgR7wvrzK+aBCuYCBPytxqJ4JScKOKYTAGzrBa1HvHA==}
+    dev: true
+
+  /@nutui/nutui/4.0.0-beta.15:
+    resolution: {integrity: sha512-LarjxHjC6SQgQXM7z2E6HOqNIFBDJoIGiTh51OaOZqjPspKIOVz5ujdctBzIPNxo7UNyWMf7/MgDeNTppfErkQ==}
     dependencies:
-      '@nutui/icons-vue': 0.0.19
+      '@nutui/icons-vue': 0.0.20
       sass: 1.57.1
     dev: false
 

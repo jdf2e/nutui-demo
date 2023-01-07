@@ -13,16 +13,31 @@
         <nut-audio-operate type="mute"></nut-audio-operate>
       </div>
     </nut-audio>
+
+    <nut-price :price="0" size="small" :need-symbol="false" :thousands="true" />
+    <nut-price :price="0" size="normal" :need-symbol="false" :thousands="true" />
+    <nut-price :price="0" size="large" :need-symbol="false" :thousands="true" />
+    <nut-price :price="999.4999" :decimal-digits="0" size="normal" :need-symbol="true" :thousands="true" />
+    <nut-price :price="price" :decimal-digits="3" :need-symbol="true" :thousands="true" />
+
+
 </template>
 <script lang="ts">
-import { reactive, toRefs } from 'vue';
+import { reactive, toRefs, ref } from 'vue';
 export default {
   setup() {
     const data = reactive({
       muted: false,
       autoplay: false
     });
+
+    const price = ref(0);
+            setInterval(() => {
+                price.value = Math.random()*10000000;
+            }, 1000);
+
     return {
+        price,
       ...toRefs(data)
     };
   }

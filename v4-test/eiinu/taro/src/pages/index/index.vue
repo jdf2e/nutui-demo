@@ -1,56 +1,68 @@
 <template>
-  <view class="index">
-    <view>
-      <img src="" alt="" />
-    </view>
-    {{ msg }}
-    <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)"
-        >点我</nut-button
-      >
-    </view>
-    <nut-popup :style="{ padding: '30px 50px' }" v-model:visible="showPopup">正文</nut-popup>
-    <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
-  </view>
+  <div class="demo">
+    <h2>基础用法</h2>
+    <nut-config-provider :theme-vars="{
+      'list-item-margin': '0 0 30px 0'
+    }"> 
+      <nut-list :height="50" :listData="count" @scroll-bottom="handleScroll">
+        <template v-slot="{ item }">
+          <div class="list-item" @click="onClick(item)">
+            {{ item }}
+          </div>
+        </template>
+      </nut-list>
+    </nut-config-provider>
+  </div>
 </template>
-
-<script>
-import { reactive, toRefs } from "vue";
-
+<script lang="ts">
+import { onMounted, reactive, toRefs } from 'vue';
 export default {
-  name: "Index",
-  components: {},
+  props: {},
   setup() {
     const state = reactive({
-      msg: "欢迎使用 NutUI3.0 开发小程序",
-      msg2: "你成功了～",
-      type: "text",
-      show: false,
-      cover: false,
-      showPopup: false,
+      count: new Array(100).fill(0)
     });
 
-    const handleClick = (type, msg, cover = false) => {
-      state.show = true;
-      state.msg2 = msg;
-      state.type = type;
-      state.cover = cover;
-      state.showPopup = true;
+    const handleScroll = () => {
+      let arr = new Array(100).fill(0);
+      const len = state.count.length;
+      state.count = state.count.concat(arr.map((item: number, index: number) => len + index + 1));
     };
 
-    return {
-      ...toRefs(state),
-      handleClick,
-    };
-  },
+    onMounted(() => {
+      state.count = state.count.map((item: number, index: number) => index + 1);
+    })
+
+    const onClick = (item: any) => {
+      console.log(item);
+    }
+
+    return { ...toRefs(state), handleScroll, onClick };
+  }
 };
 </script>
-
 <style lang="scss">
-.index {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+body {
+  width: 100%;
+  height: 100vh;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+.demo {
+  height: 100%;
+  .nut-cell {
+    height: 100%;
+  }
+  .list-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f4a8b6;
+    border-radius: 10px;
+  }
 }
 </style>

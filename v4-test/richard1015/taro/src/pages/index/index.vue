@@ -5,7 +5,7 @@
     </view>
     {{ msg }}
     <view class="btn">
-      <nut-button loading type="primary" @click="handleClick('text', msg2, true)"
+      <nut-button type="primary" @click="handleClick('text', msg2, true)"
         >点我</nut-button
       >
     </view>
