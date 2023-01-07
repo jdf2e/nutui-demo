@@ -5,6 +5,7 @@
     "ImagePreview",
     "Backtop",
     "Dialog",
-    "Range"
+    "Range",
+    "Grid"
   ]
 }

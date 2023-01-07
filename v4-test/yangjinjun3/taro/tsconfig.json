@@ -22,6 +22,9 @@
       "node_modules/@types"
     ]
   },
-  "include": ["./src", "./types"],
+  "include": [
+    "./src",
+    "components.d.ts"
+  ],
   "compileOnSave": false
 }
