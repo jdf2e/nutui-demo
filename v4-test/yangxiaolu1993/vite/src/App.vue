@@ -1,14 +1,17 @@
 <script setup lang="ts">
 const themeVars = {
-  buttonBorderRadius: '10px'
+  timeselectTitleFontSize: '10px',
+  timeselectTitleColor:'#ff0',
+  timeselectTitleWidth:'80px',
+  timeselectTitleHeight:'100px'
 };
 </script>
 
 <template>
   <div id="app">
-    <!-- <nut-config-provider :theme-vars="themeVars"> -->
+    <nut-config-provider :theme-vars="themeVars">
       <router-view/>
-    <!-- </nut-config-provider> -->
+    </nut-config-provider>
   </div>
 
 </template>
