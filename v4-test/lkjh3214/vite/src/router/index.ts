@@ -53,7 +53,7 @@ export const routes = [
   {
     path: "/range",
     name: "range",
-    component: () => import("../views/RangeView.vue"),
+    component: () => import("../views/RangeView2.vue"),
   },
   {
     path: "/CircleProgress",
@@ -79,6 +79,11 @@ export const routes = [
     path: "/CheckboxView",
     name: "CheckboxView",
     component: () => import("../views/CheckboxView.vue"),
+  },
+  {
+    path: "/TestView",
+    name: "TestView",
+    component: () => import("../views/TestView.vue"),
   },
 ];
 const router = createRouter({
