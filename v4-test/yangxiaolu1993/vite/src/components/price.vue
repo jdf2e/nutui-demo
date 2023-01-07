@@ -36,6 +36,7 @@ export default {
                 price.value = Math.random()*10000000;
             }, 1000);
 
+            console.log(11)
     return {
         price,
       ...toRefs(data)

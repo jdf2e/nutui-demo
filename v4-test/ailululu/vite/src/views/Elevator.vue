@@ -40,7 +40,7 @@ interface Item {
 export default {
   props: {},
   setup() {
-    const elevator = ref<HTMLElement>();
+    const elevator = ref();
     const state = reactive({
       acceptKey: "num",
       dataList: [
@@ -197,13 +197,14 @@ export default {
 
     const clickIndex = () => {
       console.log("scrollTo");
-      elevator.scrollTo(0);
+      elevator.value.scrollTo(0);
     };
 
     return {
       ...toRefs(state),
       clickItem,
       clickIndex,
+      elevator,
     };
   },
 };
