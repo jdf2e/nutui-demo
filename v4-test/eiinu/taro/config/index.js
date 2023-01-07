@@ -1,6 +1,21 @@
 import ComponentsPlugin from 'unplugin-vue-components/webpack';
-import { NutUIResolver } from 'unplugin-vue-components/resolvers';
-
+function NutUIResolver(options = {}) {
+  const { taro = false } = options
+  const packageName = taro ? '@nutui/nutui-taro' : '@nutui/nutui'
+  return {
+    type: 'component',
+    resolve: (name) => {
+      if (name.startsWith('Nut')) {
+        const partialName = name.slice(3)
+        return {
+          name: partialName,
+          from: packageName,
+          sideEffects: `${packageName}/dist/packages/${partialName.toLowerCase()}/style`,
+        }
+      }
+    },
+  }
+}
 const config = {
   projectName: 'taro',
   date: '2022-12-30',
@@ -64,6 +79,11 @@ const config = {
     }
   },
   h5: {
+    webpackChain(chain) {
+      chain.plugin('unplugin-vue-components').use(ComponentsPlugin({
+        resolvers: [NutUIResolver({taro: true})]
+      }))
+    },
     publicPath: '/',
     staticDirectory: 'static',
     esnextModules: ['nutui-taro'],
