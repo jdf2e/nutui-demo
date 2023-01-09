@@ -59,6 +59,75 @@
       <span class="nut-swiper-btns__left" @click="handlePrev"> left </span>
       <span class="nut-swiper-btns__left" @click="handleNext"> right </span>
     </view>
+    <nut-swipe>
+      <nut-cell round-radius="0" desc="左滑删除" />
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe disabled>
+      <nut-cell round-radius="0" desc="禁止滑动" />
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe>
+      <template #left>
+        <nut-button shape="square" style="height: 100%" type="success"
+          >选择</nut-button
+        >
+      </template>
+      <nut-cell round-radius="0" desc="左滑右滑都可以哦" />
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+        <nut-button shape="square" style="height: 100%" type="info"
+          >收藏</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe name="last" ref="refSwipe" @open="open" @close="close">
+      <nut-cell title="异步打开关闭">
+        <template v-slot:link>
+          <nut-switch
+            v-model="checked"
+            @change="changSwitch"
+            active-text="开"
+            inactive-text="关"
+          />
+        </template>
+      </nut-cell>
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe>
+      <template #left>
+        <nut-button shape="square" style="height: 100%" type="success"
+          >选择</nut-button
+        >
+      </template>
+      <nut-cell title="商品描述">
+        <template v-slot:link>
+          <nut-input-number v-model="number" />
+        </template>
+      </nut-cell>
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+        <nut-button shape="square" style="height: 100%" type="info"
+          >收藏</nut-button
+        >
+      </template>
+    </nut-swipe>
   </view>
 </template>
 
@@ -69,7 +138,7 @@ export default {
   components: {},
   setup() {
     const elevator = ref(null);
-    const swiper = ref(null);
+    const swiper = ref<HTMLElement>();
     const state = reactive({
       acceptKey: "num",
       dataList: [
@@ -243,11 +312,11 @@ export default {
       }, 3000);
     });
 
-    const clickItem = (key: string, item: any) => {
+    const clickItem = (key, item) => {
       console.log(key, JSON.stringify(item));
     };
 
-    const clickIndex = (key: string) => {
+    const clickIndex = (key) => {
       console.log(key);
     };
 
@@ -256,7 +325,7 @@ export default {
       elevator.value.scrollTo(0);
     };
 
-    const handleStep = (params: any) => {
+    const handleStep = (params) => {
       if (state[params] >= 3) {
         state[params] = 1;
       } else {
@@ -264,11 +333,11 @@ export default {
       }
     };
 
-    const handleClickStep = (index: number) => {
+    const handleClickStep = (index) => {
       console.log(index);
     };
 
-    const change = (index: number) => {
+    const change = (index) => {
       console.log("swiper", index);
       state.current = index + 1;
     };
@@ -279,6 +348,26 @@ export default {
     const handleNext = () => {
       swiper.value.next();
     };
+
+    const number = ref(0);
+    const refSwipe = ref<HTMLElement>();
+    const checked = ref(false);
+    const changSwitch = (value) => {
+      if (value) {
+        refSwipe.value?.open("left");
+      } else {
+        refSwipe.value?.close();
+      }
+    };
+    const open = (obj) => {
+      console.log('open', obj);
+      checked.value = true;
+    };
+    const close = (obj) => {
+      console.log('close', obj);
+      checked.value = false;
+    };
+
 
     return {
       elevator,
@@ -292,6 +381,12 @@ export default {
       swiper,
       handlePrev,
       handleNext,
+      checked,
+      changSwitch,
+      refSwipe,
+      open,
+      close,
+      number,
     };
   },
 };
@@ -303,6 +398,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  overflow-x: hidden;
 }
 .nut-swiper-item {
   line-height: 150px;

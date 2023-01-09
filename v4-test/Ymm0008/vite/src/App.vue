@@ -1,11 +1,29 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
 import { ref } from "vue";
-const switchChecked = ref(false);
 const themeVars = {
-  primaryColor: "#008000",
-  primaryColorEnd: "#008000",
-  backtopBorderColor: "red",
+  progressInnerBackgroundColor: "green",
+  // progressInsidetextBackground: "green",
+  // progressOuterBackgroundColor: "green",
+  // progressOuterBorderRadius: "0",
+  // progressInsidetextBorderRadius: "0",
+  // progressInsidetextPadding: "20px",
+  // progressInsidetextTop: "30px", 无效
+  // progressSmallHeight: "50px",
+  // progressSmallTextFontSize: "12px",
+  // progressSmallTextLineHeight: "100px",
+  // progessSmallTextPadding: "30px", 无效
+  // progessSmallTextTop: "-100%",无效
+  // progressBaseHeight: "100px",
+  // progressBaseTextFontSize: "10px",
+  // progressBaseTextLineHeight: "130px",
+  // progressBaseTextPadding: "20px",
+  // progressBaseTextTop: "13px",无效
+  // progressLargeHeight: "100px",
+  // progressLargeTextFontSize: "20px",
+  // progressLargeTextLineHeight: "180px",
+  // progressLargeTextPadding: "33px",
+  // progressLargeTextTop: "20px",
 };
 </script>
 
@@ -18,11 +36,6 @@ const themeVars = {
     />
   </div>
   <nut-config-provider :theme-vars="themeVars">
-    <nut-cell title="切换暗黑">
-      <template v-slot:link>
-        <nut-switch v-model="switchChecked" @change="switchChange" />
-      </template>
-    </nut-cell>
     <HelloWorld />
   </nut-config-provider>
 </template>

@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:22
  * @LastEditors: sueRimn
- * @LastEditTime: 2023-01-07 14:13:55
+ * @LastEditTime: 2023-01-07 16:14:32
  */
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -90,6 +90,16 @@ const router = createRouter({
       path: "/swipe",
       name: "swipe",
       component: () => import("../views/Swipe.vue"),
+    },
+    {
+      path: "/video",
+      name: "video",
+      component: () => import("../views/Video.vue"),
+    },
+    {
+      path: "/infiniteLoading",
+      name: "infiniteLoading",
+      component: () => import("../views/InfiniteLoading.vue"),
     },
   ],
 });
