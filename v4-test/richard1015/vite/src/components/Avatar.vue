@@ -83,15 +83,4 @@ import { My } from "@nutui/icons-vue";
   </nut-avatar-group>
 </template>
 
-<style scoped>
-.nut-avatar img {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-}
-.nut-avatar {
-  line-height: normal;
-  background-color: transparent !important;
-  overflow: auto;
-}
-</style>
+<style scoped></style>
