@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "taro",
   "description": "taro",
-  "appid": "touristappid",
+  "appid": "wxf2b976b67dab3882",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -17,7 +17,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "2.29.0",
+  "libVersion": "2.29.1",
   "srcMiniprogramRoot": "dist/",
   "packOptions": {
     "ignore": [],

@@ -10,6 +10,8 @@ import Timeselect from '../components/timeselect.vue'
 import skeleton from '../components/skeleton.vue'
 import sidenavbar from '../components/sidenavbar.vue'
 import cascader from '../components/cascader.vue'
+import sticky from '../components/sticky.vue'
+import demo from '../components/demo.vue'
 
 const router = createRouter({
     history:createWebHistory(),
@@ -56,6 +58,12 @@ const router = createRouter({
         },{
             path:'/cascader',
             component:cascader
+        },{
+            path:'/sticky',
+            component:sticky
+        },{
+            path:'/demo',
+            component:demo
         }
     ]
 })
