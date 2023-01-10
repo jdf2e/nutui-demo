@@ -1,68 +1,43 @@
 <template>
   <div class="demo">
-    <h2>基础用法</h2>
-    <nut-config-provider :theme-vars="{
-      'list-item-margin': '0 0 30px 0'
-    }"> 
-      <nut-list :height="50" :listData="count" @scroll-bottom="handleScroll">
-        <template v-slot="{ item }">
-          <div class="list-item" @click="onClick(item)">
-            {{ item }}
-          </div>
-        </template>
-      </nut-list>
-    </nut-config-provider>
+    <div style="height: 200px"></div>
+    <nut-badge>
+      <template #icons>
+        <Check color="#ffffff" width="12px" height="12px"></Check>
+      </template>
+      <nut-avatar shape="square"></nut-avatar>
+    </nut-badge>
+    <nut-badge>
+      <template #icons>
+        <Link color="#ffffff" width="12px" height="12px"></Link>
+      </template>
+      <nut-avatar shape="square"></nut-avatar>
+    </nut-badge>
+    <nut-badge>
+      <template #icons>
+        <Download color="#ffffff" width="12px" height="12px"></Download>
+      </template>
+      <nut-avatar shape="square"></nut-avatar>
+    </nut-badge>
   </div>
 </template>
-<script lang="ts">
-import { onMounted, reactive, toRefs } from 'vue';
-export default {
-  props: {},
-  setup() {
-    const state = reactive({
-      count: new Array(100).fill(0)
-    });
 
-    const handleScroll = () => {
-      let arr = new Array(100).fill(0);
-      const len = state.count.length;
-      state.count = state.count.concat(arr.map((item: number, index: number) => len + index + 1));
-    };
-
-    onMounted(() => {
-      state.count = state.count.map((item: number, index: number) => index + 1);
-    })
-
-    const onClick = (item: any) => {
-      console.log(item);
-    }
-
-    return { ...toRefs(state), handleScroll, onClick };
-  }
-};
+<script setup>
+import { Check, Link, Download } from '@nutui/icons-vue-taro';
 </script>
-<style lang="scss">
-body {
-  width: 100%;
-  height: 100vh;
+
+<style lang="scss" scoped>
+.demo{
+  padding: 30px 17px 0 17px;
 }
-#app {
-  width: 100%;
-  height: 100%;
+.nut-badge {
+  margin-right: 40px;
 }
-.demo {
-  height: 100%;
-  .nut-cell {
-    height: 100%;
-  }
-  .list-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #f4a8b6;
-    border-radius: 10px;
-  }
+.nut-icon {
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+  line-height: 12px;
 }
 </style>
+

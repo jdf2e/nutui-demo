@@ -4,6 +4,9 @@ export default defineAppConfig({
     'pages/commen/index',
     'pages/watermark/index',
     'pages/trendArrow/index',
+    'pages/tour/index',
+    'pages/noticebar/index',
+    'pages/searchbar/index',
 
   ],
   window: {

@@ -11,9 +11,7 @@
     v-model:visible="showTour"
     :steps="steps"
     location="bottom"
-    :offset="[0, 0]"
-    maskWidth="50"
-    maskHeight="50"
+    :offset="[10, 10]"
   ></nut-tour>
 
   <nut-cell title="点击试试" @click="showTour2 = true">
@@ -35,7 +33,6 @@
     bgColor="#f00"
     theme="dark"
     location="bottom-start"
-    :offset="[20, 28]"
   ></nut-tour>
 </template>
 
@@ -71,8 +68,6 @@ export default {
         {
           content: '这里换成关注和粉丝啦，听歌时长点击头像可见',
           target: 'target6',
-          popoverOffset: [40, 12],
-          arrowOffset: -36
         }
       ]
     });

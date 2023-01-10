@@ -1,31 +1,76 @@
 <template>
-  <nut-picker
-    :columns="columns"
-    title="城市选择"
-    @confirm="confirm"
-  ></nut-picker>
+  <nut-countup
+    ref="countupMachineDom"
+    type="machine"
+    :machine-num="machineNum"
+    :machine-prize-num="5"
+    :machine-prize-level="prizeLevel"
+    :custom-bg-img="bgImage"
+    :num-width="100"
+    :num-height="100"
+    :during="3000"
+    @scroll-end="scrollAniEnd"
+  >
+  </nut-countup>
+  <div class="btnBtn">
+    <nut-button type="danger" @click="startRole" :disabled="startFlag">
+      中奖
+    </nut-button>
+    <nut-button type="danger" @click="startRole2" :disabled="startFlag">
+      不中奖
+    </nut-button>
+  </div>
 </template>
-<script lang="ts">
+<script>
 import { ref } from "vue";
-import { showToast } from "@nutui/nutui";
-import "@nutui/nutui/dist/packages/toast/style";
 export default {
-  setup(props) {
-    const columns = ref([
-      { text: "南京市", value: "NanJing" },
-      { text: "无锡市", value: "WuXi" },
-      { text: "海北藏族自治区", value: "ZangZu" },
-      { text: "北京市", value: "BeiJing" },
-      { text: "连云港市", value: "LianYunGang" },
-      { text: "浙江市", value: "ZheJiang" },
-      { text: "江苏市", value: "JiangSu" },
-    ]);
-
-    const confirm = ({ selectedValue, selectedOptions }) => {
-      showToast.text(selectedOptions.map((val: any) => val.text).join(","));
+  setup() {
+    const countupMachineDom = ref(null);
+    const startFlag = ref(false);
+    const machineNum = ref(3);
+    const bgImage = ref(
+      "https://img10.360buyimg.com/imagetools/jfs/t1/121466/20/6784/28830/5f06e7f2Edbb8998c/9bdd9e7b24dff9fe.png"
+    );
+    const prizeLevel = ref(0);
+    const startRole = () => {
+      prizeLevel.value = Math.floor(Math.random() * 5 + 1);
+      startFlag.value = true;
+      countupMachineDom.value.machineLuck();
+    };
+    const startRole2 = () => {
+      prizeLevel.value = -1;
+      startFlag.value = true;
+      setTimeout(() => {
+        countupMachineDom.value.machineLuck();
+      }, 500);
     };
 
-    return { columns, confirm };
+    const scrollAniEnd = () => {
+      console.log("恭喜中奖！！！");
+      setTimeout(() => {
+        startFlag.value = false;
+      }, 300);
+    };
+
+    return {
+      countupMachineDom,
+      startFlag,
+      machineNum,
+      bgImage,
+      prizeLevel,
+      startRole,
+      startRole2,
+      scrollAniEnd,
+    };
   },
 };
 </script>
+
+<style lang="scss">
+.btnBtn {
+  text-align: center;
+  .nut-button {
+    margin-right: 20px;
+  }
+}
+</style>
