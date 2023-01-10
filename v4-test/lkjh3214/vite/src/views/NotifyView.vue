@@ -20,7 +20,7 @@
     >
   </nut-cell-group>
   <nut-cell-group title="组件调用">
-    <nut-cell is-Link @click="showNotify">组件调用</nut-cell>
+    <nut-cell is-Link @click="_showNotify">组件调用</nut-cell>
     <nut-notify v-model:visible="show" :duration="2000">
       <span>Content</span>
     </nut-notify>
@@ -28,11 +28,11 @@
 </template>
 <script lang="ts">
 import { ref } from "vue";
-import { Notify } from "@nutui/nutui";
+import { showNotify } from "@nutui/nutui";
 export default {
   setup() {
     const baseNotify = (msg: string) => {
-      Notify.text(msg, {
+      showNotify.text(msg, {
         onClose: () => {
           console.log("close");
         },
@@ -42,28 +42,28 @@ export default {
       });
     };
     const primaryNotify = (msg: string) => {
-      Notify.primary(msg);
+      showNotify.primary(msg);
     };
     const successNotify = (msg: string) => {
-      Notify.success(msg);
+      showNotify.success(msg);
     };
     const errorNotify = (msg: string) => {
-      Notify.danger(msg);
+      showNotify.danger(msg);
     };
     const warningNotify = (msg: string) => {
-      Notify.warn(msg);
+      showNotify.warn(msg);
     };
     const cusBgNotify = (msg: string) => {
-      Notify.text(msg, { color: "#ad0000", background: "#ffe1e1" });
+      showNotify.text(msg, { color: "#ad0000", background: "#ffe1e1" });
     };
     const timeNotify = (msg: string) => {
-      Notify.text(msg, { duration: 10000 });
+      showNotify.text(msg, { duration: 10000 });
     };
     const positionNotify = (msg: string) => {
-      Notify.text(msg, { position: "bottom" });
+      showNotify.text(msg, { position: "bottom" });
     };
     const show = ref(false);
-    const showNotify = () => {
+    const _showNotify = () => {
       console.log("showNotify");
       show.value = true;
     };
@@ -77,7 +77,7 @@ export default {
       timeNotify,
       positionNotify,
       show,
-      showNotify,
+      _showNotify,
     };
   },
 };
