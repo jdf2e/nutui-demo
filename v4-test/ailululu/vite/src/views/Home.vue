@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2022-12-29 15:48:48
  * @LastEditors: sueRimn
- * @LastEditTime: 2023-01-07 14:13:39
+ * @LastEditTime: 2023-01-07 16:42:29
 -->
 <script setup lang="ts"></script>
 
@@ -26,6 +26,8 @@
         <RouterLink to="/steps">steps</RouterLink>
         <RouterLink to="/swiper">swiper</RouterLink>
         <RouterLink to="/swipe">swipe</RouterLink>
+        <RouterLink to="/video">video</RouterLink>
+        <RouterLink to="/infiniteLoading">infiniteLoading</RouterLink>
       </nav>
     </div>
   </main>

@@ -54,10 +54,12 @@
     "@tarojs/shared": "3.5.10",
     "@tarojs/taro": "3.5.10",
     "@tarojs/taro-h5": "3.5.10",
+    "unplugin-vue-components": "^0.22.12",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "@nutui/icons-vue-taro": "0.0.6",
     "@tarojs/cli": "3.5.10",
     "@tarojs/webpack5-runner": "3.5.10",
     "@types/webpack-env": "^1.13.6",

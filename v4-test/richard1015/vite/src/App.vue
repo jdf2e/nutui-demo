@@ -46,18 +46,24 @@ const baseClick = (): void => {
   <!-- <Avatar /> -->
   <!-- <Swipe /> -->
   <!-- <InputNumber /> -->
-  <NumberKeyboard />
+  <!-- <NumberKeyboard /> -->
+  <!-- <Countdown /> -->
+  <!-- <Badge /> -->
+  <!-- <Tag /> -->
+  <!-- <Popover /> -->
+  <Form />
 </template>
 
 <style>
 html,
 body {
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 body {
   margin: 0;
   padding: 0;
+  background: #ccc;
 }
 /* :root {
   --nut-primary-color: #4425d1;

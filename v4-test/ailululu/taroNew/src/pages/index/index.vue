@@ -1,5 +1,22 @@
 <template>
   <view class="index">
+    <nut-avatar>
+      <img
+        src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png"
+      />
+    </nut-avatar>
+    <nut-avatar><My /></nut-avatar>
+    <nut-avatar>王</nut-avatar>
+    <nut-address-list
+      :data="data"
+      @click-item="clickItem"
+      @del-icon="delClick"
+      @edit-icon="editClick"
+      :show-bottom-button="false"
+      :dataMapOptions="dataOptions"
+      swipe-edition
+    >
+    </nut-address-list>
     <h2>自定义索引</h2>
     <nut-elevator
       ref="elevator"
@@ -59,17 +76,117 @@
       <span class="nut-swiper-btns__left" @click="handlePrev"> left </span>
       <span class="nut-swiper-btns__left" @click="handleNext"> right </span>
     </view>
+    <nut-swipe>
+      <nut-cell round-radius="0" desc="左滑删除" />
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe disabled>
+      <nut-cell round-radius="0" desc="禁止滑动" />
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe>
+      <template #left>
+        <nut-button shape="square" style="height: 100%" type="success"
+          >选择</nut-button
+        >
+      </template>
+      <nut-cell round-radius="0" desc="左滑右滑都可以哦" />
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+        <nut-button shape="square" style="height: 100%" type="info"
+          >收藏</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe name="last" ref="refSwipe" @open="open" @close="close">
+      <nut-cell title="异步打开关闭">
+        <template v-slot:link>
+          <nut-switch
+            v-model="checked"
+            @change="changSwitch"
+            active-text="开"
+            inactive-text="关"
+          />
+        </template>
+      </nut-cell>
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+      </template>
+    </nut-swipe>
+    <nut-swipe>
+      <template #left>
+        <nut-button shape="square" style="height: 100%" type="success"
+          >选择</nut-button
+        >
+      </template>
+      <nut-cell title="商品描述">
+        <template v-slot:link>
+          <nut-input-number v-model="number" />
+        </template>
+      </nut-cell>
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger"
+          >删除</nut-button
+        >
+        <nut-button shape="square" style="height: 100%" type="info"
+          >收藏</nut-button
+        >
+      </template>
+    </nut-swipe>
   </view>
 </template>
 
 <script>
 import { reactive, toRefs, ref, onMounted } from "vue";
+import { My } from '@nutui/icons-vue';
 export default {
   name: "Index",
   components: {},
   setup() {
     const elevator = ref(null);
-    const swiper = ref(null);
+    const swiper = ref<HTMLElement>();
+      const data = ref([
+      {
+        testid:3,
+        testaddressName:'姓名',
+        phone:'123****4567',
+        defaultAddress:false,
+        fullAddress:'北京市通州区测试测试测试测试测试测试测试测试测试'
+      },
+      {
+        testid:4,
+        testaddressName:'姓名',
+        phone:'123****4567',
+        defaultAddress:true,
+        fullAddress:'北京市通州区测试测试测试测试测试测试测试测试测试'
+      },
+    ]);
+    const dataOptions = reactive({
+      id: 'testid',
+      addressDetail:'testaddressDetail',
+      addressName:'testaddressName'
+    });
+    const clickItem = ()=>{
+      console.log('Click To Address');
+    }
+    const delClick = ()=>{
+      console.log('Click To Delete');
+    }
+    const editClick = ()=>{
+      console.log('Click To Edit');
+    }
     const state = reactive({
       acceptKey: "num",
       dataList: [
@@ -243,11 +360,11 @@ export default {
       }, 3000);
     });
 
-    const clickItem = (key: string, item: any) => {
-      console.log(key, JSON.stringify(item));
-    };
+    // const clickItem = (key, item) => {
+    //   console.log(key, JSON.stringify(item));
+    // };
 
-    const clickIndex = (key: string) => {
+    const clickIndex = (key) => {
       console.log(key);
     };
 
@@ -256,7 +373,7 @@ export default {
       elevator.value.scrollTo(0);
     };
 
-    const handleStep = (params: any) => {
+    const handleStep = (params) => {
       if (state[params] >= 3) {
         state[params] = 1;
       } else {
@@ -264,11 +381,11 @@ export default {
       }
     };
 
-    const handleClickStep = (index: number) => {
+    const handleClickStep = (index) => {
       console.log(index);
     };
 
-    const change = (index: number) => {
+    const change = (index) => {
       console.log("swiper", index);
       state.current = index + 1;
     };
@@ -279,6 +396,26 @@ export default {
     const handleNext = () => {
       swiper.value.next();
     };
+
+    const number = ref(0);
+    const refSwipe = ref<HTMLElement>();
+    const checked = ref(false);
+    const changSwitch = (value) => {
+      if (value) {
+        refSwipe.value?.open("left");
+      } else {
+        refSwipe.value?.close();
+      }
+    };
+    const open = (obj) => {
+      console.log('open', obj);
+      checked.value = true;
+    };
+    const close = (obj) => {
+      console.log('close', obj);
+      checked.value = false;
+    };
+
 
     return {
       elevator,
@@ -292,6 +429,17 @@ export default {
       swiper,
       handlePrev,
       handleNext,
+      checked,
+      changSwitch,
+      refSwipe,
+      open,
+      close,
+      number,
+      data,
+      clickItem,
+      delClick,
+      editClick,
+      dataOptions
     };
   },
 };
@@ -303,6 +451,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  overflow-x: hidden;
 }
 .nut-swiper-item {
   line-height: 150px;

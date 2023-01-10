@@ -1,31 +1,65 @@
 <template>
-  <nut-picker
-    :columns="columns"
-    title="城市选择"
-    @confirm="confirm"
-  ></nut-picker>
+  <nut-uploader
+    :url="uploadUrl"
+    multiple
+    :before-upload="beforeUpload"
+  ></nut-uploader>
 </template>
 <script lang="ts">
 import { ref } from "vue";
-import { showToast } from "@nutui/nutui";
-import "@nutui/nutui/dist/packages/toast/style";
 export default {
-  setup(props) {
-    const columns = ref([
-      { text: "南京市", value: "NanJing" },
-      { text: "无锡市", value: "WuXi" },
-      { text: "海北藏族自治区", value: "ZangZu" },
-      { text: "北京市", value: "BeiJing" },
-      { text: "连云港市", value: "LianYunGang" },
-      { text: "浙江市", value: "ZheJiang" },
-      { text: "江苏市", value: "JiangSu" },
-    ]);
-
-    const confirm = ({ selectedValue, selectedOptions }) => {
-      showToast.text(selectedOptions.map((val: any) => val.text).join(","));
+  setup() {
+    const uploadUrl = "https://xxxxx";
+    const fileToDataURL = (file: Blob): Promise<any> => {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = (e) => resolve((e.target as FileReader).result);
+        reader.readAsDataURL(file);
+      });
     };
+    const dataURLToImage = (dataURL: string): Promise<HTMLImageElement> => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.src = dataURL;
+      });
+    };
+    const canvastoFile = (
+      canvas: HTMLCanvasElement,
+      type: string,
+      quality: number
+    ): Promise<Blob | null> => {
+      return new Promise((resolve) =>
+        canvas.toBlob((blob) => resolve(blob), type, quality)
+      );
+    };
+    const beforeUpload = async (file: File[]) => {
+      let fileName = file[0].name;
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d") as CanvasRenderingContext2D;
+      const base64 = await fileToDataURL(file[0]);
+      const img = await dataURLToImage(base64);
+      canvas.width = img.width;
+      canvas.height = img.height;
 
-    return { columns, confirm };
+      context.clearRect(0, 0, img.width, img.height);
+      context.drawImage(img, 0, 0, img.width, img.height);
+
+      let blob = (await canvastoFile(canvas, "image/jpeg", 0.5)) as Blob; //quality:0.5可根据实际情况计算
+      const f = await new File([blob], fileName);
+      return [f];
+    };
+    return {
+      uploadUrl,
+      beforeUpload,
+    };
   },
 };
 </script>
+<style>
+:root {
+  /* --nut-uploader-picture-width: 250px; */
+  /* --nut-uploader-picture-height: 100px; */
+  /* --nut-uploader-background: red; */
+}
+</style>
