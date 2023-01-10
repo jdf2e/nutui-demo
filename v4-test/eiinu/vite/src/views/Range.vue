@@ -33,9 +33,9 @@
       <nut-range
         v-model="value8"
         @change="onChange"
-        inactive-color="rgba(163,184,255,1)"
-        button-color="rgba(52,96,250,1)"
-        active-color="linear-gradient(315deg, rgba(73,143,242,1) 0%,rgba(73,101,242,1) 100%)"
+        inactive-color="red"
+        button-color="blue"
+        active-color="green"
       ></nut-range>
     </nut-cell>
     <h2>{{ translate('title8') }}</h2>
@@ -85,7 +85,8 @@
 <script lang="ts">
 import { toRefs, reactive } from 'vue';
 import { createComponent } from '@/packages/utils/create';
-import { Toast } from '@nutui/nutui';
+import { showToast } from '@nutui/nutui';
+import "@nutui/nutui/dist/packages/toast/style";
 const { createDemo, translate } = createComponent('range');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 
@@ -148,7 +149,7 @@ export default createDemo({
       }
     });
 
-    const onChange = (value: number) => Toast.text('value：' + value);
+    const onChange = (value: number) => showToast.text('value：' + value);
     return {
       ...toRefs(state),
       onChange,

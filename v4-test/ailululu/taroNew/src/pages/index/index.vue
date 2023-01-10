@@ -1,5 +1,22 @@
 <template>
   <view class="index">
+    <nut-avatar>
+      <img
+        src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png"
+      />
+    </nut-avatar>
+    <nut-avatar><My /></nut-avatar>
+    <nut-avatar>王</nut-avatar>
+    <nut-address-list
+      :data="data"
+      @click-item="clickItem"
+      @del-icon="delClick"
+      @edit-icon="editClick"
+      :show-bottom-button="false"
+      :dataMapOptions="dataOptions"
+      swipe-edition
+    >
+    </nut-address-list>
     <h2>自定义索引</h2>
     <nut-elevator
       ref="elevator"
@@ -133,12 +150,43 @@
 
 <script>
 import { reactive, toRefs, ref, onMounted } from "vue";
+import { My } from '@nutui/icons-vue';
 export default {
   name: "Index",
   components: {},
   setup() {
     const elevator = ref(null);
     const swiper = ref<HTMLElement>();
+      const data = ref([
+      {
+        testid:3,
+        testaddressName:'姓名',
+        phone:'123****4567',
+        defaultAddress:false,
+        fullAddress:'北京市通州区测试测试测试测试测试测试测试测试测试'
+      },
+      {
+        testid:4,
+        testaddressName:'姓名',
+        phone:'123****4567',
+        defaultAddress:true,
+        fullAddress:'北京市通州区测试测试测试测试测试测试测试测试测试'
+      },
+    ]);
+    const dataOptions = reactive({
+      id: 'testid',
+      addressDetail:'testaddressDetail',
+      addressName:'testaddressName'
+    });
+    const clickItem = ()=>{
+      console.log('Click To Address');
+    }
+    const delClick = ()=>{
+      console.log('Click To Delete');
+    }
+    const editClick = ()=>{
+      console.log('Click To Edit');
+    }
     const state = reactive({
       acceptKey: "num",
       dataList: [
@@ -312,9 +360,9 @@ export default {
       }, 3000);
     });
 
-    const clickItem = (key, item) => {
-      console.log(key, JSON.stringify(item));
-    };
+    // const clickItem = (key, item) => {
+    //   console.log(key, JSON.stringify(item));
+    // };
 
     const clickIndex = (key) => {
       console.log(key);
@@ -387,6 +435,11 @@ export default {
       open,
       close,
       number,
+      data,
+      clickItem,
+      delClick,
+      editClick,
+      dataOptions
     };
   },
 };

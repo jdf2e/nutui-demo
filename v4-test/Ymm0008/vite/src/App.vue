@@ -2,7 +2,10 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import { ref } from "vue";
 const themeVars = {
-  progressInnerBackgroundColor: "green",
+  tableTrEvenBgColor: "green",
+  tableTrOddBgColor: "red",
+  progressSmallTextPadding: "20px",
+  // progressInnerBackgroundColor: "green",
   // progressInsidetextBackground: "green",
   // progressOuterBackgroundColor: "green",
   // progressOuterBorderRadius: "0",

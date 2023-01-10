@@ -58,7 +58,7 @@ const config = {
     },
     postcss: {
       pxtransform: {
-        enable: true,
+        enable: false,
         config: {
           selectorBlackList: ['nut-']
         }

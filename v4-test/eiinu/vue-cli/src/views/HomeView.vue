@@ -4,6 +4,7 @@
     <nut-button type="primary" @click="onClick">按钮</nut-button>
     <nut-popup v-model:visible="showPopup">正文</nut-popup>
     <nut-overlay></nut-overlay>
+    <nut-ecard></nut-ecard>
   </div>
 </template>
 
