@@ -1,9 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import List from '@/views/List.vue';
-import Toast from '@/views/Toast.vue';
-import Dialog from '@/views/Dialog.vue';
-import ImagePreview from '@/views/ImagePreview.vue';
-import Notify from '@/views/Notify.vue';
+import Empty from '@/views/Empty.vue';
 const routes = [{
     path: '/',
     name: 'index',
@@ -11,28 +8,10 @@ const routes = [{
   },
   
   {
-    path: '/toast',
-    name: 'toast',
-    component: Toast
-  },
-
-  {
-    path: '/dialog',
-    name: 'dialog',
-    component: Dialog
-  },
-
-  {
-    path: '/imagepreview',
-    name: 'imagepreview',
-    component: ImagePreview
-  },
-
-  {
-    path: '/notify',
-    name: 'notify',
-    component: Notify
-  },
+    path: '/Empty',
+    name: 'Empty',
+    component: Empty
+  }
 ]
 const router = createRouter({
   history: createWebHashHistory(),

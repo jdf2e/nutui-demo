@@ -86,6 +86,11 @@ export const routes = [
     name: "InputView",
     component: () => import("../views/InputView.vue"),
   },
+  {
+    path: "/CountupView",
+    name: "CountupView",
+    component: () => import("../views/CountupView.vue"),
+  },
 
   {
     path: "/TestView",

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref, reactive } from "vue";
+import { Left, Right } from '@nutui/icons-vue';
 const value = ref(0.1);
 const themeVars = reactive({
   primaryColor: "#008000",
@@ -15,8 +16,16 @@ setTimeout(() => {
   <nut-config-provider :theme-vars="themeVars">
     <nut-button type="primary">123</nut-button>
     <nut-input-number v-model="value" />
-    <nut-input-number v-model="value" button-size="30" input-width="50" />
+    <nut-input-number v-model="value" button-size="70" input-width="50" />
     <nut-input-number v-model="value" step="0.2" decimal-places="1" />
+    <nut-input-number v-model="value">
+    <template #left-icon>
+      <Right />
+    </template>
+    <template #rightIcon>
+      <Right />
+    </template>
+  </nut-input-number>
   </nut-config-provider>
 </template>
 <style>

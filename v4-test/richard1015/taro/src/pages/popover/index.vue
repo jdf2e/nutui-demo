@@ -1,35 +1,49 @@
 <template>
-  <nut-popover
-    v-model:visible="customColor"
-    :list="itemList"
-    location="right-start"
-    bgColor="#f00"
-    theme="dark"
+  <nut-pagination
+    v-model="currentPage3"
+    :total-items="500"
+    @change="pageChange"
+    :show-page-size="5"
   >
-    <template #reference>
-      <nut-button type="primary" shape="square">自定义颜色</nut-button>
+  </nut-pagination>
+  <nut-swipe>
+    <nut-cell round-radius="0" desc="左滑删除" />
+    <template #right>
+      <nut-button shape="square" style="height: 100%" type="danger"
+        >删除</nut-button
+      >
     </template>
-  </nut-popover>
+  </nut-swipe>
+  <nut-swipe disabled>
+    <nut-cell round-radius="0" desc="禁止滑动" />
+    <template #right>
+      <nut-button shape="square" style="height: 100%" type="danger"
+        >删除</nut-button
+      >
+    </template>
+  </nut-swipe>
 </template>
 
-<script>
-import { reactive, ref } from "vue";
-export default {
-  setup() {
-    const visible = ref({
-      customColor: false,
-    });
+<script lang="ts">
+import { defineComponent, ref, reactive, toRefs } from "vue";
+export default defineComponent({
+  name: "Pagination",
 
-    const itemList = reactive([
-      { name: "option1" },
-      { name: "option2" },
-      { name: "option3" },
-    ]);
+  setup() {
+    const state = reactive({
+      currentPage: 1,
+      currentPage1: 1,
+      currentPage2: 1,
+      currentPage3: 1,
+    });
+    const pageChange = (value: any) => {
+      console.log(value);
+    };
 
     return {
-      itemList,
-      visible,
+      ...toRefs(state),
+      pageChange,
     };
   },
-};
+});
 </script>
