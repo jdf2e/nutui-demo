@@ -46,15 +46,15 @@ setTimeout(() => {
   <!-- <nut-cell desc-text-align="right" desc='66666' is-link></nut-cell> -->
   <nut-button loading type="info">123</nut-button>
   <!-- <nut-button @click="baseClick1" type="primary">123</nut-button> -->
-  <Pagination />
+  <!-- <Pagination /> -->
   <!-- <Avatar /> -->
   <!-- <Swipe /> -->
-  <!-- <InputNumber /> -->
+  <InputNumber />
   <!-- <NumberKeyboard /> -->
   <!-- <Countdown /> -->
   <!-- <Badge /> -->
   <!-- <Tag /> -->
-  <Popover />
+  <!-- <Popover /> -->
   <!-- <Form /> -->
 </template>
 

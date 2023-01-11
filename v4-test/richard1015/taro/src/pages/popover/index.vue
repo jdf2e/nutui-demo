@@ -1,49 +1,78 @@
 <template>
-  <nut-pagination
-    v-model="currentPage3"
-    :total-items="500"
-    @change="pageChange"
-    :show-page-size="5"
-  >
-  </nut-pagination>
-  <nut-swipe>
-    <nut-cell round-radius="0" desc="左滑删除" />
-    <template #right>
-      <nut-button shape="square" style="height: 100%" type="danger"
-        >删除</nut-button
-      >
-    </template>
-  </nut-swipe>
-  <nut-swipe disabled>
-    <nut-cell round-radius="0" desc="禁止滑动" />
-    <template #right>
-      <nut-button shape="square" style="height: 100%" type="danger"
-        >删除</nut-button
-      >
-    </template>
-  </nut-swipe>
+  <nut-row type="flex">
+     <nut-col :span="8" style='margin-left:20px'>
+        <nut-popover v-model:visible="visible.showIcon" theme="dark" :list="itemList">
+          <template #reference>
+            <nut-button type="primary" shape="square">展示图标</nut-button>
+          </template>
+        </nut-popover>
+      </nut-col>
+      <nut-col :span="8" style='margin-left:20px'>
+        <nut-popover v-model:visible="visible.disableAction" :list="itemListDisabled" location="right">
+          <template #reference>
+            <nut-button type="primary" shape="square">禁用选项</nut-button>
+          </template>
+        </nut-popover>
+      </nut-col>
+    </nut-row>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, reactive, toRefs } from "vue";
-export default defineComponent({
-  name: "Pagination",
-
+<script>
+import { reactive, ref,h } from 'vue';
+import { Location,Cart2, My2 } from '@nutui/icons-vue-taro';
+export default {
   setup() {
-    const state = reactive({
-      currentPage: 1,
-      currentPage1: 1,
-      currentPage2: 1,
-      currentPage3: 1,
+    const visible = ref({
+      showIcon: false,
+      disableAction: false,
     });
-    const pageChange = (value: any) => {
-      console.log(value);
-    };
+
+    const itemList = reactive([
+      {
+        name: 'option1',
+        icon: ()=>{
+          return h(My2,{
+            width:'14px',
+            color:'rgba(250, 44, 25, 1)'
+          })
+        }
+      },
+      {
+        name: 'option2',
+        icon: Cart2
+      },
+      {
+        name: 'option3',
+        icon: Location
+      }
+    ]);
+
+    const itemListDisabled = reactive([
+      {
+        name: '选项一',
+        disabled: true
+      },{
+        name: '选项二',
+        disabled: true
+      },{
+        name: '选项三'
+      }
+    ]);
 
     return {
-      ...toRefs(state),
-      pageChange,
-    };
-  },
-});
+        itemList,
+        visible,
+        itemListDisabled,
+      };
+    }
+}
 </script>
+
+<style>
+.nut-popover-content {
+    width: 120px;
+}
+.nut-icon{
+  width:14px
+}
+</style>
