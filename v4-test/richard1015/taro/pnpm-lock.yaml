@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': ^7.8.0
   '@babel/runtime': ^7.7.7
   '@nutui/icons-vue-taro': ^0.0.7
-  '@nutui/nutui-taro': 4.0.0-beta.17
+  '@nutui/nutui-taro': 4.0.0-beta.23
   '@tarojs/cli': 3.5.10
   '@tarojs/components': 3.5.10
   '@tarojs/helper': 3.5.10
@@ -44,7 +44,7 @@ specifiers:
 dependencies:
   '@babel/runtime': 7.20.7
   '@nutui/icons-vue-taro': 0.0.7
-  '@nutui/nutui-taro': 4.0.0-beta.17
+  '@nutui/nutui-taro': 4.0.0-beta.23
   '@tarojs/components': 3.5.10_vue@3.2.45
   '@tarojs/helper': 3.5.10
   '@tarojs/plugin-framework-vue3': 3.5.10_vue@3.2.45
@@ -1595,8 +1595,8 @@ packages:
     resolution: {integrity: sha512-qhVhoNynIPROD+9WFHEjf+kS0Y//pWkBoAhMS8M3iBT/Ta9+F8u0tWbWJ+aqdqgyzrRt+CZkxK/3AecyvjmDUQ==}
     dev: false
 
-  /@nutui/nutui-taro/4.0.0-beta.17:
-    resolution: {integrity: sha512-fBB1JLU/oeAqglk50ts1XMvIMNaRsgq7XdUjm8Ida3bTDnlBQvDbLpIF15TYeVkjxsN5UC2ju4602zBMLiR33w==}
+  /@nutui/nutui-taro/4.0.0-beta.23:
+    resolution: {integrity: sha512-AAYJKWgW/9tjSKb/cHINqLgyYDr5JRV+Q5ZtIxeM0W6WzUlp+7nvtNNJcBoQACWlkU48yHshH2dEW3ExxNhIaQ==}
     dependencies:
       '@nutui/icons-vue-taro': 0.0.8
       sass: 1.57.1
@@ -9080,8 +9080,8 @@ packages:
     resolution: {integrity: sha512-AjuBYxghx3LZeTtWQ48TfDMxoACGRUA+NdPrgl+mPPNgi5g0YXn3sDELNHRw0LcjTxfqhVufwLL65AjwT+W+FQ==}
     dev: true
 
-  /miniprogram-compiler/0.2.1:
-    resolution: {integrity: sha512-AHQgJFTnVPMcVBUUdKHlCRC3guK212XkWME0awMQiUgpzp/eIbb3jgFdkl3ib9nDbbEK+m2fSBs0++vwetWJ9Q==}
+  /miniprogram-compiler/0.2.2:
+    resolution: {integrity: sha512-fiJXv/15jCcRAU8YKcO7S7fkPKLa5ZBgpLN+d6B3r3KMktM5tAkDEQ+zm6aTfNoHurYOHcRyPyGf26gqQXlFXg==}
     dependencies:
       glob: 7.2.3
       unescape-js: 1.1.4
@@ -9097,7 +9097,7 @@ packages:
       csso: 3.5.1
       j-component: 1.4.7
       less: 3.13.1
-      miniprogram-compiler: 0.2.1
+      miniprogram-compiler: 0.2.2
       postcss: 7.0.39
     dev: true
 

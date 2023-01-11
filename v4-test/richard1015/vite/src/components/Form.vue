@@ -97,10 +97,10 @@
           },
           onChange({ custom, next, value }: any) {
             formData2.address += value.name;
-            const name = addressModule.state[next];
-            if (name.length < 1) {
-              addressModule.state.show = false;
-            }
+            // const name = addressModule.state[next];
+            // if (name.length < 1) {
+            //   addressModule.state.show = false;
+            // }
           }
         }
       });

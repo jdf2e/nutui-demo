@@ -36,8 +36,8 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@nutui/icons-vue-taro": "0.0.6",
-    "@nutui/nutui-taro": "4.0.0-beta.16",
+    "@nutui/icons-vue-taro": "0.0.8",
+    "@nutui/nutui-taro": "4.0.0-beta.23",
     "@tarojs/components": "3.5.10",
     "@tarojs/helper": "3.5.10",
     "@tarojs/plugin-framework-vue3": "3.5.10",

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -12,8 +12,8 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@nutui/icons-vue": "^0.0.20",
-    "@nutui/nutui": "4.0.0-beta.15",
+    "@nutui/icons-vue": "^0.0.24",
+    "@nutui/nutui": "4.0.0-beta.20",
     "@vitejs/plugin-vue": "^4.0.0",
     "unplugin-vue-components": "^0.22.12",
     "vite": "^4.0.0"
