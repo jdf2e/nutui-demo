@@ -21,14 +21,14 @@ declare module '@vue/runtime-core' {
     NutInput: typeof import('@nutui/nutui-taro')['Input']
     NutInputNumber: typeof import('@nutui/nutui-taro')['InputNumber']
     NutNumberKeyboard: typeof import('@nutui/nutui-taro')['NumberKeyboard']
-    NutPopover: typeof import('@nutui/nutui-taro')['Popover']
+    NutPagination: typeof import('@nutui/nutui-taro')['Pagination']
     NutRadio: typeof import('@nutui/nutui-taro')['Radio']
     NutRadioGroup: typeof import('@nutui/nutui-taro')['RadioGroup']
     NutRange: typeof import('@nutui/nutui-taro')['Range']
     NutRate: typeof import('@nutui/nutui-taro')['Rate']
+    NutSwipe: typeof import('@nutui/nutui-taro')['Swipe']
     NutSwitch: typeof import('@nutui/nutui-taro')['Switch']
     NutTag: typeof import('@nutui/nutui-taro')['Tag']
     NutToast: typeof import('@nutui/nutui-taro')['Toast']
-    NutUploader: typeof import('@nutui/nutui-taro')['Uploader']
   }
 }

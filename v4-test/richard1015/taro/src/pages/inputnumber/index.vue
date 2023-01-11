@@ -15,7 +15,7 @@ setTimeout(() => {
   <nut-config-provider :theme-vars="themeVars">
     <nut-button type="primary">123</nut-button>
     <nut-input-number v-model="value" />
-    <nut-input-number v-model="value" button-size="30" input-width="50" />
+    <nut-input-number v-model="value" button-size="70" input-width="50" />
     <nut-input-number v-model="value" step="0.2" decimal-places="1" />
   </nut-config-provider>
 </template>
