@@ -16,12 +16,12 @@ const themeVars = {
       </nav>
     </div>
   </header>
-  <main class="main_content">
+  <!-- <main class="main_content"> -->
     <!-- <nut-config-provider :theme-vars="themeVars"> -->
       <RouterView />
     <!-- </nut-config-provider> -->
    
-  </main>
+  <!-- </main> -->
 </template>
 
 <style  lang="scss">
@@ -34,6 +34,6 @@ const themeVars = {
   }
 }
 .main_content {
-  overflow: auto;
+  // overflow: auto;
 }
 </style>
