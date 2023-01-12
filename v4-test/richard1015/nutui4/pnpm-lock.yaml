@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': ^7.8.0
   '@babel/runtime': ^7.7.7
   '@nutui/icons-vue-taro': ^0.0.8
-  '@nutui/nutui-taro': ^4.0.0-beta.28
+  '@nutui/nutui-taro': ^4.0.0
   '@tarojs/cli': 3.5.10
   '@tarojs/components': 3.5.10
   '@tarojs/helper': 3.5.10
@@ -43,7 +43,7 @@ specifiers:
 dependencies:
   '@babel/runtime': 7.20.7
   '@nutui/icons-vue-taro': 0.0.8
-  '@nutui/nutui-taro': 4.0.0-beta.28
+  '@nutui/nutui-taro': 4.0.0
   '@tarojs/components': 3.5.10_vue@3.2.45
   '@tarojs/helper': 3.5.10
   '@tarojs/plugin-framework-vue3': 3.5.10_vue@3.2.45
@@ -1596,8 +1596,8 @@ packages:
     resolution: {integrity: sha512-10VYAtFC+o1X0anGs+y2PgF1NWMeLFz2JVMRw4BWLg6wbtVbYy9wukLxyGhZC6Yf6t39DcwaGVda8paV7K6/Ew==}
     dev: false
 
-  /@nutui/nutui-taro/4.0.0-beta.28:
-    resolution: {integrity: sha512-ka/K9VV2CpNBNRhEJYOUg/5xQhiKtW6zwDOUV3g6CC3kwNNIN9F9DFgnSKlz6nCKN0cjljkxJ60+FQijJVz6tw==}
+  /@nutui/nutui-taro/4.0.0:
+    resolution: {integrity: sha512-wQmcllnPpLyZ4vqJgSiiNRwE/k86N9n8oP6R3fd35WdT5NSwmcQwzh80vb7pJ6rIdQVmyXzwzsL5IUp2cSAIfw==}
     dependencies:
       '@nutui/icons-vue-taro': 0.0.9
       sass: 1.57.1
