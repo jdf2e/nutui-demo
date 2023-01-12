@@ -1,5 +1,5 @@
 const fse = require('fs-extra');
-const config = ['Toast','Dialog','ImagePreview','Notify'];
+const config = ['Noticebar', 'Tabbar', 'Navbar', 'Tabs'];
 const baseUrl = `/Users/peixinyu7/Desktop/jdf2e/nutui-demo/v4-test/eiinu/vite/`;
 
 const copyFile = (from, to) => {
@@ -50,3 +50,11 @@ config.forEach((ComponentName) => {
   copyDemo(ComponentName);
 })
 generateRouter();
+
+fse.outputFile(baseUrl + 'src/config.json', `
+{
+  "list": [${config.map((item) => {
+    return `"${item}"`
+  }).join(',')}]
+}
+`);

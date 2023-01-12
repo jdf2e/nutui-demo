@@ -19,6 +19,10 @@
     <nut-cell is-link url="https://m.jd.com">跳转 https://m.jd.com</nut-cell>
     <nut-button loading type="primary" @click="showAddress">{{text}}</nut-button>
 
+    <nut-uploader> </nut-uploader>
+
+    <nut-input-number v-model="value"></nut-input-number>
+
     <nut-address v-model:visible="showPopup" :province="province" :city="city" type="custom2" :country="country"
       :town="town" @change="onChange" @close="close" custom-address-title="请选择所在地区"></nut-address>
   </div>
@@ -27,6 +31,7 @@
     const app = Vue.createApp({
       data() {
         return {
+          value: 1,
           showPopup: true,
           province: [
             { id: 1, name: "北京", title: 'B' },

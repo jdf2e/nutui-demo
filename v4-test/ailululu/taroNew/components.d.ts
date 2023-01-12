@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    NutAddressList: typeof import('@nutui/nutui-taro')['AddressList']
+    NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
     NutButton: typeof import('@nutui/nutui-taro')['Button']
     NutCell: typeof import('@nutui/nutui-taro')['Cell']
     NutElevator: typeof import('@nutui/nutui-taro')['Elevator']
@@ -17,8 +19,5 @@ declare module '@vue/runtime-core' {
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
     NutSwitch: typeof import('@nutui/nutui-taro')['Switch']
-    NutVideo: typeof import('@nutui/nutui-taro')['Video']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
   }
 }

@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@nutui/icons-vue": "^0.0.16",
-    "@nutui/nutui": "4.0.0-beta.11",
+    "@nutui/nutui": "4.0.0-beta.20",
     "fs-extra": "^11.1.0",
+    "sass": "^1.57.1",
     "unplugin-vue-components": "^0.22.12",
+    "vant": "^3.6.6",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

@@ -5,7 +5,7 @@
     <div>1233</div>
     <div>1233</div>
     <div>1233</div>
-    <nut-watermark :fullPage="false" font-color="#fa2c19" content="nut-ui"></nut-watermark>
+    <nut-watermark :fullPage="false" font-color="#fa2c19" :z-index="12" content="nut-ui"></nut-watermark>
   </nut-cell>
 </template>
 <script lang="ts">import { ref } from 'vue';
