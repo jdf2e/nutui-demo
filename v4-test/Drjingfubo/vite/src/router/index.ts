@@ -31,7 +31,7 @@ export const routes = [
     component: () => import("../views/Noticebar.vue"),
   },
   {
-    path: "/Watermark",
+    path: "/watermark",
     name: "Watermark",
     component: () => import("../views/Watermark.vue"),
   },

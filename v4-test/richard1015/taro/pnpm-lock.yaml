@@ -3,8 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': ^7.8.0
   '@babel/runtime': ^7.7.7
-  '@nutui/icons-vue-taro': ^0.0.7
-  '@nutui/nutui-taro': 4.0.0-beta.17
+  '@nutui/icons-vue-taro': ^0.0.9
+  '@nutui/nutui-taro': 4.0.0-beta.25
   '@tarojs/cli': 3.5.10
   '@tarojs/components': 3.5.10
   '@tarojs/helper': 3.5.10
@@ -43,8 +43,8 @@ specifiers:
 
 dependencies:
   '@babel/runtime': 7.20.7
-  '@nutui/icons-vue-taro': 0.0.7
-  '@nutui/nutui-taro': 4.0.0-beta.17
+  '@nutui/icons-vue-taro': 0.0.9
+  '@nutui/nutui-taro': 4.0.0-beta.25
   '@tarojs/components': 3.5.10_vue@3.2.45
   '@tarojs/helper': 3.5.10
   '@tarojs/plugin-framework-vue3': 3.5.10_vue@3.2.45
@@ -1587,18 +1587,14 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@nutui/icons-vue-taro/0.0.7:
-    resolution: {integrity: sha512-nqEO9U+QAtnH/HDdzgA7sA8Nt+rpazmw22ib0WXEY5JeNAoG1C+t43G9UXNl+dDicX/NBjkKz/wVND5x/J09iw==}
+  /@nutui/icons-vue-taro/0.0.9:
+    resolution: {integrity: sha512-10VYAtFC+o1X0anGs+y2PgF1NWMeLFz2JVMRw4BWLg6wbtVbYy9wukLxyGhZC6Yf6t39DcwaGVda8paV7K6/Ew==}
     dev: false
 
-  /@nutui/icons-vue-taro/0.0.8:
-    resolution: {integrity: sha512-qhVhoNynIPROD+9WFHEjf+kS0Y//pWkBoAhMS8M3iBT/Ta9+F8u0tWbWJ+aqdqgyzrRt+CZkxK/3AecyvjmDUQ==}
-    dev: false
-
-  /@nutui/nutui-taro/4.0.0-beta.17:
-    resolution: {integrity: sha512-fBB1JLU/oeAqglk50ts1XMvIMNaRsgq7XdUjm8Ida3bTDnlBQvDbLpIF15TYeVkjxsN5UC2ju4602zBMLiR33w==}
+  /@nutui/nutui-taro/4.0.0-beta.25:
+    resolution: {integrity: sha512-Di2aa8Dm40JIjnKc/iu4n+x9fQUt0luyfy26MR9DIeYJ/uzxPj1fPtcJj6pIKLuud+/1+qhuHRUqre6a7eKz4A==}
     dependencies:
-      '@nutui/icons-vue-taro': 0.0.8
+      '@nutui/icons-vue-taro': 0.0.9
       sass: 1.57.1
     dev: false
 
@@ -9080,8 +9076,8 @@ packages:
     resolution: {integrity: sha512-AjuBYxghx3LZeTtWQ48TfDMxoACGRUA+NdPrgl+mPPNgi5g0YXn3sDELNHRw0LcjTxfqhVufwLL65AjwT+W+FQ==}
     dev: true
 
-  /miniprogram-compiler/0.2.1:
-    resolution: {integrity: sha512-AHQgJFTnVPMcVBUUdKHlCRC3guK212XkWME0awMQiUgpzp/eIbb3jgFdkl3ib9nDbbEK+m2fSBs0++vwetWJ9Q==}
+  /miniprogram-compiler/0.2.2:
+    resolution: {integrity: sha512-fiJXv/15jCcRAU8YKcO7S7fkPKLa5ZBgpLN+d6B3r3KMktM5tAkDEQ+zm6aTfNoHurYOHcRyPyGf26gqQXlFXg==}
     dependencies:
       glob: 7.2.3
       unescape-js: 1.1.4
@@ -9097,7 +9093,7 @@ packages:
       csso: 3.5.1
       j-component: 1.4.7
       less: 3.13.1
-      miniprogram-compiler: 0.2.1
+      miniprogram-compiler: 0.2.2
       postcss: 7.0.39
     dev: true
 
