@@ -9,7 +9,7 @@
     ></nut-ecard>
   </nut-cell>
 </template>
-<script>
+<script lang="ts">
   import {ref, reactive, toRefs } from 'vue';
   export default {
     setup() {
@@ -28,13 +28,13 @@
         },
       ])
     const money = ref(10);
-    const inputChange = (val) => {
+    const inputChange = (val: number) => {
       money.value = val;
     };
-    const change = (item) => {
+    const change = (item: { price: number; }) => {
       money.value = item.price;
     };
-    const changeStep = (num,price) => {
+    const changeStep = (num: number,price: number) => {
       const val = price * num;
       money.value = val;
     };

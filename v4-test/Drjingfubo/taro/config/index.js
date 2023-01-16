@@ -26,7 +26,7 @@ const config = {
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
   sass: {
-    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`,
+    data: `@import "@nutui/nutui-taro/dist/styles/variables-jdt.scss";`,
   },
   defineConstants: {
   },

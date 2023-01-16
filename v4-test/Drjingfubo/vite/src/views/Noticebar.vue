@@ -6,12 +6,13 @@
   
   
   
-  <script>
+  <script lang="ts">
     import { ref } from 'vue';
     export default {
+      name:"Index",
       setup(props) {
         const horseLamp1 = ref(['Noticebar 公告栏', 'Cascader 级联选择', 'DatePicker 日期选择器', 'CheckBox 复选按钮']);
-        const go = (item) => {
+        const go = (item:any) => {
           console.log(item)
         }
         return { horseLamp1,go };

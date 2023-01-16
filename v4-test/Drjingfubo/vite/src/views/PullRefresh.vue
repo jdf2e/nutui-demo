@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, reactive, onMounted, toRefs } from 'vue';
 export default {
     setup(props) {
