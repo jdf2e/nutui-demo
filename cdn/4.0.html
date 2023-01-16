@@ -5,19 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- 引入样式 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/nutui@beta/dist/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/nutui/dist/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/icons-vue/dist/style_icon.css" />
   <!-- 引入Vue -->
   <script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-router@next"></script>
   <!-- 引入NutUI组件库 -->
-  <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@beta/dist/nutui.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui/dist/nutui.umd.js"></script>
 </head>
 
 <body>
   <div id="app">
     <nut-cell is-link url="https://m.jd.com">跳转 https://m.jd.com</nut-cell>
     <nut-button loading type="primary" @click="showAddress">{{text}}</nut-button>
+
+    <nut-uploader> </nut-uploader>
+
+    <nut-input-number v-model="value"></nut-input-number>
 
     <nut-address v-model:visible="showPopup" :province="province" :city="city" type="custom2" :country="country"
       :town="town" @change="onChange" @close="close" custom-address-title="请选择所在地区"></nut-address>
@@ -27,6 +31,7 @@
     const app = Vue.createApp({
       data() {
         return {
+          value: 1,
           showPopup: true,
           province: [
             { id: 1, name: "北京", title: 'B' },

@@ -1,18 +1,8 @@
 <script setup lang="ts">
 import { Locale } from "@nutui/nutui";
-// import { Locale,showDialog } from 'vant';
-
-// 引入英文语言包
-// import enUS from 'vant/es/locale/lang/en-US';
-import { Add, Del2, Del } from "@nutui/icons-vue";
-// import { showDialog, showToast } from "@nutui/nutui";
-// import "@nutui/nutui/dist/packages/dialog/style";
-// import "@nutui/nutui/dist/packages/toast/style";
-// Locale.use('en-US', enUS);
-
-// console.log(Locale);
-
-// showDialog({ message: 'Content' });
+import { showDialog, showToast } from "@nutui/nutui";
+import "@nutui/nutui/dist/packages/dialog/style";
+import "@nutui/nutui/dist/packages/toast/style";
 import us from "@nutui/nutui/dist/packages/locale/lang/en-US";
 import tw from "@nutui/nutui/dist/packages/locale/lang/zh-TW";
 Locale.merge("zh-CN", {
@@ -32,29 +22,29 @@ setTimeout(() => {
   Locale.use("zh-TW", tw);
 }, 1000 * 15);
 
-// const baseClick = (): void => {
-//   showDialog({
-//     title: "基础弹框",
-//     content: "123",
-//   });
-// };
-// const baseClick1 = (): void => {
-//   showToast.text("123");
-// };
+const baseClick = (): void => {
+  showDialog({
+    title: "基础弹框",
+    content: "123",
+  });
+};
+const baseClick1 = (): void => {
+  showToast.text("123");
+};
 </script>
 <template>
   <!-- <nut-cell desc-text-align="right" desc='66666' is-link></nut-cell> -->
   <nut-button loading type="info">123</nut-button>
-  <!-- <nut-button @click="baseClick1" type="primary">123</nut-button> -->
+  <nut-button @click="baseClick1" type="primary">123</nut-button>
   <Pagination />
   <!-- <Avatar /> -->
   <!-- <Swipe /> -->
-  <!-- <InputNumber /> -->
+  <InputNumber />
   <!-- <NumberKeyboard /> -->
   <!-- <Countdown /> -->
   <!-- <Badge /> -->
   <!-- <Tag /> -->
-  <Popover />
+  <!-- <Popover /> -->
   <!-- <Form /> -->
 </template>
 
