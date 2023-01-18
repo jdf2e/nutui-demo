@@ -1,5 +1,5 @@
 <template>
-  <!-- <Badge></Badge>
+  <Badge></Badge>
   <Forms></Forms>
   <Pagination></Pagination>
   <Popover></Popover>
@@ -14,7 +14,7 @@
   <NoticeBar></NoticeBar>
   <CountDown></CountDown>
   <NumberKeyboard></NumberKeyboard>
-  <Uploader></Uploader> -->
+  <Uploader></Uploader>
   <List></List>
   <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
 </template>
