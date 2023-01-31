@@ -1,6 +1,7 @@
 import { reactive } from 'vue'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import { Dongdong } from '@nutui/icons-vue-taro';
 
 
 export default {
@@ -8,6 +9,7 @@ export default {
   components: {
     View,
     Text,
+    Dongdong,
   },
   setup() {
     const state = reactive({
@@ -41,7 +43,7 @@ export default {
     return () => {
       return (
         <View class='content'>
-          <View><Text>{state.msg}</Text></View>
+          <View><Text>{state.msg}</Text> <Dongdong></Dongdong> </View>
           <nut-button type="primary" onClick={() => handleClick(state.msg2)} >点我</nut-button>
           <nut-cell
             show-icon={true}
