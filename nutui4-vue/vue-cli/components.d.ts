@@ -8,10 +8,5 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     NutButton: typeof import('@nutui/nutui')['Button']
-    NutEcard: typeof import('@nutui/nutui')['Ecard']
-    NutOverlay: typeof import('@nutui/nutui')['Overlay']
-    NutPopup: typeof import('@nutui/nutui')['Popup']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
   }
 }
