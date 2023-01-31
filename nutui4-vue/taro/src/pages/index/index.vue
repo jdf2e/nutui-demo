@@ -9,6 +9,13 @@
     </view>
     <nut-toast :msg="msg2" v-model:visible="show" :type="type" :cover="cover"/>
   </view>
+    <nut-config-provider :theme-vars="themeVars">
+      <nut-form>
+        <nut-form-item label="滑块">
+          <nut-range hidden-tag></nut-range>
+        </nut-form-item>
+      </nut-form>
+    </nut-config-provider>
 </template>
 
 <script>
@@ -34,9 +41,15 @@ export default {
       state.type = type;
       state.cover = cover;
     };
+    const themeVars = {
+    rangeBgColor: "rgba(25,137,250,0.15)",
+    rangeBarBgColor: "#0289fa",
+    rangeBarBtnBorder: "10px solid #0289fa",
+  };
 
     return {
       ...toRefs(state),
+      themeVars,
       handleClick
     }
   }
