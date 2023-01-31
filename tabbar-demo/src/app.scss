@@ -1,8 +1,0 @@
-
-// taro 的h5为 默认的 tabbar 组件，所以这里将其样式清除掉  taro issues https://github.com/NervJS/taro/issues/10049
-.taro-tabbar__tabbar-bottom {
-    display: none;
-  }
-  .taro-tabbar__container .taro_page.taro_tabbar_page {
-    max-height: 100vh;
-}
