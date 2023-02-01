@@ -37,8 +37,8 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@nutui/icons-vue-taro": "^0.0.8",
-    "@nutui/nutui-taro": "4.0.0-beta.20",
+    "@nutui/icons-vue-taro": "^0.0.9",
+    "@nutui/nutui-taro": "4.0.0-beta.27",
     "@tarojs/components": "3.5.6",
     "@tarojs/helper": "3.5.6",
     "@tarojs/plugin-framework-vue3": "3.5.6",

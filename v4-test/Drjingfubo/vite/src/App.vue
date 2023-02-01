@@ -34,6 +34,6 @@ const themeVars = {
   }
 }
 .main_content {
-  overflow: auto;
+  // overflow: auto;
 }
 </style>

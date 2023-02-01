@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     NutCell: typeof import('@nutui/nutui-taro')['Cell']
     NutCellGroup: typeof import('@nutui/nutui-taro')['CellGroup']
     NutCheckbox: typeof import('@nutui/nutui-taro')['Checkbox']
+    NutCol: typeof import('@nutui/nutui-taro')['Col']
     NutConfigProvider: typeof import('@nutui/nutui-taro')['ConfigProvider']
     NutCountdown: typeof import('@nutui/nutui-taro')['Countdown']
     NutForm: typeof import('@nutui/nutui-taro')['Form']
@@ -26,9 +27,9 @@ declare module '@vue/runtime-core' {
     NutRadioGroup: typeof import('@nutui/nutui-taro')['RadioGroup']
     NutRange: typeof import('@nutui/nutui-taro')['Range']
     NutRate: typeof import('@nutui/nutui-taro')['Rate']
+    NutRow: typeof import('@nutui/nutui-taro')['Row']
     NutSwitch: typeof import('@nutui/nutui-taro')['Switch']
     NutTag: typeof import('@nutui/nutui-taro')['Tag']
     NutToast: typeof import('@nutui/nutui-taro')['Toast']
-    NutUploader: typeof import('@nutui/nutui-taro')['Uploader']
   }
 }

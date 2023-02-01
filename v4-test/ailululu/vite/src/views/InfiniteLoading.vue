@@ -1,32 +1,36 @@
-<!--
- * @Descripttion: 
- * @version: 
- * @Author: sueRimn
- * @Date: 2023-01-07 16:13:58
- * @LastEditors: sueRimn
- * @LastEditTime: 2023-01-07 16:29:43
--->
 <template>
-  <div class="demo">
-    <nut-infinite-loading
-      v-model="infinityValue"
-      :has-more="hasMore"
-      @load-more="loadMore"
-    >
-      <div class="infiniteLi" v-for="(item, index) in defultList" :key="index">
-        {{ item }}
-      </div>
-    </nut-infinite-loading>
-  </div>
+  <nut-tabs v-model="tabsValue" animatedTime="0">
+    <nut-tab-pane title="自定义加载文案">
+      <ul class="infiniteUl">
+        <nut-infinite-loading
+          v-model="infinityValue"
+          load-txt="Loading..."
+          load-more-txt="没有啦~"
+          :has-more="hasMore"
+          @load-more="loadMore"
+        >
+          <li
+            class="infiniteLi"
+            v-for="(item, index) in defultList"
+            :key="index"
+          >
+            {{ item }}
+          </li>
+        </nut-infinite-loading>
+      </ul>
+    </nut-tab-pane>
+  </nut-tabs>
 </template>
 
-<script lang="ts">
-import { toRefs, reactive, ref, onMounted } from "vue";
-
+<script>
+import { ref } from "vue";
 export default {
-  props: {},
-  setup() {
-    const letter: any[] = [
+  setup(props) {
+    let cycle = 0;
+    const tabsValue = ref(0);
+    const infinityValue = ref(false);
+    const hasMore = ref(true);
+    const letter = [
       "A",
       "B",
       "C",
@@ -53,72 +57,38 @@ export default {
       "Y",
       "Z",
     ];
-    const data = reactive({
-      infinityValue: true,
-      defultList: [],
-    });
-    onMounted(() => {
-      data.defultList = [].concat(letter);
-    });
-
-    let cycle = 0;
-    // const infinityValue = ref(false);
-    const hasMore = ref(true);
-    // const defultList = ref([]);
-    const loadMore = (done: any) => {
+    const defultList = ref(letter);
+    const loadMore = (done) => {
       setTimeout(() => {
-        data.defultList = data.defultList.concat(letter);
+        defultList.value = defultList.value.concat(letter);
         cycle++;
         if (cycle > 2) hasMore.value = false;
-        data.infinityValue = false;
-        console.log("data.defultList", data.defultList);
+        infinityValue.value = false;
       }, 1000);
     };
 
-    return { loadMore, hasMore, ...toRefs(data) };
+    return { tabsValue, loadMore, hasMore, defultList, infinityValue };
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.demo {
-  .nut-theme-dark {
-    .infiniteLi {
-      color: $dark-color;
-    }
-  }
-
-  .nut-tabs__titles {
-    background: #fff !important;
-    box-shadow: 0px 4px 10px 0px rgb(0 0 0 / 7%);
-    margin-top: 10px;
-    margin-bottom: 3px;
-    z-index: 99;
-  }
-
-  .nut-tab-pane {
-    padding: 0 !important;
-    padding-left: 16px !important;
-  }
-  .infiniteUl {
-    width: 100%;
-    height: calc(100vh - 120px);
-    padding: 0;
-    margin: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  .infiniteLi {
-    font-size: 14px;
-    color: #333;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  .loading {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
+<style lang="scss">
+.nut-tab-pane {
+  padding: 0 !important;
+  padding-left: 16px !important;
+}
+.infiniteUl {
+  width: 100%;
+  height: calc(100vh - 120px);
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.infiniteLi {
+  font-size: 14px;
+  color: #333;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
 }
 </style>

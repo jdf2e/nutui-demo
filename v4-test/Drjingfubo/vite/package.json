@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite build && vite preview "
   },
   "dependencies": {
-    "@nutui/nutui": "4.0.0-beta.16",
+    "@nutui/icons-vue": "^0.0.24",
+    "@nutui/nutui": "4.0.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
