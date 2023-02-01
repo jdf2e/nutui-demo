@@ -1,17 +1,17 @@
-// import Components from 'unplugin-vue-components/webpack';
+import Components from 'unplugin-vue-components/webpack';
 
-// const NutUIResolver = () => {
-//   return (name) => {
-//     if (name.startsWith('Nut')) {
-//       const partialName = name.slice(3);
-//       return {
-//         name: partialName,
-//         from: '@nutui/nutui-taro',
-//         sideEffects: `@nutui/nutui-taro/dist/packages/${partialName.toLowerCase()}/style`
-//       }
-//     }
-//   }
-// }
+const NutUIResolver = () => {
+  return (name) => {
+    if (name.startsWith('Nut')) {
+      const partialName = name.slice(3);
+      return {
+        name: partialName,
+        from: '@nutui/nutui-taro',
+        sideEffects: `@nutui/nutui-taro/dist/packages/${partialName.toLowerCase()}/style`
+      }
+    }
+  }
+}
 
 const config = {
   projectName: 'jsx',
@@ -51,11 +51,15 @@ const config = {
     data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
   },
   mini: {
-    // webpackChain(chain) {
-    //   chain.plugin('unplugin-vue-components').use(Components({
-    //     resolvers: [NutUIResolver()]
-    //   }))
-    // },
+    webpackChain(chain) {
+      chain.plugin('unplugin-vue-components').use(Components({
+        include: [
+          /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+          /\.vue$/, /\.vue\?vue/, // .vue
+        ],
+        resolvers: [NutUIResolver()]
+      }))
+    },
     postcss: {
       pxtransform: {
         enable: true,
