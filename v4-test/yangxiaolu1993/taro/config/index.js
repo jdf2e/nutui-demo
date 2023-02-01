@@ -48,6 +48,10 @@ const config = {
       }))
     },
     postcss: {
+      autoprefixer: {
+        enable: true,
+        config: {}
+      },
       pxtransform: {
         enable: true,
         config: {
