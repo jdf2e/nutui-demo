@@ -4,27 +4,22 @@
       <img src="" alt="">
     </view>
     {{ msg }} <Dongdong />
+    <IconFont name="dongdong" />
     <view class="btn">
       <nut-button type="primary" @click="handleClick('text', msg2, true)">点我</nut-button>
     </view>
     <nut-toast :msg="msg2" v-model:visible="show" :type="type" :cover="cover"/>
   </view>
-    <nut-config-provider :theme-vars="themeVars">
-      <nut-form>
-        <nut-form-item label="滑块">
-          <nut-range hidden-tag></nut-range>
-        </nut-form-item>
-      </nut-form>
-    </nut-config-provider>
 </template>
 
 <script>
 import { reactive, toRefs } from 'vue';
-import { Dongdong } from '@nutui/icons-vue-taro';
+import { Dongdong,IconFont } from '@nutui/icons-vue-taro';
 export default {
   name: 'Index',
   components: {
-    Dongdong
+    Dongdong,
+    IconFont
   },
   setup() {
     const state = reactive({
