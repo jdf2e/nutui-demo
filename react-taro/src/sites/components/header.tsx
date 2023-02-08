@@ -11,17 +11,19 @@ const Header = () => {
   }
 
   const compName = () => {
-    let allComps: any = []
-    let hashCompName = location.hash.split('pages/')[1].replace('/index', '')
-    config.nav.map((item: any) => {
-      allComps = [...allComps, ...item.packages]
-    })
-
-    let targetComp = allComps.filter(
-      (item: any) => hashCompName === item.name.toLowerCase()
-    )
-
-    return targetComp[0].name
+    return ''
+    // let allComps: any = []
+    // let hashCompName = location.hash.split('pages/')[1].replace('/index', '')
+    // console.log('xxx', hashCompName, config.nav)
+    // config.nav.map((item: any) => {
+    //   allComps = [...allComps, ...item.packages]
+    // })
+    //
+    // let targetComp = allComps.filter(
+    //   (item: any) => hashCompName === item.name.toLowerCase()
+    // )
+    //
+    // return targetComp[0].name
   }
 
   return (
