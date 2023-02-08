@@ -6,6 +6,7 @@ import Popup from "../../components/popup/popup";
 import Divider from "../../components/divider/divider";
 import Grid from "../../components/grid/grid";
 import Layout from "../../components/layout/layout";
+import Sticky from "../../components/sticky/sticky";
 import Elevator from "../../components/elevator/elevator";
 import Fixednav from "../../components/fixednav/fixednav";
 import Indicator from "../../components/indicator/indicator";
@@ -67,5 +68,5 @@ import Card from "../../components/card/card";
 import Signature from "../../components/signature/signature";
 import Timeselect from "../../components/timeselect/timeselect";
  
-const components =[Button,Cell,Icon,Overlay,Popup,Divider,Grid,Layout,Elevator,Fixednav,Indicator,Menu,Navbar,Pagination,Sidenavbar,Tabbar,Tabs,Calendar,Cascader,Checkbox,Datepicker,Input,Inputnumber,Numberkeyboard,Picker,Radio,Range,Rate,Searchbar,Shortpassword,Textarea,Uploader,Actionsheet,Backtop,Dialog,Drag,Infiniteloading,Notify,Swipe,Switch,Toast,Animate,Animatingnumbers,Avatar,Badge,Circleprogress,Collapse,Countdown,Ellipsis,Empty,Imagepreview,Noticebar,Popover,Price,Progress,Skeleton,Steps,Swiper,Table,Tag,Trendarrow,Virtuallist,Watermark,Address,Barrage,Card,Signature,Timeselect]; 
+const components =[Button,Cell,Icon,Overlay,Popup,Divider,Grid,Layout,Sticky,Elevator,Fixednav,Indicator,Menu,Navbar,Pagination,Sidenavbar,Tabbar,Tabs,Calendar,Cascader,Checkbox,Datepicker,Input,Inputnumber,Numberkeyboard,Picker,Radio,Range,Rate,Searchbar,Shortpassword,Textarea,Uploader,Actionsheet,Backtop,Dialog,Drag,Infiniteloading,Notify,Swipe,Switch,Toast,Animate,Animatingnumbers,Avatar,Badge,Circleprogress,Collapse,Countdown,Ellipsis,Empty,Imagepreview,Noticebar,Popover,Price,Progress,Skeleton,Steps,Swiper,Table,Tag,Trendarrow,Virtuallist,Watermark,Address,Barrage,Card,Signature,Timeselect]; 
 export default components
