@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useLocale from '../../../../sites/assets/locale/taro/uselocale'
 import { BaseLang } from '../../../../locales/base'
 
@@ -10,9 +10,9 @@ interface LanguagesPackage<A = {}> {
     A
 }
 
-export const useTranslate = <T>(languagesPackage: LanguagesPackage<T>) => {
+export const useTranslate = (languagesPackage: LanguagesPackage) => {
   const [locale] = useLocale()
-  const [translated, setLanguagesPackage] = useState<BaseLang & T>({} as any)
+  const [translated, setLanguagesPackage] = useState<BaseLang>({} as any)
   useEffect(() => {
     if (languagesPackage) {
       // @ts-ignore
