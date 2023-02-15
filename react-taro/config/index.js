@@ -10,7 +10,9 @@ const config = {
     375: 2 / 1,
   },
   sourceRoot: 'src',
-  outputRoot: 'dist',
+  outputRoot: `dist/${
+      process.env.TARO_ENV == 'h5' ? 'demo' : process.env.TARO_ENV
+  }`,
   plugins: ['@tarojs/plugin-html'],
   defineConstants: {
   },

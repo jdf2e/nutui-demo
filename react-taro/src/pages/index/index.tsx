@@ -1,9 +1,9 @@
-import React, { Component, useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Taro from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
 import "./index.scss";
 import { Cell } from "@nutui/nutui-react-taro";
-import{list} from '../../../componentsNameList'
+import {list} from '../../../componentsNameList'
 const { navigateTo } = Taro;
 
 
