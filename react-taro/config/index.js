@@ -1,4 +1,5 @@
 const path = require("path");
+console.log(process.cwd())
 const config = {
   projectName: 'jd-lai',
   date: '2022-9-2',
@@ -34,6 +35,21 @@ const config = {
     '@': path.resolve(__dirname, '../src'),
   },
   mini: {
+    webpackChain: (chain, webpack) => {
+      chain.merge({
+        loader: {
+          'postcss-loader': [require('postcss-loader'), {
+            postcssOptions: {
+              plugins: [
+                [
+                  "postcss-import",
+                ],
+              ],
+            }
+          }]
+        }
+      })
+    },
     postcss: {
       pxtransform: {
         enable: true,

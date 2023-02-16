@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Taro from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
 import "./index.scss";
@@ -9,14 +9,11 @@ const { navigateTo } = Taro;
 
 const nutuiTaro: React.FunctionComponent = () => {
   const gotoSingleComponent = (index?: number) => {
-    console.log('gotoSingleComponent ', index )
     navigateTo({
       url: `/pages/single/index?id=${index}`,
     });
   };
-  useEffect(() => {
-  console.log('=>>>>>>',list)
-  }, []);
+
   const renderCellGroup = () => {
     if (list?.length) {
       return list.map((i: string, index: number) => {
