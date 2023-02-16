@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import Taro from '@tarojs/taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import { Button, Cell, Overlay } from '@nutui/nutui-react-taro'
 import './demo.scss'
+import Header from '@/sites/components/header'
 
 interface T {
   '84aa6bce': string
@@ -60,7 +62,10 @@ const OverlayDemo = () => {
   }
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div
+        className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} demo-overlay`}
+      >
         <h2>{translated['84aa6bce']}</h2>
         <Cell>
           <Button type="primary" onClick={handleToggleShow}>

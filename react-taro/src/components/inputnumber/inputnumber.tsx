@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import { InputNumber, Cell, Toast } from '@nutui/nutui-react-taro'
+import Header from '@/sites/components/header'
+import Taro from '@tarojs/taro'
 
-interface IValState {
+interface ValState {
   val1: number | string
   val2: number | string
   val3: number | string
@@ -65,7 +67,7 @@ const InputNumberDemo = () => {
     },
   })
 
-  const [inputState, setInputState] = useState<IValState>({
+  const [inputState, setInputState] = useState<ValState>({
     val1: 1,
     val2: 0,
     val3: 10,
@@ -77,19 +79,31 @@ const InputNumberDemo = () => {
   })
   const overlimit = (e: MouseEvent) => {
     console.log(e)
-    Toast.warn(translated['6333c786'])
+    // Toast.warn(translated['6333c786'])
+    toastShow(translated['6333c786'], 'warn')
   }
   const onChange = (value: string | number) => {
-    Toast.loading(translated['0137871a'])
+    // Toast.loading(translated['0137871a'])
+    toastShow(translated['0137871a'], 'loading')
     setTimeout(() => {
       inputState.val7 = Number(value)
       setInputState({ ...inputState })
-      Toast.hide()
+      //   Toast.hide()
+      SetShow(false)
     }, 2000)
+  }
+  const [show, SetShow] = useState(false)
+  const [toastMsg, SetToastMsg] = useState('')
+  const [toastType, SetToastType] = useState('text')
+  const toastShow = (msg: any, type: string) => {
+    SetToastMsg(msg)
+    SetToastType(type)
+    SetShow(true)
   }
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>{translated['84aa6bce']}</h2>
         <Cell>
           <InputNumber modelValue={inputState.val1} />
@@ -104,7 +118,7 @@ const InputNumberDemo = () => {
             modelValue={inputState.val3}
             min="10"
             max="20"
-            overlimit={overlimit}
+            onOverlimit={overlimit}
           />
         </Cell>
         <h2>{translated['181965e2']}</h2>
@@ -126,7 +140,11 @@ const InputNumberDemo = () => {
         </Cell>
         <h2>{translated['65bafb1d']}</h2>
         <Cell>
-          <InputNumber modelValue={inputState.val7} change={onChange} isAsync />
+          <InputNumber
+            modelValue={inputState.val7}
+            onChangeFuc={onChange}
+            isAsync
+          />
         </Cell>
         <h2>{translated['7e2394ae']}</h2>
         <Cell>
@@ -136,6 +154,14 @@ const InputNumberDemo = () => {
             inputWidth="50"
           />
         </Cell>
+        <Toast
+          type={toastType}
+          visible={show}
+          msg={toastMsg}
+          onClose={() => {
+            SetShow(false)
+          }}
+        />
       </div>
     </>
   )

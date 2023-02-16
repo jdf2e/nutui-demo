@@ -1,9 +1,10 @@
 import React from 'react'
+import Taro from '@tarojs/taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import icons from '@/styles/font/config.json'
 import { Icon, Cell, CellGroup } from '@nutui/nutui-react-taro'
-import Taro from '@tarojs/taro'
 import './demo.scss'
+import Header from '@/sites/components/header'
 
 interface T {
   '84aa6bce': string
@@ -32,6 +33,34 @@ const copyTag = (text: string) => {
   document.body.removeChild(input)
 }
 
+const style = `
+.nut-cell > .nutui-iconfont {
+  margin-right: 10px;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  width: 100%;
+}
+ul li {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ul li  span {
+  height: 40px;
+  font-size: 12px;
+  text-align: center;
+}
+ul li span .nutui-iconfont {
+  margin: 16px 0 16px;
+}
+`
+
 const IconDemo = () => {
   const [translated] = useTranslate<T>({
     'zh-CN': {
@@ -59,7 +88,9 @@ const IconDemo = () => {
 
   return (
     <>
-      <div className="demo">
+      <Header />
+      <style>{style}</style>
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>{translated['84aa6bce']}</h2>
         <Cell>
           <Icon name="dongdong" />
@@ -79,10 +110,10 @@ const IconDemo = () => {
           <Icon name="JD" color="#fa2c19" />
         </Cell>
         <h2>{translated['7aeb5407']}</h2>
-        <Cell>
-          <Icon name="dongdong" />
-          <Icon name="dongdong" size="24" />
+        <Cell style={{ alignItems: 'center' }}>
           <Icon name="dongdong" size="16" />
+          <Icon name="dongdong" size="20" />
+          <Icon name="dongdong" size="24" />
         </Cell>
         {icons.data.map((item, index) => {
           return (

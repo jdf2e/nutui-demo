@@ -1,6 +1,8 @@
 import React from 'react'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import { Switch, Cell, CellGroup } from '@nutui/nutui-react-taro'
+import Header from '@/sites/components/header'
+import Taro from '@tarojs/taro'
 
 interface T {
   basic: string
@@ -110,7 +112,8 @@ const CellDemo = () => {
   }
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>{translated.basic}</h2>
         <Cell title={translated.title} desc={translated.desc} />
         <Cell
@@ -120,7 +123,7 @@ const CellDemo = () => {
         />
         <Cell
           title={translated.title3}
-          click={(
+          onClick={(
             event: React.MouseEvent<HTMLDivElement, globalThis.MouseEvent>
           ) => testClick(event)}
         />
@@ -154,7 +157,6 @@ const CellDemo = () => {
             isLink
             url="/pages/index/index"
           />
-          <Cell title={translated.routerJump} to="/" />
         </CellGroup>
         <CellGroup title={translated.customRight}>
           <Cell title="Switch" linkSlot={<Switch checked />} />

@@ -1,6 +1,8 @@
 import React from 'react'
-import { Divider } from '@nutui/nutui-react-taro'
+import Taro from '@tarojs/taro'
+import { Divider, Cell } from '@nutui/nutui-react-taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
+import Header from '@/sites/components/header'
 
 interface T {
   basic: string
@@ -37,44 +39,65 @@ const DividerDemo = () => {
   })
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>{translated.basic}</h2>
-        <Divider />
+        <Cell>
+          <Divider />
+        </Cell>
         <h2>{translated.withText}</h2>
-        <Divider>{translated.text}</Divider>
-        <h2>{translated.withText}</h2>
-        <Divider contentPosition="left">{translated.text}</Divider>
-        <Divider contentPosition="right">{translated.text}</Divider>
+        <Cell>
+          <Divider>{translated.text}</Divider>
+        </Cell>
+        <h2>{translated.contentPosition}</h2>
+        <Cell>
+          <Divider contentPosition="left">{translated.text}</Divider>
+        </Cell>
+        <Cell>
+          <Divider contentPosition="right">{translated.text}</Divider>
+        </Cell>
         <h2>{translated.dashed}</h2>
-        <Divider dashed>{translated.text}</Divider>
+        <Cell>
+          <Divider dashed>{translated.text}</Divider>
+        </Cell>
         <h2>{translated.customStyle}</h2>
-        <Divider
-          styles={{
-            color: '#1989fa',
-            borderColor: '#1989fa',
-            padding: '0 16px',
-          }}
-        >
-          {translated.text}
-        </Divider>
+        <Cell>
+          <Divider
+            styles={{
+              color: '#1989fa',
+              borderColor: '#1989fa',
+              padding: '0 16px',
+            }}
+          >
+            {translated.text}
+          </Divider>
+        </Cell>
         <h2>{translated.verticalDivider}</h2>
-        <div style={{ fontSize: '14px', marginLeft: '27px', color: '#909ca4' }}>
-          {translated.text}
-          <Divider direction="vertical" />
-          <a
-            href="#/Divider"
-            style={{ color: '#1989fa', display: 'inline-block' }}
+        <Cell>
+          <div
+            style={{ fontSize: '14px', marginLeft: '27px', color: '#909ca4' }}
           >
-            {translated.link}
-          </a>
-          <Divider direction="vertical" />
-          <a
-            href="#/Divider"
-            style={{ color: '#1989fa', display: 'inline-block' }}
-          >
-            {translated.link}
-          </a>
-        </div>
+            {translated.text}
+            <Divider direction="vertical" />
+            <span
+              onClick={() => {
+                Taro.navigateTo({ url: '/pages/index/index' })
+              }}
+              style={{ color: '#1989fa', display: 'inline-block' }}
+            >
+              {translated.link}
+            </span>
+            <Divider direction="vertical" />
+            <span
+              onClick={() => {
+                Taro.navigateTo({ url: '/pages/index/index' })
+              }}
+              style={{ color: '#1989fa', display: 'inline-block' }}
+            >
+              {translated.link}
+            </span>
+          </div>
+        </Cell>
       </div>
     </>
   )

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, Cell, CountDown } from '@nutui/nutui-react-taro'
+import Header from '@/sites/components/header'
+import Taro from '@tarojs/taro'
 
 const CountDownDemo = () => {
   const stateRef = useRef({
@@ -35,7 +37,7 @@ const CountDownDemo = () => {
   }
 
   useEffect(() => {
-    stateRef.current.timer = setTimeout(() => {
+    stateRef.current.timer = window.setTimeout(() => {
       setAsyncEnd(Date.now() + 30 * 1000)
     }, 3000)
     return () => {
@@ -62,7 +64,8 @@ const CountDownDemo = () => {
   }
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>基础用法</h2>
         <Cell>
           <CountDown endTime={stateRef.current.endTime} onEnd={onEnd} />
@@ -70,7 +73,7 @@ const CountDownDemo = () => {
         <h2>显示天</h2>
 
         <Cell>
-          <CountDown endTime={stateRef.current.endTime} showDays />
+          <CountDown endTime={stateRef.current.endTime} />
         </Cell>
 
         <h2>以服务端的时间为准</h2>
@@ -85,17 +88,13 @@ const CountDownDemo = () => {
         <h2>显示为天时分秒</h2>
 
         <Cell>
-          <CountDown
-            showDays
-            showPlainText
-            endTime={stateRef.current.endTime}
-          />
+          <CountDown endTime={stateRef.current.endTime} />
         </Cell>
 
         <h2>异步更新结束时间</h2>
 
         <Cell>
-          <CountDown showPlainText endTime={asyncEnd} />
+          <CountDown endTime={asyncEnd} />
         </Cell>
 
         <h2>控制开始和暂停的倒计时</h2>

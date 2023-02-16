@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import Taro from '@tarojs/taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
-import { Button } from '@nutui/nutui-react-taro'
+import Header from '@/sites/components/header'
+import { Button, Cell } from '@nutui/nutui-react-taro'
+import './demo.scss'
 
 interface T {
   ce5c5446: string
@@ -14,6 +17,7 @@ interface T {
   '7db1a8b2': string
   a52bef0c: string
   d04fcbda: string
+  '0aaad622': string
   '0aaad620': string
   '60a53514': string
   b8a453e3: string
@@ -39,6 +43,7 @@ const ButtonDemo = () => {
       '7db1a8b2': '禁用状态',
       a52bef0c: '加载状态',
       d04fcbda: '加载中',
+      '0aaad622': '图标按钮',
       '0aaad620': '按钮尺寸',
       '60a53514': '收藏',
       b8a453e3: '大号按钮',
@@ -61,6 +66,7 @@ const ButtonDemo = () => {
       '7db1a8b2': '禁用狀態',
       a52bef0c: '載入狀態',
       d04fcbda: '載入中',
+      '0aaad622': '图标按钮',
       '0aaad620': '按鈕尺寸',
       '60a53514': '收藏',
       b8a453e3: '大號按鈕',
@@ -83,6 +89,7 @@ const ButtonDemo = () => {
       '7db1a8b2': 'Disabled State',
       a52bef0c: 'Load State',
       d04fcbda: 'Loading',
+      '0aaad622': 'Icon Button',
       '0aaad620': 'Button size',
       '60a53514': 'Favorite',
       b8a453e3: 'Large button',
@@ -98,105 +105,142 @@ const ButtonDemo = () => {
   const [loading, setLoading] = useState(false)
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>{translated.ce5c5446}</h2>
-        <Button
-          className="aa"
-          style={{ margin: 8 }}
-          type="primary"
-          shape="round"
-        >
-          {translated.c38a08ef}
-        </Button>
-        <Button type="info" style={{ margin: 8 }} shape="round">
-          {translated.b840c88f}
-        </Button>
-        <Button shape="round" style={{ margin: 8 }}>
-          {translated.a74a1fd4}
-        </Button>
-        <Button type="danger" style={{ margin: 8 }} shape="round">
-          {translated['8dab2f66']}
-        </Button>
-        <Button type="warning" style={{ margin: 8 }}>
-          {translated.cfbdc781}
-        </Button>
-        <Button type="success" style={{ margin: 8 }}>
-          {translated.c3a3a1d2}
-        </Button>
+        <Cell className="button-cell">
+          <Button
+            className="aa"
+            style={{ margin: 8 }}
+            type="primary"
+            shape="round"
+          >
+            {translated.c38a08ef}
+          </Button>
+          <Button type="info" style={{ margin: 8 }} shape="round">
+            {translated.b840c88f}
+          </Button>
+          <Button shape="round" style={{ margin: 8 }}>
+            {translated.a74a1fd4}
+          </Button>
+          <Button type="danger" style={{ margin: 8 }} shape="round">
+            {translated['8dab2f66']}
+          </Button>
+          <Button type="warning" style={{ margin: 8 }}>
+            {translated.cfbdc781}
+          </Button>
+          <Button type="success" style={{ margin: 8 }}>
+            {translated.c3a3a1d2}
+          </Button>
+        </Cell>
 
         <h2>{translated.e51e4582}</h2>
-        <Button plain style={{ margin: 8 }} type="primary">
-          {translated.e51e4582}
-        </Button>
-        <Button plain style={{ margin: 8 }} type="info">
-          {translated.e51e4582}
-        </Button>
+        <Cell className="button-cell">
+          <Button plain style={{ margin: 8 }} type="primary">
+            {translated.e51e4582}
+          </Button>
+          <Button plain style={{ margin: 8 }} type="info">
+            {translated.e51e4582}
+          </Button>
+        </Cell>
         <h2>{translated['7db1a8b2']}</h2>
-        <Button disabled style={{ margin: 8 }} type="primary">
-          {translated['7db1a8b2']}
-        </Button>
-        <Button plain disabled style={{ margin: 8 }} type="info">
-          {translated['7db1a8b2']}
-        </Button>
-        <Button plain disabled style={{ margin: 8 }} type="primary">
-          {translated['7db1a8b2']}
-        </Button>
+        <Cell className="button-cell">
+          <Button disabled style={{ margin: 8 }} type="primary">
+            {translated['7db1a8b2']}
+          </Button>
+          <Button plain disabled style={{ margin: 8 }} type="info">
+            {translated['7db1a8b2']}
+          </Button>
+          <Button plain disabled style={{ margin: 8 }} type="primary">
+            {translated['7db1a8b2']}
+          </Button>
+        </Cell>
+
         <h2>{translated.a52bef0c}</h2>
-        <Button loading type="info" style={{ margin: 8 }} />
-        <Button loading type="warning" style={{ margin: 8 }}>
-          {translated.d04fcbda}
-        </Button>
-        <Button
-          loading={loading}
-          type="success"
-          onClick={() => {
-            setTimeout(() => {
-              setLoading(false)
-            }, 1500)
-            setLoading(!loading)
-          }}
-          style={{ margin: 8 }}
-        >
-          Click me!
-        </Button>
+        <Cell className="button-cell">
+          <Button loading type="info" style={{ margin: 8 }} />
+          <Button loading type="warning" style={{ margin: 8 }}>
+            {translated.d04fcbda}
+          </Button>
+          <Button
+            loading={loading}
+            type="success"
+            onClick={() => {
+              setTimeout(() => {
+                setLoading(false)
+              }, 1500)
+              setLoading(!loading)
+            }}
+            style={{ margin: 8 }}
+          >
+            Click me!
+          </Button>
+        </Cell>
+
+        <h2>{translated['0aaad622']}</h2>
+
+        <Cell className="button-cell">
+          <Button
+            shape="square"
+            plain
+            type="primary"
+            icon="star-fill"
+            style={{ margin: 8 }}
+          />
+          <Button
+            shape="square"
+            type="primary"
+            icon="star"
+            style={{ margin: 8 }}
+          >
+            {translated['60a53514']}
+          </Button>
+          <Button
+            shape="round"
+            type="primary"
+            size="large"
+            icon="star"
+            iconSize={20}
+            style={{ margin: 8 }}
+          >
+            {translated['60a53514']}
+          </Button>
+        </Cell>
         <h2>{translated['0aaad620']}</h2>
-        <Button
-          shape="square"
-          plain
-          type="primary"
-          icon="star-fill"
-          style={{ margin: 8 }}
-        />
-        <Button shape="square" type="primary" icon="star" style={{ margin: 8 }}>
-          {translated['60a53514']}
-        </Button>
-        <h2>{translated['0aaad620']}</h2>
-        <Button size="large" type="primary">
-          {translated.b8a453e3}
-        </Button>
-        <Button type="primary" style={{ margin: 8 }}>
-          {translated['248be9e1']}
-        </Button>
-        <Button size="small" style={{ margin: 8 }} type="primary">
-          {translated.ea3d02f2}
-        </Button>
+        <Cell className="button-cell">
+          <Button size="large" type="primary">
+            {translated.b8a453e3}
+          </Button>
+          <Button type="primary" style={{ margin: 8 }}>
+            {translated['248be9e1']}
+          </Button>
+          <Button size="small" style={{ margin: 8 }} type="primary">
+            {translated.ea3d02f2}
+          </Button>
+        </Cell>
         <h2>{translated.c9e6df49}</h2>
-        <Button block type="primary">
-          {translated.c9e6df49}
-        </Button>
+        <Cell>
+          <Button block type="primary">
+            {translated.c9e6df49}
+          </Button>
+        </Cell>
+
         <h2>{translated['781b07fd']}</h2>
-        <Button color="#7232dd" style={{ margin: 8 }}>
-          {translated['1076d771']}
-        </Button>
-        <Button color="#7232dd" plain style={{ margin: 8 }}>
-          {translated['1076d771']}
-        </Button>
-        <Button
-          color="linear-gradient(to right, #ff6034, #ee0a24)"
-          style={{ margin: 8 }}
-        >
-          {translated['6ab47cd2']}
-        </Button>
+
+        <Cell className="button-cell">
+          <Button color="#7232dd" style={{ margin: 8 }}>
+            {translated['1076d771']}
+          </Button>
+          <Button color="#7232dd" plain style={{ margin: 8 }}>
+            {translated['1076d771']}
+          </Button>
+          <Button
+            color="linear-gradient(to right, #ff6034, #ee0a24)"
+            style={{ margin: 8 }}
+          >
+            {translated['6ab47cd2']}
+          </Button>
+        </Cell>
       </div>
     </>
   )

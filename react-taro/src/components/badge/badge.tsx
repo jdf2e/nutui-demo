@@ -1,6 +1,9 @@
 import React from 'react'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import { Avatar, Badge, Cell, CellGroup } from '@nutui/nutui-react-taro'
+import Header from '@/sites/components/header'
+import Taro from '@tarojs/taro'
+
 interface T {
   '8ab98966': string
   '1e7a2282': string
@@ -38,7 +41,8 @@ const BadgeDemo = () => {
   })
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>{translated['8ab98966']}</h2>
         <CellGroup>
           <Cell>

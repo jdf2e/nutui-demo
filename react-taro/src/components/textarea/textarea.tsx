@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import Taro from '@tarojs/taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
 import { TextArea } from '@nutui/nutui-react-taro'
+import Header from '@/sites/components/header'
 
 interface T {
   basic: string
@@ -57,12 +59,12 @@ const TextAreaDemo = () => {
 
   return (
     <>
-      <div className="demo">
+      <Header />
+      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
         <h2>{translated.basic}</h2>
         <TextArea
           defaultValue={value1}
           className="text-1"
-          maxlength={-1}
           style={{ fontSize: '12px' }}
           onChange={(value, event) => {
             change(value, event)
