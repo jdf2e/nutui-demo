@@ -39,7 +39,7 @@
     "@gui-one/material-miniapp": "^0.15.81",
     "@nutui/icons-vue-taro": "0.0.9",
     "@nutui/nutui": "^4.0.5",
-    "@nutui/nutui-react-taro": "^2.0.0-alpha.0",
+    "@nutui/nutui-react-taro": "^2.0.0-alpha.5",
     "@tarojs/components": "3.6.1",
     "@tarojs/helper": "3.6.1",
     "@tarojs/plugin-framework-react": "3.6.1",
@@ -59,7 +59,7 @@
     "@tarojs/taro-h5": "3.6.1",
     "antd-mobile": "^5.22.0",
     "babel-plugin-import": "^1.13.5",
-    "postcss": "^8.4.22",
+    "postcss": "^8.4.23",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },

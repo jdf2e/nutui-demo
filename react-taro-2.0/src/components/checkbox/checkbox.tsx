@@ -5,7 +5,10 @@ import { useTranslate } from '@/sites/assets/locale/taro'
 import { Button, Cell, Checkbox, Toast } from '@nutui/nutui-react-taro'
 import Header from '@/sites/components/header'
 
+
 interface T {
+  uncontrolled: string
+  controlled: string
   basic: string
   checkbox: string
   disbaled: string
@@ -31,8 +34,10 @@ interface T {
 }
 
 const CheckboxDemo = () => {
-  const [translated] = useTranslate<T>({
+  const [translated] = useTranslate({
     'zh-CN': {
+      uncontrolled: '非受控',
+      controlled: '受控',
       basic: '基本用法',
       checkbox: '复选框',
       disbaled: '禁用状态',
@@ -42,10 +47,10 @@ const CheckboxDemo = () => {
       customSize: '自定义尺寸',
       customIcon: '自定义图标',
       triggerEvent: '点击触发事件',
-      uncheckedx: '您取消了x的勾选',
+      uncheckedx: '取消选中',
       checked: '选中',
       cancel: '取消',
-      selected: '您选中了x',
+      selected: '选中',
       options1: '选项',
       Disabled: '禁用',
       selectAndCancel: '全选和取消',
@@ -57,6 +62,8 @@ const CheckboxDemo = () => {
       threeState: '全选/半选/取消',
     },
     'zh-TW': {
+      uncontrolled: '非受控',
+      controlled: '受控',
       basic: '基本用法',
       checkbox: '複選框',
       disbaled: '禁用狀態',
@@ -66,7 +73,7 @@ const CheckboxDemo = () => {
       customSize: '自定義尺寸',
       customIcon: '自定義圖示',
       triggerEvent: '點擊觸發事件',
-      uncheckedx: '您取消了x的勾選',
+      uncheckedx: '取消选中',
       checked: '選中',
       cancel: '取消',
       selected: '您選取了x',
@@ -81,6 +88,8 @@ const CheckboxDemo = () => {
       threeState: '全选/半选/取消',
     },
     'en-US': {
+      uncontrolled: 'uncontrolled',
+      controlled: 'controlled',
       basic: 'Basic Usage',
       checkbox: 'Checkbox',
       disbaled: 'Disabled State',
@@ -106,7 +115,7 @@ const CheckboxDemo = () => {
     },
   })
 
-  const [checked] = useState(true)
+  const [checked, setChecked] = useState(false)
   const [checkbox1, setCheckbox1] = useState(false)
   const [indeterminate, setIndeterminate] = useState(false)
   const [checkboxgroup1, setCheckboxgroup1] = useState(['1'])
@@ -116,301 +125,300 @@ const CheckboxDemo = () => {
   const [checkboxgroup5, setCheckboxgroup5] = useState<string[]>([])
   const checkboxgroup2Ref = useRef(null)
   const checkboxgroup3Ref = useRef(null)
-  const [show, SetShow] = useState(false)
-  const [toastMsg, SetToastMsg] = useState('')
   const [optionsDemo1] = useState([
     {
-      label: 'Options 1',
+      label: '选项 1',
       value: '1',
     },
     {
-      label: 'Options 2',
+      label: '选项 2',
       value: '2',
       disabled: true,
     },
     {
-      label: 'Options 3',
+      label: '选项 3',
       value: '3',
     },
   ])
-  const toastShow = (msg: any) => {
-    SetToastMsg(msg)
-    SetShow(true)
-  }
+
+  const [controlled, setControlled] = useState(false)
+  const [controlledGroup, setControlledGroup] = useState(['2'])
+
   return (
-    <>
-      <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
-        <Toast
-          type="text"
-          visible={show}
-          msg={toastMsg}
-          onClose={() => {
-            SetShow(false)
-          }}
-        />
-        <h2>{translated.basic}</h2>
-        <Cell className="nut-cell">
-          <Checkbox
-            className="test"
-            textPosition="left"
-            label={translated.checkbox}
-            checked={checked}
-          />
-        </Cell>
-        <Cell className="nut-cell">
-          <Checkbox.Group textPosition="left" checkedValue={['选项 1']}>
-            <span>
-              <Checkbox label={optionsDemo1[0].label} checked={false} />
-            </span>
-            <Checkbox label={optionsDemo1[1].label} checked={false} />
-            <Checkbox label={optionsDemo1[2].label} checked={false} />
-          </Checkbox.Group>
-        </Cell>
-        <h2>{translated.selective}</h2>
-        <Cell>
-          <Checkbox.Group checkedValue={checkboxgroup1}>
-            <Checkbox label={`${translated.checkbox}1`} checked indeterminate />
-          </Checkbox.Group>
-        </Cell>
-        <h2>{translated.disbaled}</h2>
-        <Cell className="nut-cell">
-          <Checkbox
-            textPosition="right"
-            label={translated.DisabledState}
-            checked={false}
-            disabled
-          />
-        </Cell>
-        <Cell className="nut-cell">
-          <Checkbox
-            textPosition="right"
-            label={translated.disabledState}
-            checked
-            disabled
-          />
-        </Cell>
-        <h2>{translated.customSize}</h2>
-        <Cell className="nut-cell">
-          <Checkbox label={translated.customSize} iconSize={25} />
-        </Cell>
-        <Cell className="nut-cell">
-          <Checkbox label={translated.customSize} iconSize={10} />
-        </Cell>
-        <h2>{translated.customIcon}</h2>
-        <Cell className="nut-cell">
-          <Checkbox.Group>
+      <>
+        <div className="demo">
+          <h2>{translated.uncontrolled}</h2>
+          <Cell className="nut-cell">
             <Checkbox
-              checked={false}
-              label={1}
-              icon={<Checklist />}
-              checkedIcon={<Checklist />}
+                className="test"
+                label={translated.checkbox}
+                defaultChecked={checked}
+            />
+          </Cell>
+          <h2>{translated.controlled}</h2>
+          <Cell className="nut-cell">
+            <Checkbox
+                className="test"
+                label={translated.checkbox}
+                checked={controlled}
+                onChange={(val) => setControlled(val)}
+            />
+          </Cell>
+          <Cell className="nut-cell">
+            <Checkbox.Group
+                labelPosition="left"
+                value={controlledGroup}
+                onChange={(value) => setControlledGroup(value)}
+            >
+            <span>
+              <Checkbox value="1" label={optionsDemo1[0].label} />
+            </span>
+              <Checkbox value="2" label={optionsDemo1[1].label} />
+              <Checkbox value="3" label={optionsDemo1[2].label} />
+            </Checkbox.Group>
+          </Cell>
+          <h2>{translated.basic}</h2>
+          <Cell className="nut-cell">
+            <Checkbox
+                className="test"
+                labelPosition="left"
+                label={translated.checkbox}
+                defaultChecked={checked}
+            />
+          </Cell>
+          <Cell className="nut-cell">
+            <Checkbox.Group labelPosition="left" defaultValue={['1']}>
+            <span>
+              <Checkbox value="1" label={optionsDemo1[0].label} />
+            </span>
+              <Checkbox value="2" label={optionsDemo1[1].label} />
+              <Checkbox value="3" label={optionsDemo1[2].label} />
+            </Checkbox.Group>
+          </Cell>
+          <h2>{translated.selective}</h2>
+          <Cell>
+            <Checkbox
+                value="1"
+                checked
+                label={`${translated.checkbox}1`}
+                indeterminate
+            />
+          </Cell>
+          <h2>{translated.disbaled}</h2>
+          <Cell className="nut-cell">
+            <Checkbox
+                labelPosition="right"
+                label={translated.DisabledState}
+                checked={false}
+                disabled
+            />
+          </Cell>
+          <Cell className="nut-cell">
+            <Checkbox
+                labelPosition="right"
+                label={translated.disabledState}
+                checked
+                disabled
+            />
+          </Cell>
+          <h2>{translated.customSize}</h2>
+          <Cell className="nut-cell">
+            <Checkbox
+                label={translated.customSize}
+            />
+          </Cell>
+          <Cell className="nut-cell">
+            <Checkbox
+                label={translated.customSize}
+            />
+          </Cell>
+          <h2>{translated.customIcon}</h2>
+          <Cell className="nut-cell">
+            <Checkbox
+                defaultChecked={false}
+                icon={<Checklist />}
+                activeIcon={<Checklist className="nut-checkbox__icon" />}
             >
               {translated.customIcon}
             </Checkbox>
-          </Checkbox.Group>
-        </Cell>
-        <h2>{translated.triggerEvent}</h2>
-        <Cell className="nut-cell">
-          <Checkbox
-            checked={false}
-            onChange={(state, label) => {
-              if (state) {
-                toastShow(translated.selected.replace('x', label))
-              } else {
-                toastShow(translated.uncheckedx.replace('x', label))
-              }
-            }}
-          >
-            {translated.checkbox}
-          </Checkbox>
-        </Cell>
-        <h2>Checkbox.Group</h2>
-        <Cell>
-          <Checkbox.Group
-            checkedValue={checkboxgroup1}
-            direction="horizontal"
-            onChange={(value) => {
-              toastShow(value)
-              setCheckboxgroup1(value)
-            }}
-          >
-            <Checkbox checked={false} label="1">
-              {translated.options1}
+          </Cell>
+          <h2>{translated.triggerEvent}</h2>
+          <Cell className="nut-cell">
+            <Checkbox
+                defaultChecked={false}
+                onChange={(state) => {
+                  if (state) {
+                    Taro.showToast({
+                      icon: 'none',
+                      title: translated.selected.replace('x', state.toString()),
+                    })
+                  } else {
+                    Taro.showToast({
+                      icon: 'none',
+                      title: translated.uncheckedx.replace('x', state.toString()),
+                    })
+                  }
+                }}
+            >
+              {translated.checkbox}
             </Checkbox>
-            <Checkbox checked={false} label="2">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="3">
-              {translated.options1}
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="4">
-              {translated.options1}
-            </Checkbox>
-          </Checkbox.Group>
-        </Cell>
-        <Cell>
+          </Cell>
+          <h2>Checkbox.Group</h2>
+          <Cell>
+            <Checkbox.Group
+                defaultValue={checkboxgroup1}
+                direction="horizontal"
+                onChange={(value) => {
+                  Taro.showToast({
+                    icon: 'none',
+                    title: value.toString(),
+                  })
+                  setCheckboxgroup1(value)
+                }}
+            >
+              <Checkbox value="1">{translated.options1}</Checkbox>
+              <Checkbox value="2">{translated.options1}</Checkbox>
+              <Checkbox value="3">{translated.options1}</Checkbox>
+              <Checkbox value="4">{translated.options1}</Checkbox>
+            </Checkbox.Group>
+          </Cell>
+          <Cell>
           <span>
             {translated.checked}：{checkboxgroup1.toString()}
           </span>
-        </Cell>
-        <h2>{translated.Disabled}</h2>
-        <Cell>
-          <Checkbox.Group
-            checkedValue={checkboxgroup1}
-            disabled
-            direction="horizontal"
-          >
-            <Checkbox label="1">{translated.options1}</Checkbox>
-            <Checkbox label="2">{translated.options1}</Checkbox>
-            <Checkbox label="3">{translated.options1}</Checkbox>
-            <Checkbox label="4">{translated.options1}</Checkbox>
-          </Checkbox.Group>
-        </Cell>
-        <h2>{translated.selectAndCancel}</h2>
-        <Cell>
-          <Checkbox.Group
-            textPosition="left"
-            direction="horizontal"
-            ref={checkboxgroup2Ref}
-            checkedValue={checkboxgroup2}
-            onChange={(value) => {
-              toastShow(
-                `${
-                  value.length === 4
-                    ? translated.selectAll
-                    : translated.cancelSelection
-                }`
-              )
-            }}
-          >
-            <Checkbox checked={false} label="1">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="2">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="3">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="4">
-              {translated.options1}
-            </Checkbox>
-          </Checkbox.Group>
-        </Cell>
-        <Cell>
-          <Button
-            type="primary"
-            onClick={() => {
-              ;(checkboxgroup2Ref.current as any).toggleAll(true)
-            }}
-            style={{ margin: '0 20px 0 0' }}
-          >
-            {translated.selectAll}
-          </Button>
-          <Button
-            type="info"
-            onClick={() => {
-              ;(checkboxgroup2Ref.current as any).toggleAll(false)
-            }}
-            style={{ margin: '0 20px 0 0' }}
-          >
-            {translated.cancel}
-          </Button>
-          <Button
-            type="warning"
-            onClick={() => {
-              ;(checkboxgroup2Ref.current as any).toggleReverse()
-            }}
-          >
-            {translated.reverse}
-          </Button>
-        </Cell>
-        <h2>{translated.max}</h2>
-        <Cell>
-          <Checkbox.Group
-            checkedValue={checkboxgroup3}
-            max={2}
-            onChange={(value) => {
-              toastShow(value)
-            }}
-          >
-            <Checkbox checked={false} label="1">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="2">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="3">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="4">
-              {translated.options1}
-            </Checkbox>
-          </Checkbox.Group>
-        </Cell>
-        <h2>{translated.threeState}</h2>
-        <Cell>
-          <div style={{ width: '50%' }}>
-            <Checkbox
-              checked={checkbox1}
-              indeterminate={indeterminate}
-              onChange={(state, label) => {
-                if (state) {
-                  setIndeterminate(false)
-                }
-                setCheckbox1(state)
-                ;(checkboxgroup3Ref.current as any).toggleAll(state)
-              }}
+          </Cell>
+          <h2>{translated.Disabled}</h2>
+          <Cell>
+            <Checkbox.Group
+                defaultValue={checkboxgroup1}
+                disabled
+                direction="horizontal"
+            >
+              <Checkbox value="1">{translated.options1}</Checkbox>
+              <Checkbox value="2">{translated.options1}</Checkbox>
+              <Checkbox value="3">{translated.options1}</Checkbox>
+              <Checkbox value="4">{translated.options1}</Checkbox>
+            </Checkbox.Group>
+          </Cell>
+          <h2>{translated.selectAndCancel}</h2>
+          <Cell>
+            <Checkbox.Group
+                labelPosition="left"
+                direction="horizontal"
+                ref={checkboxgroup2Ref}
+                defaultValue={checkboxgroup2}
+                onChange={(value) => {
+                  Taro.showToast({
+                    icon: 'none',
+                    title: `${
+                        value.length === 4
+                            ? translated.selectAll
+                            : translated.cancelSelection
+                    }`,
+                  })
+                }}
+            >
+              <Checkbox value="1">{translated.options1}</Checkbox>
+              <Checkbox value="2">{translated.options1}</Checkbox>
+              <Checkbox value="3">{translated.options1}</Checkbox>
+              <Checkbox value="4">{translated.options1}</Checkbox>
+            </Checkbox.Group>
+          </Cell>
+          <Cell>
+            <Button
+                type="primary"
+                onClick={() => {
+                  ;(checkboxgroup2Ref.current as any).toggle(true)
+                }}
+                style={{ margin: '0 20px 0 0' }}
             >
               {translated.selectAll}
-            </Checkbox>
-          </div>
+            </Button>
+            <Button
+                type="info"
+                onClick={() => {
+                  ;(checkboxgroup2Ref.current as any).toggle(false)
+                }}
+                style={{ margin: '0 20px 0 0' }}
+            >
+              {translated.cancel}
+            </Button>
+            <Button
+                type="warning"
+                onClick={() => {
+                  ;(checkboxgroup2Ref.current as any).reverse()
+                }}
+            >
+              {translated.reverse}
+            </Button>
+          </Cell>
+          <h2>{translated.max}</h2>
+          <Cell>
+            <Checkbox.Group
+                defaultValue={checkboxgroup3}
+                max={2}
+                onChange={(value) => {
+                  Taro.showToast({
+                    title: value.toString(),
+                    icon: 'none',
+                  })
+                }}
+            >
+              <Checkbox value="1">{translated.options1}</Checkbox>
+              <Checkbox value="2">{translated.options1}</Checkbox>
+              <Checkbox value="3">{translated.options1}</Checkbox>
+              <Checkbox value="4">{translated.options1}</Checkbox>
+            </Checkbox.Group>
+          </Cell>
+          <h2>{translated.threeState}</h2>
+          <Cell>
+            <div style={{ width: '50%' }}>
+              <Checkbox
+                  checked={checkbox1}
+                  indeterminate={indeterminate}
+                  onChange={(state) => {
+                    if (state) {
+                      setIndeterminate(false)
+                    }
+                    setCheckbox1(state)
+                    ;(checkboxgroup3Ref.current as any).toggle(state)
+                  }}
+              >
+                {translated.selectAll}
+              </Checkbox>
+            </div>
 
-          <Checkbox.Group
-            ref={checkboxgroup3Ref}
-            direction="horizontal"
-            checkedValue={checkboxgroup4}
-            onChange={(value) => {
-              if (value.length === 4) {
-                setIndeterminate(false)
-                setCheckbox1(true)
-              } else if (value.length && value.length < 4) {
-                setIndeterminate(true)
-                setCheckbox1(true)
-              } else {
-                setCheckbox1(false)
-              }
-            }}
-          >
-            <Checkbox checked={false} label="1">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="2">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="3">
-              {translated.options1}
-            </Checkbox>
-            <Checkbox checked={false} label="4">
-              {translated.options1}
-            </Checkbox>
-          </Checkbox.Group>
-        </Cell>
-        <h2>{translated.options}</h2>
-        <Cell>
-          <Checkbox.Group
-            options={optionsDemo1}
-            checkedValue={checkboxgroup5}
-            onChange={(val) => {
-              console.log(val)
-              setCheckboxgroup5(val)
-            }}
-          />
-        </Cell>
-      </div>
-    </>
+            <Checkbox.Group
+                ref={checkboxgroup3Ref}
+                direction="horizontal"
+                defaultValue={checkboxgroup4}
+                onChange={(value) => {
+                  if (value.length === 4) {
+                    setIndeterminate(false)
+                    setCheckbox1(true)
+                  } else if (value.length && value.length < 4) {
+                    setIndeterminate(true)
+                    setCheckbox1(true)
+                  } else {
+                    setCheckbox1(false)
+                  }
+                }}
+            >
+              <Checkbox value="1">{translated.options1}</Checkbox>
+              <Checkbox value="2">{translated.options1}</Checkbox>
+              <Checkbox value="3">{translated.options1}</Checkbox>
+              <Checkbox value="4">{translated.options1}</Checkbox>
+            </Checkbox.Group>
+          </Cell>
+          <h2>{translated.options}</h2>
+          <Cell>
+            <Checkbox.Group
+                options={optionsDemo1}
+                defaultValue={checkboxgroup5}
+            />
+          </Cell>
+        </div>
+      </>
   )
 }
 

@@ -6,6 +6,7 @@ import { Cell, Badge, Avatar, AvatarGroup } from '@nutui/nutui-react-taro'
 import Header from '@/sites/components/header'
 import './demo.scss'
 
+
 interface T {
   b040e71e: string
   '67f78db5': string
@@ -47,7 +48,7 @@ const AvatarDemo = () => {
       '3928b17e': 'Two shapes are supported: square, round',
       '049b6a97': 'Three types are supported: Picture, Icon and Character',
       a304dabf:
-        'Icon and character type can customize icon color and background color',
+          'Icon and character type can customize icon color and background color',
       '89bca4e7': 'Avatar with logo',
       e981579e: 'Avatar combination display',
       f645fc65: 'Combining avatars to control hierarchy direction',
@@ -56,104 +57,104 @@ const AvatarDemo = () => {
   })
 
   const activeAvatar = () => {
-    console.log(translated.b040e71e)
+    Taro.showToast({ title: translated.b040e71e })
   }
   return (
-    <>
-      <Header />
-      <div
-        className={`demo ${
-          Taro.getEnv() === 'WEB' ? 'web' : ''
-        } full avatar-demo`}
-      >
-        <h2>{translated['67f78db5']}</h2>
-        <Cell>
-          <Avatar
-            size="large"
-            url="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
-          />
-          <Avatar
-            size="normal"
-            url="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
-          />
-          <Avatar
-            size="small"
-            url="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
-          />
-        </Cell>
-        <h2>{translated['3928b17e']}</h2>
-        <Cell>
-          <Avatar icon={<My />} shape="square" />
-          <Avatar icon={<My />} shape="round" />
-        </Cell>
-        <h2>{translated['049b6a97']}</h2>
-        <Cell>
-          <Avatar url="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png" />
-          <Avatar icon={<My />} />
-          <Avatar>N</Avatar>
-        </Cell>
-        <h2>{translated.a304dabf}</h2>
-        <Cell>
-          <Avatar
-            className="demo-avatar"
-            color="#fff"
-            bgColor="#FA2C19"
-            icon={<My />}
-          />
-          <Avatar
-            color="var(--nutui-brand-color)"
-            bgColor="var(--nutui-brand-color-opacity)"
-          >
-            U
-          </Avatar>
-        </Cell>
-        <h2>{translated['89bca4e7']}</h2>
-        <Cell>
-          <Badge value="8">
+      <>
+        <Header />
+        <div
+            className={`demo ${
+                Taro.getEnv() === 'WEB' ? 'web' : ''
+            } full avatar-demo`}
+        >
+          <h2>{translated['67f78db5']}</h2>
+          <Cell align="flex-end">
+            <Avatar
+                size="large"
+                src="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
+            />
+            <Avatar
+                size="normal"
+                src="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
+            />
+            <Avatar
+                size="small"
+                src="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
+            />
+          </Cell>
+          <h2>{translated['3928b17e']}</h2>
+          <Cell>
             <Avatar icon={<My />} shape="square" />
-          </Badge>
-          <Badge dot>
-            <Avatar icon={<My />} shape="square" />
-          </Badge>
-        </Cell>
-        <h2>{translated.e981579e}</h2>
-        <Cell>
-          <AvatarGroup span="-4">
-            <Avatar url="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+            <Avatar icon={<My />} shape="round" />
+          </Cell>
+          <h2>{translated['049b6a97']}</h2>
+          <Cell>
+            <Avatar src="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png" />
             <Avatar icon={<My />} />
-            <Avatar color="rgb(245, 106, 0)" bg-color="rgb(253, 227, 207)">
+            <Avatar>N</Avatar>
+          </Cell>
+          <h2>{translated.a304dabf}</h2>
+          <Cell>
+            <Avatar
+                className="demo-avatar"
+                color="#fff"
+                background="#FA2C19"
+                icon={<My />}
+            />
+            <Avatar
+                color="var(--nutui-brand-color)"
+                background="var(--nutui-brand-color-opacity)"
+            >
               U
             </Avatar>
-          </AvatarGroup>
-        </Cell>
+          </Cell>
+          <h2>{translated['89bca4e7']}</h2>
+          <Cell>
+            <Badge value="8">
+              <Avatar icon={<My />} shape="square" />
+            </Badge>
+            <Badge dot>
+              <Avatar icon={<My />} shape="square" />
+            </Badge>
+          </Cell>
+          <h2>{translated.e981579e}</h2>
+          <Cell>
+            <AvatarGroup gap="-4">
+              <Avatar src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+              <Avatar icon={<My />} />
+              <Avatar color="rgb(245, 106, 0)" bg-color="rgb(253, 227, 207)">
+                U
+              </Avatar>
+            </AvatarGroup>
+          </Cell>
 
-        <Cell>
-          <AvatarGroup maxCount="3" maxColor="#fff" maxBgColor="#498ff2">
-            <Avatar url="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
-            <Avatar icon={<My />} />
-            <Avatar color="rgb(245, 106, 0)" bgColor="rgb(253, 227, 207)">
-              U
-            </Avatar>
-            <Avatar icon={<My />} />
-          </AvatarGroup>
-        </Cell>
-        <h2>{translated.f645fc65}</h2>
-        <Cell>
-          <AvatarGroup maxCount="3" zIndex="right" maxContent="...">
-            <Avatar url="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
-            <Avatar icon={<My />} />
-            <Avatar color="rgb(245, 106, 0)" bgColor="rgb(253, 227, 207)">
-              U
-            </Avatar>
-            <Avatar icon={<My />} />
-          </AvatarGroup>
-        </Cell>
-        <h2>{translated['43f00872']}</h2>
-        <Cell>
-          <Avatar icon={<My />} onActiveAvatar={activeAvatar} />
-        </Cell>
-      </div>
-    </>
+          <Cell>
+            <AvatarGroup max="3" maxColor="#fff" maxBackground="#498ff2">
+              <Avatar src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+              <Avatar icon={<My />} />
+              <Avatar color="rgb(245, 106, 0)" background="rgb(253, 227, 207)">
+                U
+              </Avatar>
+              <Avatar icon={<My />} />
+            </AvatarGroup>
+          </Cell>
+          <h2>{translated.f645fc65}</h2>
+          <Cell>
+            <AvatarGroup max="3" level="right" maxContent="...">
+              <Avatar src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+              <Avatar icon={<My />} />
+              <Avatar color="rgb(245, 106, 0)" background="rgb(253, 227, 207)">
+                U
+              </Avatar>
+              <Avatar icon={<My />} />
+            </AvatarGroup>
+          </Cell>
+          <h2>{translated['43f00872']}</h2>
+          <Cell>
+            <Avatar icon={<My />} onClick={activeAvatar} />
+          </Cell>
+        </div>
+      </>
   )
 }
 

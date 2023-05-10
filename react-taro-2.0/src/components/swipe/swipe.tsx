@@ -39,7 +39,7 @@ type TSwipeDemo = {
 }
 
 const SwipeDemo = () => {
-  const [translated] = useTranslate<TSwipeDemo>({
+  const [translated] = useTranslate({
     'zh-CN': {
       title1: '基础用法',
       title2: '禁用滑动',
@@ -163,7 +163,7 @@ const SwipeDemo = () => {
     //   title: translated.tips,
     //   content:
     //     postion === 'left' ? translated.chooseTips : translated.deleteTips,
-    //   onOk: () => {
+    //   onConfirm: () => {
     //     refDom.current && refDom.current.close()
     //   },
     // })
@@ -179,160 +179,160 @@ const SwipeDemo = () => {
   const openRef = useRef(null)
 
   return (
-    <>
-      <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
-        <h2>{translated.title1}</h2>
-        <Swipe
-          rightAction={
-            <Button type="primary" shape="square">
-              {translated.del}
-            </Button>
-          }
-          onTouchEnd={(e) => console.log(e)}
-          onTouchMove={(e) => console.log(e)}
-          onTouchStart={(e) => console.log(e)}
-        >
-          <Cell title={translated.leftDel} radius={0} />
-        </Swipe>
-        <h2>{translated.title6}</h2>
-        <Swipe
-          ref={openRef}
-          rightAction={
-            <Button shape="square" type="primary">
-              {translated.del}
-            </Button>
-          }
-          style={{ marginBottom: '10px' }}
-        >
-          <Cell title={translated.openOrClose} radius={0} />
-        </Swipe>
-        <Button
-          style={{ marginRight: '10px' }}
-          type="primary"
-          onClick={() => (openRef.current as any)?.open()}
-        >
-          {translated.open}
-        </Button>
-        <Button onClick={() => (openRef.current as any)?.close()}>
-          {translated.close}
-        </Button>
-        <h2>{translated.title7}</h2>
-        <Swipe
-          ref={closeRef}
-          rightAction={
-            <Button shape="square" type="primary">
-              {translated.del}
-            </Button>
-          }
-          onActionClick={() => {
-            ;(closeRef.current as any)?.close()
-          }}
-        >
-          <Cell title={translated.closeLeft} radius={0} />
-        </Swipe>
-        <h2>{translated.title2}</h2>
-        <Swipe
-          rightAction={
-            <Button shape="square" type="primary">
-              {translated.del}
-            </Button>
-          }
-          disabled
-        >
-          <Cell title={translated.disabled} radius={0} />
-        </Swipe>
-        <h2>{translated.title3}</h2>
-        <Swipe
-          leftAction={
-            <Button shape="square" type="primary">
-              {translated.choose}
-            </Button>
-          }
-          rightAction={
-            <>
-              <Button shape="square" type="primary">
-                {translated.del}
-              </Button>
-              <Button shape="square" type="info">
-                {translated.collect}
-              </Button>
-            </>
-          }
-          onActionClick={handleChange}
-          onOpen={({ name, position }) => {
-            // Toast.text(translated.open)
-            toastShow(translated.open)
-          }}
-          onClose={handleClose}
-        >
-          <Cell title={translated.event} />
-        </Swipe>
-        <h2>{translated.title4}</h2>
-        <Swipe
-          ref={refDom}
-          beforeClose={beforeClose}
-          leftAction={
-            <Button shape="square" type="success">
-              {translated.choose}
-            </Button>
-          }
-          rightAction={
-            <>
-              <Button shape="square" type="danger">
-                {translated.del}
-              </Button>
-            </>
-          }
-        >
-          <Cell title={translated.event} />
-        </Swipe>
-        <h2>{translated.title5}</h2>
-        <Swipe
-          rightAction={
-            <>
-              <Button shape="square" type="primary">
-                {translated.cart}
-              </Button>
-            </>
-          }
-          style={{ marginBottom: '30px' }}
-        >
-          <Cell>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
+      <>
+        <Header />
+        <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+          <h2>{translated.title1}</h2>
+          <Swipe
+              rightAction={
+                <Button type="primary" shape="square">
+                  {translated.del}
+                </Button>
+              }
+              onTouchEnd={(e) => console.log(e)}
+              onTouchMove={(e) => console.log(e)}
+              onTouchStart={(e) => console.log(e)}
+          >
+            <Cell title={translated.leftDel} radius={0} />
+          </Swipe>
+          <h2>{translated.title6}</h2>
+          <Swipe
+              ref={openRef}
+              rightAction={
+                <Button shape="square" type="primary">
+                  {translated.del}
+                </Button>
+              }
+              style={{ marginBottom: '10px' }}
+          >
+            <Cell title={translated.openOrClose} radius={0} />
+          </Swipe>
+          <Button
+              style={{ marginRight: '10px' }}
+              type="primary"
+              onClick={() => (openRef.current as any)?.open()}
+          >
+            {translated.open}
+          </Button>
+          <Button onClick={() => (openRef.current as any)?.close()}>
+            {translated.close}
+          </Button>
+          <h2>{translated.title7}</h2>
+          <Swipe
+              ref={closeRef}
+              rightAction={
+                <Button shape="square" type="primary">
+                  {translated.del}
+                </Button>
+              }
+              onActionClick={() => {
+                ;(closeRef.current as any)?.close()
               }}
-            >
-              <span>{translated.goods}</span>
-              <InputNumber style={{ float: 'right' }} />
-            </div>
-          </Cell>
-        </Swipe>
-        <Toast
-          type="text"
-          visible={show}
-          msg={toastMsg}
-          onClose={() => {
-            SetShow(false)
-          }}
-        />
-        <Dialog
-          visible={showDialog}
-          title={translated.tips}
-          onClosed={() => {
-            refDom.current && refDom.current.close()
-            setShowDialog(false)
-          }}
-        >
-          {pRef.current === 'left'
-            ? translated.chooseTips
-            : translated.deleteTips}
-        </Dialog>
-      </div>
-    </>
+          >
+            <Cell title={translated.closeLeft} radius={0} />
+          </Swipe>
+          <h2>{translated.title2}</h2>
+          <Swipe
+              rightAction={
+                <Button shape="square" type="primary">
+                  {translated.del}
+                </Button>
+              }
+              disabled
+          >
+            <Cell title={translated.disabled} radius={0} />
+          </Swipe>
+          <h2>{translated.title3}</h2>
+          <Swipe
+              leftAction={
+                <Button shape="square" type="primary">
+                  {translated.choose}
+                </Button>
+              }
+              rightAction={
+                <>
+                  <Button shape="square" type="primary">
+                    {translated.del}
+                  </Button>
+                  <Button shape="square" type="info">
+                    {translated.collect}
+                  </Button>
+                </>
+              }
+              onActionClick={handleChange}
+              onOpen={({ name, position }) => {
+                // Toast.text(translated.open)
+                toastShow(translated.open)
+              }}
+              onClose={handleClose}
+          >
+            <Cell title={translated.event} />
+          </Swipe>
+          <h2>{translated.title4}</h2>
+          <Swipe
+              ref={refDom}
+              beforeClose={beforeClose}
+              leftAction={
+                <Button shape="square" type="success">
+                  {translated.choose}
+                </Button>
+              }
+              rightAction={
+                <>
+                  <Button shape="square" type="danger">
+                    {translated.del}
+                  </Button>
+                </>
+              }
+          >
+            <Cell title={translated.event} />
+          </Swipe>
+          <h2>{translated.title5}</h2>
+          <Swipe
+              rightAction={
+                <>
+                  <Button shape="square" type="primary">
+                    {translated.cart}
+                  </Button>
+                </>
+              }
+              style={{ marginBottom: '30px' }}
+          >
+            <Cell>
+              <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                  }}
+              >
+                <span>{translated.goods}</span>
+                <InputNumber style={{ float: 'right' }} />
+              </div>
+            </Cell>
+          </Swipe>
+          <Toast
+              type="text"
+              visible={show}
+              msg={toastMsg}
+              onClose={() => {
+                SetShow(false)
+              }}
+          />
+          <Dialog
+              visible={showDialog}
+              title={translated.tips}
+              onClose={() => {
+                refDom.current && refDom.current.close()
+                setShowDialog(false)
+              }}
+          >
+            {pRef.current === 'left'
+                ? translated.chooseTips
+                : translated.deleteTips}
+          </Dialog>
+        </div>
+      </>
   )
 }
 

@@ -65,64 +65,64 @@ const EmptyDemo = () => {
       b8a453e3: 'Retry',
     },
   })
-  const [tabvalue, setTabvalue] = useState('')
+  const [tabvalue, setTabvalue] = useState<string | number>('0')
 
   return (
-    <>
-      <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
-        <h2>{translated.ce5c5446}</h2>
-        <div className="show">
-          <Empty description={translated.cfbdc781} />
-        </div>
-        <h2>{translated.c38a08ef}</h2>
-        <div className="show">
-          <Empty description={translated.cfbdc781} imageSize={100} />
-        </div>
-        <h2>{translated.b840c88f}</h2>
-        <div className="show">
-          <Tabs
-            value={tabvalue}
-            onChange={({ paneKey }) => {
-              setTabvalue(paneKey)
-            }}
-          >
-            <TabPane title={translated.c3a3a1d2} paneKey="0">
-              <Empty image="empty" description={translated.c3a3a1d2} />
-            </TabPane>
-            <TabPane title={translated.e51e4582} paneKey="1">
-              <Empty image="error" description={translated.e51e4582} />
-            </TabPane>
-            <TabPane title={translated.adb1a8b2} paneKey="2">
-              <Empty image="network" description={translated.adb1a8b2} />
-            </TabPane>
-          </Tabs>
-        </div>
-        <h2>{translated.a74a1fd4}</h2>
-        <div className="show">
-          <Empty
-            description={translated.a52bef0c}
-            image={
-              <img
-                src="https://static-ftcms.jd.com/p/files/61a9e3313985005b3958672e.png"
-                alt=""
-              />
-            }
-          />
-        </div>
+      <>
+        <Header />
+        <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+          <h2>{translated.ce5c5446}</h2>
+          <div className="show">
+            <Empty description={translated.cfbdc781} />
+          </div>
+          <h2>{translated.c38a08ef}</h2>
+          <div className="show">
+            <Empty description={translated.cfbdc781} imageSize={100} />
+          </div>
+          <h2>{translated.b840c88f}</h2>
+          <div className="show">
+            <Tabs
+                value={tabvalue}
+                onChange={(paneKey) => {
+                  setTabvalue(paneKey)
+                }}
+            >
+              <TabPane title={translated.c3a3a1d2} value="0">
+                <Empty status="empty" description={translated.c3a3a1d2} />
+              </TabPane>
+              <TabPane title={translated.e51e4582} value="1">
+                <Empty status="error" description={translated.e51e4582} />
+              </TabPane>
+              <TabPane title={translated.adb1a8b2} value="2">
+                <Empty status="network" description={translated.adb1a8b2} />
+              </TabPane>
+            </Tabs>
+          </div>
+          <h2>{translated.a74a1fd4}</h2>
+          <div className="show">
+            <Empty
+                description={translated.a52bef0c}
+                image={
+                  <img
+                      src="https://static-ftcms.jd.com/p/files/61a9e3313985005b3958672e.png"
+                      alt=""
+                  />
+                }
+            />
+          </div>
 
-        <h2>{translated['8dab2f66']}</h2>
-        <div className="show">
-          <Empty image="error" description={translated.d04fcbda}>
-            <div style={{ marginTop: '10px' }}>
-              <Button icon="refresh" type="primary">
-                {translated.b8a453e3}
-              </Button>
-            </div>
-          </Empty>
+          <h2>{translated['8dab2f66']}</h2>
+          <div className="show">
+            <Empty status="error" description={translated.d04fcbda}>
+              <div style={{ marginTop: '10px' }}>
+                <Button icon="refresh" type="primary">
+                  {translated.b8a453e3}
+                </Button>
+              </div>
+            </Empty>
+          </div>
         </div>
-      </div>
-    </>
+      </>
   )
 }
 
