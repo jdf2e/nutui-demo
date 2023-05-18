@@ -20,14 +20,6 @@ interface T {
   hideHeader: string
 }
 
-interface TableColumnProps {
-  key: string
-  title?: string
-  align?: string
-  sorter?: ((a: any, b: any) => number) | boolean | string
-  render?: (rowData?: any, rowIndex?: number) => string | React.ReactNode
-}
-
 const TableDemo = () => {
   const [translated] = useTranslate<T>({
     'zh-CN': {
@@ -52,17 +44,17 @@ const TableDemo = () => {
       striped: 'Stripes, alternating light and shade',
       hideHeader: 'Hide table header',
       noDataTitle:
-        'No data is displayed by default, and customization is supported',
+          'No data is displayed by default, and customization is supported',
       customNoData: 'Here is the custom display',
       customCell: 'Custom cell',
       asynchronousRendering:
-        'Support asynchronous rendering(See the effect after 5S)',
+          'Support asynchronous rendering(See the effect after 5S)',
       sorting: 'Support sorting',
       sorterIcon: 'Supports sorting and changing ICONS',
     },
   })
 
-  const [columns1, setColumns1] = useState<Array<TableColumnProps>>([
+  const [columns1, ] = useState<Array<any>>([
     {
       title: '姓名',
       key: 'name',
@@ -72,7 +64,7 @@ const TableDemo = () => {
       key: 'sex',
       render: (record: any) => {
         return (
-          <span style={{ color: record.sex === '女' ? 'blue' : 'green' }}>
+            <span style={{ color: record.sex === '女' ? 'blue' : 'green' }}>
             {record.sex}
           </span>
         )
@@ -83,7 +75,7 @@ const TableDemo = () => {
       key: 'record',
     },
   ])
-  const [columns2, setColumns2] = useState<Array<TableColumnProps>>([
+  const [columns2, ] = useState<Array<any>>([
     {
       title: '姓名',
       key: 'name',
@@ -99,7 +91,7 @@ const TableDemo = () => {
     },
   ])
 
-  const [columns4, setColumns4] = useState<Array<TableColumnProps>>([
+  const [columns4, ] = useState<Array<any>>([
     {
       title: '姓名',
       key: 'name',
@@ -119,7 +111,7 @@ const TableDemo = () => {
     },
   ])
 
-  const [columns5, setColumns5] = useState<Array<TableColumnProps>>([
+  const [columns5, ] = useState<Array<any>>([
     {
       title: '姓名',
       key: 'name',
@@ -161,25 +153,21 @@ const TableDemo = () => {
     },
   ])
 
-  const [data2, setData2] = useState([])
-  const [data3, setData3] = useState([] as any)
-  const [data4, setData4] = useState([
+  const [data2, ] = useState([])
+  const [data3, setData3] = useState<any>([])
+  const [data4, ] = useState([
     {
       name: 'Tom',
       sex: '男',
       record: '小学',
       render: () => {
         return (
-          <Button
-            onClick={() => {
-              // Toast.text('hello')
-              toastShow('hello')
-            }}
-            size="small"
-            type="primary"
-          >
-            <div>Hello</div>
-          </Button>
+            <Button
+                size="small"
+                type="primary"
+            >
+              <div>Hello</div>
+            </Button>
         )
       },
     },
@@ -188,7 +176,7 @@ const TableDemo = () => {
       sex: '女',
       record: '本科',
       render: () => {
-        return <Dongdong size="14px" />
+        return <Dongdong height="14px" width="14px" />
       },
     },
     {
@@ -197,13 +185,13 @@ const TableDemo = () => {
       record: '高中',
       render: () => {
         return (
-          <Button
-            type="success"
-            size="small"
-            onClick={() => window.open('https://www.jd.com')}
-          >
-            <div>跳转到京东</div>
-          </Button>
+            <Button
+                type="success"
+                size="small"
+                onClick={() => window.open('https://www.jd.com')}
+            >
+              <div>跳转到京东</div>
+            </Button>
         )
       },
     },
@@ -234,90 +222,72 @@ const TableDemo = () => {
     setData3(data1)
   }, 5000)
 
-  const handleSorter = (item: TableColumnProps, data: Array<any>) => {
-    // Toast.text(`${JSON.stringify(item)}`)
-    toastShow(`${JSON.stringify(item)}`)
+  const handleSorter = (item: any, data: Array<any>) => {
     setData5([...data])
   }
 
-  const [show, SetShow] = useState(false)
-  const [toastMsg, SetToastMsg] = useState('')
-  const toastShow = (msg: any) => {
-    SetToastMsg(msg)
-    SetShow(true)
-  }
-
   return (
-    <>
-      <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
-        <Toast
-          type="text"
-          visible={show}
-          msg={toastMsg}
-          onClose={() => {
-            SetShow(false)
-          }}
-        />
-        <h2>{translated.basic}</h2>
-        <Table columns={columns1} data={data1} style={{ background: '#fff' }} />
-        <h2>{translated.borderedAndAlign}</h2>
-        <Table
-          columns={columns2}
-          data={data1}
-          bordered={false}
-          style={{ background: '#fff' }}
-        />
-        <h2>{translated.summaryTitle}</h2>
-        <Table
-          columns={columns1}
-          data={data1}
-          summary={translated.summary}
-          style={{ background: '#fff' }}
-        />
-        <h2>{translated.striped}</h2>
-        <Table
-          columns={columns1}
-          data={data1}
-          style={{ background: '#fff' }}
-          striped
-        />
-        <h2>{translated.hideHeader}</h2>
-        <Table
-          columns={columns1}
-          data={data1}
-          style={{ background: '#fff' }}
-          showHeader={false}
-        />
-        <h2>{translated.noDataTitle}</h2>
-        <Table columns={columns1} data={data2} style={{ background: '#fff' }} />
-        <Table
-          columns={columns1}
-          data={data2}
-          style={{ background: '#fff' }}
-          noData={translated.customNoData}
-        />
-        <h2>{translated.customCell}</h2>
-        <Table columns={columns4} data={data4} style={{ background: '#fff' }} />
-        <h2>{translated.asynchronousRendering}</h2>
-        <Table columns={columns1} data={data3} style={{ background: '#fff' }} />
-        <h2>{translated.sorting}</h2>
-        <Table
-          columns={columns5}
-          data={data5}
-          onSorter={handleSorter}
-          style={{ background: '#fff' }}
-        />
-        <h2>{translated.sorterIcon}</h2>
-        <Table
-          columns={columns5}
-          data={data5}
-          onSorter={handleSorter}
-          style={{ background: '#fff' }}
-          sorterIcon={<TriangleDown size="12px" />}
-        />
-      </div>
-    </>
+      <>
+        <div className="demo">
+          <h2>{translated.basic}</h2>
+          <Table columns={columns1} data={data1} style={{ background: '#fff' }} />
+          <h2>{translated.borderedAndAlign}</h2>
+          <Table
+              columns={columns2}
+              data={data1}
+              bordered={false}
+              style={{ background: '#fff' }}
+          />
+          <h2>{translated.summaryTitle}</h2>
+          <Table
+              columns={columns1}
+              data={data1}
+              summary={translated.summary}
+              style={{ background: '#fff' }}
+          />
+          <h2>{translated.striped}</h2>
+          <Table
+              columns={columns1}
+              data={data1}
+              style={{ background: '#fff' }}
+              striped
+          />
+          <h2>{translated.hideHeader}</h2>
+          <Table
+              columns={columns1}
+              data={data1}
+              style={{ background: '#fff' }}
+              showHeader={false}
+          />
+          <h2>{translated.noDataTitle}</h2>
+          <Table columns={columns1} data={data2} style={{ background: '#fff' }} />
+          <Table
+              columns={columns1}
+              data={data2}
+              style={{ background: '#fff' }}
+              noData={translated.customNoData}
+          />
+          <h2>{translated.customCell}</h2>
+          <Table columns={columns4} data={data4} style={{ background: '#fff' }} />
+          <h2>{translated.asynchronousRendering}</h2>
+          <Table columns={columns1} data={data3} style={{ background: '#fff' }} />
+          <h2>{translated.sorting}</h2>
+          <Table
+              columns={columns5}
+              data={data5}
+              onSort={handleSorter}
+              style={{ background: '#fff' }}
+          />
+          <h2>{translated.sorterIcon}</h2>
+          <Table
+              columns={columns5}
+              data={data5}
+              onSort={handleSorter}
+              style={{ background: '#fff' }}
+              sorterIcon={<TriangleDown width="12px" height="12px" />}
+          />
+        </div>
+      </>
   )
 }
 

@@ -30,14 +30,14 @@ const TabsDemo = () => {
     'zh-CN': {
       basic: '基本用法',
       title1: '基础用法-微笑曲线',
-      title2: '通过 paneKey 匹配',
+      title2: '通过 value 匹配',
       title3: '数据异步渲染 3s',
       title4: '数量多,滚动操作',
       title5: '左右布局',
       title6: '左右布局-微笑曲线',
       title12: '嵌套布局',
       title13: '嵌套布局2',
-      title7: 'Title 字体尺寸：large normal small',
+      title7: 'Title 字体尺寸：20px 12px',
       title8: '自定义标签栏',
       title9: 'Tabpane 自动高度',
       title10: 'CSS 粘性布局',
@@ -49,14 +49,14 @@ const TabsDemo = () => {
     'en-US': {
       basic: 'Basic Usage',
       title1: 'Basic Usage - Smile Curve',
-      title2: 'Match by paneKey',
+      title2: 'Match by value',
       title3: 'Data is rendered asynchronously for 3s',
       title4: 'A large number of scrolling operations',
       title5: 'Left and right layout',
       title6: 'Left and Right Layout - Smile Curve',
       title12: 'Tabs in Tabs',
       title13: 'Tabs in Tabs 2',
-      title7: 'Title font size: large normal small',
+      title7: 'Title font size: 20px 12px',
       title8: 'custom tab bar',
       title9: 'Tabpane auto height',
       title10: 'CSS Sticky',
@@ -67,354 +67,380 @@ const TabsDemo = () => {
     },
   })
 
-  const [tab1value, setTab1value] = useState('0')
-  const [tab2value, setTab2value] = useState('0')
-  const [tab3value, setTab3value] = useState('0')
-  const [tab4value, setTab4value] = useState('0')
-  const [tab5value, setTab5value] = useState('0')
-  const [tab6value, setTab6value] = useState('0')
-  const [tab7value, setTab7value] = useState('c1')
-  const [tab8value, setTab8value] = useState('0')
-  const [tab9value, setTab9value] = useState('0')
-  const [list3, setList3] = useState(Array.from(new Array(2).keys()))
+  const [tab1value, setTab1value] = useState<string | number>('0')
+  const [tab2value, setTab2value] = useState<string | number>('0')
+  const [tab3value, setTab3value] = useState<string | number>('0')
+  const [tab4value, setTab4value] = useState<string | number>('0')
+  const [tab5value, setTab5value] = useState<string | number>('0')
+  const [tab6value, setTab6value] = useState<string | number>('0')
+  const [tab7value, setTab7value] = useState<string | number>('c1')
+  const [tab8value, setTab8value] = useState<string | number>('0')
+  const [tab9value, setTab9value] = useState<string | number>('0')
+  const [tab10value, setTab10value] = useState<string | number>('0')
+  const [list8, setList8] = useState<any>([])
   const list4 = Array.from(new Array(10).keys())
   const list5 = Array.from(new Array(2).keys())
   const list6 = [
     {
       title: translated.custom1,
-      paneKey: 'c1',
-      icon: <Dongdong />,
+      value: 'c1',
+      icon: <Dongdong size={16} style={{ marginRight: '10px' }} />,
     },
     {
       title: translated.custom2,
-      paneKey: 'c2',
-      icon: <Jd />,
+      value: 'c2',
+      icon: <Jd size={16} style={{ marginRight: '10px' }} />,
     },
     {
       title: translated.custom3,
-      paneKey: 'c3',
+      value: 'c3',
     },
   ]
 
   useEffect(() => {
     setTimeout(() => {
-      list3.push(999)
-      setTab3value('2')
-      setList3(list3)
+      setTab8value(2)
+      setList8(Array.from(new Array(3).keys()))
     }, 3000)
   }, [])
+
+  const swiperRef = useRef<any>(null)
+  const [tabIndex, setTabIndex] = useState<string | number>(0)
+
   return (
-    <>
-      <Header />
-      <div
-        className={`demo ${
-          Taro.getEnv() === 'WEB' ? 'web' : ''
-        } full no-overflow`}
-      >
-        <h2>{translated.basic}</h2>
-        <Tabs
-          value={tab1value}
-          className="test"
-          style={{ color: 'red' }}
-          onChange={({ paneKey }) => {
-            setTab1value(paneKey)
-          }}
+      <>
+        <Header />
+        <div
+            className={`demo ${
+                Taro.getEnv() === 'WEB' ? 'web' : ''
+            } full no-overflow`}
         >
-          <Tabs.TabPane title="Tab 1" className="custom-class">
-            {' '}
-            Tab 1{' '}
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
-        <h2>{translated.title1}</h2>
-        <Tabs
-          value={tab1value}
-          onChange={({ paneKey }) => {
-            setTab1value(paneKey)
-          }}
-          type="smile"
-        >
-          <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
-        <h2>{translated.title11}</h2>
-        <Tabs
-          value={tab1value}
-          leftAlign
-          onChange={({ paneKey }) => {
-            setTab1value(paneKey)
-          }}
-        >
-          <Tabs.TabPane title="Tab 1" className="custom-class">
-            {' '}
-            Tab 1{' '}
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
-        <h2>{translated.title2}</h2>
-        <Tabs
-          value={tab2value}
-          onChange={({ paneKey }) => {
-            setTab2value(paneKey)
-          }}
-        >
-          <Tabs.TabPane title="Tab 1" paneKey="0">
-            {' '}
-            Tab 1{' '}
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2" paneKey="1" disabled>
-            {' '}
-            Tab 2{' '}
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3" paneKey="2">
-            {' '}
-            Tab 3{' '}
-          </Tabs.TabPane>
-        </Tabs>
-        <h2>{translated.title10}</h2>
-        <Tabs
-          value={tab2value}
-          tabStyle={{ position: 'sticky', top: '0px', zIndex: 1 }}
-          onChange={({ paneKey }) => {
-            setTab2value(paneKey)
-          }}
-        >
-          <Tabs.TabPane title="Tab 1" paneKey="0">
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2" paneKey="1">
-            <p>Tab 2</p>
-            <p>Tab 2</p>
-            <p>Tab 2</p>
-            <p>Tab 2</p>
-            <p>Tab 2</p>
-            <p>Tab 2</p>
-            <p>Tab 2</p>
-            <p>Tab 2</p>
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3" paneKey="2">
-            {' '}
-            Tab 3{' '}
-          </Tabs.TabPane>
-        </Tabs>
-        <h2>{translated.title9}</h2>
-        <Tabs
-          value={tab2value}
-          autoHeight
-          onChange={({ paneKey }) => {
-            setTab2value(paneKey)
-          }}
-        >
-          <Tabs.TabPane title="Tab 1" paneKey="0">
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-            <p>Tab 1</p>
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2" paneKey="1">
-            {' '}
-            Tab 2{' '}
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3" paneKey="2">
-            {' '}
-            Tab 3{' '}
-          </Tabs.TabPane>
-        </Tabs>
-        <h2>{translated.title3}</h2>
-        <Tabs
-          value={tab3value}
-          onChange={({ paneKey }) => {
-            setTab3value(paneKey)
-          }}
-        >
-          {list3.map((item) => (
-            <Tabs.TabPane key={item} title={`Tab ${item}`}>
-              {' '}
-              Tab {item}{' '}
-            </Tabs.TabPane>
-          ))}
-        </Tabs>
-        <h2>{translated.title4}</h2>
-        <Tabs
-          value={tab4value}
-          onChange={({ paneKey }) => {
-            setTab4value(paneKey)
-          }}
-          titleScroll
-          titleGutter="10"
-        >
-          {list4.map((item) => (
-            <Tabs.TabPane key={item} title={`Tab ${item}`}>
-              {' '}
-              Tab {item}{' '}
-            </Tabs.TabPane>
-          ))}
-        </Tabs>
-        <h2>{translated.title5}</h2>
-        <Tabs
-          style={{ height: '300px' }}
-          value={tab5value}
-          onChange={({ paneKey }) => {
-            setTab5value(paneKey)
-          }}
-          titleScroll
-          direction="vertical"
-        >
-          {list5.map((item) => (
-            <Tabs.TabPane key={item} title={`Tab ${item}`}>
-              {' '}
-              Tab {item}{' '}
-            </Tabs.TabPane>
-          ))}
-        </Tabs>
-        <h2>{translated.title6}</h2>
-        <Tabs
-          style={{ height: '300px' }}
-          value={tab6value}
-          onChange={({ paneKey }) => {
-            setTab6value(paneKey)
-          }}
-          type="smile"
-          titleScroll
-          direction="vertical"
-        >
-          {list5.map((item) => (
-            <Tabs.TabPane key={item} title={`Tab ${item}`}>
-              {' '}
-              Tab {item}{' '}
-            </Tabs.TabPane>
-          ))}
-        </Tabs>
-
-        <h2>{translated.title12}</h2>
-
-        <Tabs
-          value={tab8value}
-          onChange={({ paneKey }) => {
-            setTab8value(paneKey)
-          }}
-          type="smile"
-          direction="vertical"
-        >
-          <Tabs.TabPane title="Tab 1">
-            <Tabs
-              value={tab9value}
-              onChange={({ paneKey }) => {
-                setTab9value(paneKey)
+          <h2>{translated.basic}</h2>
+          <Tabs
+              value={tab1value}
+              onChange={(value) => {
+                setTab1value(value)
               }}
-              type="smile"
-              direction="horizontal"
-            >
-              <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
-              <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-              <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-            </Tabs>
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
-
-        <h2>{translated.title13}</h2>
-        <Tabs
-          value={tab8value}
-          onChange={({ paneKey }) => {
-            setTab8value(paneKey)
-          }}
-          autoHeight
-          type="smile"
-        >
-          <Tabs.TabPane title="Tab 1">
-            <Tabs
+          >
+            <Tabs.TabPane title="Tab 1"> Tab 1</Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+          </Tabs>
+          <h2>{translated.title1}</h2>
+          <Tabs
+              value={tab2value}
+              onChange={(value) => {
+                setTab2value(value)
+              }}
+              activeType="smile"
+          >
+            <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+          </Tabs>
+          <h2>{translated.title11}</h2>
+          <Tabs
+              value={tab3value}
+              align="left"
+              onChange={(value) => {
+                setTab3value(value)
+              }}
+          >
+            <Tabs.TabPane title="Tab 1"> Tab 1</Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+          </Tabs>
+          <h2>{translated.title2}</h2>
+          <Tabs
+              value={tab4value}
+              onChange={(value) => {
+                setTab4value(value)
+              }}
+          >
+            <Tabs.TabPane title="Tab 1" value="0">
+              Tab 1
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2" value="1" disabled>
+              Tab 2
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3" value="2">
+              Tab 3
+            </Tabs.TabPane>
+          </Tabs>
+          <h2>滑动切换</h2>
+          <Tabs
+              value={tabIndex}
+              onChange={(page) => {
+                swiperRef.current?.to(page)
+                setTabIndex(page)
+              }}
+          >
+            <Tabs.TabPane title="Tab 1" />
+            <Tabs.TabPane title="Tab 2" />
+            <Tabs.TabPane title="Tab 3" />
+          </Tabs>
+          <Swiper
+              defaultValue={0}
+              loop={false}
+              ref={swiperRef}
+              height={50}
+              onChange={(page) => {
+                setTabIndex(page.detail.current)
+              }}
+          >
+            <SwiperItem>
+              <div style={{ backgroundColor: '#fff', padding: '10px' }}>
+                Tab 1
+              </div>
+            </SwiperItem>
+            <SwiperItem>
+              <div style={{ backgroundColor: '#fff', padding: '10px' }}>
+                Tab 2
+              </div>
+            </SwiperItem>
+            <SwiperItem>
+              <div style={{ backgroundColor: '#fff', padding: '10px' }}>
+                Tab 3
+              </div>
+            </SwiperItem>
+          </Swiper>
+          <h2>{translated.title10}</h2>
+          <Tabs
+              value={tab5value}
+              style={{ position: 'relative', zIndex: 11 }}
+              tabStyle={{ position: 'sticky', top: '0px', zIndex: 11 }}
+              onChange={(value) => {
+                setTab5value(value)
+              }}
+          >
+            <Tabs.TabPane title="Tab 1" value="0">
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2" value="1">
+              <p>Tab 2</p>
+              <p>Tab 2</p>
+              <p>Tab 2</p>
+              <p>Tab 2</p>
+              <p>Tab 2</p>
+              <p>Tab 2</p>
+              <p>Tab 2</p>
+              <p>Tab 2</p>
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3" value="2">
+              Tab 3
+            </Tabs.TabPane>
+          </Tabs>
+          <h2>{translated.title9}</h2>
+          <Tabs
+              value={tab6value}
+              autoHeight
+              onChange={(value) => {
+                setTab6value(value)
+              }}
+          >
+            <Tabs.TabPane title="Tab 1" value="0">
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+              <p>Tab 1</p>
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2" value="1">
+              Tab 2
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3" value="2">
+              Tab 3
+            </Tabs.TabPane>
+          </Tabs>
+          <h2>{translated.title3}</h2>
+          <Tabs
+              value={tab8value}
+              onChange={(value) => {
+                setTab8value(value)
+              }}
+          >
+            {list8.map((item: any) => (
+                <Tabs.TabPane key={item} title={`Tab ${item}`}>
+                  Tab {item}
+                </Tabs.TabPane>
+            ))}
+          </Tabs>
+          <h2>{translated.title4}</h2>
+          <Tabs
               value={tab9value}
-              onChange={({ paneKey }) => {
-                setTab9value(paneKey)
+              onChange={(value) => {
+                setTab9value(value)
+              }}
+          >
+            {list4.map((item) => (
+                <Tabs.TabPane key={item} title={`Tab ${item}`}>
+                  Tab {item}
+                </Tabs.TabPane>
+            ))}
+          </Tabs>
+          <h2>{translated.title4}</h2>
+          <Tabs
+              value={tab9value}
+              style={{ height: '300px' }}
+              onChange={(value) => {
+                setTab9value(value)
               }}
               direction="vertical"
-            >
-              <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
-              <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-              <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-            </Tabs>
-          </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
+          >
+            {list4.map((item) => (
+                <Tabs.TabPane key={item} title={`Tab ${item}`}>
+                  Tab {item}
+                </Tabs.TabPane>
+            ))}
+          </Tabs>
+          <h2>{translated.title5}</h2>
+          <Tabs
+              style={{ height: '300px' }}
+              value={tab5value}
+              onChange={(value) => {
+                setTab5value(value)
+              }}
+              direction="vertical"
+          >
+            {list5.map((item) => (
+                <Tabs.TabPane key={item} title={`Tab ${item}`}>
+                  Tab {item}
+                </Tabs.TabPane>
+            ))}
+          </Tabs>
+          <h2>{translated.title6}</h2>
+          <Tabs
+              style={{ height: '300px' }}
+              value={tab6value}
+              onChange={(value) => {
+                setTab6value(value)
+              }}
+              activeType="smile"
+              direction="vertical"
+          >
+            {list5.map((item) => (
+                <Tabs.TabPane key={item} title={`Tab ${item}`}>
+                  Tab {item}
+                </Tabs.TabPane>
+            ))}
+          </Tabs>
 
-        <h2>{translated.title7}</h2>
-        <Tabs
-          value={tab1value}
-          onChange={({ paneKey }) => {
-            setTab1value(paneKey)
-          }}
-          size="large"
-        >
-          <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
-        <Tabs
-          value={tab1value}
-          onChange={({ paneKey }) => {
-            setTab1value(paneKey)
-          }}
-          size="normal"
-        >
-          <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
-        <Tabs
-          value={tab1value}
-          onChange={({ paneKey }) => {
-            setTab1value(paneKey)
-          }}
-          size="small"
-        >
-          <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
-          <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
-        </Tabs>
+          <h2>{translated.title12}</h2>
 
-        <h2>{translated.title8}</h2>
-        <Tabs
-          value={tab7value}
-          titleNode={() => {
-            return list6.map((item) => (
-              <div
-                onClick={() => setTab7value(item.paneKey)}
-                className={`nut-tabs__titles-item ${
-                  tab7value === item.paneKey ? 'active' : ''
-                }`}
-                key={item.paneKey}
+          <Tabs
+              value={tab10value}
+              onChange={(value) => {
+                setTab10value(value)
+              }}
+              activeType="smile"
+              direction="vertical"
+          >
+            <Tabs.TabPane title="Tab 1">
+              <Tabs
+                  value={tab9value}
+                  onChange={(value) => {
+                    setTab9value(value)
+                  }}
+                  activeType="smile"
+                  direction="horizontal"
               >
-                {item.icon || null}
-                <span className="nut-tabs__titles-item__text">
+                <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
+                <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+                <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+              </Tabs>
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+          </Tabs>
+
+          <h2>{translated.title13}</h2>
+          <Tabs
+              value={tab10value}
+              onChange={(value) => {
+                setTab10value(value)
+              }}
+              autoHeight
+              activeType="smile"
+          >
+            <Tabs.TabPane title="Tab 1">
+              <Tabs
+                  value={tab9value}
+                  onChange={(value) => {
+                    setTab9value(value)
+                  }}
+                  direction="vertical"
+              >
+                <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
+                <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+                <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+              </Tabs>
+            </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+          </Tabs>
+
+          <h2>{translated.title7}</h2>
+          <Tabs
+              value={tab1value}
+              onChange={(value) => {
+                setTab1value(value)
+              }}
+              style={{ '--nutui-tabs-titles-item-font-size': '20px' }}
+          >
+            <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+          </Tabs>
+          <Tabs
+              value={tab1value}
+              onChange={(value) => {
+                setTab1value(value)
+              }}
+              style={{ '--nutui-tabs-titles-item-font-size': '12px' }}
+          >
+            <Tabs.TabPane title="Tab 1"> Tab 1 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 2"> Tab 2 </Tabs.TabPane>
+            <Tabs.TabPane title="Tab 3"> Tab 3 </Tabs.TabPane>
+          </Tabs>
+
+          <h2>{translated.title8}</h2>
+          <Tabs
+              value={tab7value}
+              title={() => {
+                return list6.map((item) => (
+                    <div
+                        onClick={() => setTab7value(item.value)}
+                        className={`nut-tabs__titles-item ${
+                            tab7value === item.value
+                                ? 'nut-tabs__titles-item--active'
+                                : ''
+                        }`}
+                        key={item.value}
+                    >
+                      {item.icon || null}
+                      <span className="nut-tabs__titles-item__text">
                   {item.title}
                 </span>
-                <span className="nut-tabs__titles-item__line" />
-              </div>
-            ))
-          }}
-        >
-          {list6.map((item) => (
-            <Tabs.TabPane key={item.paneKey} paneKey={item.paneKey}>
-              {item.title}
-            </Tabs.TabPane>
-          ))}
-        </Tabs>
-      </div>
-    </>
+                      <span className="nut-tabs__titles-item__line" />
+                    </div>
+                ))
+              }}
+          >
+            {list6.map((item) => (
+                <Tabs.TabPane key={item.value} value={item.value}>
+                  {item.title}
+                </Tabs.TabPane>
+            ))}
+          </Tabs>
+        </div>
+      </>
   )
 }
 

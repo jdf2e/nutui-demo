@@ -6,7 +6,7 @@ import Header from '@/sites/components/header'
 interface PickerOption {
   text: string | number
   value: string | number
-  disabled?: string
+  disabled?: boolean
   children?: PickerOption[]
   className?: string | number
 }
@@ -196,8 +196,8 @@ const PickerDemo = () => {
   ])
 
   const setChooseValueCustmer = (
-    values: (string | number)[],
-    options: PickerOption[]
+      options: PickerOption[],
+      values: (string | number)[]
   ) => {
     console.log('多级联动确定', values, options)
     const str = options.map((item) => item.text).join('-')
@@ -205,8 +205,8 @@ const PickerDemo = () => {
   }
 
   const setAsyncConfirm = (
-    values: (string | number)[],
-    options: PickerOption[]
+      options: PickerOption[],
+      values: (string | number)[]
   ) => {
     console.log('异步获取确定', values, options)
     const str = options.map((item) => item.text).join('-')
@@ -214,9 +214,9 @@ const PickerDemo = () => {
   }
 
   const updateChooseValueCustmer = (
-    columnIndex: number,
-    values: (string | number)[],
-    options: PickerOption[]
+      options: PickerOption[],
+      values: (string | number)[],
+      columnIndex: number
   ) => {
     console.log('异步获取change', columnIndex, values, options)
     if (columnIndex === 0 && values[0] === 2) {
@@ -237,19 +237,20 @@ const PickerDemo = () => {
   }
 
   // 切换选择项
-  const changePicker = (columnIndex: number, values: any, options: any[]) => {
+  const changePicker = (options: any[], values: any, columnIndex: number) => {
     console.log('picker选择change', columnIndex, values, options)
   }
+  const [val, setVal] = useState<Array<number | string>>([])
   // 确定选择
   const confirmPicker = (
-    type: string,
-    values: (string | number)[],
-    options: PickerOption[]
+      type: string,
+      options: PickerOption[],
+      values: (string | number)[]
   ) => {
     console.log('picker选择确定', values, options)
     let description = ''
     options.forEach((option: any) => {
-      description += option.text
+      description += ` ${option.text}`
     })
     if (type === 'base') {
       setBaseDesc(description)
@@ -268,113 +269,135 @@ const PickerDemo = () => {
     }
   }
   return (
-    <>
-      <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
-        <h2>基础用法</h2>
-        <Cell
-          title="请选择城市"
-          description={baseDesc}
-          onClick={() => setIsVisible1(!isVisible1)}
-        />
-        <Picker
-          title="请选择城市"
-          visible={isVisible1}
-          listData={listData1}
-          onConfirm={(values, list) => confirmPicker('base', values, list)}
-          onClose={() => setIsVisible1(false)}
-          onChange={changePicker}
-        />
+      <>
+        <Header />
+        <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+          <h2>基础用法</h2>
+          <Cell
+              title="请选择城市"
+              description={baseDesc}
+              onClick={() => setIsVisible1(!isVisible1)}
+          />
+          <Picker
+              title="请选择城市"
+              visible={isVisible1}
+              options={listData1}
+              onConfirm={(list, values) => confirmPicker('base', list, values)}
+              onClose={() => setIsVisible1(false)}
+              onChange={changePicker}
+          />
 
-        <h2>默认选中项</h2>
-        <Cell
-          title="请选择城市"
-          description={baseDefault}
-          onClick={() => setIsVisible4(!isVisible4)}
-        />
-        <Picker
-          visible={isVisible4}
-          listData={listData1}
-          onConfirm={(values, list) => confirmPicker('default', values, list)}
-          defaultValueData={defaultValue}
-          onClose={() => setIsVisible4(false)}
-          onChange={changePicker}
-        />
+          <h2>默认选中项</h2>
+          <Cell
+              title="请选择城市"
+              description={baseDefault}
+              onClick={() => setIsVisible4(!isVisible4)}
+          />
+          <Picker
+              visible={isVisible4}
+              options={listData1}
+              onConfirm={(list, values) => confirmPicker('default', list, values)}
+              defaultValue={defaultValue}
+              onClose={() => setIsVisible4(false)}
+              onChange={changePicker}
+          />
 
-        <h2>多列用法</h2>
-        <Cell
-          title="多列用法"
-          description={mutilDesc}
-          onClick={() => setIsVisible2(!isVisible2)}
-        />
-        <Picker
-          visible={isVisible2}
-          listData={listData2}
-          onClose={() => setIsVisible2(false)}
-          defaultValueData={['Wednesday']}
-          onChange={changePicker}
-          onConfirm={(values, list) => confirmPicker('mutil', values, list)}
-        />
-        <h2>平铺展示</h2>
-        <Cell
-          title="请选择城市"
-          description={tileDesc}
-          onClick={() => setIsVisible6(!isVisible6)}
-        />
-        <Picker
-          visible={isVisible6}
-          listData={listData1}
-          onConfirm={(values, list) => confirmPicker('tile', values, list)}
-          defaultValueData={defaultValue}
-          threeDimensional={false}
-          swipeDuration={1000}
-          onClose={() => setIsVisible6(false)}
-          onChange={changePicker}
-        />
+          <h2>受控</h2>
+          <Cell
+              title="请选择城市"
+              description={baseDesc}
+              onClick={() => setIsVisible1(!isVisible1)}
+          />
+          <Picker
+              title="请选择城市"
+              visible={isVisible1}
+              value={val}
+              options={listData1}
+              onConfirm={(list, values) => {
+                confirmPicker('base', list, values)
+                setVal(values)
+              }}
+              onClose={() => {
+                setIsVisible1(false)
+              }}
+          />
 
-        <h2>多级联动</h2>
-        <Cell
-          title="多级联动"
-          description={cityCustmer}
-          onClick={() => setIsVisible3(!isVisible3)}
-        />
+          <h2>多列用法</h2>
+          <Cell
+              title="多列用法"
+              description={mutilDesc}
+              onClick={() => setIsVisible2(!isVisible2)}
+          />
+          <Picker
+              visible={isVisible2}
+              options={listData2}
+              onClose={() => setIsVisible2(false)}
+              defaultValue={['Wednesday']}
+              onChange={changePicker}
+              onConfirm={(list, values) => confirmPicker('mutil', list, values)}
+          />
+          <h2>平铺展示</h2>
+          <Cell
+              title="请选择城市"
+              description={tileDesc}
+              onClick={() => setIsVisible6(!isVisible6)}
+          />
+          <Picker
+              visible={isVisible6}
+              options={listData1}
+              onConfirm={(list, values) => confirmPicker('tile', list, values)}
+              defaultValue={defaultValue}
+              threeDimensional={false}
+              duration={1000}
+              onClose={() => setIsVisible6(false)}
+              onChange={changePicker}
+          />
 
-        <Picker
-          visible={isVisible3}
-          listData={custmerCityData}
-          onClose={() => setIsVisible3(false)}
-          onConfirm={(values, list: PickerOption[]) =>
-            setChooseValueCustmer(values, list)
-          }
-          onChange={(
-            columnIndex: number,
-            value: (string | number)[],
-            options: PickerOption[]
-          ) => console.log('多级联动', columnIndex, value, options)}
-        />
+          <h2>多级联动</h2>
+          <Cell
+              title="多级联动"
+              description={cityCustmer}
+              onClick={() => setIsVisible3(!isVisible3)}
+          />
 
-        <h2>动态获取</h2>
-        <Cell
-          title="请选择城市"
-          description={asyncDesc}
-          onClick={() => setIsVisible5(!isVisible5)}
-        />
+          <Picker
+              visible={isVisible3}
+              options={custmerCityData}
+              onClose={() => setIsVisible3(false)}
+              onConfirm={(list, values) => setChooseValueCustmer(list, values)}
+              onChange={(
+                  options: PickerOption[],
+                  value: (string | number)[],
+                  columnIndex: number
+              ) => console.log(asyncData, '多级联动', columnIndex, value, options)}
+          />
 
-        <Picker
-          visible={isVisible5}
-          listData={asyncData}
-          onClose={() => setIsVisible5(false)}
-          onConfirm={(values, list: PickerOption[]) =>
-            setAsyncConfirm(values, list)
-          }
-          onChange={(
-            columnIndex: number,
-            value: (string | number)[],
-            options: PickerOption[]
-          ) => updateChooseValueCustmer(columnIndex, value, options)}
-        />
-      </div>
-    </>
+          <h2>动态获取</h2>
+          <Cell
+              title="请选择城市"
+              description={asyncDesc}
+              onClick={() => setIsVisible5(!isVisible5)}
+          />
+
+          <Picker
+              visible={isVisible5}
+              options={asyncData}
+              onClose={() => setIsVisible5(false)}
+              onConfirm={(list, values) => setAsyncConfirm(list, values)}
+              onChange={(
+                  selectedOptions: PickerOption[],
+                  selectedValue: (string | number)[],
+                  columnIndex: number
+              ) =>
+                  updateChooseValueCustmer(
+                      selectedOptions,
+                      selectedValue,
+                      columnIndex
+                  )
+              }
+          />
+        </div>
+      </>
   )
 }
 

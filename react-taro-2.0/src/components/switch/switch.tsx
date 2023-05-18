@@ -83,7 +83,7 @@ const SwitchDemo = () => {
           <h2>{translated.customColor}</h2>
           <Cell>
             <Switch
-                defaultChecked
+                defaultChecked={false}
             />
           </Cell>
           <h2>{translated.supportText}</h2>

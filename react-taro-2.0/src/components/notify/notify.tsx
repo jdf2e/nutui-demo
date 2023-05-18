@@ -45,123 +45,123 @@ const NotifyDemo = () => {
   const [showNotify, SetShowNotify] = useState(false)
   const [customShow, SetCustomShow] = useState(false)
   const [states, SetStates] = useState({
-    msg: '',
+    message: '',
     type: 'danger',
     duration: 2000,
     position: 'top',
-    color: '',
-    background: '',
   })
   const changeNotify = (
-    msg: string,
-    type?: string,
-    duration?: number,
-    color?: string,
-    position?: string
+      message: string,
+      type?: string,
+      duration?: number,
+      position?: string
   ) => {
     const change = Object.assign(states, {
-      msg,
+      message,
       type,
       duration,
-      color,
       position,
     })
     SetStates(change)
   }
 
   return (
-    <>
-      <Header />
-      <div
-        className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}
-        style={{ paddingBottom: '30px' }}
-      >
-        <Notify
-          visible={showNotify}
-          msg={states.msg}
-          type={states.type}
-          duration={states.duration}
-          position={states.position}
-          onClosed={() => {
-            SetShowNotify(false)
-          }}
-          onClick={() => {
-            console.log('click')
-          }}
-        />
-        <h2>{translated.basic}</h2>
-        <Cell
-          title={translated.basic}
-          onClick={(event: React.MouseEvent) => {
-            changeNotify(translated.basic)
-            SetShowNotify(true)
-          }}
-        />
-        <h2>{translated.t1}</h2>
-        <CellGroup>
+      <>
+        <Header />
+        <div
+            className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}
+            style={{ paddingBottom: '30px' }}
+        >
+          <Notify
+              visible={showNotify}
+              type={states.type}
+              duration={states.duration}
+              position={states.position}
+              onClose={() => {
+                SetShowNotify(false)
+              }}
+              onClick={() => {
+                console.log('click')
+              }}
+          >
+            {states.message}
+          </Notify>
+          <h2>{translated.basic}</h2>
           <Cell
-            title={translated.primaryNotify}
-            onClick={(event: React.MouseEvent) => {
-              changeNotify(translated.primaryNotify, 'primary')
-              SetShowNotify(true)
-            }}
+              title={translated.basic}
+              onClick={(event: React.MouseEvent) => {
+                changeNotify(translated.basic)
+                SetShowNotify(true)
+              }}
+          />
+          <h2>{translated.t1}</h2>
+          <CellGroup>
+            <Cell
+                title={translated.primaryNotify}
+                onClick={(event: React.MouseEvent) => {
+                  changeNotify(translated.primaryNotify, 'primary')
+                  SetShowNotify(true)
+                }}
+            />
+            <Cell
+                title={translated.successNotify}
+                onClick={(event: React.MouseEvent) => {
+                  changeNotify(translated.successNotify, 'success')
+                  SetShowNotify(true)
+                }}
+            />
+            <Cell
+                title={translated.errorNotify}
+                onClick={(event: React.MouseEvent) => {
+                  changeNotify(translated.errorNotify, 'danger')
+                  SetShowNotify(true)
+                }}
+            />
+            <Cell
+                title={translated.warningNotify}
+                onClick={(event: React.MouseEvent) => {
+                  changeNotify(translated.warningNotify, 'warning')
+                  SetShowNotify(true)
+                }}
+            />
+          </CellGroup>
+          <h2>{translated.t2}</h2>
+          <Notify
+              className="customer"
+              visible={customShow}
+              style={{
+                '--nutui-notify-text-color': '#ad0000',
+                '--nutui-notify-base-background-color': '#ffe1e1',
+              }}
+              onClose={() => {
+                SetCustomShow(false)
+              }}
+          >
+            {translated.cusBgNotify}
+          </Notify>
+          <Cell
+              title={translated.cusBgNotify}
+              onClick={(event: React.MouseEvent) => {
+                SetCustomShow(true)
+              }}
+          />
+          <h2>{translated.t3}</h2>
+          <Cell
+              title={translated.t3}
+              onClick={(event: React.MouseEvent) => {
+                changeNotify(translated.t3, 'base', 5000)
+                SetShowNotify(true)
+              }}
           />
           <Cell
-            title={translated.successNotify}
-            onClick={(event: React.MouseEvent) => {
-              changeNotify(translated.successNotify, 'success')
-              SetShowNotify(true)
-            }}
+              title={translated.cusPostion}
+              onClick={(event: React.MouseEvent) => {
+                changeNotify(translated.cusPostion, 'base', 2000, 'bottom')
+                SetShowNotify(true)
+              }}
           />
-          <Cell
-            title={translated.errorNotify}
-            onClick={(event: React.MouseEvent) => {
-              changeNotify(translated.errorNotify, 'danger')
-              SetShowNotify(true)
-            }}
-          />
-          <Cell
-            title={translated.warningNotify}
-            onClick={(event: React.MouseEvent) => {
-              changeNotify(translated.warningNotify, 'warning')
-              SetShowNotify(true)
-            }}
-          />
-        </CellGroup>
-        <h2>{translated.t2}</h2>
-        <Notify
-          className="customer"
-          visible={customShow}
-          msg={translated.cusBgNotify}
-          color="#ad0000"
-          background="#ffe1e1"
-          onClosed={() => {
-            SetCustomShow(false)
-          }}
-        />
-        <Cell
-          title={translated.cusBgNotify}
-          onClick={(event: React.MouseEvent) => {
-            SetCustomShow(true)
-          }}
-        />
-        <h2>{translated.t3}</h2>
-        <Cell
-          title={translated.t3}
-          onClick={(event: React.MouseEvent) => {
-            changeNotify(translated.t3, 'base', 5000)
-            SetShowNotify(true)
-          }}
-        />
-        <Cell
-          title={translated.cusPostion}
-          onClick={(event: React.MouseEvent) => {
-            changeNotify(translated.cusPostion, 'base', 2000, '', 'bottom')
-            SetShowNotify(true)
-          }}
-        />
-      </div>
-    </>
+        </div>
+      </>
   )
 }
 
