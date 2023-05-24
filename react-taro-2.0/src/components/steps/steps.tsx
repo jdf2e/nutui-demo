@@ -22,6 +22,7 @@ interface T {
   db1b4ed6: string
   '0533b454': string
   '0533b455': string
+  '0533b456': string
   '70ffa5d8': string
   f28461bb: string
   dc9591e5: string
@@ -54,6 +55,23 @@ const customTheme2 = {
     rgba(250, 89, 25, 1) 83%,
     rgba(250, 100, 25, 1) 100%)`,
 }
+
+const customTheme3 = {
+  nutuiStepsDotHeadMargin: '0 0 12px 0',
+  nutuiBrandColorEnd: '#fff',
+  nutuiStepsDotIconBorder: '0',
+  nutuiStepsBaseIconWidth: '6px',
+  nutuiStepsBaseIconHeight: '6px',
+  nutuiStepsBaseLineBackground: `#ddd`,
+  nutuiStepsFinishIconBgColor: 'black',
+  nutuiStepsFinishIconColor: 'black',
+  nutuiStepsProcessIconBgColor: 'white',
+  nutuiStepsWaitIconBgColor: '#ddd',
+  nutuiStepsBaseLineWidth: '45px',
+  nutuiStepsBaseLineHeight: '1px',
+  nutuiStepsFinishLineBackground: `black`,
+}
+
 const StepsDemo = () => {
   const [translated] = useTranslate<T>({
     'zh-CN': {
@@ -67,6 +85,7 @@ const StepsDemo = () => {
       db1b4ed6: '步骤描述',
       '0533b454': '自定义步骤条',
       '0533b455': '自定义步骤条：点状',
+      '0533b456': '自定义步骤条：点状 + icon',
       '70ffa5d8': '自定义图标',
       f28461bb: '已完成',
       dc9591e5: '进行中',
@@ -89,6 +108,7 @@ const StepsDemo = () => {
       db1b4ed6: '步驟描述',
       '0533b454': '自定義步驟条',
       '0533b455': '自定義步驟条：点状',
+      '0533b456': '自定義步驟条：点状+icon',
       '70ffa5d8': '自定義圖標',
       f28461bb: '已完成',
       dc9591e5: '進行中',
@@ -111,6 +131,7 @@ const StepsDemo = () => {
       db1b4ed6: 'Step Description',
       '0533b454': 'Custom Step Bar',
       '0533b455': 'Custom Step Bar: Dot',
+      '0533b456': 'Custom Step Bar: Dot+icon',
       '70ffa5d8': 'custom Icon',
       f28461bb: 'completed',
       dc9591e5: 'in progress',
@@ -120,7 +141,7 @@ const StepsDemo = () => {
       '2e60dc8f': 'Your order is on the way',
       '8bf37ba9': 'The delivery address is:',
       '34c1d5cc':
-        'Jingdong Building, No. 18, Kechuang 11th Street, Beijing Economic and Technological Development Zone',
+          'Jingdong Building, No. 18, Kechuang 11th Street, Beijing Economic and Technological Development Zone',
       d98503f5: 'Dot Steps and Vertical Orientation',
     },
   })
@@ -145,230 +166,260 @@ const StepsDemo = () => {
     console.log(index)
   }
   return (
-    <>
-      <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} padding`}>
-        <h2>{translated['74fc5d8a']}</h2>
-        <div className="steps-wrapper">
-          <Steps current={stepState.current1} onClickStep={handleClickStep}>
-            <Step activeIndex={1} title={translated['606ae3f5']}>
-              1
-            </Step>
-            <Step activeIndex={2} title={translated['3c6225eb']}>
-              2
-            </Step>
-            <Step activeIndex={3} title={translated['979df428']}>
-              3
-            </Step>
-          </Steps>
-          <div className="steps-button">
-            <Button
-              type="primary"
-              size="small"
-              onClick={() => handleStep('current1')}
+      <>
+        <Header />
+        <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} padding`}>
+          <h2>{translated['74fc5d8a']}</h2>
+          <div className="steps-wrapper">
+            <Steps
+                value={stepState.current1}
+                onStepClick={() => handleStep('current2')}
             >
-              {translated.acfc4e74}
-            </Button>
+              <Step value={1} title={translated['606ae3f5']}>
+                1
+              </Step>
+              <Step value={2} title={translated['3c6225eb']}>
+                2
+              </Step>
+              <Step value={3} title={translated['979df428']}>
+                3
+              </Step>
+            </Steps>
+            <div className="steps-button">
+              <Button
+                  type="primary"
+                  size="small"
+                  onClick={() => handleStep('current1')}
+              >
+                {translated.acfc4e74}
+              </Button>
+            </div>
           </div>
-        </div>
 
-        <h2>{translated['74fc5d8b']}</h2>
-        <div className="steps-wrapper">
-          <Steps
-            current={stepState.current1}
-            progressDot
-            onClickStep={handleClickStep}
-          >
-            <Step activeIndex={1}>1</Step>
-            <Step activeIndex={2}>2</Step>
-            <Step activeIndex={3}>3</Step>
-          </Steps>
-          <div className="steps-button">
-            <Button
-              type="primary"
-              size="small"
-              onClick={() => handleStep('current1')}
-            >
-              {translated.acfc4e74}
-            </Button>
+          <h2>{translated['74fc5d8b']}</h2>
+          <div className="steps-wrapper">
+            <Steps value={stepState.current1} dot onStepClick={handleClickStep}>
+              <Step value={1}>1</Step>
+              <Step value={2}>2</Step>
+              <Step value={3}>3</Step>
+            </Steps>
+            <div className="steps-button">
+              <Button
+                  type="primary"
+                  size="small"
+                  onClick={() => handleStep('current1')}
+              >
+                {translated.acfc4e74}
+              </Button>
+            </div>
           </div>
-        </div>
-        <h2>{translated['0533b453']}</h2>
-        <div className="steps-wrapper">
-          <Steps current={stepState.current2}>
-            <Step
-              activeIndex={1}
-              title={translated['606ae3f5']}
-              content={translated.db1b4ed6}
-            >
-              1
-            </Step>
-            <Step
-              activeIndex={2}
-              title={translated['3c6225eb']}
-              content={translated.db1b4ed6}
-            />
-            <Step
-              activeIndex={3}
-              title={translated['979df428']}
-              content={translated.db1b4ed6}
-            />
-          </Steps>
-          <div className="steps-button" style={{ marginTop: '10px' }}>
-            <Button
-              type="primary"
-              size="small"
-              onClick={() => handleStep('current2')}
-            >
-              {translated.acfc4e74}
-            </Button>
-          </div>
-        </div>
-
-        <h2>{translated['0533b454']}</h2>
-        <div className="steps-wrapper">
-          <ConfigProvider theme={customTheme}>
-            <Steps current={stepState.current2}>
+          <h2>{translated['0533b453']}</h2>
+          <div className="steps-wrapper">
+            <Steps value={stepState.current2}>
               <Step
-                activeIndex={1}
-                title={translated['606ae3f5']}
-                content={translated.db1b4ed6}
+                  value={1}
+                  title={translated['606ae3f5']}
+                  description={translated.db1b4ed6}
               >
                 1
               </Step>
               <Step
-                activeIndex={2}
-                title={translated['3c6225eb']}
-                content={translated.db1b4ed6}
+                  value={2}
+                  title={translated['3c6225eb']}
+                  description={translated.db1b4ed6}
               />
               <Step
-                activeIndex={3}
-                title={translated['979df428']}
-                content={translated.db1b4ed6}
+                  value={3}
+                  title={translated['979df428']}
+                  description={translated.db1b4ed6}
               />
             </Steps>
-          </ConfigProvider>
-          <div className="steps-button" style={{ marginTop: '10px' }}>
-            <Button
-              type="primary"
-              size="small"
-              onClick={() => handleStep('current2')}
-            >
-              {translated.acfc4e74}
-            </Button>
+            <div className="steps-button" style={{ marginTop: '10px' }}>
+              <Button
+                  type="primary"
+                  size="small"
+                  onClick={() => handleStep('current2')}
+              >
+                {translated.acfc4e74}
+              </Button>
+            </div>
           </div>
-        </div>
 
-        <h2>{translated['0533b455']}</h2>
-        <div className="steps-wrapper">
-          <ConfigProvider theme={customTheme2}>
-            <Steps
-              current={stepState.current1}
-              progressDot
-              onClickStep={handleClickStep}
-            >
-              <Step activeIndex={1}>1</Step>
-              <Step activeIndex={2}>2</Step>
-              <Step activeIndex={3}>3</Step>
+          <h2>{translated['0533b454']}</h2>
+          <div className="steps-wrapper">
+            <ConfigProvider theme={customTheme}>
+              <Steps
+                  value={stepState.current2}
+                  onStepClick={() => handleStep('current2')}
+              >
+                <Step
+                    value={1}
+                    title={translated['606ae3f5']}
+                    description={translated.db1b4ed6}
+                >
+                  1
+                </Step>
+                <Step
+                    value={2}
+                    title={translated['3c6225eb']}
+                    description={translated.db1b4ed6}
+                />
+                <Step
+                    value={3}
+                    title={translated['979df428']}
+                    description={translated.db1b4ed6}
+                />
+              </Steps>
+            </ConfigProvider>
+            <div className="steps-button" style={{ marginTop: '10px' }}>
+              <Button
+                  type="primary"
+                  size="small"
+                  onClick={() => handleStep('current2')}
+              >
+                {translated.acfc4e74}
+              </Button>
+            </div>
+          </div>
+
+          <h2>{translated['0533b455']}</h2>
+          <div className="steps-wrapper">
+            <ConfigProvider theme={customTheme2}>
+              <Steps value={stepState.current1} dot onStepClick={handleClickStep}>
+                <Step value={1}>1</Step>
+                <Step value={2}>2</Step>
+                <Step value={3}>3</Step>
+              </Steps>
+            </ConfigProvider>
+            <div className="steps-button">
+              <Button
+                  type="primary"
+                  size="small"
+                  onClick={() => handleStep('current1')}
+              >
+                {translated.acfc4e74}
+              </Button>
+            </div>
+          </div>
+
+          <h2>{translated['0533b456']}</h2>
+          <div className="steps-wrapper">
+            <ConfigProvider theme={customTheme3}>
+              <Steps dot value={2}>
+                <Step value={1} title={translated.f28461bb}>
+                  1
+                </Step>
+                <Step
+                    value={2}
+                    title={translated.dc9591e5}
+                    icon={
+                      <People
+                          width={20}
+                          height={20}
+                          style={{ color: 'red', flex: 'none' }}
+                      />
+                    }
+                >
+                  2
+                </Step>
+                <Step value={3} title={translated.f6e0d691} icon=" ">
+                  3
+                </Step>
+              </Steps>
+            </ConfigProvider>
+          </div>
+
+          <h2>{translated['70ffa5d8']}</h2>
+          <div className="steps-wrapper">
+            <Steps value={1}>
+              <Step
+                  value={1}
+                  title={translated.f28461bb}
+                  icon={<Service width={12} height={12} />}
+              >
+                1
+              </Step>
+              <Step
+                  value={2}
+                  title={translated.dc9591e5}
+                  icon={<People width={12} height={12} />}
+              >
+                2
+              </Step>
+              <Step
+                  value={3}
+                  title={translated.f6e0d691}
+                  icon={<Location2 width={12} height={12} />}
+              >
+                3
+              </Step>
             </Steps>
-          </ConfigProvider>
-          <div className="steps-button">
-            <Button
-              type="primary"
-              size="small"
-              onClick={() => handleStep('current1')}
-            >
-              {translated.acfc4e74}
-            </Button>
+          </div>
+          <h2>{translated['7605ff3d']}</h2>
+          <div
+              className="steps-wrapper"
+              style={{ height: '300px', padding: '15px 30px' }}
+          >
+            <Steps direction="vertical" value={2}>
+              <Step
+                  value={1}
+                  title={translated.f28461bb}
+                  description={translated.da71e1e5}
+              >
+                1
+              </Step>
+              <Step
+                  value={2}
+                  title={translated.dc9591e5}
+                  description={translated['2e60dc8f']}
+              >
+                2
+              </Step>
+              <Step
+                  value={3}
+                  title={translated.f6e0d691}
+                  description={`${translated['8bf37ba9']}${translated['34c1d5cc']}`}
+              >
+                3
+              </Step>
+            </Steps>
+          </div>
+          <h2>{translated.d98503f5}</h2>
+          <div
+              className="steps-wrapper"
+              style={{ height: '300px', padding: '15px 40px' }}
+          >
+            <Steps direction="vertical" dot value={2}>
+              <Step
+                  value={1}
+                  title={translated.f28461bb}
+                  description={translated.da71e1e5}
+              >
+                1
+              </Step>
+              <Step
+                  value={2}
+                  title={translated.dc9591e5}
+                  description={translated['2e60dc8f']}
+              >
+                2
+              </Step>
+              <Step
+                  value={3}
+                  title={translated.f6e0d691}
+                  description={
+                    <>
+                      <p>{translated['8bf37ba9']}</p>
+                      <p>{translated['34c1d5cc']}</p>
+                    </>
+                  }
+              >
+                3
+              </Step>
+            </Steps>
           </div>
         </div>
-        <h2>{translated['70ffa5d8']}</h2>
-        <div className="steps-wrapper">
-          <Steps current={1}>
-            <Step
-              activeIndex={1}
-              title={translated.f28461bb}
-              icon={<Service />}
-            >
-              1
-            </Step>
-            <Step activeIndex={2} title={translated.dc9591e5} icon={<People />}>
-              2
-            </Step>
-            <Step
-              activeIndex={3}
-              title={translated.f6e0d691}
-              icon={<Location2 />}
-            >
-              3
-            </Step>
-          </Steps>
-        </div>
-        <h2>{translated['7605ff3d']}</h2>
-        <div
-          className="steps-wrapper"
-          style={{ height: '300px', padding: '15px 30px' }}
-        >
-          <Steps direction="vertical" current={2}>
-            <Step
-              activeIndex={1}
-              title={translated.f28461bb}
-              content={translated.da71e1e5}
-            >
-              1
-            </Step>
-            <Step
-              activeIndex={2}
-              title={translated.dc9591e5}
-              content={translated['2e60dc8f']}
-            >
-              2
-            </Step>
-            <Step
-              activeIndex={3}
-              title={translated.f6e0d691}
-              content={`${translated['8bf37ba9']}${translated['34c1d5cc']}`}
-            >
-              3
-            </Step>
-          </Steps>
-        </div>
-        <h2>{translated.d98503f5}</h2>
-        <div
-          className="steps-wrapper"
-          style={{ height: '300px', padding: '15px 40px' }}
-        >
-          <Steps direction="vertical" progressDot current={2}>
-            <Step
-              activeIndex={1}
-              title={translated.f28461bb}
-              content={translated.da71e1e5}
-            >
-              1
-            </Step>
-            <Step
-              activeIndex={2}
-              title={translated.dc9591e5}
-              content={translated['2e60dc8f']}
-            >
-              2
-            </Step>
-            <Step
-              activeIndex={3}
-              title={translated.f6e0d691}
-              renderContent={() => (
-                <>
-                  <p>{translated['8bf37ba9']}</p>
-                  <p>{translated['34c1d5cc']}</p>
-                </>
-              )}
-            >
-              3
-            </Step>
-          </Steps>
-        </div>
-      </div>
-    </>
+      </>
   )
 }
 

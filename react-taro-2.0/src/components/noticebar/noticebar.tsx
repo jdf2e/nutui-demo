@@ -31,7 +31,7 @@ const NoticeBarDemo = () => {
       basic: 'Basic Usage',
       scrollable: 'Scrollable',
       mode: 'Mode',
-      multiline: 'Wrapable',
+      multiline: 'wrap',
       vertical: 'Vertical Scroll',
       complexAm: 'Vertical Scroll Complex Animation',
       customAm: 'Vertical Scroll Custom Style',
@@ -54,131 +54,131 @@ const NoticeBarDemo = () => {
   }
 
   return (
-    <>
-      <Header />
-      <div
-        className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}
-        style={{ paddingBottom: '30px' }}
-      >
-        <h2>{translated.basic}</h2>
-        <NoticeBar text={translated.text} />
-
-        <h2>{translated.scrollable}</h2>
-        <NoticeBar text={translated.textShort} scrollable />
-        <br />
-        <NoticeBar text={translated.text} scrollable={false} />
-
-        <h2>{translated.mode}</h2>
-        <NoticeBar closeMode onClick={hello}>
-          {translated.text}
-        </NoticeBar>
-        <br />
-        <NoticeBar closeMode rightIcon={<CircleClose />} onClick={hello}>
-          {translated.text}
-        </NoticeBar>
-        <br />
-        <NoticeBar
-          leftIcon={
-            <img
-              alt="notice"
-              width="16px"
-              height="16px"
-              src="https://img13.360buyimg.com/imagetools/jfs/t1/72082/2/3006/1197/5d130c8dE1c71bcd6/e48a3b60804c9775.png"
-            />
-          }
+      <>
+        <Header />
+        <div
+            className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}
+            style={{ paddingBottom: '30px' }}
         >
-          <a href="https://www.jd.com" style={{ color: '#4d88ff' }}>
-            {translated.jd}
-          </a>
-        </NoticeBar>
+          <h2>{translated.basic}</h2>
+          <NoticeBar content={translated.text} />
 
-        <h2>{translated.multiline}</h2>
-        <NoticeBar text={translated.text} wrapable />
+          <h2>{translated.scrollable}</h2>
+          <NoticeBar content={translated.textShort} scrollable />
+          <br />
+          <NoticeBar content={translated.text} scrollable={false} />
 
-        <h2>{translated.vertical}</h2>
-        <div className="interstroll-list">
-          <NoticeBar
-            direction="vertical"
-            list={horseLamp1}
-            speed={10}
-            standTime={1000}
-            onClick={(e) => {
-              go(e.target.innerHTML)
-            }}
-            closeMode
-          />
-        </div>
-
-        <h2>{translated.complexAm}</h2>
-        <div className="interstroll-list">
-          <NoticeBar
-            direction="vertical"
-            list={horseLamp2}
-            speed={10}
-            standTime={2000}
-            leftIcon={
-              <img
-                alt="notice"
-                width="16px"
-                height="16px"
-                src="https://img13.360buyimg.com/imagetools/jfs/t1/72082/2/3006/1197/5d130c8dE1c71bcd6/e48a3b60804c9775.png"
-              />
-            }
-            onClick={(e) => {
-              console.log('listClick', e.target)
-            }}
-            onClickItem={(e, val) => {
-              console.log('dom', e.target)
-              console.log('value', val)
-            }}
-          />
-        </div>
-
-        <h2>{translated.customAm}</h2>
-        <div className="interstroll-list">
-          <NoticeBar
-            direction="vertical"
-            height={50}
-            speed={10}
-            standTime={1000}
-            closeMode
-            onClose={() => {
-              console.log('close')
-            }}
-          >
-            {horseLamp3.map((item, index) => {
-              return (
-                <div
-                  className="custom-item"
-                  style={{ height: '50px', lineHeight: '50px' }}
-                  key={index}
-                  onClick={() => {
-                    console.log('inner', item)
-                  }}
-                >
-                  {item}
-                </div>
-              )
-            })}
+          <h2>{translated.mode}</h2>
+          <NoticeBar closeable onClick={hello}>
+            {translated.text}
           </NoticeBar>
-        </div>
-
-        <h2>{translated.customRightIcon}</h2>
-        <div className="interstroll-list">
+          <br />
+          <NoticeBar closeable rightIcon={<CircleClose />} onClick={hello}>
+            {translated.text}
+          </NoticeBar>
+          <br />
           <NoticeBar
-            className="custom"
-            direction="vertical"
-            list={horseLamp1}
-            speed={10}
-            standTime={1000}
-            onClickItem={(e, v) => {
-              console.log('onclick-custom', v)
-            }}
-            rightIcon={<Fabulous size={16} color="#f0250f" />}
-          />
+              leftIcon={
+                <img
+                    alt="notice"
+                    width="16px"
+                    height="16px"
+                    src="https://img13.360buyimg.com/imagetools/jfs/t1/72082/2/3006/1197/5d130c8dE1c71bcd6/e48a3b60804c9775.png"
+                />
+              }
+          >
+            <a href="https://www.jd.com" style={{ color: '#4d88ff' }}>
+              {translated.jd}
+            </a>
+          </NoticeBar>
+
+          <h2>{translated.multiline}</h2>
+          <NoticeBar content={translated.text} wrap />
+
+          <h2>{translated.vertical}</h2>
+          <div className="interstroll-list">
+            <NoticeBar
+                direction="vertical"
+                list={horseLamp1}
+                speed={10}
+                duration={1000}
+                onClick={(e) => {
+                  go(e.target.innerHTML)
+                }}
+                closeable
+            />
+          </div>
+
+          <h2>{translated.complexAm}</h2>
+          <div className="interstroll-list">
+            <NoticeBar
+                direction="vertical"
+                list={horseLamp2}
+                speed={10}
+                duration={2000}
+                leftIcon={
+                  <img
+                      alt="notice"
+                      width="16px"
+                      height="16px"
+                      src="https://img13.360buyimg.com/imagetools/jfs/t1/72082/2/3006/1197/5d130c8dE1c71bcd6/e48a3b60804c9775.png"
+                  />
+                }
+                onClick={(e) => {
+                  console.log('listClick', e.target)
+                }}
+                onClickItem={(e, val) => {
+                  console.log('dom', e.target)
+                  console.log('value', val)
+                }}
+            />
+          </div>
+
+          <h2>{translated.customAm}</h2>
+          <div className="interstroll-list">
+            <NoticeBar
+                direction="vertical"
+                height={50}
+                speed={10}
+                duration={1000}
+                closeable
+                onClose={() => {
+                  console.log('close')
+                }}
+            >
+              {horseLamp3.map((item, index) => {
+                return (
+                    <div
+                        className="custom-item"
+                        style={{ height: '50px', lineHeight: '50px' }}
+                        key={index}
+                        onClick={() => {
+                          console.log('inner', item)
+                        }}
+                    >
+                      {item}
+                    </div>
+                )
+              })}
+            </NoticeBar>
+          </div>
+
+          <h2>{translated.customRightIcon}</h2>
+          <div className="interstroll-list">
+            <NoticeBar
+                className="custom"
+                direction="vertical"
+                list={horseLamp1}
+                speed={10}
+                duration={1000}
+                onClickItem={(e, v) => {
+                  console.log('onclick-custom', v)
+                }}
+                rightIcon={<Fabulous size={16} color="#f0250f" />}
+            />
+          </div>
         </div>
-      </div>
-    </>
+      </>
   )
 }
 
