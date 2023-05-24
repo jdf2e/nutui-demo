@@ -8,15 +8,26 @@ module.exports = {
     }]
   ],
   plugins: [
-    [
-      "import",
-      {
-        "libraryName": "@nutui/nutui-react-taro",
-        "libraryDirectory": "dist/esm",
-        "style": true,
-        "camel2DashComponentName": false
-      },
-      'nutui-react-taro'
-    ]
+    // [
+    //   "import",
+    //   {
+    //     "libraryName": "@nutui/nutui-react-taro",
+    //     "libraryDirectory": "dist/esm",
+    //     "style": true,
+    //     "camel2DashComponentName": false
+    //   },
+    //   'nutui-react-taro'
+    // ]
+
+        [
+        "import",
+            {
+              "libraryName": "@nutui/nutui-react-taro",
+              "libraryDirectory": "dist/esm",
+              "style": 'css',
+              "camel2DashComponentName": false
+            },
+            'nutui-react-taro'
+        ]
   ]
 }
