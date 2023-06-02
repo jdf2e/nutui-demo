@@ -39,7 +39,7 @@
     "@gui-one/material-miniapp": "^0.15.81",
     "@nutui/icons-vue-taro": "0.0.9",
     "@nutui/nutui": "^4.0.5",
-    "@nutui/nutui-react-taro": "^2.0.0-alpha.13",
+    "@nutui/nutui-react-taro": "^2.0.0-alpha.14",
     "@tarojs/components": "3.6.1",
     "@tarojs/helper": "3.6.1",
     "@tarojs/plugin-framework-react": "3.6.1",

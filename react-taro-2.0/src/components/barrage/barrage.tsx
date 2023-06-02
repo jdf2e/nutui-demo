@@ -57,7 +57,7 @@ const BarrageDemo = () => {
     },
   })
 
-  const list = [
+  const barrageList = [
     translated.ed8c172b,
     translated.ae9cd4a0,
     translated.ab05020c,
@@ -71,32 +71,32 @@ const BarrageDemo = () => {
     const n = Math.random()
     if (barrageRef.current) {
       barrageRef.current.add(
-        `${translated['75ca4f92']}${String(n).substr(2, 10)}`
+          `${translated['75ca4f92']}${String(n).substr(2, 10)}`
       )
     }
   }
 
   return (
-    <>
-      <Header />
-      <div
-        className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} demo-barrage`}
-      >
-        <h2>{translated['84aa6bce']}</h2>
-        <Cell className="barrage-demo-wrap">
-          <Barrage
-            className="barrage-demo"
-            ref={barrageRef}
-            barrageList={list}
-          />
-        </Cell>
-        <div className="test" style={{ textAlign: 'center' }}>
-          <Button type="primary" onClick={addBarrage}>
-            {translated['3d9b2794']}
-          </Button>
+      <>
+        <Header />
+        <div
+            className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} demo-barrage`}
+        >
+          <h2>{translated['84aa6bce']}</h2>
+          <Cell className="barrage-demo-wrap">
+            <Barrage
+                className="barrage-demo"
+                ref={barrageRef}
+                list={barrageList}
+            />
+          </Cell>
+          <div className="test" style={{ textAlign: 'center' }}>
+            <Button type="primary" onClick={addBarrage}>
+              {translated['3d9b2794']}
+            </Button>
+          </div>
         </div>
-      </div>
-    </>
+      </>
   )
 }
 
