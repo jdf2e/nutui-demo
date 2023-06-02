@@ -21,16 +21,16 @@ const AnimatingNumbersDemo = () => {
     'en-US': {
       basic: 'Basic Usage',
       custom:
-        'Custom styles to dynamically modify data (maximum number of bits required)',
+          'Custom styles to dynamically modify data (maximum number of bits required)',
     },
   })
-  const [endNumber, setEndNumer] = useState('1570.99')
+  const [value, setEndNumer] = useState('1570.99')
   useEffect(() => {
     const timer = setInterval(() => {
       setEndNumer(
-        `${Math.floor(Math.random() * 999999)}.${Math.floor(
-          Math.random() * 89 + 10
-        )}`
+          `${Math.floor(Math.random() * 999999)}.${Math.floor(
+              Math.random() * 89 + 10
+          )}`
       )
     }, 30000)
     return () => {
@@ -38,20 +38,20 @@ const AnimatingNumbersDemo = () => {
     }
   }, [])
   return (
-    <>
-      <Header />
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
-        <h2>CountUp-{translated.basic}</h2>
-        <AnimatingNumbers.CountUp endNumber="678.94" />
-        <h2>CountUp-{translated.custom}</h2>
-        <AnimatingNumbers.CountUp
-          endNumber={endNumber}
-          easeSpeed={1.2}
-          maxLen={6}
-          className="custom-coutup"
-        />
-      </div>
-    </>
+      <>
+        <Header />
+        <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+          <h2>CountUp-{translated.basic}</h2>
+          <AnimatingNumbers.CountUp value="678.94" />
+          <h2>CountUp-{translated.custom}</h2>
+          <AnimatingNumbers.CountUp
+              value={value}
+              duration={1.2}
+              length={6}
+              className="custom-coutup"
+          />
+        </div>
+      </>
   )
 }
 

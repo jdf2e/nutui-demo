@@ -35,10 +35,10 @@ const WaterMarkDemo = () => {
 
   const [flag, setFlag] = useState(false)
   const src = useRef(
-    '//img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg'
+      '//storage.360buyimg.com/imgtools/e067cd5b69-07c864c0-dd02-11ed-8b2c-d7f58b17086a.png'
   )
   const imgSrc = useRef(
-    'http://img11.360buyimg.com/imagetools/jfs/t1/57345/6/20069/8019/62b995cdEd96fef03/51d3302dfeccd1d2.png'
+      '//m.360buyimg.com/imagetools/jfs/t1/57345/6/20069/8019/62b995cdEd96fef03/51d3302dfeccd1d2.png'
   )
 
   const showTextMark = () => {
@@ -50,40 +50,34 @@ const WaterMarkDemo = () => {
   }
 
   return (
-    <>
-      <Header />
-      <div
-        className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} demo-watemark`}
-      >
-        <h2>{translated['84aa6bce']}</h2>
-        <Cell className="wrap">
-          <Button onClick={showTextMark}>{translated.ddd76b7f}</Button>
-          <Button onClick={showImageMark}>{translated['6de1e02a']}</Button>
-          {!flag && (
-            <WaterMark
-              className="mark1-taro"
-              zIndex={1}
-              content="nut-ui-water-mark"
-            />
-          )}
-          {flag && (
-            <WaterMark
-              className="mark1-taro"
-              zIndex={1}
-              content="nut-ui-water-mark"
-              imageWidth={60}
-              imageHeight={23}
-              image={imgSrc.current}
-            />
-          )}
-        </Cell>
-        <h2>{translated.fa139733}</h2>
-        <Cell className="wrap wrap2">
-          <img src={src.current} alt="" />
-          <WaterMark fullPage={false} fontColor="#fa2c19" content="nut-ui" />
-        </Cell>
-      </div>
-    </>
+      <>
+        <Header />
+        <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+          <h2>{translated['84aa6bce']}</h2>
+          <Cell>
+            <Button onClick={showTextMark} style={{ marginRight: '10px' }}>
+              {translated.ddd76b7f}
+            </Button>
+            <Button onClick={showImageMark}>{translated['6de1e02a']}</Button>
+            {!flag && <WaterMark zIndex={200} content="NutUI-WaterMark" />}
+            {flag && (
+                <WaterMark
+                    zIndex={200}
+                    content="NutUI-WaterMark"
+                    rotate={22}
+                    imageWidth={60}
+                    imageHeight={23}
+                    image={imgSrc.current}
+                />
+            )}
+          </Cell>
+          <h2>{translated.fa139733}</h2>
+          <Cell>
+            <img src={src.current} alt="" width="100%" height="100%" />
+            <WaterMark fullPage={false} color="red" content="nutui" />
+          </Cell>
+        </div>
+      </>
   )
 }
 
