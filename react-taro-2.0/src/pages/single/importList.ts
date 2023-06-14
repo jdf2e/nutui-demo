@@ -68,6 +68,7 @@ import Barrage from "../../components/barrage/barrage";
 import Card from "../../components/card/card";
 import Signature from "../../components/signature/signature";
 import Timeselect from "../../components/timeselect/timeselect";
+import Form from "../../components/form/form";
 
-const components =[Video,Button,Cell,Icon,Overlay,Popup,Divider,Grid,Layout,Sticky,Elevator,Fixednav,Indicator,Menu,Navbar,Pagination,Sidenavbar,Tabbar,Tabs,Calendar,Cascader,Checkbox,Datepicker,Input,Inputnumber,Numberkeyboard,Picker,Radio,Range,Rate,Searchbar,Shortpassword,Textarea,Uploader,Actionsheet,Backtop,Dialog,Drag,Infiniteloading,Notify,Swipe,Switch,Toast,Animate,Animatingnumbers,Avatar,Badge,Circleprogress,Collapse,Countdown,Ellipsis,Empty,Imagepreview,Noticebar,Popover,Price,Progress,Skeleton,Steps,Swiper,Table,Tag,Trendarrow,Virtuallist,Watermark,Address,Barrage,Card,Signature,Timeselect];
+const components = [Form, Video, Button, Cell, Icon, Overlay, Popup, Divider, Grid, Layout, Sticky, Elevator, Fixednav, Indicator, Menu, Navbar, Pagination, Sidenavbar, Tabbar, Tabs, Calendar, Cascader, Checkbox, Datepicker, Input, Inputnumber, Numberkeyboard, Picker, Radio, Range, Rate, Searchbar, Shortpassword, Textarea, Uploader, Actionsheet, Backtop, Dialog, Drag, Infiniteloading, Notify, Swipe, Switch, Toast, Animate, Animatingnumbers, Avatar, Badge, Circleprogress, Collapse, Countdown, Ellipsis, Empty, Imagepreview, Noticebar, Popover, Price, Progress, Skeleton, Steps, Swiper, Table, Tag, Trendarrow, Virtuallist, Watermark, Address, Barrage, Card, Signature, Timeselect];
 export default components

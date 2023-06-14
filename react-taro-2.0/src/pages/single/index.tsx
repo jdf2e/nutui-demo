@@ -8,7 +8,7 @@ const Single = () => {
     let idx = Number(router.params.id);
 
     const Item = components[idx] || null;
-    return <Item />;
+    return <Item/>;
     // return null
 };
 export default Single;
