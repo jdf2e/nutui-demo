@@ -42,7 +42,7 @@ const TagDemo = () => {
                 <CellGroup>
                     <Cell
                         title="primary"
-                        extra={<Tag type="primary">{translated.tag}</Tag>}
+                        extra={<Tag type="info">{translated.tag}</Tag>}
                     />
                     <Cell
                         title="success"
