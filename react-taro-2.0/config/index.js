@@ -25,7 +25,7 @@ const config = {
   },
   framework: 'react',
   sass:{
-    // data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";`
+    data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";`
   },
   compiler: {
     type: 'webpack5',

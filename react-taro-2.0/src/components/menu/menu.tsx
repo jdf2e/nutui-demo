@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { TriangleDown, Success } from '@nutui/icons-react-taro'
 import Taro from '@tarojs/taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
-import { Menu, MenuItem, Button } from '@nutui/nutui-react-taro'
+import { Menu, Button } from '@nutui/nutui-react-taro'
 import Header from '@/sites/components/header'
 
 const MenuDemo = () => {
@@ -13,7 +13,7 @@ const MenuDemo = () => {
   }`
   const [translated] = useTranslate({
     'zh-CN': {
-      basic: '基本用法',
+      basic: '基础用法',
       customMenuContent: '自定义菜单内容',
       customContent: '自定义内容',
       screen: '筛选',
@@ -103,57 +103,68 @@ const MenuDemo = () => {
   const itemRef = useRef(null)
 
   return (
-    <>
-      <Header />
-      <style>{style}</style>
-      <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''} full`}>
-        <h2>{translated.basic}</h2>
-        <Menu closeOnClickOverlay={false} lockScroll={false}>
-          <MenuItem
-            options={options}
-            value={0}
-            onChange={(val) => {
-              console.log(val)
-            }}
-          />
-          <MenuItem options={options1} value="a" />
-        </Menu>
-        <h2>{translated.customMenuContent}</h2>
-        <Menu>
-          <MenuItem options={options} value={0} />
-          <MenuItem title={translated.screen} ref={itemRef}>
-            <div>{translated.customContent}</div>
-            <Button onClick={() => (itemRef.current as any).toggle(false)}>
-              {translated.confirm}
-            </Button>
-          </MenuItem>
-        </Menu>
-        <h2>{translated.twoColsInOneLine}</h2>
-        <Menu>
-          <MenuItem options={options} value={0} columns={2} />
-        </Menu>
-        <h2>{translated.customActiveColor}</h2>
-        <Menu activeColor="green">
-          <MenuItem options={options} value={0} />
-          <MenuItem options={options1} value="a" />
-        </Menu>
-        <h2>{translated.customIcons}</h2>
-        <Menu titleIcon={<TriangleDown />}>
-          <MenuItem options={options} value={0} optionsIcon={<Success />} />
-          <MenuItem options={options1} value="a" />
-        </Menu>
-        <h2>{translated.expandDirection}</h2>
-        <Menu>
-          <MenuItem options={options} value={0} direction="up" />
-          <MenuItem options={options1} value="a" direction="up" />
-        </Menu>
-        <h2>{translated.disableMenu}</h2>
-        <Menu>
-          <MenuItem options={options} value={0} disabled />
-          <MenuItem options={options1} value="a" disabled />
-        </Menu>
-      </div>
-    </>
+      <>
+        <Header />
+        <style>{style}</style>
+        <div className={`demo demo-full ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+          <h2>{translated.basic}</h2>
+          <Menu closeOnOverlayClick lockScroll={false}>
+            <Menu.Item
+                options={options}
+                value={0}
+                closeOnClickAway
+                onChange={(val) => {
+                  console.log(val)
+                }}
+            />
+            <Menu.Item closeOnClickAway options={options1} value="a" />
+          </Menu>
+          <h2>{translated.customMenuContent}</h2>
+          <Menu>
+            <Menu.Item options={options} value={0} />
+            <Menu.Item title={translated.screen} ref={itemRef}>
+              <div>{translated.customContent}</div>
+              <Button onClick={() => (itemRef.current as any).toggle(false)}>
+                {translated.confirm}
+              </Button>
+            </Menu.Item>
+          </Menu>
+          <h2>{translated.twoColsInOneLine}</h2>
+          <Menu>
+            <Menu.Item options={options} value={0} columns={2} />
+          </Menu>
+          <h2>{translated.customActiveColor}</h2>
+          <Menu activeColor="green">
+            <Menu.Item options={options} value={0} />
+            <Menu.Item options={options1} value="a" />
+          </Menu>
+          <h2>{translated.customIcons}</h2>
+          <Menu icon={<TriangleDown />}>
+            <Menu.Item options={options} value={0} icon={<Success />} />
+            <Menu.Item options={options1} value="a" />
+          </Menu>
+          <h2>{translated.expandDirection}</h2>
+          <Menu>
+            <Menu.Item
+                options={options}
+                value={0}
+                direction="up"
+                closeOnClickAway
+            />
+            <Menu.Item
+                options={options1}
+                value="a"
+                direction="up"
+                closeOnClickAway
+            />
+          </Menu>
+          <h2>{translated.disableMenu}</h2>
+          <Menu>
+            <Menu.Item options={options} value={0} disabled />
+            <Menu.Item options={options1} value="a" disabled />
+          </Menu>
+        </div>
+      </>
   )
 }
 
