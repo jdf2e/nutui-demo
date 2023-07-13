@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react'
 import Taro from '@tarojs/taro'
 import { useTranslate } from '@/sites/assets/locale/taro'
-import { Cell, Calendar } from '@nutui/nutui-react-taro'
+import {Cell, Calendar, ButtonProps} from '@nutui/nutui-react-taro'
 import Header from '@/sites/components/header'
 import Utils from '@/utils/date'
 import './demo.scss'
 
+type a = ButtonProps
 interface Day {
   day: string | number
   type: string

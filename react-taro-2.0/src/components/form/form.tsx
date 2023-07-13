@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Taro from '@tarojs/taro'
-import { Right } from '@nutui/icons-react-taro'
-import { useTranslate } from '@/sites/assets/locale/taro'
+// import { Right } from '@nutui/icons-react-taro'
+import {useTranslate} from '@/sites/assets/locale/taro'
 import {
     Input,
     Form,
     TextArea,
     Button,
-    Picker,
-    Radio,
-    Checkbox,
+    // Picker,
+    // Radio,
+    // Checkbox,
     InputNumber,
-    Switch,
-    Uploader,
-    Rate,
-    Range,
+    // Switch,
+    // Uploader,
+    // Rate,
+    // Range,
     Toast,
-    Cell
+    // Cell
 } from '@nutui/nutui-react-taro'
 import Header from '@/sites/components/header'
 
@@ -213,58 +213,58 @@ const FormDemo = () => {
         })
         SetState(changeState)
     }
-    const submitFailed = (error: any) => {
-        openToast('fail', JSON.stringify(error))
-        SetShowToast(true)
-    }
+    // const submitFailed = (error: any) => {
+    //     openToast('fail', JSON.stringify(error))
+    //     SetShowToast(true)
+    // }
 
     const submitSucceed = (values: any) => {
         openToast('success', JSON.stringify(values))
         SetShowToast(true)
     }
 
-    const [form] = Form.useForm()
+    // const [form] = Form.useForm()
 
-    const onMenuChange = (value: string | number | boolean) => {
-        switch (value) {
-            case 'male':
-                form.setFieldsValue({ note: '👨' })
-                break
-            case 'female':
-                form.setFieldsValue({ note: '👩' })
-                break
-            default:
-        }
-    }
+    // const onMenuChange = (value: string | number | boolean) => {
+    //     switch (value) {
+    //         case 'male':
+    //             form.setFieldsValue({ note: '👨' })
+    //             break
+    //         case 'female':
+    //             form.setFieldsValue({ note: '👩' })
+    //             break
+    //         default:
+    //     }
+    // }
 
     // 函数校验
-    const customValidator = (
-        rule: FormItemRuleWithoutValidator,
-        value: string
-    ) => {
-        return /^\d+$/.test(value)
-    }
+    // const customValidator = (
+    //     rule: FormItemRuleWithoutValidator,
+    //     value: string
+    // ) => {
+    //     return /^\d+$/.test(value)
+    // }
+    //
+    // const valueRangeValidator = (
+    //     rule: FormItemRuleWithoutValidator,
+    //     value: string
+    // ) => {
+    //     return /^(\d{1,2}|1\d{2}|200)$/.test(value)
+    // }
 
-    const valueRangeValidator = (
-        rule: FormItemRuleWithoutValidator,
-        value: string
-    ) => {
-        return /^(\d{1,2}|1\d{2}|200)$/.test(value)
-    }
-
-    const pickerOptions = [
-        { value: 4, text: 'BeiJing' },
-        { value: 1, text: 'NanJing' },
-        { value: 2, text: 'WuXi' },
-        { value: 8, text: 'DaQing' },
-        { value: 9, text: 'SuiHua' },
-        { value: 10, text: 'WeiFang' },
-        { value: 12, text: 'ShiJiaZhuang' },
-    ]
+    // const pickerOptions = [
+    //     { value: 4, text: 'BeiJing' },
+    //     { value: 1, text: 'NanJing' },
+    //     { value: 2, text: 'WuXi' },
+    //     { value: 8, text: 'DaQing' },
+    //     { value: 9, text: 'SuiHua' },
+    //     { value: 10, text: 'WeiFang' },
+    //     { value: 12, text: 'ShiJiaZhuang' },
+    // ]
 
     return (
         <>
-            <Header />
+            <Header/>
             <Toast
                 msg={state.msg}
                 visible={showToast}
@@ -286,7 +286,7 @@ const FormDemo = () => {
                         </>
                     }
                 >
-                    <Form.Item required label={translated.name} name="username">
+                    <Form.Item>
                         <Input
                             className="nut-input-text"
                             placeholder={translated.nameTip}
@@ -297,7 +297,7 @@ const FormDemo = () => {
                         <TextArea
                             placeholder={translated.addressTip}
                             maxLength={100}
-                            style={{ height: '22px' }}
+                            style={{height: '22px'}}
                         />
                     </Form.Item>
                     <Form.Item
@@ -305,235 +305,235 @@ const FormDemo = () => {
                         name="num"
                         getValueFromEvent={(...args) => args[0]}
                     >
-                        <InputNumber />
+                        <InputNumber/>
                     </Form.Item>
                 </Form>
-                <h2>{translated.title2}</h2>
-                <Form
-                    onFinish={(values) => submitSucceed(values)}
-                    onFinishFailed={(values, errors) => submitFailed(errors)}
-                    footer={
-                        <div
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                width: '100%',
-                            }}
-                        >
-                            <Button formType="submit" type="primary">
-                                {translated.submit}
-                            </Button>
-                            <Button formType="reset" style={{ marginLeft: '20px' }}>
-                                {translated.reset}
-                            </Button>
-                        </div>
-                    }
-                >
-                    <Form.Item
-                        label={translated.name}
-                        name="username"
-                        required
-                        rules={[{ required: true, message: translated.nameTip }]}
-                    >
-                        <Input placeholder={translated.nameTip1} type="text" />
-                    </Form.Item>
-                    <Form.Item
-                        label={translated.age}
-                        name="age"
-                        required
-                        rules={[
-                            { required: true, message: translated.ageTip },
-                            { validator: customValidator, message: translated.ageTip2 },
-                            { validator: valueRangeValidator, message: translated.ageTip3 },
-                        ]}
-                    >
-                        <Input placeholder={translated.ageTip1} type="text" />
-                    </Form.Item>
-                    <Form.Item
-                        label={translated.tel}
-                        name="tel"
-                        required
-                        rules={[{ required: true, message: translated.telTip }]}
-                    >
-                        <Input placeholder={translated.telTip2} type="number" />
-                    </Form.Item>
-                    <Form.Item
-                        label={translated.address}
-                        name="address"
-                        required
-                        rules={[{ required: true, message: translated.addressTip }]}
-                    >
-                        <Input placeholder={translated.addressTip} type="text" />
-                    </Form.Item>
-                </Form>
+                {/*<h2>{translated.title2}</h2>*/}
+                {/*<Form*/}
+                {/*    onFinish={(values) => submitSucceed(values)}*/}
+                {/*    onFinishFailed={(values, errors) => submitFailed(errors)}*/}
+                {/*    footer={*/}
+                {/*        <div*/}
+                {/*            style={{*/}
+                {/*                display: 'flex',*/}
+                {/*                justifyContent: 'center',*/}
+                {/*                width: '100%',*/}
+                {/*            }}*/}
+                {/*        >*/}
+                {/*            <Button formType="submit" type="primary">*/}
+                {/*                {translated.submit}*/}
+                {/*            </Button>*/}
+                {/*            <Button formType="reset" style={{ marginLeft: '20px' }}>*/}
+                {/*                {translated.reset}*/}
+                {/*            </Button>*/}
+                {/*        </div>*/}
+                {/*    }*/}
+                {/*>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.name}*/}
+                {/*        name="username"*/}
+                {/*        required*/}
+                {/*        rules={[{ required: true, message: translated.nameTip }]}*/}
+                {/*    >*/}
+                {/*        <Input placeholder={translated.nameTip1} type="text" />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.age}*/}
+                {/*        name="age"*/}
+                {/*        required*/}
+                {/*        rules={[*/}
+                {/*            { required: true, message: translated.ageTip },*/}
+                {/*            // { validator: customValidator, message: translated.ageTip2 },*/}
+                {/*            // { validator: valueRangeValidator, message: translated.ageTip3 },*/}
+                {/*        ]}*/}
+                {/*    >*/}
+                {/*        <Input placeholder={translated.ageTip1} type="text" />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.tel}*/}
+                {/*        name="tel"*/}
+                {/*        required*/}
+                {/*        rules={[{ required: true, message: translated.telTip }]}*/}
+                {/*    >*/}
+                {/*        <Input placeholder={translated.telTip2} type="number" />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.address}*/}
+                {/*        name="address"*/}
+                {/*        required*/}
+                {/*        rules={[{ required: true, message: translated.addressTip }]}*/}
+                {/*    >*/}
+                {/*        <Input placeholder={translated.addressTip} type="text" />*/}
+                {/*    </Form.Item>*/}
+                {/*</Form>*/}
 
-                <h2>{translated.title3}</h2>
-                <Form
-                    initialValues={{ username: 'LiSi', age: 20 }}
-                    onFinish={(values) => submitSucceed(values)}
-                    onFinishFailed={(values, errors) => submitFailed(errors)}
-                    footer={
-                        <div
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                width: '100%',
-                            }}
-                        >
-                            <Button formType="submit" type="primary">
-                                {translated.submit}
-                            </Button>
-                            <Button formType="reset" style={{ marginLeft: '20px' }}>
-                                {translated.reset}
-                            </Button>
-                        </div>
-                    }
-                >
-                    <Form.Item
-                        label={translated.name}
-                        name="username"
-                        required
-                        rules={[{ required: true, message: translated.nameTip }]}
-                        initialValue="ZhangSan"
-                    >
-                        <Input placeholder={translated.nameTip1} type="text" />
-                    </Form.Item>
-                    <Form.Item label={translated.age} name="age" initialValue={18}>
-                        <Input placeholder={translated.ageTip1} type="number" />
-                    </Form.Item>
-                </Form>
+                {/*<h2>{translated.title3}</h2>*/}
+                {/*<Form*/}
+                {/*    initialValues={{ username: 'LiSi', age: 20 }}*/}
+                {/*    onFinish={(values) => submitSucceed(values)}*/}
+                {/*    onFinishFailed={(values, errors) => submitFailed(errors)}*/}
+                {/*    footer={*/}
+                {/*        <div*/}
+                {/*            style={{*/}
+                {/*                display: 'flex',*/}
+                {/*                justifyContent: 'center',*/}
+                {/*                width: '100%',*/}
+                {/*            }}*/}
+                {/*        >*/}
+                {/*            <Button formType="submit" type="primary">*/}
+                {/*                {translated.submit}*/}
+                {/*            </Button>*/}
+                {/*            <Button formType="reset" style={{ marginLeft: '20px' }}>*/}
+                {/*                {translated.reset}*/}
+                {/*            </Button>*/}
+                {/*        </div>*/}
+                {/*    }*/}
+                {/*>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.name}*/}
+                {/*        name="username"*/}
+                {/*        required*/}
+                {/*        rules={[{ required: true, message: translated.nameTip }]}*/}
+                {/*        initialValue="ZhangSan"*/}
+                {/*    >*/}
+                {/*        <Input placeholder={translated.nameTip1} type="text" />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.age} name="age" initialValue={18}>*/}
+                {/*        <Input placeholder={translated.ageTip1} type="number" />*/}
+                {/*    </Form.Item>*/}
+                {/*</Form>*/}
 
-                <h2>{translated.title4}</h2>
-                <Form
-                    form={form}
-                    onFinish={(values) => submitSucceed(values)}
-                    onFinishFailed={(values, errors) => submitFailed(errors)}
-                >
-                    <Form.Item
-                        label={translated.name}
-                        name="username"
-                        required
-                        rules={[{ required: true, message: translated.nameTip }]}
-                    >
-                        <Input placeholder={translated.nameTip1} type="text" />
-                    </Form.Item>
-                    <Form.Item label={translated.tag} name="note">
-                        <Input placeholder={translated.tagTip} type="string" />
-                    </Form.Item>
-                    <Form.Item label={translated.gender} name="gender">
-                        <Radio.Group onChange={onMenuChange}>
-                            <Radio value="male">{translated.male}</Radio>
-                            <Radio value="female">{translated.female}</Radio>
-                        </Radio.Group>
-                    </Form.Item>
-                </Form>
+                {/*<h2>{translated.title4}</h2>*/}
+                {/*<Form*/}
+                {/*    form={form}*/}
+                {/*    onFinish={(values) => submitSucceed(values)}*/}
+                {/*    onFinishFailed={(values, errors) => submitFailed(errors)}*/}
+                {/*>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.name}*/}
+                {/*        name="username"*/}
+                {/*        required*/}
+                {/*        rules={[{ required: true, message: translated.nameTip }]}*/}
+                {/*    >*/}
+                {/*        <Input placeholder={translated.nameTip1} type="text" />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.tag} name="note">*/}
+                {/*        <Input placeholder={translated.tagTip} type="string" />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.gender} name="gender">*/}
+                {/*        <Radio.Group onChange={onMenuChange}>*/}
+                {/*            <Radio value="male">{translated.male}</Radio>*/}
+                {/*            <Radio value="female">{translated.female}</Radio>*/}
+                {/*        </Radio.Group>*/}
+                {/*    </Form.Item>*/}
+                {/*</Form>*/}
 
-                <h2>{translated.title5}</h2>
-                <Form
-                    footer={
-                        <div
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                width: '100%',
-                            }}
-                        >
-                            <Button formType="submit" type="primary">
-                                {translated.submit}
-                            </Button>
-                            <Button formType="reset" style={{ marginLeft: '20px' }}>
-                                {translated.reset}
-                            </Button>
-                        </div>
-                    }
-                    onFinish={(values) => submitSucceed(values)}
-                    onFinishFailed={(values, errors) => submitFailed(errors)}
-                >
-                    <Form.Item label={translated.input} name="form_input">
-                        <Input placeholder={translated.nameTip1} />
-                    </Form.Item>
-                    <Form.Item label={translated.switch} name="switch">
-                        <Switch />
-                    </Form.Item>
-                    <Form.Item label={translated.checkbox} name="checkbox">
-                        <Checkbox labelPosition="right" label={`${translated.option} 1`} />
-                    </Form.Item>
-                    <Form.Item label={translated.checkboxGroup} name="checkbox_group">
-                        <Checkbox.Group>
-                            <Checkbox
-                                labelPosition="right"
-                                label={`${translated.option} 1`}
-                                value={1}
-                            />
-                            <Checkbox
-                                labelPosition="right"
-                                label={`${translated.option} 2`}
-                                value={2}
-                            />
-                        </Checkbox.Group>
-                    </Form.Item>
-                    <Form.Item label={translated.radio} name="radio">
-                        <Radio value="1">{translated.radioOption} 1</Radio>
-                    </Form.Item>
-                    <Form.Item label={translated.radioGroup} name="radio_group">
-                        <Radio.Group>
-                            <Radio value="1">{translated.radioOption} 1</Radio>
-                            <Radio value="2">{translated.radioOption} 2</Radio>
-                        </Radio.Group>
-                    </Form.Item>
-                    <Form.Item label={translated.rate} name="rate">
-                        <Rate />
-                    </Form.Item>
-                    <Form.Item label={translated.range} name="range">
-                        <Range max={10} min={-10} />
-                    </Form.Item>
-                    <Form.Item
-                        label={translated.picker}
-                        name="picker"
-                        trigger="onConfirm"
-                        getValueFromEvent={(...args) => args[1]}
-                        onClick={(event, ref: any) => {
-                            ref.open()
-                        }}
-                    >
-                        <Picker options={[pickerOptions]}>
-                            {(value: any) => {
-                                return (
-                                    <Cell
-                                        style={{
-                                            padding: 0,
-                                        }}
-                                        className="nutui-cell--clickable"
-                                        title={
-                                            value.length
-                                                ? pickerOptions.filter((po) => po.value === value[0])[0]
-                                                    ?.text
-                                                : translated.select
-                                        }
-                                        extra={<Right />}
-                                        align="center"
-                                    />
-                                )
-                            }}
-                        </Picker>
-                    </Form.Item>
-                    <Form.Item
-                        label={translated.uploader}
-                        name="files"
-                        initialValue={[
-                            {
-                                name: 'file1.png',
-                                url: 'https://m.360buyimg.com/babel/jfs/t1/164410/22/25162/93384/616eac6cE6c711350/0cac53c1b82e1b05.gif',
-                                status: 'success',
-                                message: 'success',
-                                type: 'image',
-                                uid: '122',
-                            },
-                        ]}
-                    >
-                        <Uploader url="https://my-json-server.typicode.com/linrufeng/demo/posts" />
-                    </Form.Item>
-                </Form>
+                {/*<h2>{translated.title5}</h2>*/}
+                {/*<Form*/}
+                {/*    footer={*/}
+                {/*        <div*/}
+                {/*            style={{*/}
+                {/*                display: 'flex',*/}
+                {/*                justifyContent: 'center',*/}
+                {/*                width: '100%',*/}
+                {/*            }}*/}
+                {/*        >*/}
+                {/*            <Button formType="submit" type="primary">*/}
+                {/*                {translated.submit}*/}
+                {/*            </Button>*/}
+                {/*            <Button formType="reset" style={{ marginLeft: '20px' }}>*/}
+                {/*                {translated.reset}*/}
+                {/*            </Button>*/}
+                {/*        </div>*/}
+                {/*    }*/}
+                {/*    onFinish={(values) => submitSucceed(values)}*/}
+                {/*    onFinishFailed={(values, errors) => submitFailed(errors)}*/}
+                {/*>*/}
+                {/*    <Form.Item label={translated.input} name="form_input">*/}
+                {/*        <Input placeholder={translated.nameTip1} />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.switch} name="switch">*/}
+                {/*        <Switch />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.checkbox} name="checkbox">*/}
+                {/*        <Checkbox labelPosition="right" label={`${translated.option} 1`} />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.checkboxGroup} name="checkbox_group">*/}
+                {/*        <Checkbox.Group>*/}
+                {/*            <Checkbox*/}
+                {/*                labelPosition="right"*/}
+                {/*                label={`${translated.option} 1`}*/}
+                {/*                value={1}*/}
+                {/*            />*/}
+                {/*            <Checkbox*/}
+                {/*                labelPosition="right"*/}
+                {/*                label={`${translated.option} 2`}*/}
+                {/*                value={2}*/}
+                {/*            />*/}
+                {/*        </Checkbox.Group>*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.radio} name="radio">*/}
+                {/*        <Radio value="1">{translated.radioOption} 1</Radio>*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.radioGroup} name="radio_group">*/}
+                {/*        <Radio.Group>*/}
+                {/*            <Radio value="1">{translated.radioOption} 1</Radio>*/}
+                {/*            <Radio value="2">{translated.radioOption} 2</Radio>*/}
+                {/*        </Radio.Group>*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.rate} name="rate">*/}
+                {/*        <Rate />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item label={translated.range} name="range">*/}
+                {/*        <Range max={10} min={-10} />*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.picker}*/}
+                {/*        name="picker"*/}
+                {/*        trigger="onConfirm"*/}
+                {/*        getValueFromEvent={(...args) => args[1]}*/}
+                {/*        onClick={(event, ref: any) => {*/}
+                {/*            ref.open()*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        <Picker options={[pickerOptions]}>*/}
+                {/*            {(value: any) => {*/}
+                {/*                return (*/}
+                {/*                    <Cell*/}
+                {/*                        style={{*/}
+                {/*                            padding: 0,*/}
+                {/*                        }}*/}
+                {/*                        className="nutui-cell--clickable"*/}
+                {/*                        title={*/}
+                {/*                            value.length*/}
+                {/*                                ? pickerOptions.filter((po) => po.value === value[0])[0]*/}
+                {/*                                    ?.text*/}
+                {/*                                : translated.select*/}
+                {/*                        }*/}
+                {/*                        extra={<Right />}*/}
+                {/*                        align="center"*/}
+                {/*                    />*/}
+                {/*                )*/}
+                {/*            }}*/}
+                {/*        </Picker>*/}
+                {/*    </Form.Item>*/}
+                {/*    <Form.Item*/}
+                {/*        label={translated.uploader}*/}
+                {/*        name="files"*/}
+                {/*        initialValue={[*/}
+                {/*            {*/}
+                {/*                name: 'file1.png',*/}
+                {/*                url: 'https://m.360buyimg.com/babel/jfs/t1/164410/22/25162/93384/616eac6cE6c711350/0cac53c1b82e1b05.gif',*/}
+                {/*                status: 'success',*/}
+                {/*                message: 'success',*/}
+                {/*                type: 'image',*/}
+                {/*                uid: '122',*/}
+                {/*            },*/}
+                {/*        ]}*/}
+                {/*    >*/}
+                {/*        <Uploader url="https://my-json-server.typicode.com/linrufeng/demo/posts" />*/}
+                {/*    </Form.Item>*/}
+                {/*</Form>*/}
             </div>
         </>
     )
