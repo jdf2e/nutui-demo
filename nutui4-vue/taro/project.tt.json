@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./",
   "projectname": "taro",
-  "description": "taro+nutui4",
+  "description": "",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,

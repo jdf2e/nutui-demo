@@ -4,7 +4,6 @@
       <img src="" alt="">
     </view>
     {{ msg }} <Dongdong />
-    <IconFont name="dongdong" />
     <view class="btn">
       <nut-button type="primary" @click="handleClick('text', msg2, true)">点我</nut-button>
     </view>
@@ -14,12 +13,11 @@
 
 <script>
 import { reactive, toRefs } from 'vue';
-import { Dongdong,IconFont } from '@nutui/icons-vue-taro';
+import { Dongdong } from '@nutui/icons-vue-taro';
 export default {
   name: 'Index',
   components: {
-    Dongdong,
-    IconFont
+    Dongdong
   },
   setup() {
     const state = reactive({
@@ -36,15 +34,9 @@ export default {
       state.type = type;
       state.cover = cover;
     };
-    const themeVars = {
-    rangeBgColor: "rgba(25,137,250,0.15)",
-    rangeBarBgColor: "#0289fa",
-    rangeBarBtnBorder: "10px solid #0289fa",
-  };
 
     return {
       ...toRefs(state),
-      themeVars,
       handleClick
     }
   }

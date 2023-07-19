@@ -1,21 +1,9 @@
 import Components from 'unplugin-vue-components/webpack';
-
-const NutUIResolver = () => {
-  return (name) => {
-    if (name.startsWith('Nut')) {
-      const partialName = name.slice(3);
-      return {
-        name: partialName,
-        from: '@nutui/nutui-taro',
-        sideEffects: `@nutui/nutui-taro/dist/packages/${partialName.toLowerCase()}/style`
-      }
-    }
-  }
-}
+import NutUIResolver from '@nutui/nutui-taro/dist/resolver';
 
 const config = {
   projectName: 'taro',
-  date: '2023-1-31',
+  date: '2023-7-19',
   designWidth (input) {
     if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
       return 375
@@ -53,7 +41,7 @@ const config = {
   mini: {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver()]
+        resolvers: [NutUIResolver({taro: true})]
       }))
     },
     postcss: {
@@ -81,7 +69,7 @@ const config = {
   h5: {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver()]
+        resolvers: [NutUIResolver({taro: true})]
       }))
     },
     publicPath: '/',
