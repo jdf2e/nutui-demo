@@ -1,26 +1,18 @@
 const { defineConfig } = require('@vue/cli-service')
-const ComponentsPlugin = require('unplugin-vue-components/webpack');
-const NutUIResolver = () => {
-  return (name) => {
-    if (name.startsWith('Nut')) {
-      const partialName = name.slice(3);
-      return {
-        name: partialName,
-        from: '@nutui/nutui',
-        sideEffects: `@nutui/nutui/dist/packages/${partialName.toLowerCase()}/style`
-      }
-    }
-  }
-}
+const Components = require('unplugin-vue-components/webpack')
+const NutUIResolver = require('@nutui/nutui/dist/resolver')
+
 module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
     plugins: [
-      ComponentsPlugin({
+      // 开启 unplugin 插件，自动引入 NutUI 组件
+      Components({
         resolvers: [NutUIResolver()],
-      }),
+      })
     ],
   },
+  // 配置全局样式变量
   css: {
     loaderOptions: {
       scss: {
@@ -28,5 +20,4 @@ module.exports = defineConfig({
       },
     },
   },
- 
 })
