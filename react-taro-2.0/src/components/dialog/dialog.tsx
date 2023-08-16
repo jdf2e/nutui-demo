@@ -63,6 +63,21 @@ const DialogDemo = () => {
       <>
         <Header />
         <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+          <Dialog id="test" />
+          <Cell
+              title="函数调用"
+              onClick={() =>
+                  Dialog.open('test', {
+                    title: 'ok?',
+                    onConfirm: () => {
+                      Dialog.close('test')
+                    },
+                    onCancel: () => {
+                      Dialog.close('test')
+                    },
+                  })
+              }
+          />
           <h2>{translated.title1}</h2>
           <Cell title={translated.basic} onClick={() => setVisible1(true)} />
           <Dialog

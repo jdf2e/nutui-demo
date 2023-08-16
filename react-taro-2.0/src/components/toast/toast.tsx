@@ -36,6 +36,14 @@ const ToastDemo = () => {
     <>
       <Header />
       <div className={`demo ${Taro.getEnv() === 'WEB' ? 'web' : ''}`}>
+        <h2>函数调用</h2>
+        <Toast id="test" />
+        <Cell
+            title="函数调用"
+            onClick={() => {
+              Toast.show('test', { title: '函数调用' })
+            }}
+        />
         <Toast
           msg={state.msg}
           visible={showToast}
