@@ -1,0 +1,208 @@
+{
+  "stylePanel": [
+    {
+      "sectionlabel": "基础配置",
+      "name": "basicConfig",
+      "properties": [
+        {
+          "type": "text",
+          "name": "link",
+          "label": "优惠券链接",
+          "description": "简介",
+          "defaultValue": "",
+          "param": {
+            "placeholder": "提示信息"
+          }
+        },
+        {
+          "type": "select",
+          "name": "couponType",
+          "label": "优惠券类型",
+          "description": "简介",
+          "defaultValue": "1",
+          "param": {
+            "multiple": false,
+            "options": [
+              {
+                "name": "普通优惠券",
+                "value": "1"
+              },
+              {
+                "name": "金融券",
+                "value": "2"
+              },
+              {
+                "name": "到家券",
+                "value": "3"
+              }
+            ]
+          },
+          "onChange": "if(val == 1) {dispatch({type: 'setFormData', 'limitPlatform': '1'})}else{dispatch({type: 'setFormData', 'limitPlatform': '0'})}"
+        },
+        {
+          "type": "select",
+          "name": "limitPlatform",
+          "label": "使用平台",
+          "description": "简介",
+          "defaultValue": "0",
+          "param": {
+            "multiple": true,
+            "options": [
+              {
+                "name": "手Q",
+                "value": "1"
+              },
+              {
+                "name": "无线",
+                "value": "0"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "name": "limitStr",
+          "label": "品类范围",
+          "description": "简介",
+          "defaultValue": "",
+          "param": {
+            "placeholder": ""
+          }
+        },
+        {
+          "type": "text",
+          "name": "quota",
+          "label": "使用门槛",
+          "description": "简介",
+          "defaultValue": "",
+          "param": {
+            "placeholder": ""
+          }
+        },
+        {
+          "type": "select",
+          "name": "userLever",
+          "label": "使用等级",
+          "param": {
+            "useDropDown": true,
+            "options": [
+              {
+                "name": "24级",
+                "value": "24"
+              },
+              {
+                "name": "30级",
+                "value": "30"
+              },
+              {
+                "name": "36级",
+                "value": "36"
+              },
+              {
+                "name": "40级",
+                "value": "40"
+              },
+              {
+                "name": "44级",
+                "value": "44"
+              },
+              {
+                "name": "54级",
+                "value": "54"
+              },
+              {
+                "name": "60级",
+                "value": "60"
+              }
+            ],
+            "style": {
+              "width": "50%"
+            },
+            "defaultValue": "54"
+          },
+          "validation": [
+            {
+              "type": "general",
+              "rules": [
+                {
+                  "type": "required"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "discount",
+          "label": "额度",
+          "description": "简介",
+          "defaultValue": "",
+          "param": {
+            "placeholder": "",
+            "multiLine": true
+          }
+        },
+        {
+          "type": "datepicker",
+          "label": "到期时间",
+          "name": "actEnd",
+          "param": {
+            "range": true,
+            "format": "YYYY-MM-DD HH:mm:ss",
+            "placeholder": "",
+            "showTime": {
+              "defaultValue": ""
+            }
+          },
+          "vcontrol": "boardParams.couponType == '1'"
+        },
+        {
+          "type": "colorpicker",
+          "name": "colorpicker",
+          "label": "背景色",
+          "defaultValue": "#08ce96",
+          "clickTip": "展示楼层背景色",
+          "param": {}
+        }
+      ]
+    },
+    {
+      "sectionlabel": "楼层背景颜色",
+      "name": "backgroundColor",
+      "properties": [
+        {
+          "type": "colorpicker",
+          "name": "backcolorpicker",
+          "label": "背景色",
+          "defaultValue": "#08ce96",
+          "clickTip": "展示楼层背景色",
+          "param": {}
+        }
+      ]
+    }
+  ],
+  "material": [
+    {
+      "sectionlabel": "广告组",
+      "type": "grouptable",
+      "name": "advId1",
+      "param": {
+        "groupType": "advert",
+        "queryDefault": true,
+        "materialStyle": { "stylePanel": [] },
+        "materialParam": {}
+      }
+    },
+    {
+      "sectionlabel": "商品组",
+      "type": "grouptable",
+      "name": "goodsId1",
+      "param": {
+        "queryDefault": true,
+        "groupType": "product",
+        "materialStyle": { "stylePanel": [] },
+        "materialParam": {}
+      }
+    }
+  ]
+}
