@@ -28,7 +28,7 @@ const LoadingDemo = () => {
     return (
         <>
             <div className="demo">
-                <h2>基础用法</h2>
+                <h2>基础用法1</h2>
                 <Cell>
                     <Loading type="circular" />
                     <Loading type="spinner" />
