@@ -8,10 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@nutui/nutui": "^4.1.0",
-    "core-js": "^3.31.1",
+    "@nutui/nutui": "^4.2.0",
+    "@nutui/icons-vue": "^0.1.1",
+    "@nutui/touch-emulator": "^1.0.0",
+    "core-js": "^3.33.2",
     "sass-loader": "^13.3.2",
-    "vue": "^3.3.4"
+    "vue": "^3.3.7"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
@@ -22,7 +24,8 @@
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.7.1",
     "sass": "^1.63.6",
-    "unplugin-vue-components": "^0.25.1"
+    "unplugin-vue-components": "^0.25.2",
+    "@nutui/auto-import-resolver": "^1.0.0"
   },
   "eslintConfig": {
     "root": true,

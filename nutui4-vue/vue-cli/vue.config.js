@@ -1,6 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 const Components = require('unplugin-vue-components/webpack')
-const NutUIResolver = require('@nutui/nutui/dist/resolver')
+const NutUIResolver = require('@nutui/auto-import-resolver')
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -11,13 +11,5 @@ module.exports = defineConfig({
         resolvers: [NutUIResolver()],
       })
     ],
-  },
-  // 配置全局样式变量
-  css: {
-    loaderOptions: {
-      scss: {
-        additionalData: `@import "@nutui/nutui/dist/styles/variables.scss";`,
-      },
-    },
-  },
+  }
 })

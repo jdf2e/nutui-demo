@@ -1,6 +1,6 @@
 <script setup>
 import { showToast } from '@nutui/nutui';
-import '@nutui/nutui/dist/packages/toast/style';
+import '@nutui/nutui/dist/packages/toast/style/css';
 
 const msg = '欢迎使用 NutUI4.0 开发项目~'
 const handleClick = () => {
