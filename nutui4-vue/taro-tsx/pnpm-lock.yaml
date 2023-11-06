@@ -12,8 +12,11 @@ dependencies:
     specifier: ^0.0.9
     version: 0.0.9
   '@nutui/nutui-taro':
-    specifier: ^4.0.4
-    version: 4.0.4(unplugin-vue-components@0.23.0)
+    specifier: ^4.2.0
+    version: 4.2.0(unplugin-vue-components@0.23.0)
+  '@nutui/touch-emulator':
+    specifier: ^1.0.0
+    version: 1.0.0
   '@tarojs/components':
     specifier: 3.6.8
     version: 3.6.8(vue@3.2.40)
@@ -64,6 +67,9 @@ devDependencies:
   '@babel/core':
     specifier: ^7.8.0
     version: 7.8.0
+  '@nutui/auto-import-resolver':
+    specifier: ^1.0.0
+    version: 1.0.0
   '@tarojs/cli':
     specifier: 3.6.8
     version: 3.6.8(vue@3.2.40)
@@ -2816,14 +2822,18 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
+  /@nutui/auto-import-resolver@1.0.0:
+    resolution: {integrity: sha512-j92ehNlnJKq+O8+DJx4MP+2izdg2UBSZhPVC6ivIXUKAL3p8BXDMcivvGfOJM0n2adD1ZpMHO6M3R6RiWB68kw==}
+    dev: true
+
   /@nutui/icons-vue-taro@0.0.9:
     resolution: {integrity: sha512-10VYAtFC+o1X0anGs+y2PgF1NWMeLFz2JVMRw4BWLg6wbtVbYy9wukLxyGhZC6Yf6t39DcwaGVda8paV7K6/Ew==}
     dev: false
 
-  /@nutui/nutui-taro@4.0.4(unplugin-vue-components@0.23.0):
-    resolution: {integrity: sha512-v9XyXidgiRgZTH5JofgjhJTGGvQDXhOqkLb/uRjlR2c9eQBSU653rlTO82VjUWOpCterYDxtqXswUZIf+PRbfQ==}
+  /@nutui/nutui-taro@4.2.0(unplugin-vue-components@0.23.0):
+    resolution: {integrity: sha512-M7asJILX8pHVPYd0isFFK2rXr0nmkCkB8lwsUzUe5ylSIB/6L1EON+ZVN5OD6redbCMIi1JIr9a35mGdjSYdLg==}
     peerDependencies:
-      unplugin-vue-components: ^0.23.0
+      unplugin-vue-components: ^0.25.1
     peerDependenciesMeta:
       unplugin-vue-components:
         optional: true
@@ -2831,6 +2841,10 @@ packages:
       '@nutui/icons-vue-taro': 0.0.9
       sass: 1.63.6
       unplugin-vue-components: 0.23.0(vue@3.2.40)
+    dev: false
+
+  /@nutui/touch-emulator@1.0.0:
+    resolution: {integrity: sha512-k2hvI/9LlRA7Ph1Chni27pTuvPmKPt+/I10sWWd2sWzqiCOYRerD79eIwCMRGUF/q6WVDEKVnv00t9CEUL4sPA==}
     dev: false
 
   /@nuxt/kit@3.6.3:
@@ -4011,7 +4025,7 @@ packages:
     resolution: {integrity: sha512-jn7qwGFmJHwUSphV8zZneO3GmtlgLsmhs/LQyVvQbIIa+fzGMUiHI4HXJZL3FT8MJmgXWbLGiVVY7ElvHq6vDA==}
     deprecated: This is a stub types definition. sass provides its own type definitions, so you do not need this installed.
     dependencies:
-      sass: 1.50.0
+      sass: 1.63.6
 
   /@types/send@0.17.1:
     resolution: {integrity: sha512-Cwo8LE/0rnvX7kIIa3QHCkcuF21c05Ayb0ZfxPiv0W8VRiZiNW/WuRupHKpqqGVGf7SUA44QSOUKaEd9lIrd/Q==}
@@ -11729,6 +11743,7 @@ packages:
 
   /prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
+    requiresBuild: true
 
   /pseudomap@1.0.2:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
@@ -12335,6 +12350,7 @@ packages:
       chokidar: 3.5.3
       immutable: 4.3.1
       source-map-js: 1.0.2
+    dev: true
 
   /sass@1.63.6:
     resolution: {integrity: sha512-MJuxGMHzaOW7ipp+1KdELtqKbfAWbH7OLIdoSMnVe3EXPMTmxTmlaZDCTsgIpPCs3w99lLo9/zDKkOrJuT5byw==}
@@ -12404,7 +12420,7 @@ packages:
       loglevel: 1.8.1
       loglevel-plugin-prefix: 0.8.4
       pretty-bytes: 5.6.0
-      sass: 1.50.0
+      sass: 1.63.6
       tslib: 1.14.1
 
   /scss-parser@1.0.6:

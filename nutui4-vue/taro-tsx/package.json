@@ -51,10 +51,12 @@
     "@tarojs/plugin-html": "3.6.8",
     "@tarojs/plugin-framework-vue3": "3.6.8",
     "vue": "^3.2.40",
-    "@nutui/nutui-taro": "^4.0.4",
-    "@nutui/icons-vue-taro": "^0.0.9"
+    "@nutui/nutui-taro": "^4.2.0",
+    "@nutui/icons-vue-taro": "^0.0.9",
+    "@nutui/touch-emulator": "^1.0.0"
   },
   "devDependencies": {
+    "@nutui/auto-import-resolver": "^1.0.0",
     "@babel/core": "^7.8.0",
     "@types/webpack-env": "^1.13.6",
     "webpack": "^5.78.0",

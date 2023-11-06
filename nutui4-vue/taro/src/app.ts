@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import './app.scss'
+import '@nutui/touch-emulator'
 
 const App = createApp({
   onShow (options) {},
