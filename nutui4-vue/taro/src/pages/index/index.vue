@@ -1,53 +1,15 @@
 <template>
-  <view class="index">
-    <view>
-      <img src="" alt="">
-    </view>
-    {{ msg }} <Dongdong />
-    <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)">点我</nut-button>
-    </view>
-    <nut-toast :msg="msg2" v-model:visible="show" :type="type" :cover="cover"/>
-  </view>
+  <div>
+    <nut-cell title="我是标题" desc="描述文字" @click="click"></nut-cell>
+    <nut-popup v-model:visible="show" closeable position="bottom" style="height: 50%;">
+      这里是 popup 的内容
+    </nut-popup>
+  </div>
 </template>
-
-<script>
-import { reactive, toRefs } from 'vue';
-import { Dongdong } from '@nutui/icons-vue-taro';
-export default {
-  name: 'Index',
-  components: {
-    Dongdong
-  },
-  setup() {
-    const state = reactive({
-      msg: '欢迎使用 NutUI4.0 开发小程序',
-      msg2: '你成功了～',
-      type: 'text',
-      show: false,
-      cover: false
-    });
-
-    const handleClick = (type, msg, cover = false) => {
-      state.show = true;
-      state.msg2 = msg;
-      state.type = type;
-      state.cover = cover;
-    };
-
-    return {
-      ...toRefs(state),
-      handleClick
-    }
-  }
-}
+<script setup lang="ts">
+import { ref } from 'vue';
+const show = ref(false);
+const click = () => {
+  show.value = true;
+};
 </script>
-
-<style lang="scss">
-.index {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
-</style>

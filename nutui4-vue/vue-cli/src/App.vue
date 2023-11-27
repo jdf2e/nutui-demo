@@ -1,25 +1,15 @@
-<script setup>
-import { showToast } from '@nutui/nutui';
-import '@nutui/nutui/dist/packages/toast/style/css';
-
-const msg = '欢迎使用 NutUI4.0 开发项目~'
-const handleClick = () => {
-  showToast.text(msg)
-};
-</script>
-
 <template>
   <div>
-    <div>{{ msg }}</div>
-    <nut-button type="primary" @click="handleClick()">点我</nut-button>
+    <nut-cell title="我是标题" desc="描述文字" @click="click"></nut-cell>
+    <nut-popup v-model:visible="show" closeable position="bottom" style="height: 50%;">
+      这里是 popup 的内容
+    </nut-popup>
   </div>
 </template>
-
-<style >
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-</style>
+<script setup lang="js">
+import { ref } from 'vue';
+const show = ref(false);
+const click = () => {
+  show.value = true;
+};
+</script>
