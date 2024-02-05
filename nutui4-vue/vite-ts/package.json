@@ -10,16 +10,16 @@
   },
   "dependencies": {
     "@nutui/icons-vue": "^0.1.1",
-    "@nutui/nutui": "^4.2.7",
+    "@nutui/nutui": "^4.3.0",
     "@nutui/touch-emulator": "^1.0.0",
-    "vue": "^3.4.10"
+    "vue": "^3.4.15"
   },
   "devDependencies": {
     "@nutui/auto-import-resolver": "^1.0.0",
     "@vitejs/plugin-vue": "^5.0.3",
     "typescript": "^5.3.3",
     "unplugin-vue-components": "^0.25.2",
-    "vite": "^5.0.11",
+    "vite": "^5.0.12",
     "vue-tsc": "^1.8.27"
   }
 }
