@@ -1,28 +1,23 @@
-import { reactive } from 'vue'
-import { View, Text } from '@tarojs/components'
-import './index.scss'
+import { ref, defineComponent } from 'vue'
+import { View } from '@tarojs/components'
 
-export default {
+export default defineComponent({
   name: 'Index',
   setup() {
-    const state = reactive({
-      msg: '欢迎使用 NutUI4.0 开发小程序',
-      msg2: '你成功了～',
-      isVisible1: false,
-      val: ''
-    })
-
-    const handleClick = msg => {
-      state.msg = msg
-    }
+    const show = ref(false)
+    const click = () => {
+      show.value = true;
+    };
 
     return () => {
       return (
-        <View class='content'>
-          <View><Text>{state.msg}</Text></View>
-          <nut-button type="primary" onClick={() => handleClick(state.msg2)}>点我</nut-button>
+        <View>
+          <NutCell title="我是标题" desc="描述文字" onClick={click} />
+          <NutPopup v-model:visible={show.value} closeable position="bottom" style={{height: "50%"}}>
+            这里是 popup 的内容
+          </NutPopup>
         </View>
       )
     }
   }
-}
+})
