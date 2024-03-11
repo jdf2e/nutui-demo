@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@nutui/nutui':
-    specifier: ^4.3.1
-    version: 4.3.1(unplugin-vue-components@0.26.0)(vue@3.4.21)
+    specifier: ^4.3.2
+    version: 4.3.2(unplugin-vue-components@0.26.0)(vue@3.4.21)
   vue:
     specifier: ^3.4.21
     version: 3.4.21(typescript@5.4.2)
@@ -17,11 +17,11 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@rsbuild/core':
-    specifier: ^0.4.12
-    version: 0.4.12(webpack@5.90.3)
+    specifier: ^0.4.13
+    version: 0.4.13
   '@rsbuild/plugin-vue':
-    specifier: ^0.4.12
-    version: 0.4.12(@rsbuild/core@0.4.12)(vue@3.4.21)
+    specifier: ^0.4.13
+    version: 0.4.13(@rsbuild/core@0.4.13)(vue@3.4.21)
   typescript:
     specifier: ^5.4.2
     version: 5.4.2
@@ -143,8 +143,8 @@ packages:
     resolution: {integrity: sha512-ekn6R9GNHWNUcV4pxdhQzrI1g1VhZ5zknklXoUJrCzt0RkRRLU0bUXX3ouWT0sl0U3MNJClnXAzZe7iPAvgPtw==}
     dev: false
 
-  /@nutui/nutui@4.3.1(unplugin-vue-components@0.26.0)(vue@3.4.21):
-    resolution: {integrity: sha512-bNiqWENP4aKnLGxNkotJvqIwkUwa9eh9hWGxtTmnKBz27FBE3wkkTPMAZa+YTWXXIki+PwwXqeO1xmmfiPMbhQ==}
+  /@nutui/nutui@4.3.2(unplugin-vue-components@0.26.0)(vue@3.4.21):
+    resolution: {integrity: sha512-wrjcBA0RvJw1VEuc1xW5I6rTpI5ryTgfsaIMLKlZTABxGcKRvBL+3kZ4NGU35ucq2tMf34ndiTNGKf/xXxnZbA==}
     peerDependencies:
       unplugin-vue-components: '>=0.25.1'
       vue: ^3.0.0
@@ -171,28 +171,26 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
 
-  /@rsbuild/core@0.4.12(webpack@5.90.3):
-    resolution: {integrity: sha512-OIRHXEAugbEtnw22tdos6Hiep2i8CIa1DdHU1HVVIf+WeTbVvWplW2JcsPgjbY31S3z0tg6xn3QaVT8uTzrz5w==}
+  /@rsbuild/core@0.4.13:
+    resolution: {integrity: sha512-8iqA+enprHDkRYfdNWed5gcU3LuDhvi90igifoeu+BUvOHgy8BZfDufQLaddkt4UpeeSRzLSe9GTeU4EOEgjqw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
-      '@rsbuild/shared': 0.4.12(@swc/helpers@0.5.3)
+      '@rsbuild/shared': 0.4.13(@swc/helpers@0.5.3)
       '@rspack/core': 0.5.6(@swc/helpers@0.5.3)
       '@swc/helpers': 0.5.3
       core-js: 3.32.2
-      html-webpack-plugin: /html-rspack-plugin@5.6.1(@rspack/core@0.5.6)(webpack@5.90.3)
+      html-webpack-plugin: /html-rspack-plugin@5.6.2(@rspack/core@0.5.6)
       postcss: 8.4.35
-    transitivePeerDependencies:
-      - webpack
     dev: true
 
-  /@rsbuild/plugin-vue@0.4.12(@rsbuild/core@0.4.12)(vue@3.4.21):
-    resolution: {integrity: sha512-pDa505rrw1PmYmVClwJO/5qeutYvjAXj70BXEV1F6tHgV2pqcblE2z46SGYymI5/dAkFuvM7icqmQXbZOnSWpA==}
+  /@rsbuild/plugin-vue@0.4.13(@rsbuild/core@0.4.13)(vue@3.4.21):
+    resolution: {integrity: sha512-2B3+WVCRVg9j6X7z58LJ1FiLTaS2KB7C0F481gXmgFzc2NYDMyzaq7I+hfRycQNF+Xl+xBUUS+Ms41EVPGO4Mw==}
     peerDependencies:
-      '@rsbuild/core': ^0.4.12
+      '@rsbuild/core': ^0.4.13
     dependencies:
-      '@rsbuild/core': 0.4.12(webpack@5.90.3)
-      '@rsbuild/shared': 0.4.12(@swc/helpers@0.5.3)
+      '@rsbuild/core': 0.4.13
+      '@rsbuild/shared': 0.4.13(@swc/helpers@0.5.3)
       vue-loader: 17.4.2(vue@3.4.21)(webpack@5.90.3)
       webpack: 5.90.3
     transitivePeerDependencies:
@@ -205,11 +203,11 @@ packages:
       - webpack-cli
     dev: true
 
-  /@rsbuild/shared@0.4.12(@swc/helpers@0.5.3):
-    resolution: {integrity: sha512-2lPbqcLNjUoHfdQCB6XdoqCqiLwpVeXcydv8cvTeiNCGseLY1WWTSn14b/L6Aj72TJbWWCqAAsm7YVL7Oibqvg==}
+  /@rsbuild/shared@0.4.13(@swc/helpers@0.5.3):
+    resolution: {integrity: sha512-ZaCBlgmDY9Tp8aQlRp0Bh5XpHhDHzJjdm2p82n9YkVVvZbPHLhQ9VLdTNxLY5l2R9uYZ9KjJ3h8L5PZlds7oNQ==}
     dependencies:
       '@rspack/core': 0.5.6(@swc/helpers@0.5.3)
-      caniuse-lite: 1.0.30001596
+      caniuse-lite: 1.0.30001597
       postcss: 8.4.35
     transitivePeerDependencies:
       - '@swc/helpers'
@@ -608,8 +606,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001596
-      electron-to-chromium: 1.4.698
+      caniuse-lite: 1.0.30001597
+      electron-to-chromium: 1.4.699
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
     dev: true
@@ -618,8 +616,8 @@ packages:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
 
-  /caniuse-lite@1.0.30001596:
-    resolution: {integrity: sha512-zpkZ+kEr6We7w63ORkoJ2pOfBwBkY/bJrG/UZ90qNb45Isblu8wzDgevEOrRL1r9dWayHjYiiyCMEXPn4DweGQ==}
+  /caniuse-lite@1.0.30001597:
+    resolution: {integrity: sha512-7LjJvmQU6Sj7bL0j5b5WY/3n7utXUJvAe1lxhsHDbLmwX9mdL86Yjtr+5SRCyf8qME4M7pU2hswj0FpyBVCv9w==}
     dev: true
 
   /chalk@4.1.2:
@@ -683,8 +681,8 @@ packages:
     dependencies:
       ms: 2.1.2
 
-  /electron-to-chromium@1.4.698:
-    resolution: {integrity: sha512-f9iZD1t3CLy1AS6vzM5EKGa6p9pRcOeEFXRFbaG2Ta+Oe7MkfRQ3fsvPYidzHe1h4i0JvIvpcY55C+B6BZNGtQ==}
+  /electron-to-chromium@1.4.699:
+    resolution: {integrity: sha512-I7q3BbQi6e4tJJN5CRcyvxhK0iJb34TV8eJQcgh+fR2fQ8miMgZcEInckCo1U9exDHbfz7DLDnFn8oqH/VcRKw==}
     dev: true
 
   /enhanced-resolve@5.12.0:
@@ -815,28 +813,24 @@ packages:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
     dev: true
 
-  /hasown@2.0.1:
-    resolution: {integrity: sha512-1/th4MHjnwncwXsIW6QMzlvYL9kG5e/CpVvLRZe4XPa8TOUNbCELqmvhDmnkNsAjwaG4+I8gJJL0JBvTTLO9qA==}
+  /hasown@2.0.2:
+    resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
     dependencies:
       function-bind: 1.1.2
 
-  /html-rspack-plugin@5.6.1(@rspack/core@0.5.6)(webpack@5.90.3):
-    resolution: {integrity: sha512-HxBMh931QBxzUAA12j4iPIK1yVgnQrz3ziU/CHU7hUWuolpCy+wcUgcn9Zy4YPsq8PisE9lSg2K8+3i0a//H8A==}
+  /html-rspack-plugin@5.6.2(@rspack/core@0.5.6):
+    resolution: {integrity: sha512-cPGwV3odvKJ7DBAG/DxF5e0nMMvBl1zGfyDciT2xMETRrIwajwC7LtEB3cf7auoGMK6xJOOLjWJgaKHLu/FzkQ==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
-      webpack: ^5.20.0
     peerDependenciesMeta:
       '@rspack/core':
-        optional: true
-      webpack:
         optional: true
     dependencies:
       '@rspack/core': 0.5.6(@swc/helpers@0.5.3)
       lodash: 4.17.21
       tapable: 2.2.1
-      webpack: 5.90.3
     dev: true
 
   /immutable@4.3.5:
@@ -852,7 +846,7 @@ packages:
   /is-core-module@2.13.1:
     resolution: {integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==}
     dependencies:
-      hasown: 2.0.1
+      hasown: 2.0.2
 
   /is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
@@ -1165,14 +1159,14 @@ packages:
       magic-string: 0.30.8
       minimatch: 9.0.3
       resolve: 1.22.8
-      unplugin: 1.8.3
+      unplugin: 1.9.0
       vue: 3.4.21(typescript@5.4.2)
     transitivePeerDependencies:
       - rollup
       - supports-color
 
-  /unplugin@1.8.3:
-    resolution: {integrity: sha512-ZlLteXGDcyJgsbN2g4sZ3Dw6fpX1O5rjgeaA5MmQhhA2YxnTxsh43f8nDQgFOzcir0iv8GYMjtCV8MtyNnrhEg==}
+  /unplugin@1.9.0:
+    resolution: {integrity: sha512-14PslvMY3gNbXnQtNIRB566Q057L5Fe7f5LDEamxVi0QQVxoz5hrveBwwZLcKyHtZ09ysmipxRRj5Lv+BGz2Iw==}
     engines: {node: '>=14.0.0'}
     dependencies:
       acorn: 8.11.3

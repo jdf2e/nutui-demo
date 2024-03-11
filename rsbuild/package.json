@@ -8,13 +8,13 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
-    "@nutui/nutui": "^4.3.1",
+    "@nutui/nutui": "^4.3.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {
     "@nutui/auto-import-resolver": "^1.0.0",
-    "@rsbuild/core": "^0.4.12",
-    "@rsbuild/plugin-vue": "^0.4.12",
+    "@rsbuild/core": "^0.4.13",
+    "@rsbuild/plugin-vue": "^0.4.13",
     "typescript": "^5.4.2",
     "unplugin-vue-components": "^0.26.0"
   }
