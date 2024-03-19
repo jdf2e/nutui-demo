@@ -8,9 +8,13 @@
 ├── vite            NutUI + Vite
 ├── rsbuild         NutUI + Rsbuild
 ├── vue-cli         NutUI + Vue CLI
+├──
 ├── taro            NutUI + Taro
 ├── taro-tsx        NutUI + Taro + TSX
+├──
 ├── cdn             NutUI CDN
+├──
+├── vite-jdt        NutUI JDT 主题
 
 ```
 

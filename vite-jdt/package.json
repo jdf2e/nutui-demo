@@ -1,0 +1,25 @@
+{
+  "name": "vite-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --force",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@nutui/icons-vue": "^0.1.1",
+    "@nutui/nutui": "^4.3.2",
+    "@nutui/touch-emulator": "^1.0.0",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@nutui/auto-import-resolver": "^1.0.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.4.2",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.1.5",
+    "vue-tsc": "^2.0.6"
+  }
+}
