@@ -8,14 +8,14 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
-    "@nutui/nutui": "^4.3.2",
+    "@nutui/nutui": "^4.3.3",
     "vue": "^3.4.21"
   },
   "devDependencies": {
     "@nutui/auto-import-resolver": "^1.0.0",
-    "@rsbuild/core": "^0.4.13",
-    "@rsbuild/plugin-vue": "^0.4.13",
-    "typescript": "^5.4.2",
+    "@rsbuild/core": "^0.5.2",
+    "@rsbuild/plugin-vue": "^0.5.2",
+    "typescript": "^5.4.3",
     "unplugin-vue-components": "^0.26.0"
   }
 }
